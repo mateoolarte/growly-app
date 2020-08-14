@@ -1,6 +1,21 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
+// utils
+import { getCookie } from "../../../utils/cookies";
 
 export default function User() {
+  const router = useRouter();
+
+  const isLogged = getCookie("currentUser");
+
+  useEffect(() => {
+    if (!isLogged) {
+      router.push("/ingresar");
+    }
+  }, [isLogged]);
+
   return (
     <div>
       <Head>
@@ -8,7 +23,7 @@ export default function User() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main>Usuario</main>
 
       <footer></footer>
     </div>

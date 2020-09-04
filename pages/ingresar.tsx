@@ -12,6 +12,15 @@ import firebase from "../firebase/clientApp";
 const LOGIN = "login";
 const REGISTER = "register";
 
+function setUser(userAuth) {
+  const { user } = userAuth;
+  const { uid } = user;
+
+  setCookie("currentUser", uid, 1);
+
+  return { uid };
+}
+
 export default function Login() {
   const router = useRouter();
 
@@ -47,20 +56,48 @@ export default function Login() {
     try {
       if (currentTab === LOGIN) {
         const userAuth = await auth.signInWithEmailAndPassword(email, password);
-        const { user } = userAuth;
-        const { uid } = user;
 
-        setCookie("currentUser", uid, 1);
-
+        const { uid } = setUser(userAuth);
         router.push("/usuario/[id]", `/usuario/${uid}`);
       } else if (currentTab === REGISTER) {
-        const user = await auth.createUserWithEmailAndPassword(email, password);
+        const userAuth = await auth.createUserWithEmailAndPassword(
+          email,
+          password
+        );
 
-        console.log(user);
+        const { uid } = setUser(userAuth);
+        router.push("/usuario/[id]", `/usuario/${uid}`);
       }
     } catch (error) {
       console.log(error);
     }
+  }
+
+  function handleAuthGoogle() {
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+    const auth = firebase.auth();
+
+    auth
+      .signInWithPopup(googleProvider)
+      .then(function (result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        const { uid } = user;
+        setCookie("currentUser", uid, 1);
+        router.push("/usuario/[id]", `/usuario/${uid}`);
+      })
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
   }
 
   return (
@@ -104,6 +141,10 @@ export default function Login() {
 
             <button type="submit">
               {currentTab === LOGIN ? "Ingresar" : "Registrarse"}
+            </button>
+
+            <button type="button" onClick={handleAuthGoogle}>
+              {currentTab === LOGIN ? "Ingresar" : "Registrarse"} con Google
             </button>
           </div>
         </form>

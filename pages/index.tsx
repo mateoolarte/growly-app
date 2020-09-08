@@ -1,23 +1,6 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+// components
+import Layout from "../components/shared/Layout";
 
 export default function Home() {
-  const router = useRouter();
-
-  return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <button type="button" onClick={() => router.push("/ingresar")}>
-          Go to Login
-        </button>
-      </main>
-
-      <footer></footer>
-    </div>
-  );
+  return <Layout title="Inicio - Growly"></Layout>;
 }

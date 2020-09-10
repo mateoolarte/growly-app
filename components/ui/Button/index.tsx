@@ -41,7 +41,7 @@ const ContainerLink = styled.a`
 export default function Button(props: Props) {
   if (props.type === "link") {
     return (
-      <Link {...props}>
+      <Link href={props.href}>
         <ContainerLink>{props.children}</ContainerLink>
       </Link>
     );

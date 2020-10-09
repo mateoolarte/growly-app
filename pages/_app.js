@@ -1,5 +1,8 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const theme = {
   colors: {
     primary: "#D94141",

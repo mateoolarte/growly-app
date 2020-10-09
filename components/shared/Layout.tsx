@@ -7,7 +7,7 @@ import Header from "./Header";
 
 const Container = styled.main``;
 
-export default function Layout({ title }) {
+export default function Layout({ title, children }) {
   return (
     <>
       <Head>
@@ -21,7 +21,7 @@ export default function Layout({ title }) {
 
       <Header />
 
-      <Container></Container>
+      <Container>{children}</Container>
     </>
   );
 }

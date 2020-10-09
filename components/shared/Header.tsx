@@ -16,6 +16,7 @@ import Button from "../ui/Button";
 const Container = styled.header`
   display: flex;
   align-items: center;
+  position: sticky;
   width: 95%;
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto;
@@ -48,6 +49,7 @@ const NavigationList = styled.ul`
   justify-content: center;
   flex-direction: column;
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;

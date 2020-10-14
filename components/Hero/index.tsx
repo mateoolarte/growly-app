@@ -11,16 +11,32 @@ import Button from "../ui/Button";
 
 // assets
 import bg from "../../assets/bg.jpg";
-import thumbnail from "../../assets/thumbnail.jpg";
+import thumbnail from "../../assets/thumbnail.png";
 
 const Wrapper = styled.section`
-  min-height: 60vh;
+  position: relative;
+  padding-top: 90px;
+  min-height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), #fff);
+  }
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
   width: 95%;
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto;
@@ -101,6 +117,16 @@ const Description = styled.p`
 const Gallery = styled.div`
   width: 100%;
 
+  .slick-dots li button:before {
+    color: ${(props) => props && props.theme.colors.terciary};
+    font-size: 1.2rem;
+    opacity: 0.45;
+  }
+
+  .slick-dots li.slick-active button:before {
+    opacity: 1;
+  }
+
   ${MEDIA_QUERIES.landscape} {
     width: 50%;
   }
@@ -142,6 +168,7 @@ export default function Hero() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     beforeChange: (current, next) => setCurrentSlide(next),
   };
 
@@ -168,7 +195,7 @@ export default function Hero() {
           <Slider {...settings}>
             {images.map((image) => {
               return (
-                <SlideContainer>
+                <SlideContainer key={image.id}>
                   <SlideImage src={image.thumbnail} alt="Image" />
                 </SlideContainer>
               );

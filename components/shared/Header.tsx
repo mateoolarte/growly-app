@@ -16,11 +16,15 @@ import Button from "../ui/Button";
 const Container = styled.header`
   display: flex;
   align-items: center;
-  position: sticky;
-  width: 95%;
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  width: 100%;
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 1rem;
+  transform: translateX(-50%);
+  transition: height 0.25s ease-out;
 `;
 
 const LogoContainer = styled.div`
@@ -48,12 +52,12 @@ const NavigationList = styled.ul`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 105vh;
   margin: 0;
   padding: 0;
   transform-origin: 0% 0%;
@@ -76,6 +80,7 @@ const NavigationList = styled.ul`
     width: auto;
     height: auto;
     transform: none;
+    background: none;
   }
 `;
 
@@ -119,9 +124,9 @@ const BtnSignInIcon = styled.span`
 const HamburgerIconContainer = styled.button`
   display: inline-block;
   position: absolute;
-  z-index: 2;
-  top: 1.5rem;
-  right: 1.5rem;
+  z-index: 4;
+  top: 2rem;
+  right: 3rem;
   width: 40px;
   height: 24px;
   border: 0;
@@ -196,7 +201,7 @@ export default function Header() {
   }
 
   return (
-    <Container>
+    <Container isActive={toggleMenu}>
       <LogoContainer>
         <Logo />
       </LogoContainer>

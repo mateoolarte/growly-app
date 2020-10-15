@@ -24,7 +24,13 @@ const Container = styled.header`
   margin: 0 auto;
   padding: 1rem;
   transform: translateX(-50%);
-  transition: height 0.25s ease-out;
+  transition: height 0.25s ease-out, background 0.25s ease-in-out;
+
+  &.active {
+    border-radius: 0 0 4px 4px;
+    background-color: ${(props) => props && props.theme.colors.white};
+    box-shadow: 0 2px 6px ${(props) => props && props.theme.colors.grayDark};
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -201,7 +207,7 @@ export default function Header() {
   }
 
   return (
-    <Container isActive={toggleMenu}>
+    <Container isActive={toggleMenu} id="sticky-header">
       <LogoContainer>
         <Logo />
       </LogoContainer>

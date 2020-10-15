@@ -1,5 +1,5 @@
 // vendors
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
 
@@ -17,8 +17,17 @@ const Wrapper = styled.section`
   position: relative;
   padding-top: 90px;
   min-height: 70vh;
+  margin-bottom: 4rem;
   background-repeat: no-repeat;
   background-size: cover;
+
+  ${MEDIA_QUERIES.landscape} {
+    margin-bottom: 0;
+  }
+
+  ${MEDIA_QUERIES.desktop} {
+    margin-bottom: 4rem;
+  }
 
   &:before {
     content: "";

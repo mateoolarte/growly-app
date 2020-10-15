@@ -11,6 +11,7 @@ const theme = {
     white: "#fff",
     black: "#262526",
     gray: "#F2F2F2",
+    grayDark: "#b5b5b5",
   },
   sizes: {
     container: "1160px",

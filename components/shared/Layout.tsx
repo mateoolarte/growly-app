@@ -8,6 +8,16 @@ import Header from "./Header";
 const Container = styled.main``;
 
 export default function Layout({ title, children }) {
+  function handleStickyMenu() {
+    const headerElm = document.getElementById("sticky-header");
+
+    if (window.scrollY >= 80) {
+      headerElm.classList.add("active");
+    } else {
+      headerElm.classList.remove("active");
+    }
+  }
+
   return (
     <>
       <Head>
@@ -21,7 +31,7 @@ export default function Layout({ title, children }) {
 
       <Header />
 
-      <Container>{children}</Container>
+      <Container onWheel={handleStickyMenu}>{children}</Container>
     </>
   );
 }

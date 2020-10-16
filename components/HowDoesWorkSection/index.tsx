@@ -82,7 +82,11 @@ const Step = styled.button`
 const StepsContent = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+
+  ${MEDIA_QUERIES.tablet} {
+    margin-bottom: 3rem;
+  }
 `;
 
 const StepContentItem = styled.div`

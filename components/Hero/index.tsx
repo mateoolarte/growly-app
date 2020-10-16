@@ -10,13 +10,18 @@ import { MEDIA_QUERIES } from "../../constants";
 import Button from "../ui/Button";
 
 // assets
-import bg from "../../assets/bg.jpg";
-import thumbnail from "../../assets/thumbnail.png";
+import afairHero from "../../assets/afair-hero.jpg";
+import afairMockup from "../../assets/afair-mockup.png";
+import dealiaHero from "../../assets/dealia-hero.jpg";
+import dealiaMockup from "../../assets/dealia-mockup.png";
+import strikHero from "../../assets/strik-hero.jpg";
+import strikMockup from "../../assets/strik-mockup.png";
+import zalepHero from "../../assets/zalep-hero.jpg";
+import zalepMockup from "../../assets/zalep-mockup.png";
 
 const Wrapper = styled.section`
   position: relative;
   padding-top: 90px;
-  min-height: 70vh;
   margin-bottom: 4rem;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,6 +31,7 @@ const Wrapper = styled.section`
   }
 
   ${MEDIA_QUERIES.desktop} {
+    min-height: 600px;
     margin-bottom: 4rem;
   }
 
@@ -153,18 +159,23 @@ const SlideImage = styled.img`
 const images = [
   {
     id: 1,
-    thumbnail: thumbnail,
-    background: bg,
+    thumbnail: afairMockup,
+    background: afairHero,
   },
   {
     id: 2,
-    thumbnail: thumbnail,
-    background: bg,
+    thumbnail: dealiaMockup,
+    background: dealiaHero,
   },
   {
     id: 3,
-    thumbnail: thumbnail,
-    background: bg,
+    thumbnail: strikMockup,
+    background: strikHero,
+  },
+  {
+    id: 4,
+    thumbnail: zalepMockup,
+    background: zalepHero,
   },
 ];
 

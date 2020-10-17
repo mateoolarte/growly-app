@@ -31,7 +31,9 @@ export default function Layout({ title, children }) {
 
       <Header />
 
-      <Container onWheel={handleStickyMenu}>{children}</Container>
+      <Container onWheel={handleStickyMenu} onTouchMove={handleStickyMenu}>
+        {children}
+      </Container>
     </>
   );
 }

@@ -16,6 +16,10 @@ const Wrapper = styled.section`
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto 3rem;
   text-align: center;
+
+  ${MEDIA_QUERIES.tablet} {
+    margin-bottom: 4rem;
+  }
 `;
 
 const Title = styled.h2`

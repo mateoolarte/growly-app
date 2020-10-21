@@ -7,4 +7,5 @@ export interface Props {
   children: React.ReactNode;
   onClick?: any; // Update this type
   href?: string;
+  white: boolean;
 }

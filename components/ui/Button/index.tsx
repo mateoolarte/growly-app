@@ -12,11 +12,19 @@ const ContainerBtn = styled.button`
     ${(props) => props && props.theme.sizes.space1};
   border: 0;
   border-radius: ${(props) => props && props.theme.sizes.space1};
-  background: linear-gradient(
-    ${(props) => props && props.theme.colors.primary},
-    ${(props) => props && props.theme.colors.secondary}
-  );
-  color: ${(props) => props && props.theme.colors.white};
+  background: ${(props) =>
+    props && props.white
+      ? `${props.theme.colors.white}`
+      : `
+        linear-gradient(
+          ${props.theme.colors.primary},
+          ${props.theme.colors.secondary}
+        );
+  `};
+  color: ${(props) =>
+    props && props.white
+      ? `${props.theme.colors.secondary}`
+      : `${props.theme.colors.white}`};
   font-weight: ${(props) => props && props.theme.fonts.bold};
   text-transform: uppercase;
   cursor: pointer;
@@ -28,11 +36,19 @@ const ContainerLink = styled.a`
     ${(props) => props && props.theme.sizes.space1};
   border: 0;
   border-radius: ${(props) => props && props.theme.sizes.space1};
-  background: linear-gradient(
-    ${(props) => props && props.theme.colors.primary},
-    ${(props) => props && props.theme.colors.secondary}
-  );
-  color: ${(props) => props && props.theme.colors.white};
+  background: ${(props) =>
+    props && props.white
+      ? `${props.theme.colors.white}`
+      : `
+        linear-gradient(
+          ${props.theme.colors.primary},
+          ${props.theme.colors.secondary}
+        );
+  `};
+  color: ${(props) =>
+    props && props.white
+      ? `${props.theme.colors.secondary}`
+      : `${props.theme.colors.white}`};
   font-weight: ${(props) => props && props.theme.fonts.bold};
   text-transform: uppercase;
   cursor: pointer;
@@ -42,7 +58,7 @@ export default function Button(props: Props) {
   if (props.type === "link") {
     return (
       <Link href={props.href}>
-        <ContainerLink>{props.children}</ContainerLink>
+        <ContainerLink white={props.white}>{props.children}</ContainerLink>
       </Link>
     );
   }

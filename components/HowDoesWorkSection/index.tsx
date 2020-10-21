@@ -9,6 +9,9 @@ import Button from "../ui/Button";
 
 // assets
 import FirstIconStep from "../../assets/computer-icon.svg";
+import SecondIconStep from "../../assets/card-icon.svg";
+import ThirdIconStep from "../../assets/email-icon.svg";
+import FourthIconStep from "../../assets/layout-icon.svg";
 import ArrowIcon from "../../assets/arrow-right-icon.svg";
 
 const Wrapper = styled.section`
@@ -137,17 +140,17 @@ export default function HowDoesWorkSection() {
     },
     {
       id: 2,
-      Icon: FirstIconStep,
+      Icon: SecondIconStep,
       title: "Elige un plan y método de pago",
     },
     {
       id: 3,
-      Icon: FirstIconStep,
+      Icon: ThirdIconStep,
       title: "Nos envías tu información",
     },
     {
       id: 4,
-      Icon: FirstIconStep,
+      Icon: FourthIconStep,
       title: "Tienes tu sitio web al aire",
     },
   ];

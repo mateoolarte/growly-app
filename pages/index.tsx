@@ -9,6 +9,7 @@ import Layout from "../components/shared/Layout";
 import Hero from "../components/Hero";
 import HowDoesWorkSection from "../components/HowDoesWorkSection";
 import FeatureSection from "../components/FeatureSection";
+import CtaHome from "../components/CtaHome";
 
 // data
 import features from "../data/features";
@@ -35,6 +36,8 @@ export default function Home() {
           <FeatureSection {...feature} isAlt={index === 1} />
         ))}
       </FeaturesContainer>
+
+      <CtaHome />
     </Layout>
   );
 }

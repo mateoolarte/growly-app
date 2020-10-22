@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 // components
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Container = styled.main``;
 
@@ -34,6 +35,8 @@ export default function Layout({ title, children }) {
       <Container onWheel={handleStickyMenu} onTouchMove={handleStickyMenu}>
         {children}
       </Container>
+
+      <Footer />
     </>
   );
 }

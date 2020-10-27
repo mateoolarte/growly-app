@@ -33,8 +33,11 @@ const Container = styled.header`
   }
 `;
 
-const LogoContainer = styled.div`
+const LogoContainer = styled.a`
+  display: block;
   width: 80%;
+  text-decoration: none;
+  cursor: pointer;
 
   ${MEDIA_QUERIES.landscape} {
     width: 20%;
@@ -208,9 +211,11 @@ export default function Header() {
 
   return (
     <Container isActive={toggleMenu} id="sticky-header">
-      <LogoContainer>
-        <Logo />
-      </LogoContainer>
+      <Link href="/">
+        <LogoContainer>
+          <Logo />
+        </LogoContainer>
+      </Link>
 
       <Navigation>
         <HamburgerIconContainer

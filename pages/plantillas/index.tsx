@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Layout from "../../components/shared/Layout";
 import Hero from "../../components/HeroTemplates";
 import TemplateSection from "../../components/TemplateSection";
+import Cta from "../../components/CtaTemplates";
 
 // data
 import plans from "../../data/plans";
@@ -36,6 +37,8 @@ export default function Templates() {
           />
         ))}
       </TemplatesContainer>
+
+      <Cta />
     </Layout>
   );
 }

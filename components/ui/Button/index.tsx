@@ -34,7 +34,8 @@ const ContainerLink = styled.a`
   display: inline-block;
   padding: ${(props) => props && props.theme.sizes.space4}
     ${(props) => props && props.theme.sizes.space1};
-  border: 0;
+  border: ${(props) =>
+    props && props.white ? `1px solid ${props.theme.colors.secondary}` : 0};
   border-radius: ${(props) => props && props.theme.sizes.space1};
   background: ${(props) =>
     props && props.white

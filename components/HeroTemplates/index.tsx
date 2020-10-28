@@ -1,13 +1,8 @@
 // vendors
-import { useState } from "react";
 import styled from "styled-components";
 
 // constants
 import { MEDIA_QUERIES } from "../../constants";
-
-// assets
-import StarterIcon from "../../assets/rocketship-icon.svg";
-import PortfolioIcon from "../../assets/funnel-icon.svg";
 
 const Wrapper = styled.section`
   position: relative;
@@ -228,51 +223,17 @@ const FeatureItem = styled.li`
     top: 1px;
     width: 1.2rem;
     height: 1.2rem;
-    background-image: url(${require("../../assets/check-icon.svg")});
+    background-image: url(${require("../../assets/icons/check.svg")});
     background-repeat: no-repeat;
     background-size: 1.2rem;
   }
 `;
 
-const plans = [
-  {
-    id: 1,
-    title: "Starter",
-    description:
-      "El plan Starter está diseñado para empresas que necesitan comenzar su presencia digital con poco presupuesto y con una estructura de contenidos básica. ",
-    Icon: StarterIcon,
-    pricing: "Paga $20 USD al mes ó $200 USD al año",
-    features: [
-      "Sitio web online bajo plantilla seleccionada",
-      "Customización de la plantilla con la identidad gráfica de la marca",
-      "Montaje de contenido inicial: textos, imágenes y configuración inicial",
-      "Soporte técnico por email",
-      "Hosting y dominio por un año.",
-      "CMS para administrar contenidos",
-      "1 actualización de contenido al año",
-    ],
-  },
-  {
-    id: 2,
-    title: "Portfolio",
-    description:
-      "El plan Starter está diseñado para empresas que necesitan comenzar su presencia digital con poco presupuesto y con una estructura de contenidos básica. ",
-    Icon: PortfolioIcon,
-    pricing: "Paga $20 USD al mes ó $200 USD al año",
-    features: [
-      "Sitio web online bajo plantilla seleccionada",
-      "Customización de la plantilla con la identidad gráfica de la marca",
-      "Montaje de contenido inicial: textos, imágenes y configuración inicial",
-      "Soporte técnico por email",
-      "Hosting y dominio por un año.",
-      "CMS para administrar contenidos",
-      "1 actualización de contenido al año",
-    ],
-  },
-];
-
-export default function HeroTemplates() {
-  const [currentPlan, setCurrentPlan] = useState(0);
+export default function HeroTemplates({
+  plans,
+  currentPlan,
+  handleCurrentPlan,
+}) {
   const activePlan = plans[currentPlan];
   const { description, Icon, pricing, features, title } = activePlan;
 
@@ -286,7 +247,7 @@ export default function HeroTemplates() {
           <ToggleBoxItem isActive={currentPlan === 0}>
             <ToggleBoxButton
               isActive={currentPlan === 0}
-              onClick={() => setCurrentPlan(0)}
+              onClick={() => handleCurrentPlan(0)}
             >
               <strong>Starter</strong>
               $20 USD/mes
@@ -295,7 +256,7 @@ export default function HeroTemplates() {
           <ToggleBoxItem isActive={currentPlan === 1}>
             <ToggleBoxButton
               isActive={currentPlan === 1}
-              onClick={() => setCurrentPlan(1)}
+              onClick={() => handleCurrentPlan(1)}
             >
               <strong>Portfolio</strong>
               $40 USD/mes

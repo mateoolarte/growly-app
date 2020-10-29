@@ -7,21 +7,24 @@ import { MEDIA_QUERIES } from "../../constants";
 const Wrapper = styled.section`
   position: relative;
   padding-top: 120px;
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
   background-image: url(${require("../../assets/bg-how-works.jpg")});
   background-repeat: no-repeat;
   background-size: cover;
 
   ${MEDIA_QUERIES.tablet} {
-    display: flex;
-    align-items: center;
-    height: 400px;
-    padding: 0;
-    margin-bottom: 4rem;
+    padding-top: 160px;
+    padding-bottom: 4rem;
   }
 
   ${MEDIA_QUERIES.landscape} {
-    height: 500px;
+    padding-top: 200px;
+    padding-bottom: 6rem;
+  }
+
+  ${MEDIA_QUERIES.landscape} {
+    padding-top: 220px;
+    padding-bottom: 8rem;
   }
 
   &:before {

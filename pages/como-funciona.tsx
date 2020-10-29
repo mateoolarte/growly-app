@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Layout from "../components/shared/Layout";
 import Hero from "../components/HeroHowWorks";
 import Step from "../components/StepSection";
+import Cta from "../components/CtaHowWorks";
 
 // data
 import steps from "../data/steps";
@@ -32,6 +33,8 @@ export default function HowWorks() {
           <Step key={step.id} {...step} isReverse={index % 2 !== 0} />
         ))}
       </StepsContainer>
+
+      <Cta />
     </Layout>
   );
 }

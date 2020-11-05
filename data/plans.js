@@ -89,7 +89,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [CoffeeIcon, FoodIcon, RestaurantIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=dealia",
       },
       {
         id: 2,
@@ -99,7 +99,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [FilesIcon, MoneyIcon, FocusIcon, CloudIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=deuter",
       },
       {
         id: 3,
@@ -109,7 +109,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [FilesIcon, MoneyIcon, FocusIcon, CloudIcon, MegafoneIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=criket",
       },
       {
         id: 4,
@@ -119,7 +119,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [GearIcon, FocusIcon, CloudIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=snap",
       },
       {
         id: 5,
@@ -129,7 +129,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [MessageIcon, VideoIcon, MegafoneIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=strik",
       },
       {
         id: 6,
@@ -139,7 +139,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [SofaIcon, BuildingIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=amelia",
       },
       {
         id: 7,
@@ -155,7 +155,7 @@ const plans = [
           SpeakerIcon,
         ],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=creto",
       },
       {
         id: 8,
@@ -165,7 +165,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [PetIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=venezia",
       },
       {
         id: 9,
@@ -175,7 +175,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [BoxIcon, FocusIcon, CloudIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=dyno",
       },
       {
         id: 10,
@@ -185,7 +185,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [Presentation2Icon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=starter&template=printa",
       },
     ],
   },
@@ -214,7 +214,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [FruitIcon, FlowerIcon, RunIcon, StrechIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=portfolio&template=afair",
       },
       {
         id: 2,
@@ -224,7 +224,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [WeighIcon, RunIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=portfolio&template=zalep",
       },
       {
         id: 3,
@@ -234,7 +234,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [ScissorsIcon, RazorIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=portfolio&template=bento",
       },
       {
         id: 4,
@@ -244,7 +244,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [FilesIcon, MoneyIcon, FocusIcon, CloudIcon, MegafoneIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=portfolio&template=tello",
       },
       {
         id: 5,
@@ -254,7 +254,7 @@ const plans = [
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [AnchorIcon],
         demoLink: "#",
-        buyLink: "/comprar",
+        buyLink: "/checkout?type=portfolio&template=heria",
       },
     ],
   },

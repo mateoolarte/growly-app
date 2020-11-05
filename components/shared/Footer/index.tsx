@@ -6,9 +6,9 @@ import styled from "styled-components";
 import { MEDIA_QUERIES } from "../../../constants";
 
 // assets
-import FacebookIcon from "../../../assets/facebook-icon.svg";
-import InstagramIcon from "../../../assets/instagram-icon.svg";
-import TwitterIcon from "../../../assets/twitter-icon.svg";
+import FacebookIcon from "../../../assets/icons/facebook.svg";
+import InstagramIcon from "../../../assets/icons/instagram.svg";
+import TwitterIcon from "../../../assets/icons/twitter.svg";
 import LogoSmall from "../../../assets/logo-small.png";
 
 const Wrapper = styled.footer`

@@ -23,7 +23,6 @@ function setUser(userAuth) {
 
 export default function Login() {
   const router = useRouter();
-
   const isLogged = getCookie("currentUser");
 
   const [email, setEmail] = useState("");
@@ -32,7 +31,7 @@ export default function Login() {
 
   useEffect(() => {
     if (isLogged) {
-      router.push("/usuario/[id]", `/usuario/${isLogged}`);
+      router.back();
     }
   }, [isLogged]);
 
@@ -58,7 +57,7 @@ export default function Login() {
         const userAuth = await auth.signInWithEmailAndPassword(email, password);
 
         const { uid } = setUser(userAuth);
-        router.push("/usuario/[id]", `/usuario/${uid}`);
+        router.back();
       } else if (currentTab === REGISTER) {
         const userAuth = await auth.createUserWithEmailAndPassword(
           email,
@@ -66,7 +65,7 @@ export default function Login() {
         );
 
         const { uid } = setUser(userAuth);
-        router.push("/usuario/[id]", `/usuario/${uid}`);
+        router.back();
       }
     } catch (error) {
       console.log(error);
@@ -84,7 +83,7 @@ export default function Login() {
         var user = result.user;
         const { uid } = user;
         setCookie("currentUser", uid, 1);
-        router.push("/usuario/[id]", `/usuario/${uid}`);
+        router.back();
       })
       .catch(function (error) {
         // Handle Errors here.

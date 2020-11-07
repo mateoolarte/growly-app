@@ -1,17 +1,29 @@
-export default function CheckoutContainer() {
-  return (
-    <form action="https://checkout.wompi.co/p/" method="GET">
-      <input
-        type="hidden"
-        name="public-key"
-        value="pub_test_X0zDA9xoKdePzhd8a0x9HAez7HgGO2fH"
-      />
-      <input type="hidden" name="currency" value="COP" />
-      <input type="hidden" name="amount-in-cents" value="4950000" />
-      <input type="hidden" name="reference" value="4XMPGKWWPKWQ" />
+import { createRef, forwardRef, useEffect } from "react";
 
-      {/* <input type="hidden" name="redirect-url" value="URL_REDIRECCION" /> */}
-      <button type="submit">Pagar con Wompi</button>
-    </form>
-  );
+const PaymentButton = forwardRef((props, ref) => <form ref={ref}></form>);
+
+function generateScriptTag() {
+  const scriptTag = document.createElement("script");
+  scriptTag.setAttribute("type", "text/javascript");
+  scriptTag.setAttribute("src", "https://checkout.wompi.co/widget.js");
+  scriptTag.setAttribute("data-public-key", process.env.WOMPI_PUBLIC_KEY);
+  scriptTag.setAttribute("data-currency", "COP");
+  scriptTag.setAttribute("data-amount-in-cents", "4950000");
+  scriptTag.setAttribute("data-reference", `somethingToTest-${Math.random()}`);
+  scriptTag.setAttribute("data-render", "button");
+  scriptTag.setAttribute("data-redirect-url", "http://localhost:3000/pago");
+
+  return scriptTag;
+}
+
+export default function CheckoutContainer() {
+  const ref = createRef();
+
+  useEffect(() => {
+    const scriptTag = generateScriptTag();
+
+    ref.current.appendChild(scriptTag);
+  }, []);
+
+  return <PaymentButton ref={ref} />;
 }

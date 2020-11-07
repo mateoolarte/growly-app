@@ -8,7 +8,7 @@ export default function Payment() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main>Hi world</main>
 
       <footer></footer>
     </div>

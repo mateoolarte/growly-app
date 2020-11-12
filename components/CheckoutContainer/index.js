@@ -6,7 +6,10 @@ function generateScriptTag() {
   const scriptTag = document.createElement("script");
   scriptTag.setAttribute("type", "text/javascript");
   scriptTag.setAttribute("src", "https://checkout.wompi.co/widget.js");
-  scriptTag.setAttribute("data-public-key", process.env.WOMPI_PUBLIC_KEY);
+  scriptTag.setAttribute(
+    "data-public-key",
+    process.env.NEXT_PUBLIC_WOMPI_PUBLIC_KEY
+  );
   scriptTag.setAttribute("data-currency", "COP");
   scriptTag.setAttribute("data-amount-in-cents", "4950000");
   scriptTag.setAttribute("data-reference", `somethingToTest-${Math.random()}`);

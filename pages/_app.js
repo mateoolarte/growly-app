@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import "slick-carousel/slick/slick.css";
@@ -42,11 +43,33 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export default function MyApp({ Component, pageProps }) {
+export default function Growly({ Component, pageProps }) {
+  useEffect(() => {
+    const chat = window.Tawk_API;
+
+    if (chat) {
+      chat.minimize();
+    }
+  }, [Component]);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Component {...pageProps} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/5fb47ecc3e20f61525e475ea/default';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+              })();`,
+        }}
+      />
     </ThemeProvider>
   );
 }

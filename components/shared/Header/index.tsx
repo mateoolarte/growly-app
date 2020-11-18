@@ -45,6 +45,16 @@ export default function Header() {
     setToggleMenu(!toggleMenu);
   }
 
+  function handleChat(e) {
+    e.preventDefault();
+
+    const chat = window.Tawk_API;
+
+    if (chat) {
+      chat.maximize();
+    }
+  }
+
   return (
     <Container isActive={toggleMenu} id="sticky-header">
       <Link href="/">
@@ -83,8 +93,10 @@ export default function Header() {
           </NavigationItem>
 
           <NavigationItem>
-            <Link href="/contacta-un-asesor">
-              <NavigationLink>Contacta un asesor</NavigationLink>
+            <Link href="#">
+              <NavigationLink onClick={handleChat}>
+                Contacta un asesor
+              </NavigationLink>
             </Link>
           </NavigationItem>
 

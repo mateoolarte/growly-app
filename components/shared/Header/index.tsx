@@ -57,7 +57,7 @@ export default function Header() {
 
     const chat = window.Tawk_API;
 
-    if (chat) {
+    if (chat.maximize) {
       chat.maximize();
     }
   }

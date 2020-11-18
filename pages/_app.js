@@ -47,7 +47,7 @@ export default function Growly({ Component, pageProps }) {
   useEffect(() => {
     const chat = window.Tawk_API;
 
-    if (chat) {
+    if (chat.minimize) {
       chat.minimize();
     }
   }, [Component]);

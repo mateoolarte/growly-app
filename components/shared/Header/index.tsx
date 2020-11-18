@@ -35,6 +35,13 @@ function BtnSignIn() {
     </Link>
   );
 }
+declare global {
+  interface Window {
+    Tawk_API: {
+      maximize: () => void;
+    };
+  }
+}
 
 export default function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);

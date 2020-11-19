@@ -2,9 +2,6 @@
 import Link from "next/link";
 
 // assets
-import FacebookIcon from "../../../assets/icons/facebook.svg";
-import InstagramIcon from "../../../assets/icons/instagram.svg";
-import TwitterIcon from "../../../assets/icons/twitter.svg";
 import LogoSmall from "../../../assets/logo-small.png";
 
 // styled
@@ -23,45 +20,45 @@ import {
 } from "./styled";
 
 // data
-import navigationItems from "./data";
+import { navigationItems, socialLinks } from "./data";
 
 export default function Footer() {
   return (
     <Wrapper>
       <NavigationContainer>
         <Navigation>
-          {navigationItems.map(({ id, title, link }) => {
+          {navigationItems.map(({ id, title, link, isExternal }) => {
+            let linkOptions = null;
+
+            if (isExternal) {
+              linkOptions = {
+                target: "_blank",
+                rel: "noreferrer noopener",
+              };
+            }
+
             return (
               <NavigationItem key={id}>
-                <Link href={link}>
-                  <NavigationLink>{title}</NavigationLink>
+                <Link href={link} passHref>
+                  <NavigationLink {...linkOptions}>{title}</NavigationLink>
                 </Link>
               </NavigationItem>
             );
           })}
         </Navigation>
+
         <SocialLinks>
-          <SocialLinksItem>
-            <Link href="#">
-              <SocialLinksIcon>
-                <FacebookIcon />
-              </SocialLinksIcon>
-            </Link>
-          </SocialLinksItem>
-          <SocialLinksItem>
-            <Link href="#">
-              <SocialLinksIcon>
-                <InstagramIcon />
-              </SocialLinksIcon>
-            </Link>
-          </SocialLinksItem>
-          <SocialLinksItem>
-            <Link href="#">
-              <SocialLinksIcon>
-                <TwitterIcon />
-              </SocialLinksIcon>
-            </Link>
-          </SocialLinksItem>
+          {socialLinks.map(({ id, Icon, link }) => {
+            return (
+              <SocialLinksItem key={id}>
+                <Link href={link} passHref>
+                  <SocialLinksIcon>
+                    <Icon />
+                  </SocialLinksIcon>
+                </Link>
+              </SocialLinksItem>
+            );
+          })}
         </SocialLinks>
       </NavigationContainer>
 

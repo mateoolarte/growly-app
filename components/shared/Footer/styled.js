@@ -48,6 +48,7 @@ const NavigationLink = styled.a`
   color: ${(props) => props && props.theme.colors.terciary};
   font-size: 0.8rem;
   font-weight: bold;
+  text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
 `;

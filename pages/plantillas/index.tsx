@@ -3,13 +3,13 @@ import { useState } from "react";
 import styled from "styled-components";
 
 // components
-import Layout from "../components/shared/Layout";
-import Hero from "../components/HeroTemplates";
-import TemplateSection from "../components/TemplateSection";
-import Cta from "../components/CtaTemplates";
+import Layout from "../../components/shared/Layout";
+import Hero from "../../components/HeroTemplates";
+import TemplateSection from "../../components/TemplateSection";
+import Cta from "../../components/CtaTemplates";
 
 // data
-import plans from "../data/plans";
+import plans from "../../data/plans";
 
 const TemplatesContainer = styled.section`
   width: 95%;

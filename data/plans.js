@@ -82,6 +82,7 @@ const plans = [
     templates: [
       {
         id: 1,
+        name: "dealia",
         thumbnail: dealiaThumbnail,
         logoImg: dealiaLogo,
         description:
@@ -92,10 +93,11 @@ const plans = [
           { id: 3, Icon: RestaurantIcon, tooltipText: "Restaurante" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=dealia",
+        themeLink: "/plantillas/dealia?type=Starter",
       },
       {
         id: 2,
+        name: "deuter",
         thumbnail: deuterThumbnail,
         logoImg: deuterLogo,
         description:
@@ -107,10 +109,11 @@ const plans = [
           { id: 4, Icon: CloudIcon, tooltipText: "Nube" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=deuter",
+        themeLink: "/plantillas/deuter?type=Starter",
       },
       {
         id: 3,
+        name: "criket",
         thumbnail: criketThumbnail,
         logoImg: criketLogo,
         description:
@@ -123,10 +126,11 @@ const plans = [
           { id: 5, Icon: MegafoneIcon, tooltipText: "Megafono" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=criket",
+        themeLink: "/plantillas/criket?type=Starter",
       },
       {
         id: 4,
+        name: "snap",
         thumbnail: snapThumbnail,
         logoImg: snapLogo,
         description:
@@ -137,10 +141,11 @@ const plans = [
           { id: 3, Icon: CloudIcon, tooltipText: "Nube" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=snap",
+        themeLink: "/plantillas/snap?type=Starter",
       },
       {
         id: 5,
+        name: "strik",
         thumbnail: strikThumbnail,
         logoImg: strikLogo,
         description:
@@ -151,10 +156,11 @@ const plans = [
           { id: 3, Icon: MegafoneIcon, tooltipText: "Megafono" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=strik",
+        themeLink: "/plantillas/strik?type=Starter",
       },
       {
         id: 6,
+        name: "amelia",
         thumbnail: ameliaThumbnail,
         logoImg: ameliaLogo,
         description:
@@ -164,10 +170,11 @@ const plans = [
           { id: 2, Icon: BuildingIcon, tooltipText: "Edificio" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=amelia",
+        themeLink: "/plantillas/amelia?type=Starter",
       },
       {
         id: 7,
+        name: "creto",
         thumbnail: cretoThumbnail,
         logoImg: cretoLogo,
         description:
@@ -180,20 +187,22 @@ const plans = [
           { id: 5, Icon: SpeakerIcon, tooltipText: "Parlantes" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=creto",
+        themeLink: "/plantillas/creto?type=Starter",
       },
       {
         id: 8,
+        name: "venezia",
         thumbnail: veneziaThumbnail,
         logoImg: veneziaLogo,
         description:
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [{ id: 1, Icon: PetIcon, tooltipText: "Mascota" }],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=venezia",
+        themeLink: "/plantillas/venezia?type=Starter",
       },
       {
         id: 9,
+        name: "dyno",
         thumbnail: dynoThumbnail,
         logoImg: dynoLogo,
         description:
@@ -204,10 +213,11 @@ const plans = [
           { id: 3, Icon: CloudIcon, tooltipText: "Nube" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=dyno",
+        themeLink: "/plantillas/dyno?type=Starter",
       },
       {
         id: 10,
+        name: "printa",
         thumbnail: printaThumbnail,
         logoImg: printaLogo,
         description:
@@ -216,7 +226,7 @@ const plans = [
           { id: 1, Icon: Presentation2Icon, tooltipText: "Presentación 2" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=starter&template=printa",
+        themeLink: "/plantillas/printa?type=Starter",
       },
     ],
   },
@@ -238,6 +248,7 @@ const plans = [
     templates: [
       {
         id: 1,
+        name: "afair",
         thumbnail: afairThumbnail,
         logoImg: afairLogo,
         description:
@@ -249,10 +260,11 @@ const plans = [
           { id: 4, Icon: StrechIcon, tooltipText: "Estirar" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=portfolio&template=afair",
+        themeLink: "/plantillas/afair?type=Portfolio",
       },
       {
         id: 2,
+        name: "zalep",
         thumbnail: zalepThumbnail,
         logoImg: zalepLogo,
         description:
@@ -262,10 +274,11 @@ const plans = [
           { id: 2, Icon: RunIcon, tooltipText: "Correr" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=portfolio&template=zalep",
+        themeLink: "/plantillas/zalep?type=Portfolio",
       },
       {
         id: 3,
+        name: "bento",
         thumbnail: bentoThumbnail,
         logoImg: bentoLogo,
         description:
@@ -275,10 +288,11 @@ const plans = [
           { id: 2, Icon: RazorIcon, tooltipText: "Rasurador" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=portfolio&template=bento",
+        themeLink: "/plantillas/bento?type=Portfolio",
       },
       {
         id: 4,
+        name: "tello",
         thumbnail: telloThumbnail,
         logoImg: telloLogo,
         description:
@@ -291,17 +305,18 @@ const plans = [
           { id: 5, Icon: MegafoneIcon, tooltipText: "Megafono" },
         ],
         demoLink: "#",
-        buyLink: "/pasarela?type=portfolio&template=tello",
+        themeLink: "/plantillas/tello?type=Portfolio",
       },
       {
         id: 5,
+        name: "heria",
         thumbnail: heriaThumbnail,
         logoImg: heriaLogo,
         description:
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [{ id: 1, Icon: AnchorIcon, tooltipText: "Ancla" }, ,],
         demoLink: "#",
-        buyLink: "/pasarela?type=portfolio&template=heria",
+        themeLink: "/plantillas/heria?type=Portfolio",
       },
     ],
   },

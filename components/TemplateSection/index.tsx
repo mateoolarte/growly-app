@@ -22,7 +22,7 @@ export default function TemplateSection({
   description,
   preferences,
   demoLink,
-  buyLink,
+  themeLink,
   thumbnail,
   isReverse,
 }) {
@@ -51,7 +51,7 @@ export default function TemplateSection({
           <Button type="link" href={demoLink} white>
             Ver demo
           </Button>
-          <Button type="link" href={buyLink}>
+          <Button type="link" href={themeLink}>
             Lo quiero
           </Button>
         </Actions>

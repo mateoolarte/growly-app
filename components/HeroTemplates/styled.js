@@ -109,6 +109,8 @@ const ToggleBoxButton = styled.button`
   font-size: 0.9rem;
   text-align: center;
   box-shadow: 0 2px 6px ${(props) => props && props.theme.colors.grayDark};
+  cursor: pointer;
+  outline: none;
 
   ${(props) =>
     props &&
@@ -170,10 +172,35 @@ const Title = styled.h3`
   margin: 0;
   color: ${(props) => props && props.theme.colors.secondary};
   font-size: 28px;
+
+  ${MEDIA_QUERIES.landscape} {
+    font-size: 48px;
+  }
+`;
+
+const PricingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const Pricing = styled.h4`
   margin: 0;
+  margin-right: 0.5rem;
+
+  ${MEDIA_QUERIES.landscape} {
+    font-size: 26px;
+  }
+`;
+
+const Flag = styled.img`
+  height: 26px;
+`;
+
+const Note = styled.p`
+  margin: 0;
+  font-size: 12px;
 `;
 
 const Info = styled.div`
@@ -240,7 +267,10 @@ export {
   Content,
   Image,
   Title,
+  PricingContainer,
   Pricing,
+  Flag,
+  Note,
   Info,
   Description,
   Features,

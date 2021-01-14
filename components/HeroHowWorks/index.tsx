@@ -5,7 +5,7 @@ export default function HeroHowWorks() {
   return (
     <Wrapper>
       <Container>
-        <Heading>Tu sitio web en 3 días</Heading>
+        <Heading>Tu sitio web en 5 días</Heading>
         <Description>
           Sit aut quidem quia. Laborum est exercitationem tenetur. Consequuntur
           est distinctio sapiente suscipit at provident voluptas. Cupiditate

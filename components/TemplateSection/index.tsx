@@ -1,5 +1,6 @@
 // components
 import Button from "../ui/Button";
+import Tooltip from "../ui/Tooltip";
 
 // styled
 import {
@@ -38,9 +39,11 @@ export default function TemplateSection({
         <Description>{description}</Description>
         <PreferenceTitle>Ideal para:</PreferenceTitle>
         <Preferences>
-          {preferences.map((Preference, index) => (
-            <PreferenceItem key={index}>
-              <Preference />
+          {preferences.map(({ id, Icon, tooltipText }) => (
+            <PreferenceItem key={id}>
+              <Tooltip text={tooltipText}>
+                <Icon />
+              </Tooltip>
             </PreferenceItem>
           ))}
         </Preferences>
@@ -49,7 +52,7 @@ export default function TemplateSection({
             Ver demo
           </Button>
           <Button type="link" href={buyLink}>
-            Comprar
+            Lo quiero
           </Button>
         </Actions>
       </Info>

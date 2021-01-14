@@ -10,12 +10,18 @@ import {
   Content,
   Image,
   Title,
+  PricingContainer,
   Pricing,
+  Flag,
+  Note,
   Info,
   Description,
   Features,
   FeatureItem,
 } from "./styled";
+
+// assets
+import FlagCOP from "../../assets/colombia-flag.png";
 
 export default function HeroTemplates({
   plans,
@@ -38,7 +44,7 @@ export default function HeroTemplates({
               onClick={() => handleCurrentPlan(0)}
             >
               <strong>Starter</strong>
-              $20 USD/mes
+              $699.000 COP
             </ToggleBoxButton>
           </ToggleBoxItem>
           <ToggleBoxItem isActive={currentPlan === 1}>
@@ -47,7 +53,7 @@ export default function HeroTemplates({
               onClick={() => handleCurrentPlan(1)}
             >
               <strong>Portfolio</strong>
-              $40 USD/mes
+              $1'199.000 COP
             </ToggleBoxButton>
           </ToggleBoxItem>
         </ToggleBox>
@@ -56,7 +62,11 @@ export default function HeroTemplates({
           <Image>
             <Icon />
             <Title>{title}</Title>
-            <Pricing>{pricing}</Pricing>
+            <PricingContainer>
+              <Pricing>{pricing}</Pricing>
+              <Flag src={FlagCOP} alt="Bandera de Colombia" />
+              <Note>*Pesos colombianos</Note>
+            </PricingContainer>
           </Image>
           <Info>
             <Description>{description}</Description>

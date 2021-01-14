@@ -15,6 +15,16 @@ import Button from "../ui/Button";
 import bgImg from "../../assets/bg-cta-how-works.png";
 
 export default function CtaHowWorks() {
+  function handleChat(e) {
+    e.preventDefault();
+
+    const chat = window.Tawk_API;
+
+    if (chat.maximize) {
+      chat.maximize();
+    }
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -23,11 +33,11 @@ export default function CtaHowWorks() {
           Elige tu plan en Growly y comienza a crecer en el mundo digital
         </Description>
         <Actions>
-          <Button type="link" href="#">
-            Comprar
+          <Button type="button" onClick={handleChat} white>
+            Contactar un asesor
           </Button>
-          <Button type="link" href="#" white>
-            Comprar
+          <Button type="link" href="/plantillas">
+            Comenzar
           </Button>
         </Actions>
       </Container>

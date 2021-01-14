@@ -16,9 +16,14 @@ const navigationItems = [
   },
   {
     id: 3,
-    title: "Ayuda",
-    link: "https://growly.tawk.help/",
-    isExternal: true,
+    title: "Como funciona",
+    link: "/como-funciona",
+  },
+  {
+    id: 4,
+    title: "Contactar un asesor",
+    link: "#",
+    hasOnClick: true,
   },
 ];
 

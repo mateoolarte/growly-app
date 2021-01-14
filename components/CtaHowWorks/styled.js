@@ -40,7 +40,7 @@ const Description = styled.p`
 `;
 
 const Actions = styled.div`
-  a {
+  button {
     &:first-child {
       margin-right: 1rem;
     }

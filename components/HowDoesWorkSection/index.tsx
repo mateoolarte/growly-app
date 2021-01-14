@@ -24,7 +24,7 @@ import {
 export default function HowDoesWorkSection() {
   return (
     <Wrapper>
-      <Title>Un sitio web listo en 3 días</Title>
+      <Title>Un sitio web listo en 5 días</Title>
       <Description>
         Olvídate de plataformas, tecnicismos y parametros difíciles de entender.
         Selecciona una plantilla, nos envías la información correspondiente y

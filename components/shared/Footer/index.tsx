@@ -11,30 +11,42 @@ import {
   Navigation,
   NavigationItem,
   NavigationLink,
-  SocialLinks,
-  SocialLinksItem,
-  SocialLinksIcon,
   CopyrightContainer,
   Image,
   Copyright,
 } from "./styled";
 
 // data
-import { navigationItems, socialLinks } from "./data";
+import { navigationItems } from "./data";
 
 export default function Footer() {
+  function handleChat(e) {
+    e.preventDefault();
+
+    const chat = window.Tawk_API;
+
+    if (chat.maximize) {
+      chat.maximize();
+    }
+  }
+
   return (
     <Wrapper>
       <NavigationContainer>
         <Navigation>
-          {navigationItems.map(({ id, title, link, isExternal }) => {
+          {navigationItems.map(({ id, title, link, hasOnClick }) => {
             let linkOptions = null;
 
-            if (isExternal) {
-              linkOptions = {
-                target: "_blank",
-                rel: "noreferrer noopener",
-              };
+            if (hasOnClick) {
+              return (
+                <NavigationItem key={id}>
+                  <Link href={link}>
+                    <NavigationLink {...linkOptions} onClick={handleChat}>
+                      {title}
+                    </NavigationLink>
+                  </Link>
+                </NavigationItem>
+              );
             }
 
             return (
@@ -46,20 +58,6 @@ export default function Footer() {
             );
           })}
         </Navigation>
-
-        <SocialLinks>
-          {socialLinks.map(({ id, Icon, link }) => {
-            return (
-              <SocialLinksItem key={id}>
-                <Link href={link} passHref>
-                  <SocialLinksIcon>
-                    <Icon />
-                  </SocialLinksIcon>
-                </Link>
-              </SocialLinksItem>
-            );
-          })}
-        </SocialLinks>
       </NavigationContainer>
 
       <CopyrightContainer>

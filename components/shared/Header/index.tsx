@@ -17,24 +17,9 @@ import {
   NavigationList,
   NavigationItem,
   NavigationLink,
-  BtnSignInStyled,
-  BtnSignInIcon,
   HamburgerIconContainer,
   HamburgerIconLine,
 } from "./styled";
-
-function BtnSignIn() {
-  return (
-    <Link href="/ingresar">
-      <BtnSignInStyled>
-        <BtnSignInIcon>
-          <User />
-        </BtnSignInIcon>
-        Ingresar
-      </BtnSignInStyled>
-    </Link>
-  );
-}
 declare global {
   interface Window {
     Tawk_API: {
@@ -82,12 +67,6 @@ export default function Header() {
 
         <NavigationList isActive={toggleMenu}>
           <NavigationItem>
-            <Button type="link" href="/plantillas">
-              Comenzar
-            </Button>
-          </NavigationItem>
-
-          <NavigationItem>
             <Link href="/plantillas">
               <NavigationLink>Plantillas</NavigationLink>
             </Link>
@@ -108,7 +87,9 @@ export default function Header() {
           </NavigationItem>
 
           <NavigationItem>
-            <BtnSignIn />
+            <Button type="link" href="/plantillas">
+              Comenzar
+            </Button>
           </NavigationItem>
         </NavigationList>
       </Navigation>

@@ -10,7 +10,8 @@ const ContainerBtn = styled.button`
   display: inline-block;
   padding: ${(props) => props && props.theme.sizes.space4}
     ${(props) => props && props.theme.sizes.space1};
-  border: 0;
+  border: ${(props) =>
+    props && props.white ? `1px solid ${props.theme.colors.secondary}` : 0};
   border-radius: ${(props) => props && props.theme.sizes.space1};
   background: ${(props) =>
     props && props.white
@@ -28,6 +29,7 @@ const ContainerBtn = styled.button`
   font-weight: ${(props) => props && props.theme.fonts.bold};
   text-transform: uppercase;
   cursor: pointer;
+  outline: none;
 `;
 
 const ContainerLink = styled.a`
@@ -53,6 +55,7 @@ const ContainerLink = styled.a`
   font-weight: ${(props) => props && props.theme.fonts.bold};
   text-transform: uppercase;
   cursor: pointer;
+  outline: none;
 `;
 
 export default function Button(props: Props) {

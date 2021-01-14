@@ -9,17 +9,17 @@ const stepsContent = [
   {
     id: 1,
     Icon: FirstIconStep,
-    title: "Selecciona una plantilla",
+    title: "Selecciona la plantilla que te guste",
   },
   {
     id: 2,
     Icon: SecondIconStep,
-    title: "Elige un plan y método de pago",
+    title: "Elige un método de pago",
   },
   {
     id: 3,
     Icon: ThirdIconStep,
-    title: "Nos envías tu información",
+    title: "Envías la información correspondiente",
   },
   {
     id: 4,

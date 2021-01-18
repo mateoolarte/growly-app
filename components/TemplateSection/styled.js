@@ -71,7 +71,7 @@ const PreferenceTitle = styled.span`
 
 const Preferences = styled.ul`
   display: flex;
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
   padding: 0;
   list-style-type: none;
 `;

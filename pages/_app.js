@@ -58,6 +58,7 @@ export default function Growly({ Component, pageProps }) {
       <GlobalStyles />
       <Component {...pageProps} />
       <script
+        async
         dangerouslySetInnerHTML={{
           __html: `
               var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

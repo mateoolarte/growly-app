@@ -1,5 +1,6 @@
 // vendors
 import { useState } from "react";
+import Link from "next/link";
 
 // components
 import Button from "../../components/ui/Button";
@@ -22,6 +23,7 @@ import {
   Actions,
   Price,
   Icon,
+  BtnGoBack,
 } from "./styled";
 
 import {
@@ -35,6 +37,7 @@ import { PricingContainer, Pricing, Flag, Note } from "../HeroTemplates/styled";
 // assets
 import FlagCOP from "../../assets/colombia-flag.png";
 import InfoIcon from "../../assets/icons/info.svg";
+import ArrowLeft from "../../assets/icons/left-arrow.svg";
 
 const BASIC_PLAN = "basic";
 const PREMIUM_PLAN = "premium";
@@ -66,9 +69,12 @@ export default function HeroSingleTemplate({
         Contenido modal de plan premium
       </Modal>
       <TopActions>
-        <Button type="link" href="/plantillas" white>
-          Volver
-        </Button>
+        <Link href="/plantillas">
+          <BtnGoBack>
+            <ArrowLeft />
+            Volver
+          </BtnGoBack>
+        </Link>
       </TopActions>
       <Container>
         <ImageContainer>
@@ -123,14 +129,14 @@ export default function HeroSingleTemplate({
                 <Note>*Pesos colombianos</Note>
               </PricingContainer>
             </Price>
-            <Button type="link" href="#" white>
-              Ver demo
-            </Button>
             <CheckoutContainer
               price={price}
               template={name}
               type={`${type}-${activePlan}`}
             />
+            <Button type="link" href="#" white>
+              Ver demo
+            </Button>
           </Actions>
         </InfoContainer>
       </Container>

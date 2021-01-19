@@ -53,7 +53,7 @@ export default function HeroTemplates({
               onClick={() => handleCurrentPlan(1)}
             >
               <strong>Portfolio</strong>
-              $1'199.000 COP
+              $1'099.000 COP
             </ToggleBoxButton>
           </ToggleBoxItem>
         </ToggleBox>

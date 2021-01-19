@@ -190,7 +190,7 @@ const Pricing = styled.h4`
   margin-right: 0.5rem;
 
   ${MEDIA_QUERIES.landscape} {
-    font-size: 26px;
+    font-size: 35px;
   }
 `;
 

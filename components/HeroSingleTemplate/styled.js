@@ -135,7 +135,7 @@ const Actions = styled.div`
   .waybox-button {
     display: inline-block;
     height: auto;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     padding: ${(props) => props && props.theme.sizes.space9};
     border: ${(props) =>
       props && props.white ? `1px solid ${props.theme.colors.secondary}` : 0};
@@ -185,6 +185,19 @@ const Icon = styled.button`
   }
 `;
 
+const BtnGoBack = styled.a`
+  display: inline-flex;
+  align-items: center;
+  color: ${(props) => props && props.theme.colors.primary};
+  cursor: pointer;
+
+  svg {
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    fill: ${(props) => props && props.theme.colors.primary};
+  }
+`;
+
 export {
   Wrapper,
   TopActions,
@@ -199,4 +212,5 @@ export {
   Actions,
   Price,
   Icon,
+  BtnGoBack,
 };

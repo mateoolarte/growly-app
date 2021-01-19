@@ -1,3 +1,6 @@
+// vendors
+import Link from "next/link";
+
 // components
 import Button from "../ui/Button";
 import Tooltip from "../ui/Tooltip";
@@ -29,7 +32,11 @@ export default function TemplateSection({
   return (
     <Wrapper isReverse={isReverse}>
       <Image>
-        <Thumbnail src={thumbnail} alt="Thumbnail" />
+        <Link href={themeLink} passHref>
+          <a>
+            <Thumbnail src={thumbnail} alt="Thumbnail" />
+          </a>
+        </Link>
       </Image>
 
       <Info>

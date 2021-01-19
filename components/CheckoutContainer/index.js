@@ -18,7 +18,7 @@ function generateScriptTag(price, template, type) {
   scriptTag.setAttribute("data-render", "button");
   scriptTag.setAttribute(
     "data-redirect-url",
-    "http://localhost:3000/finalizado"
+    `${process.env.NEXT_PUBLIC_WOMPI_URL_REDIRECTION_ENV}finalizado`
   );
 
   return scriptTag;

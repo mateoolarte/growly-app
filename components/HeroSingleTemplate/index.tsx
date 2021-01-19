@@ -4,6 +4,7 @@ import { useState } from "react";
 // components
 import Button from "../../components/ui/Button";
 import Tooltip from "../ui/Tooltip";
+import CheckoutContainer from "../CheckoutContainer";
 
 // styled
 import {
@@ -44,9 +45,12 @@ export default function HeroSingleTemplate({
   preferences,
   type,
   pricing,
+  priceInCents,
   pricingPremium,
+  pricePremiumInCents,
 }) {
-  const [activePlan, setActivePlan] = useState("basic");
+  const [activePlan, setActivePlan] = useState(BASIC_PLAN);
+  const price = activePlan === BASIC_PLAN ? priceInCents : pricePremiumInCents;
 
   return (
     <Wrapper>
@@ -110,12 +114,14 @@ export default function HeroSingleTemplate({
                 <Note>*Pesos colombianos</Note>
               </PricingContainer>
             </Price>
-            <Button type="link" href="#">
-              Comprar
-            </Button>
             <Button type="link" href="#" white>
               Ver demo
             </Button>
+            <CheckoutContainer
+              price={price}
+              template={name}
+              type={`${type}-${activePlan}`}
+            />
           </Actions>
         </InfoContainer>
       </Container>

@@ -22,7 +22,9 @@ export default function SingleTemplate() {
         {...template}
         type={type}
         pricing={templateType?.pricing}
+        priceInCents={templateType?.priceInCents}
         pricingPremium={templateType?.pricingPremium}
+        pricePremiumInCents={templateType?.pricePremiumInCents}
       />
 
       <Terms />

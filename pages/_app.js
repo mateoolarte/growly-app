@@ -27,6 +27,8 @@ const theme = {
     space6: "28px",
     space7: "5px;",
     space8: "30px",
+    space9: "16px",
+    space10: "20px",
     circle: "50%",
   },
   fonts: {

@@ -73,7 +73,7 @@ export default function HeroTemplates({
             <strong>Este plan incluye</strong>
             <Features>
               {features.map((feature) => (
-                <FeatureItem>{feature}</FeatureItem>
+                <FeatureItem key={feature}>{feature}</FeatureItem>
               ))}
             </Features>
           </Info>

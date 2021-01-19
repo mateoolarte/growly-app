@@ -95,6 +95,34 @@ const Actions = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  .waybox-button {
+    display: inline-block;
+    height: auto;
+    margin-left: 0.5rem;
+    padding: ${(props) => props && props.theme.sizes.space9};
+    border: ${(props) =>
+      props && props.white ? `1px solid ${props.theme.colors.secondary}` : 0};
+    border-radius: ${(props) => props && props.theme.sizes.space1};
+    background: ${(props) =>
+      props && props.white
+        ? `${props.theme.colors.white}`
+        : `
+        linear-gradient(
+          ${props.theme.colors.primary},
+          ${props.theme.colors.secondary}
+        );
+  `};
+    color: ${(props) =>
+      props && props.white
+        ? `${props.theme.colors.secondary}`
+        : `${props.theme.colors.white}`};
+    font-weight: ${(props) => props && props.theme.fonts.bold};
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+  }
 `;
 
 const Price = styled.div`

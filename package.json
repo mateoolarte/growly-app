@@ -18,7 +18,8 @@
     "react-dom": "16.13.1",
     "react-slick": "^0.27.12",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.5",

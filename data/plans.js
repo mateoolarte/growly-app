@@ -71,7 +71,9 @@ const plans = [
       "El plan Starter está diseñado para empresas que necesitan comenzar su presencia digital con poco presupuesto y con una estructura de contenidos básica. ",
     Icon: StarterIcon,
     pricing: "$699.000",
+    priceInCents: "69900000",
     pricingPremium: "$999.000",
+    pricePremiumInCents: "99900000",
     features: [
       "Sitio web online bajo plantilla seleccionada",
       "Customización de la plantilla con la identidad gráfica de la marca",
@@ -238,7 +240,9 @@ const plans = [
       "El plan Starter está diseñado para empresas que necesitan comenzar su presencia digital con poco presupuesto y con una estructura de contenidos básica. ",
     Icon: PortfolioIcon,
     pricing: "$1'099.000",
+    priceInCents: "109900000",
     pricingPremium: "$1'399.000",
+    pricePremiumInCents: "139900000",
     features: [
       "Sitio web online bajo plantilla seleccionada",
       "Customización de la plantilla con la identidad gráfica de la marca",

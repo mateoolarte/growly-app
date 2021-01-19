@@ -1,6 +1,9 @@
 // vendors
 import styled from "styled-components";
 
+// constants
+import { MEDIA_QUERIES } from "../../constants";
+
 const Wrapper = styled.section`
   position: relative;
   width: 95%;
@@ -11,18 +14,38 @@ const Wrapper = styled.section`
 
 const TopActions = styled.div`
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  ${MEDIA_QUERIES.landscape} {
+    margin-bottom: 1rem;
+    justify-content: flex-end;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
+
+  ${MEDIA_QUERIES.landscape} {
+    flex-direction: row;
+  }
 `;
 
 const ImageContainer = styled.div`
-  width: 50%;
-  margin-right: 2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  ${MEDIA_QUERIES.landscape} {
+    width: 40%;
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  ${MEDIA_QUERIES.desktop} {
+    width: 50%;
+  }
 `;
 
 const Image = styled.img`
@@ -30,7 +53,15 @@ const Image = styled.img`
 `;
 
 const InfoContainer = styled.div`
-  width: 50%;
+  width: 100%;
+
+  ${MEDIA_QUERIES.landscape} {
+    width: 60%;
+  }
+
+  ${MEDIA_QUERIES.desktop} {
+    width: 50%;
+  }
 `;
 
 const Description = styled.p``;
@@ -94,7 +125,12 @@ const SelectPlanItem = styled.button`
 const Actions = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-evenly;
+
+  ${MEDIA_QUERIES.tablet} {
+    flex-direction: row;
+  }
 
   .waybox-button {
     display: inline-block;
@@ -129,16 +165,19 @@ const Price = styled.div`
   width: 40%;
 `;
 
-const Icon = styled.em`
+const Icon = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 1.2rem;
   height: 1.2rem;
   margin-left: 0.2rem;
+  border: 0;
   border-radius: 50%;
   background-color: ${(props) => props && props.theme.colors.blue};
   font-style: normal;
+  outline: none;
+  cursor: pointer;
 
   svg {
     height: 0.7rem;

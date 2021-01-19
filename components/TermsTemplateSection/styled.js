@@ -1,6 +1,9 @@
 // vendors
 import styled from "styled-components";
 
+// constants
+import { MEDIA_QUERIES } from "../../constants";
+
 const Wrapper = styled.section`
   position: relative;
   width: 95%;
@@ -12,6 +15,7 @@ const TabsContainer = styled.div``;
 
 const Tabs = styled.ul`
   display: flex;
+  margin-bottom: 2rem;
   padding: 0;
   list-style-type: none;
 `;
@@ -30,10 +34,13 @@ const TabButton = styled.button`
     props && props.isActive
       ? props.theme.colors.secondary
       : props.theme.colors.grayDark};
-  font-size: 1.2rem;
   font-weight: bold;
   outline: none;
   cursor: pointer;
+
+  ${MEDIA_QUERIES.tablet} {
+    font-size: 1.2rem;
+  }
 `;
 
 const TabContent = styled.div`

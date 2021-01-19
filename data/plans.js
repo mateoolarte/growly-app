@@ -79,7 +79,7 @@ const plans = [
       "Customización de la plantilla con la identidad gráfica de la marca",
       "Montaje de contenido inicial: textos, imágenes y configuración inicial",
       "Soporte técnico por email",
-      "Hosting y dominio por un año.",
+      "Hosting y dominio por un año",
       "CMS para administrar contenidos",
     ],
     templates: [
@@ -248,7 +248,7 @@ const plans = [
       "Customización de la plantilla con la identidad gráfica de la marca",
       "Montaje de contenido inicial: textos, imágenes y configuración inicial",
       "Soporte técnico por email",
-      "Hosting y dominio por un año.",
+      "Hosting y dominio por un año",
       "CMS para administrar contenidos",
     ],
     templates: [

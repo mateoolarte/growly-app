@@ -4,6 +4,7 @@ import { useState } from "react";
 // components
 import Button from "../../components/ui/Button";
 import Tooltip from "../ui/Tooltip";
+import Modal from "../ui/Modal";
 import CheckoutContainer from "../CheckoutContainer";
 
 // styled
@@ -50,10 +51,20 @@ export default function HeroSingleTemplate({
   pricePremiumInCents,
 }) {
   const [activePlan, setActivePlan] = useState(BASIC_PLAN);
+  const [premiumPlanModal, setPremiumPlanModal] = useState(false);
   const price = activePlan === BASIC_PLAN ? priceInCents : pricePremiumInCents;
+
+  function handlePremiumModal(e) {
+    e.stopPropagation();
+
+    setPremiumPlanModal(true);
+  }
 
   return (
     <Wrapper>
+      <Modal isActive={premiumPlanModal} handleClose={setPremiumPlanModal}>
+        Contenido modal de plan premium
+      </Modal>
       <TopActions>
         <Button type="link" href="/plantillas" white>
           Volver
@@ -91,11 +102,9 @@ export default function HeroSingleTemplate({
             >
               <strong>
                 {type} premium
-                <Tooltip text="Something">
-                  <Icon>
-                    <InfoIcon />
-                  </Icon>
-                </Tooltip>
+                <Icon type="button" onClick={handlePremiumModal}>
+                  <InfoIcon />
+                </Icon>
               </strong>
               <span>
                 Administración de contenido (6 / año) por parte del equipo de

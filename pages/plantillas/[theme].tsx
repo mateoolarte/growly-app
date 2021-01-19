@@ -27,7 +27,7 @@ export default function SingleTemplate() {
         pricePremiumInCents={templateType?.pricePremiumInCents}
       />
 
-      <Terms />
+      <Terms features={templateType?.features} />
       <Cta />
     </Layout>
   );

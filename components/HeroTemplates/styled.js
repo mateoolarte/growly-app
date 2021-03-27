@@ -188,6 +188,7 @@ const PricingContainer = styled.div`
 const Pricing = styled.h4`
   margin: 0;
   margin-right: 0.5rem;
+  font-size: 28px;
 
   ${MEDIA_QUERIES.landscape} {
     font-size: 35px;
@@ -230,7 +231,7 @@ const Features = styled.ul`
   list-style-type: none;
 
   ${MEDIA_QUERIES.landscape} {
-    height: 200px;
+    height: 280px;
   }
 `;
 

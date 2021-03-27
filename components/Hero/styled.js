@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   position: relative;
   padding-top: 90px;
   margin-bottom: 4rem;
+  transition: all 0.45s ease-in-out;
   background-repeat: no-repeat;
   background-size: cover;
 

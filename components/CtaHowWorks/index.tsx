@@ -30,7 +30,7 @@ export default function CtaHowWorks() {
       <Container>
         <Title>Viste lo fácil que es</Title>
         <Description>
-          Elige tu plan en Growly y comienza a crecer en el mundo digital
+          Elige tu plantilla en Growly y comienza a crecer en el mundo digital
         </Description>
         <Actions>
           <Button type="button" onClick={handleChat} white>

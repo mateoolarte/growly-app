@@ -69,4 +69,8 @@ const Description = styled.p`
   }
 `;
 
-export { Wrapper, Container, Heading, Description };
+const SubHeading = styled.h3`
+  font-size: 28px;
+`;
+
+export { Wrapper, Container, Heading, Description, SubHeading };

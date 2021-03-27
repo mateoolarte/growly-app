@@ -17,6 +17,12 @@ const TemplatesContainer = styled.section`
   margin: 0 auto 4rem;
 `;
 
+const Heading = styled.h3`
+  margin-bottom: 4rem;
+  font-size: 28px;
+  text-align: center;
+`;
+
 export default function Templates() {
   const [currentPlan, setCurrentPlan] = useState(0);
 
@@ -29,6 +35,8 @@ export default function Templates() {
       />
 
       <TemplatesContainer>
+        <Heading>Selecciona la plantilla ideal para a tu negocio</Heading>
+
         {plans[currentPlan].templates.map((template, index) => (
           <TemplateSection
             key={template.id}

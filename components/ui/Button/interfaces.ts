@@ -8,4 +8,5 @@ export interface Props {
   onClick?: any; // Update this type
   href?: string;
   white?: boolean;
+  target?: string;
 }

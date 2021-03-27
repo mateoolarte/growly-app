@@ -1,5 +1,5 @@
 // styled
-import { Wrapper, Container, Heading, Description } from "./styled";
+import { Wrapper, Container, Heading, Description, SubHeading } from "./styled";
 
 export default function HeroHowWorks() {
   return (
@@ -7,12 +7,15 @@ export default function HeroHowWorks() {
       <Container>
         <Heading>Tu sitio web en 5 días</Heading>
         <Description>
-          Sit aut quidem quia. Laborum est exercitationem tenetur. Consequuntur
-          est distinctio sapiente suscipit at provident voluptas. Cupiditate
-          pariatur voluptatem temporibus ipsam sint corporis. Et voluptates ut
-          asperiores quia ut eaque autem corporis. Praesentium id laborum
-          dolorum placeat similique et quidem sint consequatur.
+          Growly fue creado para que cada negocio pueda tener un sitio web
+          económico, moderno, móvil y con altos estándares de experiencia de
+          usuario (UX). Nos hemos enfocado en prestar un servicio
+          semi-personalizado para que ningún usuario tenga que tocar una sola
+          línea de código ó entenderse con terminología técnica; lo único que
+          tendrás que hacer es enviarnos la información correspondiente y tu
+          sitio estará listo en 5 días.
         </Description>
+        <SubHeading>Así funciona Growly:</SubHeading>
       </Container>
     </Wrapper>
   );

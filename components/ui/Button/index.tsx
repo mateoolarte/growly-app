@@ -56,13 +56,16 @@ const ContainerLink = styled.a`
   text-transform: uppercase;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 `;
 
 export default function Button(props: Props) {
   if (props.type === "link") {
     return (
-      <Link href={props.href}>
-        <ContainerLink white={props.white}>{props.children}</ContainerLink>
+      <Link href={props.href} passHref>
+        <ContainerLink white={props.white} target={props.target || ""}>
+          {props.children}
+        </ContainerLink>
       </Link>
     );
   }

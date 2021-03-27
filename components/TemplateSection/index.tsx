@@ -3,7 +3,6 @@ import Link from "next/link";
 
 // components
 import Button from "../ui/Button";
-import Tooltip from "../ui/Tooltip";
 
 // styled
 import {
@@ -13,16 +12,16 @@ import {
   Info,
   LogoContainer,
   Logo,
-  Description,
   PreferenceTitle,
   Preferences,
   PreferenceItem,
   Actions,
+  IconContainer,
+  PreferenceText,
 } from "./styled";
 
 export default function TemplateSection({
   logoImg,
-  description,
   preferences,
   demoLink,
   themeLink,
@@ -32,8 +31,8 @@ export default function TemplateSection({
   return (
     <Wrapper isReverse={isReverse}>
       <Image>
-        <Link href={themeLink} passHref>
-          <a>
+        <Link href={demoLink} passHref>
+          <a target="_blank">
             <Thumbnail src={thumbnail} alt="Thumbnail" />
           </a>
         </Link>
@@ -43,19 +42,21 @@ export default function TemplateSection({
         <LogoContainer>
           <Logo src={logoImg} alt="Logo" />
         </LogoContainer>
-        <Description>{description}</Description>
-        <PreferenceTitle>Ideal para:</PreferenceTitle>
+        <PreferenceTitle>
+          Esta plantilla es ideal para negocios como:
+        </PreferenceTitle>
         <Preferences>
           {preferences.map(({ id, Icon, tooltipText }) => (
             <PreferenceItem key={id}>
-              <Tooltip text={tooltipText}>
+              <IconContainer>
                 <Icon />
-              </Tooltip>
+              </IconContainer>
+              <PreferenceText>{tooltipText}</PreferenceText>
             </PreferenceItem>
           ))}
         </Preferences>
         <Actions>
-          <Button type="link" href={demoLink} white>
+          <Button type="link" href={demoLink} white target="_blank">
             Ver demo
           </Button>
           <Button type="link" href={themeLink}>

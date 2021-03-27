@@ -4,9 +4,20 @@ import styled from "styled-components";
 // constants
 import { MEDIA_QUERIES } from "../../../constants";
 
+// assets
+import bgPattern from "../../../assets/bg-pattern.png";
+
 const Wrapper = styled.footer`
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto;
+  padding-bottom: 2rem;
+
+  ${MEDIA_QUERIES.tablet} {
+    background-image: url(${bgPattern});
+    background-position: center 15%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
 `;
 
 const NavigationContainer = styled.div`
@@ -89,7 +100,7 @@ const CopyrightContainer = styled.div`
 const Image = styled.img``;
 
 const Copyright = styled.p`
-  margin-top: 0;
+  margin: 0;
   font-size: 0.8rem;
 `;
 

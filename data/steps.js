@@ -2,7 +2,6 @@
 import step1Img from "../assets/steps/step1.png";
 import step2Img from "../assets/steps/step2.png";
 import step3Img from "../assets/steps/step3.png";
-import step4Img from "../assets/steps/step4.png";
 
 const steps = [
   {
@@ -10,32 +9,24 @@ const steps = [
     stepNum: 1,
     title: "Selecciona un plan",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Actualmente contamos con 2 planes: <br /> <br /> <strong>Plan Starter:</strong> Diseñado para empresas que buscan comenzar su presencia digital con poco presupuesto y con una estructura básica. <br /> <br /> <strong>Plan Portfolio:</strong> Para empresas que requieran un sitio web con una estructura más grande y avanzada y que requieran comunicar más información, como sus servicios independientes o su portafolio y casos de éxito",
     image: step1Img,
   },
   {
     id: 2,
     stepNum: 2,
-    title: "Elije un template",
+    title: "Elige y compra una plantilla",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Navega y conoce las plantillas que hay dentro de cada plan y selecciona la que más se acomode a tu negocio. Al seleccionarla, puedes proceder con la compra online por medio de la plataforma de pagos. Trabajamos con <strong>WOMPI</strong>, la plataforma de pagos del <strong>grupo Bancolombia</strong>.",
     image: step2Img,
   },
   {
     id: 3,
     stepNum: 3,
-    title: "Envíanos la información correspondiente",
+    title: "Creación del sitio web",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Con la comprobación del pago te llegará un correo de bienvenida contándote los pasos a seguir, e inmediatamente el equipo de Growly se comunicará contigo para comenzar el proceso de la creación del sitio web. Una vez la información sea enviada, el sitio web estará listo en <strong>5 días hábiles</strong>.",
     image: step3Img,
-  },
-  {
-    id: 4,
-    stepNum: 4,
-    title: "¡Listo!",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: step4Img,
   },
 ];
 

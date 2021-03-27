@@ -6,9 +6,9 @@ import seoImage from "../assets/features/seo.png";
 const features = [
   {
     id: 1,
-    title: "Adaptable a todos los dispositivos móviles",
+    title: "Un sitio web adaptable a todos los dispositivos",
     description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "Todas nuestras plantillas son adaptables a dispositivos móviles como tablets y smartphones. Es decir, tu sitio web podrá ser navegado desde un celular.",
     image: responsiveImage,
     bgText: "Responsive",
   },
@@ -16,7 +16,7 @@ const features = [
     id: 2,
     title: "Configuración rápida y personalizada",
     description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "La plantilla que elijas, se ajustará a la imagen de tu marca (colores, logo, tipo de letra y contenido). No tendrás que tocar una sola  línea de código ó entenderte con terminología técnica, nuestro equipo se encargará de crear tu sitio web.",
     image: customizeImage,
     bgText: "Customizable",
   },
@@ -24,7 +24,7 @@ const features = [
     id: 3,
     title: "Fácil indexación y posicionamiento en Google",
     description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "Indexamos tu sitio web con las palabras claves que nos otorgues y hacemos que seas visible para Google. Con esto, ayudamos a que tu marca pueda estar en el motor de búsqueda más popular de internet y que muchos clientes potenciales puedan encontrarte.",
     image: seoImage,
     bgText: "Posicionamiento",
   },

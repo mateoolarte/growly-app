@@ -25,7 +25,7 @@ export default function StepSection({
       <Info>
         <StepNum>{stepNum}</StepNum>
         <Title>{title}</Title>
-        <Description>{description}</Description>
+        <Description dangerouslySetInnerHTML={{ __html: description }} />
       </Info>
     </Wrapper>
   );

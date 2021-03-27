@@ -26,9 +26,9 @@ export default function HowDoesWorkSection() {
     <Wrapper>
       <Title>Un sitio web listo en 5 días</Title>
       <Description>
-        Olvídate de plataformas, tecnicismos y parametros difíciles de entender.
-        Selecciona una plantilla, nos envías la información correspondiente y
-        nosotros nos encargamos del resto.
+        Olvídate de plataformas, tecnicismos y parámetros difíciles de entender.
+        No tendrás que tocar una sola línea de código ó entenderte con
+        terminología técnica, nuestro equipo se encargará de crear tu sitio web.
       </Description>
 
       <StepsContainer>

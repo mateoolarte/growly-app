@@ -26,8 +26,11 @@ export default function Hero() {
 
   const settings = {
     dots: true,
+    fade: true,
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -40,13 +43,14 @@ export default function Hero() {
     >
       <Container>
         <Info>
-          <Heading>Haz tu negocio visible en internet</Heading>
+          <Heading>La presencia digital de tu negocio</Heading>
           <Subtitle>Comienza con un sitio web</Subtitle>
           <Description>
-            Growly es un servicio basado en plantillas para sitios web, que
-            cumplen con todos los estándares de experiencia de usuario,
-            adaptable a todos los dispositivos móviles y fácil posicionamiento
-            en google.
+            Growly es un servicio para crear sitios web profesionales, basados
+            en plantillas prediseñadas que cumplen con altos estándares de
+            experiencia de usuario, adaptable a todos los dispositivos móviles,
+            fácil posicionamiento en google y personalizadas de acuerdo a la
+            imagen de la marca.
           </Description>
           <Button type="link" href="/plantillas">
             Comenzar mi sitio web

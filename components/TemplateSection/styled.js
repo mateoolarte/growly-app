@@ -54,14 +54,12 @@ const Info = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  text-align: center;
+  margin-bottom: 2rem;
 `;
 
 const Logo = styled.img`
-  height: 60px;
+  width: 120px;
 `;
-
-const Description = styled.p``;
 
 const PreferenceTitle = styled.span`
   display: inline-block;
@@ -71,6 +69,7 @@ const PreferenceTitle = styled.span`
 
 const Preferences = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 2rem;
   padding: 0;
   list-style-type: none;
@@ -79,10 +78,20 @@ const Preferences = styled.ul`
 const PreferenceItem = styled.li`
   display: flex;
   align-items: center;
+  flex-direction: column;
+  width: 90px;
+  margin: 0 0.5rem 1rem;
+  text-align: center;
+`;
+
+const IconContainer = styled.span`
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  margin-right: 1.2rem;
+
+  margin-bottom: 0.5rem;
   border-radius: 50%;
   background-color: ${(props) => props && props.theme.colors.gray};
 
@@ -98,6 +107,11 @@ const PreferenceItem = styled.li`
       height: 35px;
     }
   }
+`;
+
+const PreferenceText = styled.p`
+  margin: 0;
+  font-size: 13px;
 `;
 
 const Actions = styled.div`
@@ -122,9 +136,10 @@ export {
   Info,
   LogoContainer,
   Logo,
-  Description,
   PreferenceTitle,
   Preferences,
   PreferenceItem,
   Actions,
+  IconContainer,
+  PreferenceText,
 };

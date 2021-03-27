@@ -44,7 +44,6 @@ const PREMIUM_PLAN = "premium";
 
 export default function HeroSingleTemplate({
   name,
-  description,
   thumbnail,
   preferences,
   type,
@@ -81,7 +80,6 @@ export default function HeroSingleTemplate({
           <Image src={thumbnail} alt={`thumbnail ${name}`} />
         </ImageContainer>
         <InfoContainer>
-          <Description>{description}</Description>
           <PreferenceTitle>Ideal para:</PreferenceTitle>
           <Preferences>
             {preferences?.map(({ id, Icon, tooltipText }) => (

@@ -4,7 +4,6 @@ import Link from "next/link";
 
 // components
 import Button from "../../components/ui/Button";
-import Tooltip from "../ui/Tooltip";
 import Modal from "../ui/Modal";
 import CheckoutContainer from "../CheckoutContainer";
 
@@ -16,7 +15,6 @@ import {
   ImageContainer,
   Image,
   InfoContainer,
-  Description,
   SelectPlanTitle,
   SelectPlanContainer,
   SelectPlanItem,
@@ -30,6 +28,8 @@ import {
   PreferenceTitle,
   Preferences,
   PreferenceItem,
+  IconContainer,
+  PreferenceText,
 } from "../TemplateSection/styled";
 
 import { PricingContainer, Pricing, Flag, Note } from "../HeroTemplates/styled";
@@ -65,7 +65,15 @@ export default function HeroSingleTemplate({
   return (
     <Wrapper>
       <Modal isActive={premiumPlanModal} handleClose={setPremiumPlanModal}>
-        Contenido modal de plan premium
+        <p>
+          La opción Premium, es un servicio plus, cuesta $300.000 COP
+          adicionales por producto, para que el equipo de Growly se encargue de
+          las actualizaciones y administración del sitio web. Son máximo 6
+          actualizaciones al año, estas actualizaciones consisten en: Todas las
+          secciones administrables del plan, quitar o agregar servicios,
+          administración del formulario de contacto, seguridad, mantenimiento y
+          reporte de analytics mensual.
+        </p>
       </Modal>
       <TopActions>
         <Link href="/plantillas">
@@ -84,9 +92,10 @@ export default function HeroSingleTemplate({
           <Preferences>
             {preferences?.map(({ id, Icon, tooltipText }) => (
               <PreferenceItem key={id}>
-                <Tooltip text={tooltipText}>
+                <IconContainer>
                   <Icon />
-                </Tooltip>
+                </IconContainer>
+                <PreferenceText>{tooltipText}</PreferenceText>
               </PreferenceItem>
             ))}
           </Preferences>
@@ -124,7 +133,9 @@ export default function HeroSingleTemplate({
                   {activePlan === PREMIUM_PLAN && pricingPremium}
                 </Pricing>
                 <Flag src={FlagCOP} alt="Bandera de Colombia" />
-                <Note>*Pesos colombianos</Note>
+                <Note>
+                  {type} {activePlan === BASIC_PLAN ? "básico" : "premium"}
+                </Note>
               </PricingContainer>
             </Price>
             <CheckoutContainer

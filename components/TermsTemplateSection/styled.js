@@ -45,6 +45,10 @@ const TabButton = styled.button`
 
 const TabContent = styled.div`
   display: ${(props) => (props && props.isActive ? "block" : "none")};
+
+  .terms-item {
+    margin-bottom: 0.8rem;
+  }
 `;
 
 export { Wrapper, TabsContainer, Tabs, TabItem, TabButton, TabContent };

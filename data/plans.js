@@ -72,8 +72,8 @@ const plans = [
     Icon: StarterIcon,
     pricing: "$749.000",
     priceInCents: "74900000",
-    pricingPremium: "$999.000",
-    pricePremiumInCents: "99900000",
+    pricingPremium: "$1'049.000",
+    pricePremiumInCents: "104900000",
     features: [
       "Sitio web con hasta 5 secciones incluyendo el Home.",
       "1 Formulario de contacto",

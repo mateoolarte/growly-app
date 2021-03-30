@@ -181,7 +181,6 @@ const Title = styled.h3`
 const PricingContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
 `;
 
@@ -200,7 +199,9 @@ const Flag = styled.img`
 `;
 
 const Note = styled.p`
+  width: 100%;
   margin: 0;
+  color: ${(props) => props && props.theme.colors.secondary};
   font-size: 12px;
 `;
 

@@ -64,8 +64,6 @@ const InfoContainer = styled.div`
   }
 `;
 
-const Description = styled.p``;
-
 const SelectPlanTitle = styled.h3`
   margin: 0;
   margin-bottom: 1rem;
@@ -162,7 +160,13 @@ const Actions = styled.div`
 `;
 
 const Price = styled.div`
-  width: 40%;
+  width: 50%;
+  margin-bottom: 1rem;
+
+  ${MEDIA_QUERIES.tablet} {
+    width: 40%;
+    margin-bottom: 0;
+  }
 `;
 
 const Icon = styled.button`
@@ -205,7 +209,6 @@ export {
   ImageContainer,
   Image,
   InfoContainer,
-  Description,
   SelectPlanTitle,
   SelectPlanContainer,
   SelectPlanItem,

@@ -30,6 +30,8 @@ import {
   PreferenceItem,
   IconContainer,
   PreferenceText,
+  LogoContainer,
+  Logo,
 } from "../TemplateSection/styled";
 
 import { PricingContainer, Pricing, Flag, Note } from "../HeroTemplates/styled";
@@ -51,6 +53,8 @@ export default function HeroSingleTemplate({
   priceInCents,
   pricingPremium,
   pricePremiumInCents,
+  logoImg,
+  demoLink,
 }) {
   const [activePlan, setActivePlan] = useState(BASIC_PLAN);
   const [premiumPlanModal, setPremiumPlanModal] = useState(false);
@@ -88,7 +92,10 @@ export default function HeroSingleTemplate({
           <Image src={thumbnail} alt={`thumbnail ${name}`} />
         </ImageContainer>
         <InfoContainer>
-          <PreferenceTitle>Ideal para:</PreferenceTitle>
+          <LogoContainer>
+            <Logo src={logoImg} alt="Logo" />
+          </LogoContainer>
+          <PreferenceTitle>Esta plantilla es ideal para negocios como:</PreferenceTitle>
           <Preferences>
             {preferences?.map(({ id, Icon, tooltipText }) => (
               <PreferenceItem key={id}>
@@ -143,9 +150,11 @@ export default function HeroSingleTemplate({
               template={name}
               type={`${type}-${activePlan}`}
             />
-            <Button type="link" href="#" white>
-              Ver demo
-            </Button>
+            {demoLink && (
+              <Button type="link" href={demoLink} white target="_blank">
+                Ver demo
+              </Button>
+            )}
           </Actions>
         </InfoContainer>
       </Container>

@@ -5,6 +5,10 @@ import styled from "styled-components";
 
 // components
 import Layout from "../components/shared/Layout";
+import ApprovedPayment from "../components/ApprovedPayment";
+import DeclinedPayment from "../components/DeclinedPayment";
+
+const APPROVED = "APPROVED";
 
 const Wrapper = styled.section`
   position: relative;
@@ -22,6 +26,7 @@ const fetcher = (url) =>
 export default function Finished() {
   const router = useRouter();
   const { id } = router?.query;
+
   const { data, error } = useSWR(
     `https://${process.env.NEXT_PUBLIC_WOMPI_TRANSACTIONS_API_ENV}.wompi.co/v1/transactions/${id}`,
     fetcher
@@ -29,9 +34,23 @@ export default function Finished() {
 
   console.log(data);
 
-  return (
-    <Layout title="Finalizado - Growly">
-      <Wrapper>Something</Wrapper>
-    </Layout>
-  );
+  if (data?.status === APPROVED) {
+    return (
+      <Layout title="Confirmación de compra - Growly">
+        <Wrapper>
+          <ApprovedPayment />
+        </Wrapper>
+      </Layout>
+    );
+  }
+
+  if (data?.status !== APPROVED) {
+    return (
+      <Layout title="Pago rechazado - Growly">
+        <Wrapper>
+          <DeclinedPayment />
+        </Wrapper>
+      </Layout>
+    );
+  }
 }

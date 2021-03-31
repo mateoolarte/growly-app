@@ -1,8 +1,6 @@
 // vendors
-import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import useSWR from "swr";
 import styled from "styled-components";
 
 // constants
@@ -14,10 +12,32 @@ import DeclinedPayment from "../components/DeclinedPayment";
 
 // assets
 import Logo from "../assets/logo-growly.svg";
+import bgImg from "../assets/hero-confirmacion-growly.jpeg";
 
 const APPROVED = "APPROVED";
 
-const Wrapper = styled.main``;
+const Wrapper = styled.main`
+  ${MEDIA_QUERIES.landscape} {
+    position: relative;
+    background-image: url(${bgImg});
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+  }
+
+  &::before {
+    content: "";
+
+    ${MEDIA_QUERIES.landscape} {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0.4), #fff);
+    }
+  }
+`;
 
 const Container = styled.section`
   position: relative;
@@ -43,23 +63,8 @@ const LogoContainer = styled.a`
   }
 `;
 
-const fetcher = (url) =>
-  fetch(url)
-    .then((r) => r.json())
-    .then((r) => r.data);
-
-export default function Finished() {
-  const router = useRouter();
-  const { id } = router?.query;
-
-  const { data, error } = useSWR(
-    `https://${process.env.NEXT_PUBLIC_WOMPI_TRANSACTIONS_API_ENV}.wompi.co/v1/transactions/${id}`,
-    fetcher
-  );
-
-  console.log(data);
-
-  if (data?.status === APPROVED) {
+export default function Finished({ status }) {
+  if (status === APPROVED) {
     return (
       <Wrapper>
         <Head>
@@ -82,7 +87,7 @@ export default function Finished() {
     );
   }
 
-  if (data?.status !== APPROVED) {
+  if (status !== APPROVED) {
     return (
       <>
         <Head>
@@ -104,4 +109,25 @@ export default function Finished() {
       </>
     );
   }
+}
+
+export async function getServerSideProps({ query }) {
+  const url = `https://${process.env.NEXT_PUBLIC_WOMPI_TRANSACTIONS_API_ENV}.wompi.co/v1/transactions/${query?.id}`;
+  let status = "";
+
+  try {
+    const response = await fetch(url);
+    const parsedResponse = await response.json();
+    const data = parsedResponse?.data;
+
+    status = data?.status || "";
+  } catch (error) {
+    console.log("Something went wrong", error);
+  }
+
+  return {
+    props: {
+      status,
+    },
+  };
 }

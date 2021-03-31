@@ -33,7 +33,7 @@ export default function Home() {
 
       <FeaturesContainer>
         {features.map((feature, index) => (
-          <FeatureSection {...feature} isAlt={index === 1} />
+          <FeatureSection key={feature.id} {...feature} isAlt={index === 1} />
         ))}
       </FeaturesContainer>
 

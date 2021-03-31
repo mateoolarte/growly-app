@@ -1,21 +1,46 @@
 // vendors
 import { useRouter } from "next/router";
+import Head from "next/head";
+import Link from "next/link";
 import useSWR from "swr";
 import styled from "styled-components";
 
+// constants
+import { MEDIA_QUERIES } from "../constants";
+
 // components
-import Layout from "../components/shared/Layout";
 import ApprovedPayment from "../components/ApprovedPayment";
 import DeclinedPayment from "../components/DeclinedPayment";
 
+// assets
+import Logo from "../assets/logo-growly.svg";
+
 const APPROVED = "APPROVED";
 
-const Wrapper = styled.section`
+const Wrapper = styled.main``;
+
+const Container = styled.section`
   position: relative;
   width: 95%;
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto 2rem;
-  padding-top: 120px;
+  padding-top: 1rem;
+`;
+
+const LogoContainer = styled.a`
+  display: block;
+  width: 80%;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  ${MEDIA_QUERIES.landscape} {
+    width: 20%;
+  }
+
+  svg {
+    height: 50px;
+  }
 `;
 
 const fetcher = (url) =>
@@ -36,21 +61,47 @@ export default function Finished() {
 
   if (data?.status === APPROVED) {
     return (
-      <Layout title="Confirmación de compra - Growly">
-        <Wrapper>
+      <Wrapper>
+        <Head>
+          <title>Confirmación de compra - Growly</title>
+          <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          ></link>
+        </Head>
+        <Container>
+          <Link href="/">
+            <LogoContainer>
+              <Logo />
+            </LogoContainer>
+          </Link>
           <ApprovedPayment />
-        </Wrapper>
-      </Layout>
+        </Container>
+      </Wrapper>
     );
   }
 
   if (data?.status !== APPROVED) {
     return (
-      <Layout title="Pago rechazado - Growly">
-        <Wrapper>
+      <>
+        <Head>
+          <title>Pago rechazado - Growly</title>
+          <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          ></link>
+        </Head>
+        <Container>
+          <Link href="/">
+            <LogoContainer>
+              <Logo />
+            </LogoContainer>
+          </Link>
           <DeclinedPayment />
-        </Wrapper>
-      </Layout>
+        </Container>
+      </>
     );
   }
 }

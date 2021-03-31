@@ -4,7 +4,6 @@ import { useState } from "react";
 
 // assets
 import Logo from "../../../assets/logo-growly.svg";
-import User from "../../../assets/user.svg";
 
 // components
 import Button from "../../ui/Button";

@@ -267,7 +267,7 @@ const plans = [
           { id: 3, Icon: RunIcon, tooltipText: "Fitness y CAF" },
           { id: 4, Icon: StrechIcon, tooltipText: "Academías de baile" },
         ],
-        demoLink: "#",
+        demoLink: "https://afair.getgrowly.com/",
         themeLink: "/plantillas/afair?type=Portfolio",
       },
       {
@@ -283,7 +283,7 @@ const plans = [
           },
           { id: 2, Icon: RunIcon, tooltipText: "Fitness y CAF" },
         ],
-        demoLink: "#",
+        demoLink: "https://zalepp.getgrowly.com/",
         themeLink: "/plantillas/zalep?type=Portfolio",
       },
       {

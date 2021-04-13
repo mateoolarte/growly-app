@@ -26,7 +26,10 @@ const FeaturesContainer = styled.div`
 
 export default function Home() {
   return (
-    <Layout title="Inicio - Growly">
+    <Layout
+      title="Crea el sitio web de tu negocio a bajo costo"
+      description="Dale a tu negocio la presencia digital que necesita con sitio web profesional, moderno, económico y al aire en tan solo 5 días."
+    >
       <Hero />
 
       <HowDoesWorkSection />

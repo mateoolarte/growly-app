@@ -17,7 +17,7 @@ export default function SingleTemplate() {
   const template = templateType?.templates.find((item) => item.name === theme);
 
   return (
-    <Layout title={`Plantilla: ${theme} - Growly`}>
+    <Layout title={`Plantilla: ${theme}`}>
       <Hero
         {...template}
         type={type}

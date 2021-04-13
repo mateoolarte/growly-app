@@ -68,7 +68,7 @@ export default function Finished({ status }) {
     return (
       <Wrapper>
         <Head>
-          <title>Confirmación de compra - Growly</title>
+          <title>Confirmación de compra | Growly</title>
           <link rel="icon" href="/favicon.ico" />
           <link
             href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
@@ -91,7 +91,7 @@ export default function Finished({ status }) {
     return (
       <>
         <Head>
-          <title>Pago rechazado - Growly</title>
+          <title>Pago rechazado | Growly</title>
           <link rel="icon" href="/favicon.ico" />
           <link
             href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"

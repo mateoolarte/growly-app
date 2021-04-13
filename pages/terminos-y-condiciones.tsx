@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 
 export default function Terms() {
   return (
-    <Layout title="Términos y condiciones - Growly">
+    <Layout title="Términos y condiciones">
       <Wrapper>
         <h2>Términos y condiciones</h2>
         <ul>

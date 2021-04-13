@@ -145,7 +145,8 @@ const plans = [
           { id: 2, Icon: FocusIcon, tooltipText: "Startups" },
           { id: 3, Icon: CloudIcon, tooltipText: "Tecnología" },
         ],
-        demoLink: "#",
+        demoLink:
+          "https://drive.google.com/file/d/1vNsd_tJw1BNBgVkggyi1YYJ5bxStRgAW/view?usp=sharing",
         themeLink: "/plantillas/snap?type=Starter",
       },
       {
@@ -158,7 +159,8 @@ const plans = [
           { id: 2, Icon: VideoIcon, tooltipText: "Agencias audiovisuales" },
           { id: 3, Icon: MegafoneIcon, tooltipText: "Agencias de marketing" },
         ],
-        demoLink: "#",
+        demoLink:
+          "https://drive.google.com/file/d/1T3cy2aQ64UdDFF0gZILuu8TLIfu1eYP8/view?usp=sharing",
         themeLink: "/plantillas/strik?type=Starter",
       },
       {
@@ -174,7 +176,8 @@ const plans = [
           },
           { id: 2, Icon: BuildingIcon, tooltipText: "Arquitectura" },
         ],
-        demoLink: "#",
+        demoLink:
+          "https://drive.google.com/file/d/1inz-RDJPoG8kg2Zmvq1S-xrxB4p8vbxS/view?usp=sharing",
         themeLink: "/plantillas/amelia?type=Starter",
       },
       {
@@ -213,7 +216,8 @@ const plans = [
           { id: 2, Icon: FocusIcon, tooltipText: "Startups" },
           { id: 3, Icon: CloudIcon, tooltipText: "Tecnología" },
         ],
-        demoLink: "#",
+        demoLink:
+          "https://drive.google.com/file/d/1M3iPCSAbrcJ3Bi3Fcw9_sWMQ7OqwoFH1/view?usp=sharing",
         themeLink: "/plantillas/dyno?type=Starter",
       },
       {
@@ -224,7 +228,8 @@ const plans = [
         preferences: [
           { id: 1, Icon: Presentation2Icon, tooltipText: "Eventos" },
         ],
-        demoLink: "#",
+        demoLink:
+          "https://drive.google.com/file/d/1zcoALbtD84VTk7UOLUAbQSs22Xug6QqR/view?usp=sharing",
         themeLink: "/plantillas/printa?type=Starter",
       },
     ],

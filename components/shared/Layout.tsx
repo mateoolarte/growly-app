@@ -5,10 +5,21 @@ import styled from "styled-components";
 // components
 import Header from "./Header";
 import Footer from "./Footer";
+import CookiesModal from "../CookiesModal";
 
 const Container = styled.main``;
 
-export default function Layout({ title, children }) {
+export default function Layout({
+  title,
+  description,
+  hideCookies,
+  children,
+}: {
+  title: string;
+  description?: string;
+  hideCookies?: boolean;
+  children: any;
+}) {
   function handleStickyMenu() {
     const headerElm = document.getElementById("sticky-header");
 
@@ -22,7 +33,8 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title} | Growly</title>
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
@@ -36,6 +48,7 @@ export default function Layout({ title, children }) {
         {children}
       </Container>
 
+      {!hideCookies && <CookiesModal />}
       <Footer />
     </>
   );

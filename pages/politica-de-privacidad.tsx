@@ -14,7 +14,7 @@ const Wrapper = styled.section`
 
 export default function Privacy() {
   return (
-    <Layout title="Politicas de privacidad - Growly">
+    <Layout title="Politicas de privacidad" hideCookies>
       <Wrapper>
         <h2>Politicas de privacidad</h2>
         <p>

@@ -25,7 +25,10 @@ const StepsContainer = styled.div`
 
 export default function HowWorks() {
   return (
-    <Layout title="Cómo funciona - Growly">
+    <Layout
+      title="Crea el sitio web de tu negocio fácil y rápido"
+      description="Creamos tu sitio web fácil y rápido. Elige y compra la plantilla ideal para tu negocio, luego de enviar la información tendrás tu sitio web al aire en 5 días."
+    >
       <Hero />
 
       <StepsContainer>

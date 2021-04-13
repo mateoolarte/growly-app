@@ -27,7 +27,10 @@ export default function Templates() {
   const [currentPlan, setCurrentPlan] = useState(0);
 
   return (
-    <Layout title="Plantillas - Growly">
+    <Layout
+      title="Sitios web para independientes, emprendedores y PYMES"
+      description="El sitio web ideal para comenzar la presencia digital de tu negocio, plantillas de lujo y un servicio profesional para tener tu sitio web listo en 5 días."
+    >
       <Hero
         plans={plans}
         currentPlan={currentPlan}

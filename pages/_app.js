@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import ReactGA from "react-ga";
@@ -49,7 +48,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const gaTrackingId = process.env.NEXT_PUBLIC_WOMPI_GOOGLE_ANALYTICS_KEY;
+const gaTrackingId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY;
 
 export default function Growly({ Component, pageProps }) {
   const router = useRouter();
@@ -94,7 +93,7 @@ export default function Growly({ Component, pageProps }) {
 
       <script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_WOMPI_GOOGLE_ANALYTICS_KEY}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY}`}
       ></script>
       <script
         async
@@ -104,7 +103,7 @@ export default function Growly({ Component, pageProps }) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', "${process.env.NEXT_PUBLIC_WOMPI_GOOGLE_ANALYTICS_KEY}");`,
+            gtag('config', "${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY}");`,
         }}
       ></script>
       <script

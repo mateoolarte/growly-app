@@ -12,7 +12,7 @@ import {
 import Button from "../ui/Button";
 
 // assets
-import bgImg from "../../assets/bg-cta-how-works.png";
+const bgImg = "/images/bg-cta-how-works.png";
 
 export default function CtaHowWorks() {
   function handleChat(e) {

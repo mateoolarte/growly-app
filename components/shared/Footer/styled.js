@@ -1,26 +1,27 @@
 // vendors
 import styled from "styled-components";
+import Image from "next/image";
 
 // constants
-import { MEDIA_QUERIES } from "../../../constants";
+import { MEDIA_QUERIES } from "../../../utils/constants";
 
 // assets
-import bgPattern from "../../../assets/bg-pattern.png";
+const bgPattern = "/images/bg-pattern.png";
 
-const Wrapper = styled.footer`
+export const Wrapper = styled.footer`
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto;
   padding-bottom: 2rem;
 
   ${MEDIA_QUERIES.tablet} {
-    background-image: url(${bgPattern});
+    background-image: url("${bgPattern}");
     background-position: center 15%;
     background-size: 100%;
     background-repeat: no-repeat;
   }
 `;
 
-const NavigationContainer = styled.div`
+export const NavigationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -33,7 +34,7 @@ const NavigationContainer = styled.div`
   }
 `;
 
-const Navigation = styled.ul`
+export const Navigation = styled.ul`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -47,7 +48,7 @@ const Navigation = styled.ul`
   }
 `;
 
-const NavigationItem = styled.li`
+export const NavigationItem = styled.li`
   margin: 0.5rem 2rem;
 
   ${MEDIA_QUERIES.landscape} {
@@ -55,7 +56,7 @@ const NavigationItem = styled.li`
   }
 `;
 
-const NavigationLink = styled.a`
+export const NavigationLink = styled.a`
   color: ${(props) => props && props.theme.colors.terciary};
   font-size: 0.8rem;
   font-weight: bold;
@@ -64,7 +65,7 @@ const NavigationLink = styled.a`
   cursor: pointer;
 `;
 
-const SocialLinks = styled.ul`
+export const SocialLinks = styled.ul`
   display: flex;
   align-items: center;
   margin-top: 0;
@@ -73,11 +74,11 @@ const SocialLinks = styled.ul`
   list-style-type: none;
 `;
 
-const SocialLinksItem = styled.li`
+export const SocialLinksItem = styled.li`
   margin: 0.5rem;
 `;
 
-const SocialLinksIcon = styled.a`
+export const SocialLinksIcon = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -93,27 +94,13 @@ const SocialLinksIcon = styled.a`
   cursor: pointer;
 `;
 
-const CopyrightContainer = styled.div`
+export const CopyrightContainer = styled.div`
   text-align: center;
 `;
 
-const Image = styled.img``;
+export const Logo = styled(Image)``;
 
-const Copyright = styled.p`
+export const Copyright = styled.p`
   margin: 0;
   font-size: 0.8rem;
 `;
-
-export {
-  Wrapper,
-  NavigationContainer,
-  Navigation,
-  NavigationItem,
-  NavigationLink,
-  SocialLinks,
-  SocialLinksItem,
-  SocialLinksIcon,
-  CopyrightContainer,
-  Image,
-  Copyright,
-};

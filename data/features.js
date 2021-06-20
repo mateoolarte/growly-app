@@ -1,7 +1,7 @@
 // assets
-import responsiveImage from "../assets/features/responsive.png";
-import customizeImage from "../assets/features/customize.png";
-import seoImage from "../assets/features/seo.png";
+const responsiveImage = "/images/features/responsive.png";
+const customizeImage = "/images/features/customize.png";
+const seoImage = "/images/features/seo.png";
 
 const features = [
   {

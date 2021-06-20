@@ -2,7 +2,7 @@
 import Button from "../ui/Button";
 
 // assets
-import bg from "../../assets/cta-home-bg.jpg";
+const bg = "/images/cta-home-bg.jpg";
 
 // styled
 import { Wrapper, Info, Title, Subtitle, ImageBox, Image } from "./styled";

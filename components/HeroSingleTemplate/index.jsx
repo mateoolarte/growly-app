@@ -37,7 +37,7 @@ import {
 import { PricingContainer, Pricing, Flag, Note } from "../HeroTemplates/styled";
 
 // assets
-import FlagCOP from "../../assets/colombia-flag.png";
+const FlagCOP = "/images/colombia-flag.png";
 import InfoIcon from "../../assets/icons/info.svg";
 import ArrowLeft from "../../assets/icons/left-arrow.svg";
 
@@ -95,7 +95,9 @@ export default function HeroSingleTemplate({
           <LogoContainer>
             <Logo src={logoImg} alt="Logo" />
           </LogoContainer>
-          <PreferenceTitle>Esta plantilla es ideal para negocios como:</PreferenceTitle>
+          <PreferenceTitle>
+            Esta plantilla es ideal para negocios como:
+          </PreferenceTitle>
           <Preferences>
             {preferences?.map(({ id, Icon, tooltipText }) => (
               <PreferenceItem key={id}>

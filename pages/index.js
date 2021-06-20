@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 // constants
-import { MEDIA_QUERIES } from "../constants";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 // components
 import Layout from "../components/shared/Layout";

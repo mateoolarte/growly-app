@@ -9,17 +9,7 @@ import CookiesModal from "../CookiesModal";
 
 const Container = styled.main``;
 
-export default function Layout({
-  title,
-  description,
-  hideCookies,
-  children,
-}: {
-  title: string;
-  description?: string;
-  hideCookies?: boolean;
-  children: any;
-}) {
+export default function Layout({ title, description, hideCookies, children }) {
   function handleStickyMenu() {
     const headerElm = document.getElementById("sticky-header");
 

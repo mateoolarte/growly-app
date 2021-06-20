@@ -2,13 +2,16 @@
 import styled from "styled-components";
 
 // constants
-import { MEDIA_QUERIES } from "../../constants";
+import { MEDIA_QUERIES } from "../../utils/constants";
+
+// assets
+const bgHowWorks = "/images/bg-how-works.jpg";
 
 const Wrapper = styled.section`
   position: relative;
   padding-top: 120px;
   padding-bottom: 3rem;
-  background-image: url(${require("../../assets/bg-how-works.jpg")});
+  background-image: url("${bgHowWorks}");
   background-repeat: no-repeat;
   background-size: cover;
 

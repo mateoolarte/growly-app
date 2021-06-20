@@ -21,7 +21,7 @@ import {
 } from "./styled";
 
 // assets
-import FlagCOP from "../../assets/colombia-flag.png";
+const FlagCOP = "/images/colombia-flag.png";
 
 export default function HeroTemplates({
   plans,

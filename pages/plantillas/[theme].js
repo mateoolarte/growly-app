@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 // components
 import Layout from "../../components/shared/Layout";
-import Hero from "../../components/HeroSingleTemplate";
+import HeroSingleTemplate from "../../components/HeroSingleTemplate";
 import Terms from "../../components/TermsTemplateSection";
 import Cta from "../../components/CtaSingleTemplate";
 
@@ -18,7 +18,7 @@ export default function SingleTemplate() {
 
   return (
     <Layout title={`Plantilla: ${theme}`}>
-      <Hero
+      <HeroSingleTemplate
         {...template}
         type={type}
         pricing={templateType?.pricing}

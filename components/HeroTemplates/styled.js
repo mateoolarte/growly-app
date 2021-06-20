@@ -2,13 +2,16 @@
 import styled from "styled-components";
 
 // constants
-import { MEDIA_QUERIES } from "../../constants";
+import { MEDIA_QUERIES } from "../../utils/constants";
+
+// assets
+const bgPlans = "/images/bg-plans.jpg";
 
 const Wrapper = styled.section`
   position: relative;
   padding-top: 120px;
   margin-bottom: 2rem;
-  background-image: url(${require("../../assets/bg-plans.jpg")});
+  background-image: url("${bgPlans}");
   background-repeat: no-repeat;
   background-size: cover;
 

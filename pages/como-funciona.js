@@ -11,7 +11,7 @@ import Cta from "../components/CtaHowWorks";
 import steps from "../data/steps";
 
 // constants
-import { MEDIA_QUERIES } from "../constants";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 const StepsContainer = styled.div`
   width: 95%;

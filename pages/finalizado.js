@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 // constants
-import { MEDIA_QUERIES } from "../constants";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 // components
 import ApprovedPayment from "../components/ApprovedPayment";
@@ -12,14 +12,14 @@ import DeclinedPayment from "../components/DeclinedPayment";
 
 // assets
 import Logo from "../assets/logo-growly.svg";
-import bgImg from "../assets/hero-confirmacion-growly.jpeg";
+const bgImg = "/images/hero-confirmacion-growly.jpg";
 
 const APPROVED = "APPROVED";
 
 const Wrapper = styled.main`
   ${MEDIA_QUERIES.landscape} {
     position: relative;
-    background-image: url(${bgImg});
+    background-image: url("${bgImg}");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100%;

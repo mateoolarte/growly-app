@@ -3,9 +3,6 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-// interfaces
-import { Props } from "./interfaces";
-
 const ContainerBtn = styled.button`
   display: inline-block;
   padding: ${(props) => props && props.theme.sizes.space4}
@@ -63,7 +60,7 @@ const ContainerLink = styled.a`
   text-decoration: none;
 `;
 
-export default function Button(props: Props) {
+export default function Button(props) {
   if (props.type === "link") {
     return (
       <Link href={props.href} passHref>

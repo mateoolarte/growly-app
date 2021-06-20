@@ -1,7 +1,7 @@
 // assets
-import step1Img from "../assets/steps/step1.png";
-import step2Img from "../assets/steps/step2.png";
-import step3Img from "../assets/steps/step3.png";
+const step1Img = "/images/steps/step1.png";
+const step2Img = "/images/steps/step2.png";
+const step3Img = "/images/steps/step3.png";
 
 const steps = [
   {

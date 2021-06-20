@@ -2,9 +2,9 @@
 import styled from "styled-components";
 
 // constants
-import { MEDIA_QUERIES } from "../../constants";
+import { MEDIA_QUERIES } from "../../utils/constants";
 
-const Wrapper = styled.section`
+export const Wrapper = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column-reverse;
@@ -29,7 +29,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   padding: 0rem 2.5rem 3rem;
   text-align: center;
 
@@ -40,7 +40,7 @@ const Info = styled.div`
   }
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   margin-top: 0;
   margin-bottom: 1rem;
   color: ${(props) => props && props.theme.colors.white};
@@ -52,7 +52,7 @@ const Title = styled.h2`
   }
 `;
 
-const Subtitle = styled.p`
+export const Subtitle = styled.p`
   margin-bottom: 2rem;
   color: ${(props) => props && props.theme.colors.white};
   font-size: 1rem;
@@ -63,7 +63,7 @@ const Subtitle = styled.p`
   }
 `;
 
-const ImageBox = styled.div`
+export const ImageBox = styled.div`
   position: relative;
   z-index: 1;
   top: -60px;
@@ -77,7 +77,7 @@ const ImageBox = styled.div`
   }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -87,5 +87,3 @@ const Image = styled.img`
     border-radius: 0 6px 6px 0;
   }
 `;
-
-export { Wrapper, Info, Title, Subtitle, ImageBox, Image };

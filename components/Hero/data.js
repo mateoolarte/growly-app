@@ -1,12 +1,12 @@
 // assets
-import afairHero from "../../assets/home-hero/afair-hero.jpg";
-import afairMockup from "../../assets/home-hero/afair-mockup.png";
-import dealiaHero from "../../assets/home-hero/dealia-hero.jpg";
-import dealiaMockup from "../../assets/home-hero/dealia-mockup.png";
-import strikHero from "../../assets/home-hero/strik-hero.jpg";
-import strikMockup from "../../assets/home-hero/strik-mockup.png";
-import zalepHero from "../../assets/home-hero/zalep-hero.jpg";
-import zalepMockup from "../../assets/home-hero/zalep-mockup.png";
+const afairHero = "/images/home-hero/afair-hero.jpg";
+const afairMockup = "/images/home-hero/afair-mockup.png";
+const dealiaHero = "/images/home-hero/dealia-hero.jpg";
+const dealiaMockup = "/images/home-hero/dealia-mockup.png";
+const strikHero = "/images/home-hero/strik-hero.jpg";
+const strikMockup = "/images/home-hero/strik-mockup.png";
+const zalepHero = "/images/home-hero/zalep-hero.jpg";
+const zalepMockup = "/images/home-hero/zalep-mockup.png";
 
 const images = [
   {

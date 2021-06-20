@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 // assets
-import LogoSmall from "../../../assets/logo-small.png";
+const LogoSmall = "/images/logo-small.png";
 
 // styled
 import {
@@ -12,7 +12,7 @@ import {
   NavigationItem,
   NavigationLink,
   CopyrightContainer,
-  Image,
+  Logo,
   Copyright,
 } from "./styled";
 
@@ -61,8 +61,11 @@ export default function Footer() {
       </NavigationContainer>
 
       <CopyrightContainer>
-        <Image src={LogoSmall} alt="Logo small" />
-        <Copyright>© 2020 Growly, Todos los derechos reservados</Copyright>
+        <Logo src={LogoSmall} alt="Logo small" width={78} height={78} />
+        <Copyright>
+          © 2020 - {new Date().getFullYear()} Growly, Todos los derechos
+          reservados
+        </Copyright>
       </CopyrightContainer>
     </Wrapper>
   );

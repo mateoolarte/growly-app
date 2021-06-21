@@ -8,7 +8,7 @@ import {
   ToggleBoxItem,
   ToggleBoxButton,
   Content,
-  Image,
+  Plan,
   Title,
   PricingContainer,
   Pricing,
@@ -53,13 +53,13 @@ export default function HeroTemplates({
               onClick={() => handleCurrentPlan(1)}
             >
               <strong>Portfolio</strong>
-              $1'099.000 COP
+              $1&apos;099.000 COP
             </ToggleBoxButton>
           </ToggleBoxItem>
         </ToggleBox>
 
         <Content>
-          <Image>
+          <Plan>
             <Icon />
             <Title>{title}</Title>
             <PricingContainer>
@@ -67,7 +67,7 @@ export default function HeroTemplates({
               <Flag src={FlagCOP} alt="Bandera de Colombia" />
               <Note>*Pesos colombianos</Note>
             </PricingContainer>
-          </Image>
+          </Plan>
           <Info>
             <Description>{description}</Description>
             <strong>Este plan incluye</strong>

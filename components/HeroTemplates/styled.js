@@ -7,7 +7,7 @@ import { MEDIA_QUERIES } from "../../utils/constants";
 // assets
 const bgPlans = "/images/bg-plans.jpg";
 
-const Wrapper = styled.section`
+export const Wrapper = styled.section`
   position: relative;
   padding-top: 120px;
   margin-bottom: 2rem;
@@ -26,7 +26,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   position: relative;
   z-index: 1;
   width: 95%;
@@ -34,7 +34,7 @@ const Container = styled.div`
   margin: 0 auto 4rem;
 `;
 
-const Heading = styled.h1`
+export const Heading = styled.h1`
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 36px;
@@ -51,7 +51,7 @@ const Heading = styled.h1`
   }
 `;
 
-const SubHeading = styled.h2`
+export const SubHeading = styled.h2`
   margin-top: 0;
   margin-bottom: 0.5rem;
   color: ${(props) => props && props.theme.colors.primary};
@@ -63,7 +63,7 @@ const SubHeading = styled.h2`
   }
 `;
 
-const ToggleBox = styled.ul`
+export const ToggleBox = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,7 +79,7 @@ const ToggleBox = styled.ul`
   }
 `;
 
-const ToggleBoxItem = styled.li`
+export const ToggleBoxItem = styled.li`
   ${MEDIA_QUERIES.tablet} {
     position: absolute;
     top: 0;
@@ -102,7 +102,7 @@ const ToggleBoxItem = styled.li`
   }
 `;
 
-const ToggleBoxButton = styled.button`
+export const ToggleBoxButton = styled.button`
   display: inline-block;
   width: 150px;
   padding: 0.4rem 1rem;
@@ -144,7 +144,7 @@ const ToggleBoxButton = styled.button`
   }
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -154,7 +154,7 @@ const Content = styled.div`
   }
 `;
 
-const Image = styled.div`
+export const Plan = styled.div`
   width: 100%;
   margin-bottom: 1rem;
   text-align: center;
@@ -171,7 +171,7 @@ const Image = styled.div`
   }
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   margin: 0;
   color: ${(props) => props && props.theme.colors.secondary};
   font-size: 28px;
@@ -181,13 +181,13 @@ const Title = styled.h3`
   }
 `;
 
-const PricingContainer = styled.div`
+export const PricingContainer = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 `;
 
-const Pricing = styled.h4`
+export const Pricing = styled.h4`
   margin: 0;
   margin-right: 0.5rem;
   font-size: 28px;
@@ -197,18 +197,18 @@ const Pricing = styled.h4`
   }
 `;
 
-const Flag = styled.img`
+export const Flag = styled.img`
   height: 26px;
 `;
 
-const Note = styled.p`
+export const Note = styled.p`
   width: 100%;
   margin: 0;
   color: ${(props) => props && props.theme.colors.secondary};
   font-size: 12px;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   width: 90%;
 
   ${MEDIA_QUERIES.landscape} {
@@ -221,12 +221,12 @@ const Info = styled.div`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   margin-top: 0;
   margin-bottom: 0.5rem;
 `;
 
-const Features = styled.ul`
+export const Features = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -239,7 +239,7 @@ const Features = styled.ul`
   }
 `;
 
-const FeatureItem = styled.li`
+export const FeatureItem = styled.li`
   position: relative;
   margin-bottom: 0.8rem;
   padding: 0 1rem 0 1.8rem;
@@ -260,24 +260,3 @@ const FeatureItem = styled.li`
     background-size: 1.2rem;
   }
 `;
-
-export {
-  Wrapper,
-  Container,
-  Heading,
-  SubHeading,
-  ToggleBox,
-  ToggleBoxItem,
-  ToggleBoxButton,
-  Content,
-  Image,
-  Title,
-  PricingContainer,
-  Pricing,
-  Flag,
-  Note,
-  Info,
-  Description,
-  Features,
-  FeatureItem,
-};

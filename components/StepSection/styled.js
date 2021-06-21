@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 // constants
 import { MEDIA_QUERIES } from "../../utils/constants";
-
-const Wrapper = styled.article`
+export const Wrapper = styled.article`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -21,7 +20,7 @@ const Wrapper = styled.article`
   }
 `;
 
-const Image = styled.div`
+export const ImageContainer = styled.div`
   width: 100%;
   margin-bottom: 2rem;
   text-align: center;
@@ -37,11 +36,11 @@ const Image = styled.div`
   }
 `;
 
-const Cover = styled.img`
+export const Cover = styled.img`
   max-width: 100%;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   width: 100%;
   text-align: center;
 
@@ -56,7 +55,7 @@ const Info = styled.div`
   }
 `;
 
-const StepNum = styled.span`
+export const StepNum = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +82,7 @@ const StepNum = styled.span`
   }
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 28px;
@@ -98,8 +97,6 @@ const Title = styled.h2`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   margin: 0;
 `;
-
-export { Wrapper, Image, Cover, Info, StepNum, Title, Description };

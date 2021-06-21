@@ -7,7 +7,7 @@ import Button from "../ui/Button";
 // styled
 import {
   Wrapper,
-  Image,
+  ImageContainer,
   Thumbnail,
   Info,
   LogoContainer,
@@ -30,13 +30,13 @@ export default function TemplateSection({
 }) {
   return (
     <Wrapper isReverse={isReverse}>
-      <Image>
+      <ImageContainer>
         <Link href={demoLink} passHref>
           <a target="_blank">
             <Thumbnail src={thumbnail} alt="Thumbnail" />
           </a>
         </Link>
-      </Image>
+      </ImageContainer>
 
       <Info>
         <LogoContainer>

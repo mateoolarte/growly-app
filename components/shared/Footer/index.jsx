@@ -40,7 +40,7 @@ export default function Footer() {
             if (hasOnClick) {
               return (
                 <NavigationItem key={id}>
-                  <Link href={link}>
+                  <Link href={link} passHref>
                     <NavigationLink {...linkOptions} onClick={handleChat}>
                       {title}
                     </NavigationLink>

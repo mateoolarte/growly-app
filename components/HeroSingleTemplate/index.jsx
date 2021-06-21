@@ -80,7 +80,7 @@ export default function HeroSingleTemplate({
         </p>
       </Modal>
       <TopActions>
-        <Link href="/plantillas">
+        <Link href="/plantillas" passHref>
           <BtnGoBack>
             <ArrowLeft />
             Volver

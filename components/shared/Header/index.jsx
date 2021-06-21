@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <Container isActive={toggleMenu} id="sticky-header">
-      <Link href="/">
+      <Link href="/" passHref>
         <LogoContainer>
           <Logo />
         </LogoContainer>
@@ -59,19 +59,19 @@ export default function Header() {
 
         <NavigationList isActive={toggleMenu}>
           <NavigationItem>
-            <Link href="/plantillas">
+            <Link href="/plantillas" passHref>
               <NavigationLink>Plantillas</NavigationLink>
             </Link>
           </NavigationItem>
 
           <NavigationItem>
-            <Link href="/como-funciona">
+            <Link href="/como-funciona" passHref>
               <NavigationLink>Como funciona</NavigationLink>
             </Link>
           </NavigationItem>
 
           <NavigationItem>
-            <Link href="#">
+            <Link href="#" passHref>
               <NavigationLink onClick={handleChat}>
                 Contacta un asesor
               </NavigationLink>

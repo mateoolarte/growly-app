@@ -2,7 +2,9 @@
 import { createRef, forwardRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const PaymentButton = forwardRef((props, ref) => <form ref={ref}></form>);
+const PaymentButton = forwardRef(function paymentButton(props, ref) {
+  return <form ref={ref}></form>;
+});
 
 function generateScriptTag(price, template, type) {
   const scriptTag = document.createElement("script");
@@ -48,7 +50,7 @@ export default function CheckoutContainer({ price, template, type }) {
         oldScriptTag?.remove();
       }
     }
-  }, [price]);
+  }, [ref, template, type, price]);
 
   return <PaymentButton ref={ref} />;
 }

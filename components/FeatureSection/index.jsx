@@ -16,8 +16,8 @@ export default function FeatureSection({
   bgText,
 }) {
   return (
-    <Wrapper alt={isAlt} bgText={bgText}>
-      <ImageContainer alt={isAlt}>
+    <Wrapper isAlt={isAlt} bgText={bgText}>
+      <ImageContainer isAlt={isAlt}>
         <Image src={image} alt={title} />
       </ImageContainer>
       <Info>

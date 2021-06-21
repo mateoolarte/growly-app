@@ -4,7 +4,7 @@ import styled from "styled-components";
 // constants
 import { MEDIA_QUERIES } from "../../utils/constants";
 
-const Wrapper = styled.article`
+export const Wrapper = styled.article`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -21,7 +21,7 @@ const Wrapper = styled.article`
   }
 `;
 
-const Image = styled.div`
+export const ImageContainer = styled.div`
   width: 100%;
   margin-bottom: 2rem;
 
@@ -36,11 +36,11 @@ const Image = styled.div`
   }
 `;
 
-const Thumbnail = styled.img`
+export const Thumbnail = styled.img`
   width: 100%;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   width: 100%;
 
   ${MEDIA_QUERIES.tablet} {
@@ -53,21 +53,21 @@ const Info = styled.div`
   }
 `;
 
-const LogoContainer = styled.div`
+export const LogoContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Logo = styled.img`
+export const Logo = styled.img`
   width: 120px;
 `;
 
-const PreferenceTitle = styled.span`
+export const PreferenceTitle = styled.span`
   display: inline-block;
   margin-bottom: 1rem;
   font-weight: bold;
 `;
 
-const Preferences = styled.ul`
+export const Preferences = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 2rem;
@@ -75,7 +75,7 @@ const Preferences = styled.ul`
   list-style-type: none;
 `;
 
-const PreferenceItem = styled.li`
+export const PreferenceItem = styled.li`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -84,7 +84,7 @@ const PreferenceItem = styled.li`
   text-align: center;
 `;
 
-const IconContainer = styled.span`
+export const IconContainer = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,12 +109,12 @@ const IconContainer = styled.span`
   }
 `;
 
-const PreferenceText = styled.p`
+export const PreferenceText = styled.p`
   margin: 0;
   font-size: 13px;
 `;
 
-const Actions = styled.div`
+export const Actions = styled.div`
   a {
     display: block;
     margin-bottom: 1rem;
@@ -128,18 +128,3 @@ const Actions = styled.div`
     }
   }
 `;
-
-export {
-  Wrapper,
-  Image,
-  Thumbnail,
-  Info,
-  LogoContainer,
-  Logo,
-  PreferenceTitle,
-  Preferences,
-  PreferenceItem,
-  Actions,
-  IconContainer,
-  PreferenceText,
-};

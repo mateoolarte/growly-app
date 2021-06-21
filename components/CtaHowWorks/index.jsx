@@ -5,7 +5,7 @@ import {
   Title,
   Description,
   Actions,
-  Image,
+  BgImage,
 } from "./styled";
 
 // components
@@ -41,7 +41,7 @@ export default function CtaHowWorks() {
           </Button>
         </Actions>
       </Container>
-      <Image style={{ backgroundImage: `url(${bgImg})` }}></Image>
+      <BgImage style={{ backgroundImage: `url(${bgImg})` }} />
     </Wrapper>
   );
 }

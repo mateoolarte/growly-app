@@ -4,16 +4,16 @@ import styled from "styled-components";
 // constants
 import { MEDIA_QUERIES } from "../../utils/constants";
 
-const Wrapper = styled.section``;
+export const Wrapper = styled.section``;
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 95%;
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto;
   text-align: center;
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 28px;
@@ -28,7 +28,7 @@ const Title = styled.h2`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
@@ -39,7 +39,7 @@ const Description = styled.p`
   }
 `;
 
-const Actions = styled.div`
+export const Actions = styled.div`
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -50,7 +50,7 @@ const Actions = styled.div`
   }
 `;
 
-const Image = styled.div`
+export const BgImage = styled.div`
   position: relative;
   height: 350px;
   background-repeat: no-repeat;
@@ -75,5 +75,3 @@ const Image = styled.div`
     background: linear-gradient(#fff, rgba(255, 255, 255, 0.4));
   }
 `;
-
-export { Wrapper, Container, Title, Description, Actions, Image };

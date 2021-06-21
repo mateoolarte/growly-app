@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress:open": "cypress open"
@@ -28,6 +29,8 @@
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-styled-components": "^1.12.0",
     "cypress": "^7.5.0",
+    "eslint": "^7.29.0",
+    "eslint-config-next": "^11.0.0",
     "jest": "^27.0.4",
     "react-test-renderer": "^17.0.2"
   }

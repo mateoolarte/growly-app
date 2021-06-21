@@ -95,6 +95,7 @@ const NavigationItem = styled.li`
 `;
 
 const NavigationLink = styled.a`
+  color: ${(props) => props && props.theme.colors.black};
   font-size: ${(props) => props && props.theme.sizes.text};
   font-weight: ${(props) => props && props.theme.fonts.bold};
   text-decoration: none;

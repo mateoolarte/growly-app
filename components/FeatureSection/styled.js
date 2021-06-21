@@ -4,7 +4,7 @@ import styled from "styled-components";
 // constants
 import { MEDIA_QUERIES } from "../../utils/constants";
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   margin-bottom: 3rem;
   overflow: hidden;
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 10rem;
-    ${(props) => (props && props.alt ? "flex-direction: row-reverse" : "")};
+    ${(props) => (props && props.isAlt ? "flex-direction: row-reverse" : "")};
     overflow: unset;
   }
 
@@ -49,29 +49,29 @@ const Wrapper = styled.div`
   `}
 `;
 
-const ImageContainer = styled.div`
+export const ImageContainer = styled.div`
   margin-bottom: 1rem;
 
   ${MEDIA_QUERIES.tablet} {
     width: 55%;
     ${(props) =>
-      props && props.alt ? "margin-left: 2rem;" : "margin-right: 2rem;"};
+      props && props.isAlt ? "margin-left: 2rem;" : "margin-right: 2rem;"};
     margin-bottom: 0;
     text-align: center;
   }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   max-width: 100%;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   ${MEDIA_QUERIES.tablet} {
     width: 45%;
   }
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   margin-top: 0;
   margin-bottom: 0.8rem;
   font-size: 28px;
@@ -86,8 +86,6 @@ const Title = styled.h3`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   margin: 0;
 `;
-
-export { Wrapper, ImageContainer, Image, Info, Title, Description };

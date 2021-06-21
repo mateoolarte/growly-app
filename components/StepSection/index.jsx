@@ -1,7 +1,7 @@
 // styled
 import {
   Wrapper,
-  Image,
+  ImageContainer,
   Cover,
   Info,
   StepNum,
@@ -18,9 +18,9 @@ export default function StepSection({
 }) {
   return (
     <Wrapper isReverse={isReverse}>
-      <Image>
+      <ImageContainer>
         <Cover src={image} alt="Cover image" />
-      </Image>
+      </ImageContainer>
 
       <Info>
         <StepNum>{stepNum}</StepNum>

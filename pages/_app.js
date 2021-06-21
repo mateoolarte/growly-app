@@ -61,7 +61,7 @@ export default function Growly({ Component, pageProps }) {
     function handleRouteChangeComplete(url) {
       ReactGA.pageview(url);
     }
-  }, [router.events]);
+  }, [router]);
 
   useEffect(() => {
     const chat = window.Tawk_API;

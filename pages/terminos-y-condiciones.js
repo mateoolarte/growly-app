@@ -87,3 +87,9 @@ export default function Terms() {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}

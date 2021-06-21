@@ -5,9 +5,6 @@ import Slider from "react-slick";
 // components
 import Button from "../ui/Button";
 
-// data
-import images from "./data";
-
 // styled
 import {
   Wrapper,
@@ -21,7 +18,7 @@ import {
   SlideImage,
 } from "./styled";
 
-export default function Hero() {
+export default function Hero({ images }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {

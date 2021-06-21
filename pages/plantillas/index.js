@@ -53,3 +53,9 @@ export default function Templates() {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}

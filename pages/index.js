@@ -12,7 +12,7 @@ import FeatureSection from "../components/FeatureSection";
 import CtaHome from "../components/CtaHome";
 
 // data
-import features from "../data/features";
+import { featuresData, heroImages } from "../data/home";
 
 const FeaturesContainer = styled.div`
   width: 95%;
@@ -24,13 +24,13 @@ const FeaturesContainer = styled.div`
   }
 `;
 
-export default function Home() {
+export default function Home({ heroImages, features }) {
   return (
     <Layout
       title="Crea el sitio web de tu negocio a bajo costo"
       description="Dale a tu negocio la presencia digital que necesita con sitio web profesional, moderno, económico y al aire en tan solo 5 días."
     >
-      <Hero />
+      <Hero images={heroImages} />
 
       <HowDoesWorkSection />
 
@@ -43,4 +43,13 @@ export default function Home() {
       <CtaHome />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      heroImages,
+      features: featuresData,
+    },
+  };
 }

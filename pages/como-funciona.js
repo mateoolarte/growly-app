@@ -41,3 +41,9 @@ export default function HowWorks() {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}

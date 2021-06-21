@@ -6,6 +6,8 @@ import { MEDIA_QUERIES } from "../../utils/constants";
 
 // assets
 const bgPlans = "/images/bg-plans.jpg";
+// TODO: Handle svg images on css
+// import checkIcon from "../../assets/icons/check.svg";
 
 export const Wrapper = styled.section`
   position: relative;
@@ -255,7 +257,7 @@ export const FeatureItem = styled.li`
     top: 1px;
     width: 1.2rem;
     height: 1.2rem;
-    background-image: url(${require("../../assets/icons/check.svg")});
+    /* background-image: url("${checkIcon}"); */
     background-repeat: no-repeat;
     background-size: 1.2rem;
   }

@@ -88,8 +88,3 @@ export default function Terms() {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}

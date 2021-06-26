@@ -2,13 +2,13 @@
 import Button from "../ui/Button";
 
 // data
-import { stepsNumbers, stepsContent } from "../HowDoesWorkSection/data";
+import { stepsData } from "../../data/home";
 
 // assets
 import CheckIcon from "../../assets/icons/check.svg";
 import ArrowIcon from "../../assets/icons/arrow-right.svg";
 
-// styled
+// styles
 import {
   Wrapper,
   IconContainer,
@@ -26,9 +26,11 @@ import {
   StepContentItem,
   StepContentTitle,
   StepArrow,
-} from "../HowDoesWorkSection/styled";
+} from "../../containers/HowDoesWork/styled";
 
 export default function ApprovedPayment() {
+  const { numbers, content } = stepsData;
+
   return (
     <Wrapper>
       <IconContainer>
@@ -38,7 +40,7 @@ export default function ApprovedPayment() {
       <SubHeading>Tú sitio web, está en camino</SubHeading>
 
       <StepsContainer>
-        {stepsNumbers.map((number) => (
+        {numbers.map((number) => (
           <StepItem key={number} disabled={number > 2}>
             <Step>{number}</Step>
           </StepItem>
@@ -46,11 +48,11 @@ export default function ApprovedPayment() {
       </StepsContainer>
 
       <StepsContent>
-        {stepsContent.map(({ id, Icon, title }) => (
+        {content.map(({ id, Icon, title }) => (
           <StepContentItem key={id} disabled={id > 2}>
             <Icon />
             <StepContentTitle>{title}</StepContentTitle>
-            {id !== stepsContent.length && (
+            {id !== content.length && (
               <StepArrow>
                 <ArrowIcon />
               </StepArrow>

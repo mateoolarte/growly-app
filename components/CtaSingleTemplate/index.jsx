@@ -1,3 +1,6 @@
+// vendors
+import Image from "next/image";
+
 // components
 import Button from "../ui/Button";
 
@@ -5,7 +8,7 @@ import Button from "../ui/Button";
 import { Wrapper, Icon, Title, Subtitle, Description } from "./styled";
 
 // assets
-import LayoutIcon from "../../assets/icons/layout.svg";
+const layoutIcon = "/icons/layout.svg";
 
 export default function CtaSingleTemplate() {
   function handleChat(e) {
@@ -21,7 +24,7 @@ export default function CtaSingleTemplate() {
   return (
     <Wrapper>
       <Icon>
-        <LayoutIcon />
+        <Image src={layoutIcon} alt="icono" width={80} height={80} />
       </Icon>
       <Title>Estás muy cerca de tener tu sitio web</Title>
       <Subtitle>

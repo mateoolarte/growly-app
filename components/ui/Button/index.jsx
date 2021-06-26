@@ -24,7 +24,7 @@ const ContainerBtn = styled.button`
       ? `${props.theme.colors.secondary}`
       : `${props.theme.colors.white}`};
   font-size: 1rem;
-  font-weight: ${(props) => props && props.theme.fonts.bold};
+  font-weight: ${(props) => props && props.theme.fonts.medium};
   line-height: 1.2;
   text-transform: uppercase;
   cursor: pointer;
@@ -52,7 +52,7 @@ const ContainerLink = styled.a`
       ? `${props.theme.colors.secondary}`
       : `${props.theme.colors.white}`};
   font-size: 1rem;
-  font-weight: ${(props) => props && props.theme.fonts.bold};
+  font-weight: ${(props) => props && props.theme.fonts.medium};
   line-height: 1.2;
   text-transform: uppercase;
   cursor: pointer;

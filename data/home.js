@@ -1,8 +1,9 @@
-// assets
+// Features
 const responsiveImage = "/images/features/responsive.png";
 const customizeImage = "/images/features/customize.png";
 const seoImage = "/images/features/seo.png";
 
+// Hero
 const afairHero = "/images/home-hero/afair-hero.jpg";
 const afairMockup = "/images/home-hero/afair-mockup.png";
 const dealiaHero = "/images/home-hero/dealia-hero.jpg";
@@ -11,6 +12,12 @@ const strikHero = "/images/home-hero/strik-hero.jpg";
 const strikMockup = "/images/home-hero/strik-mockup.png";
 const zalepHero = "/images/home-hero/zalep-hero.jpg";
 const zalepMockup = "/images/home-hero/zalep-mockup.png";
+
+// Steps
+const computerIcon = "/icons/computer.svg";
+const cardIcon = "/icons/card.svg";
+const emailIcon = "/icons/email.svg";
+const layoutIcon = "/icons/layout.svg";
 
 export const featuresData = [
   {
@@ -39,7 +46,7 @@ export const featuresData = [
   },
 ];
 
-export const heroImages = [
+export const heroImagesData = [
   {
     id: 1,
     thumbnail: afairMockup,
@@ -61,3 +68,29 @@ export const heroImages = [
     background: zalepHero,
   },
 ];
+
+export const stepsData = {
+  numbers: [1, 2, 3, 4],
+  content: [
+    {
+      id: 1,
+      icon: computerIcon,
+      title: "Selecciona la plantilla que te guste",
+    },
+    {
+      id: 2,
+      icon: cardIcon,
+      title: "Elige un método de pago",
+    },
+    {
+      id: 3,
+      icon: emailIcon,
+      title: "Envías la información correspondiente",
+    },
+    {
+      id: 4,
+      icon: layoutIcon,
+      title: "Tienes tu sitio web al aire",
+    },
+  ],
+};

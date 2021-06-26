@@ -1,13 +1,13 @@
 // components
-import Button from "../ui/Button";
+import Button from "../../components/ui/Button";
 
 // assets
 const bg = "/images/cta-home-bg.jpg";
 
-// styled
+// styles
 import { Wrapper, Info, Title, Subtitle, ImageBox, Image } from "./styled";
 
-export default function CtaHome() {
+export function CtaHome() {
   return (
     <Wrapper>
       <Info>

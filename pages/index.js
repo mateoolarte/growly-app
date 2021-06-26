@@ -1,45 +1,24 @@
-// vendors
-import styled from "styled-components";
-
-// constants
-import { MEDIA_QUERIES } from "../utils/constants";
+// containers
+import { HomeHero } from "../containers/HomeHero";
+import { HowDoesWork } from "../containers/HowDoesWork";
+import { Features } from "../containers/Features";
+import { CtaHome } from "../containers/CtaHome";
 
 // components
 import Layout from "../components/shared/Layout";
-import Hero from "../components/Hero";
-import HowDoesWorkSection from "../components/HowDoesWorkSection";
-import FeatureSection from "../components/FeatureSection";
-import CtaHome from "../components/CtaHome";
 
 // data
-import { featuresData, heroImages } from "../data/home";
+import { featuresData, heroImagesData, stepsData } from "../data/home";
 
-const FeaturesContainer = styled.div`
-  width: 95%;
-  max-width: ${(props) => props && props.theme.sizes.container};
-  margin: 0 auto 3rem;
-
-  ${MEDIA_QUERIES.tablet} {
-    margin-bottom: 6rem;
-  }
-`;
-
-export default function Home({ heroImages, features }) {
+export default function Home({ heroImages, features, steps }) {
   return (
     <Layout
       title="Crea el sitio web de tu negocio a bajo costo"
       description="Dale a tu negocio la presencia digital que necesita con sitio web profesional, moderno, económico y al aire en tan solo 5 días."
     >
-      <Hero images={heroImages} />
-
-      <HowDoesWorkSection />
-
-      <FeaturesContainer>
-        {features.map((feature, index) => (
-          <FeatureSection key={feature.id} {...feature} isAlt={index === 1} />
-        ))}
-      </FeaturesContainer>
-
+      <HomeHero images={heroImages} />
+      <HowDoesWork steps={steps} />
+      <Features features={features} />
       <CtaHome />
     </Layout>
   );
@@ -48,8 +27,9 @@ export default function Home({ heroImages, features }) {
 export async function getStaticProps() {
   return {
     props: {
-      heroImages,
+      heroImages: heroImagesData,
       features: featuresData,
+      steps: stepsData,
     },
   };
 }

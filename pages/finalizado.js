@@ -11,7 +11,7 @@ import ApprovedPayment from "../components/ApprovedPayment";
 import DeclinedPayment from "../components/DeclinedPayment";
 
 // assets
-import Logo from "../assets/logo-growly.svg";
+import { LogoImg } from "../assets/Logo";
 const bgImg = "/images/hero-confirmacion-growly.jpg";
 
 const APPROVED = "APPROVED";
@@ -74,7 +74,7 @@ export default function Finished({ status }) {
         <Container>
           <Link href="/" passHref>
             <LogoContainer>
-              <Logo />
+              <LogoImg />
             </LogoContainer>
           </Link>
           <ApprovedPayment />
@@ -93,7 +93,7 @@ export default function Finished({ status }) {
         <Container>
           <Link href="/" passHref>
             <LogoContainer>
-              <Logo />
+              <LogoImg />
             </LogoContainer>
           </Link>
           <DeclinedPayment />

@@ -1,8 +1,8 @@
-// components
-import Button from "../ui/Button";
+// vendors
+import Image from "next/image";
 
-// data
-import { stepsNumbers, stepsContent } from "./data";
+// components
+import Button from "../../components/ui/Button";
 
 // assets
 import ArrowIcon from "../../assets/icons/arrow-right.svg";
@@ -21,7 +21,9 @@ import {
   StepArrow,
 } from "./styled";
 
-export default function HowDoesWorkSection() {
+export function HowDoesWork({ steps }) {
+  const { numbers, content } = steps;
+
   return (
     <Wrapper>
       <Title>Un sitio web listo en 5 días</Title>
@@ -32,7 +34,7 @@ export default function HowDoesWorkSection() {
       </Description>
 
       <StepsContainer>
-        {stepsNumbers.map((step) => (
+        {numbers.map((step) => (
           <StepItem key={step}>
             <Step>{step}</Step>
           </StepItem>
@@ -40,11 +42,11 @@ export default function HowDoesWorkSection() {
       </StepsContainer>
 
       <StepsContent>
-        {stepsContent.map(({ id, Icon, title }) => (
+        {content.map(({ id, icon, title }) => (
           <StepContentItem key={id}>
-            <Icon />
-            <StepContentTitle>{title}</StepContentTitle>
-            {id !== stepsContent.length && (
+            {icon && <Image src={icon} alt="icono" width={80} height={80} />}
+            {title && <StepContentTitle>{title}</StepContentTitle>}
+            {id !== content.length && (
               <StepArrow>
                 <ArrowIcon />
               </StepArrow>

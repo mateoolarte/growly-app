@@ -3,7 +3,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 
 // components
-import Button from "../ui/Button";
+import Button from "../../components/ui/Button";
 
 // styled
 import {
@@ -18,7 +18,7 @@ import {
   SlideImage,
 } from "./styled";
 
-export default function Hero({ images }) {
+export function HomeHero({ images }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {

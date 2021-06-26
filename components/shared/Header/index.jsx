@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 // assets
-import Logo from "../../../assets/logo-growly.svg";
+import { LogoImg } from "../../../assets/Logo";
 
 // components
 import Button from "../../ui/Button";
@@ -43,7 +43,7 @@ export default function Header() {
     <Container isActive={toggleMenu} id="sticky-header">
       <Link href="/" passHref>
         <LogoContainer>
-          <Logo />
+          <LogoImg />
         </LogoContainer>
       </Link>
 

@@ -150,7 +150,7 @@ const Actions = styled.div`
       props && props.white
         ? `${props.theme.colors.secondary}`
         : `${props.theme.colors.white}`};
-    font-weight: ${(props) => props && props.theme.fonts.bold};
+    font-weight: ${(props) => props && props.theme.fonts.medium};
     line-height: 1;
     text-transform: uppercase;
     cursor: pointer;

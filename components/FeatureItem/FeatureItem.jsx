@@ -8,13 +8,7 @@ import {
   Description,
 } from "./styled";
 
-export default function FeatureSection({
-  isAlt,
-  title,
-  image,
-  description,
-  bgText,
-}) {
+export function FeatureItem({ isAlt, title, image, description, bgText }) {
   return (
     <Wrapper isAlt={isAlt} bgText={bgText}>
       <ImageContainer isAlt={isAlt}>

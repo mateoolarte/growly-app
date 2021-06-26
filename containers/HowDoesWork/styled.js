@@ -4,7 +4,7 @@ import styled from "styled-components";
 // constants
 import { MEDIA_QUERIES } from "../../utils/constants";
 
-const Wrapper = styled.section`
+export const Wrapper = styled.section`
   width: 95%;
   max-width: ${(props) => props && props.theme.sizes.container};
   margin: 0 auto 3rem;
@@ -15,7 +15,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 28px;
@@ -29,7 +29,7 @@ const Title = styled.h2`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   margin: 0 auto 2rem;
   font-size: 0.9rem;
 
@@ -43,7 +43,7 @@ const Description = styled.p`
   }
 `;
 
-const StepsContainer = styled.ul`
+export const StepsContainer = styled.ul`
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
@@ -51,7 +51,7 @@ const StepsContainer = styled.ul`
   list-style-type: none;
 `;
 
-const StepItem = styled.li`
+export const StepItem = styled.li`
   width: calc(100% / 4 - 1rem);
   margin: 0 0.5rem;
   filter: ${(props) => (props && props.disabled ? "grayscale(100%)" : "")};
@@ -63,7 +63,7 @@ const StepItem = styled.li`
   }
 `;
 
-const Step = styled.button`
+export const Step = styled.button`
   width: 3.2rem;
   height: 3.2rem;
   border: 0;
@@ -78,7 +78,7 @@ const Step = styled.button`
   cursor: pointer;
 `;
 
-const StepsContent = styled.div`
+export const StepsContent = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
@@ -88,23 +88,15 @@ const StepsContent = styled.div`
   }
 `;
 
-const StepContentItem = styled.div`
+export const StepContentItem = styled.div`
   position: relative;
   width: calc(100% / 4 - 1rem);
   margin: 0 0.5rem;
   filter: ${(props) => (props && props.disabled ? "grayscale(100%)" : "")};
   opacity: ${(props) => (props && props.disabled ? "0.5" : "1")};
-
-  svg {
-    width: 100%;
-
-    ${MEDIA_QUERIES.tablet} {
-      width: auto;
-    }
-  }
 `;
 
-const StepContentTitle = styled.h3`
+export const StepContentTitle = styled.h3`
   margin-top: 0;
   font-size: 0.8rem;
 
@@ -113,7 +105,7 @@ const StepContentTitle = styled.h3`
   }
 `;
 
-const StepArrow = styled.span`
+export const StepArrow = styled.span`
   display: none;
 
   ${MEDIA_QUERIES.landscape} {
@@ -123,16 +115,3 @@ const StepArrow = styled.span`
     right: -2.5rem;
   }
 `;
-
-export {
-  Wrapper,
-  Title,
-  Description,
-  StepsContainer,
-  StepItem,
-  Step,
-  StepsContent,
-  StepContentItem,
-  StepContentTitle,
-  StepArrow,
-};

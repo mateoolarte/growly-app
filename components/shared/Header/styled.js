@@ -97,7 +97,7 @@ const NavigationItem = styled.li`
 const NavigationLink = styled.a`
   color: ${(props) => props && props.theme.colors.black};
   font-size: ${(props) => props && props.theme.sizes.text};
-  font-weight: ${(props) => props && props.theme.fonts.bold};
+  font-weight: ${(props) => props && props.theme.fonts.medium};
   text-decoration: none;
   cursor: pointer;
 `;
@@ -106,7 +106,7 @@ const BtnSignInStyled = styled.a`
   display: inline-flex;
   align-items: center;
   color: ${(props) => props && props.theme.colors.primary};
-  font-weight: ${(props) => props && props.theme.fonts.bold};
+  font-weight: ${(props) => props && props.theme.fonts.medium};
   cursor: pointer;
 `;
 

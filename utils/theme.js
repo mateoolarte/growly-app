@@ -1,0 +1,32 @@
+export const theme = {
+  colors: {
+    primary: "#D94141",
+    secondary: "#F26A4B",
+    terciary: "#8C493A",
+    white: "#fff",
+    gray: "#F2F2F2",
+    grayDark: "#b5b5b5",
+    black: "#262526",
+    blue: "#4b78f2",
+  },
+  sizes: {
+    container: "1160px",
+    text: "0.9rem",
+    textSmall: "0.8rem",
+    space1: "2rem",
+    space2: "24px",
+    space3: "36px",
+    space4: "12px",
+    space5: "0.5rem",
+    space6: "28px",
+    space7: "5px;",
+    space8: "30px",
+    space9: "1rem",
+    space10: "20px",
+    circle: "50%",
+  },
+  fonts: {
+    primary: "'Hind Madurai', sans-serif",
+    medium: "600",
+  },
+};

@@ -1,9 +1,34 @@
+// vendors
 import styled from "styled-components";
 
 // constants
 import { MEDIA_QUERIES } from "../../utils/constants";
 
-export const Wrapper = styled.div`
+export const Container = styled.section`
+  position: relative;
+  width: 95%;
+  max-width: ${(props) => props && props.theme.sizes.container};
+  margin: 0 auto 2rem;
+  padding-top: 1rem;
+`;
+
+export const LogoContainer = styled.a`
+  display: block;
+  width: 80%;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  ${MEDIA_QUERIES.landscape} {
+    width: 20%;
+  }
+
+  svg {
+    height: 50px;
+  }
+`;
+
+export const Content = styled.div`
   text-align: center;
 `;
 

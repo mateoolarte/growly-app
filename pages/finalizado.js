@@ -1,105 +1,28 @@
-// vendors
-import Head from "next/head";
-import Link from "next/link";
-import styled from "styled-components";
+// containers
+import { ApprovedPayment } from "../containers/ApprovedPayment";
+import { DeclinedPayment } from "../containers/DeclinedPayment";
 
-// constants
-import { MEDIA_QUERIES } from "../utils/constants";
-
-// components
-import ApprovedPayment from "../components/ApprovedPayment";
-import DeclinedPayment from "../components/DeclinedPayment";
-
-// assets
-import { LogoImg } from "../assets/Logo";
-const bgImg = "/images/hero-confirmacion-growly.jpg";
+// data
+import { stepsData } from "../data/home";
 
 const APPROVED = "APPROVED";
+const DECLINED = "DECLINED";
+const VOIDED = "VOIDED";
+const ERROR = "ERROR";
+const PENDING = "PENDING";
 
-const Wrapper = styled.main`
-  ${MEDIA_QUERIES.landscape} {
-    position: relative;
-    background-image: url("${bgImg}");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100%;
+export default function Finished({ status, steps }) {
+  if (!status || status === DECLINED || status === VOIDED || status === ERROR) {
+    return <DeclinedPayment />;
   }
 
-  &::before {
-    content: "";
-
-    ${MEDIA_QUERIES.landscape} {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(rgba(255, 255, 255, 0.4), #fff);
-    }
-  }
-`;
-
-const Container = styled.section`
-  position: relative;
-  width: 95%;
-  max-width: ${(props) => props && props.theme.sizes.container};
-  margin: 0 auto 2rem;
-  padding-top: 1rem;
-`;
-
-const LogoContainer = styled.a`
-  display: block;
-  width: 80%;
-  margin-bottom: 2rem;
-  text-decoration: none;
-  cursor: pointer;
-
-  ${MEDIA_QUERIES.landscape} {
-    width: 20%;
+  // TODO: Add a layout for pending results
+  if (status === PENDING) {
+    return <h1>Tu pago está siendo procesado</h1>;
   }
 
-  svg {
-    height: 50px;
-  }
-`;
-
-export default function Finished({ status }) {
   if (status === APPROVED) {
-    return (
-      <Wrapper>
-        <Head>
-          <title>Confirmación de compra | Growly</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Container>
-          <Link href="/" passHref>
-            <LogoContainer>
-              <LogoImg />
-            </LogoContainer>
-          </Link>
-          <ApprovedPayment />
-        </Container>
-      </Wrapper>
-    );
-  }
-
-  if (status !== APPROVED) {
-    return (
-      <>
-        <Head>
-          <title>Pago rechazado | Growly</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Container>
-          <Link href="/" passHref>
-            <LogoContainer>
-              <LogoImg />
-            </LogoContainer>
-          </Link>
-          <DeclinedPayment />
-        </Container>
-      </>
-    );
+    return <ApprovedPayment steps={steps} />;
   }
 }
 
@@ -114,12 +37,13 @@ export async function getServerSideProps({ query }) {
 
     status = data?.status || "";
   } catch (error) {
-    console.log("Something went wrong", error);
+    throw new Error(`Something went wrong: ${error}`);
   }
 
   return {
     props: {
       status,
+      steps: stepsData,
     },
   };
 }

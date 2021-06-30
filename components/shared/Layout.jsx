@@ -25,7 +25,6 @@ export default function Layout({ title, description, hideCookies, children }) {
       <Head>
         <title>{title} | Growly</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />

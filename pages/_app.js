@@ -14,12 +14,15 @@ import { useSupportChat } from "../hooks/useSupportChat";
 import { Scripts } from "../components/shared/Scripts";
 
 const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: content-box;
+  }
+
   body {
     margin: 0;
     color: ${(props) => props && props.theme.colors.black};
     font-size: 16px;
     font-family: ${(props) => props && props.theme.fonts.primary};
-    box-sizing: content-box;
   }
 `;
 

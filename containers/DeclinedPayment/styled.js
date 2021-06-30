@@ -41,7 +41,7 @@ export const IconContainer = styled.span`
   }
 
   svg {
-    fill: #f2c54b;
+    fill: ${(props) => props && props.theme.colors.yellow};
   }
 `;
 

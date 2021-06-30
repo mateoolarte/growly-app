@@ -72,6 +72,9 @@ export const BgImage = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(#fff, rgba(255, 255, 255, 0.4));
+    background: linear-gradient(
+      ${(props) => props && props.theme.colors.white},
+      ${(props) => props && props.theme.colors.lightGradient}
+    );
   }
 `;

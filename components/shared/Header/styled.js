@@ -4,7 +4,7 @@ import styled from "styled-components";
 // constants
 import { MEDIA_QUERIES } from "../../../utils/constants";
 
-const Container = styled.header`
+export const Container = styled.header`
   display: flex;
   align-items: center;
   position: fixed;
@@ -24,7 +24,7 @@ const Container = styled.header`
   }
 `;
 
-const LogoContainer = styled.a`
+export const LogoContainer = styled.a`
   display: block;
   width: 80%;
   text-decoration: none;
@@ -39,7 +39,7 @@ const LogoContainer = styled.a`
   }
 `;
 
-const Navigation = styled.nav`
+export const Navigation = styled.nav`
   width: 20%;
 
   ${MEDIA_QUERIES.landscape} {
@@ -47,7 +47,7 @@ const Navigation = styled.nav`
   }
 `;
 
-const NavigationList = styled.ul`
+export const NavigationList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@ const NavigationList = styled.ul`
   }
 `;
 
-const NavigationItem = styled.li`
+export const NavigationItem = styled.li`
   margin: ${(props) => props && props.theme.sizes.space2} 0;
   text-align: center;
   text-transform: uppercase;
@@ -94,15 +94,23 @@ const NavigationItem = styled.li`
   }
 `;
 
-const NavigationLink = styled.a`
+export const NavigationLink = styled.a`
   color: ${(props) => props && props.theme.colors.black};
-  font-size: ${(props) => props && props.theme.sizes.text};
+  font-size: ${(props) => props && props.theme.sizes.textNormal};
   font-weight: ${(props) => props && props.theme.fonts.medium};
   text-decoration: none;
   cursor: pointer;
+
+  ${MEDIA_QUERIES.tablet} {
+    font-size: ${(props) => props && props.theme.sizes.textBig};
+  }
+
+  ${MEDIA_QUERIES.landscape} {
+    font-size: ${(props) => props && props.theme.sizes.text};
+  }
 `;
 
-const BtnSignInStyled = styled.a`
+export const BtnSignInStyled = styled.a`
   display: inline-flex;
   align-items: center;
   color: ${(props) => props && props.theme.colors.primary};
@@ -110,7 +118,7 @@ const BtnSignInStyled = styled.a`
   cursor: pointer;
 `;
 
-const BtnSignInIcon = styled.span`
+export const BtnSignInIcon = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -121,7 +129,7 @@ const BtnSignInIcon = styled.span`
   background-color: ${(props) => props && props.theme.colors.primary};
 `;
 
-const HamburgerIconContainer = styled.button`
+export const HamburgerIconContainer = styled.button`
   display: inline-block;
   position: absolute;
   z-index: 4;
@@ -132,7 +140,6 @@ const HamburgerIconContainer = styled.button`
   border: 0;
   transition: all 0.4s;
   background: none;
-  box-sizing: border-box;
 
   ${MEDIA_QUERIES.landscape} {
     display: none;
@@ -156,7 +163,7 @@ const HamburgerIconContainer = styled.button`
   `}
 `;
 
-const HamburgerIconLine = styled.span`
+export const HamburgerIconLine = styled.span`
   display: inline-block;
   position: absolute;
   left: 0;
@@ -165,7 +172,6 @@ const HamburgerIconLine = styled.span`
   border-radius: ${(props) => props && props.theme.sizes.space1};
   transition: all 0.4s;
   background-color: ${(props) => props && props.theme.colors.secondary};
-  box-sizing: border-box;
 
   &:nth-of-type(1) {
     top: 0;
@@ -177,16 +183,3 @@ const HamburgerIconLine = styled.span`
     bottom: 0;
   }
 `;
-
-export {
-  Container,
-  LogoContainer,
-  Navigation,
-  NavigationList,
-  NavigationItem,
-  NavigationLink,
-  BtnSignInStyled,
-  BtnSignInIcon,
-  HamburgerIconContainer,
-  HamburgerIconLine,
-};

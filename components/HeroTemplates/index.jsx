@@ -62,7 +62,7 @@ export default function HeroTemplates({
           <Plan>
             <Icon />
             <Title>{title}</Title>
-            <PricingContainer>
+            <PricingContainer centered>
               <Pricing>{pricing}</Pricing>
               <Flag src={FlagCOP} alt="Bandera de Colombia" />
               <Note>*Pesos colombianos</Note>

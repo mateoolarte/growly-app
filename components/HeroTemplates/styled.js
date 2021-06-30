@@ -24,7 +24,10 @@ export const Wrapper = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.4), #fff);
+    background: linear-gradient(
+      ${(props) => props && props.theme.colors.lightGradient},
+      ${(props) => props && props.theme.colors.white}
+    );
   }
 `;
 
@@ -106,7 +109,7 @@ export const ToggleBoxItem = styled.li`
 
 export const ToggleBoxButton = styled.button`
   display: inline-block;
-  width: 150px;
+  width: 120px;
   padding: 0.4rem 1rem;
   border: 0;
   border-radius: 2rem;
@@ -130,7 +133,7 @@ export const ToggleBoxButton = styled.button`
   `}
 
   ${MEDIA_QUERIES.tablet} {
-    width: 200px;
+    width: 140px;
     padding: 0.6rem 1rem 0.6rem 3.2rem;
     font-size: 1rem;
     text-align: left;
@@ -187,6 +190,13 @@ export const PricingContainer = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+
+  ${(props) =>
+    props &&
+    props.centered &&
+    `
+    justify-content: center;
+  `}
 `;
 
 export const Pricing = styled.h4`

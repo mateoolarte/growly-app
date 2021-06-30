@@ -132,7 +132,7 @@ const Actions = styled.div`
   .waybox-button {
     display: inline-block;
     height: auto;
-    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     padding: ${(props) => props && props.theme.sizes.space9};
     border: ${(props) =>
       props && props.white ? `1px solid ${props.theme.colors.secondary}` : 0};
@@ -155,6 +155,11 @@ const Actions = styled.div`
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
+
+    ${MEDIA_QUERIES.tablet} {
+      margin-right: 0.5rem;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -175,6 +180,7 @@ const Icon = styled.button`
   width: 1.2rem;
   height: 1.2rem;
   margin-left: 0.2rem;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   background-color: ${(props) => props && props.theme.colors.blue};

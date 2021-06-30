@@ -66,6 +66,7 @@ export const StepItem = styled.li`
 export const Step = styled.button`
   width: 3.2rem;
   height: 3.2rem;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   background: linear-gradient(

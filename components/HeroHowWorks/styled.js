@@ -37,7 +37,10 @@ const Wrapper = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.4), #fff);
+    background: linear-gradient(
+      ${(props) => props && props.theme.colors.lightGradient},
+      ${(props) => props && props.theme.colors.white}
+    );
   }
 `;
 

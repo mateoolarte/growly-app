@@ -1,11 +1,11 @@
-const afairHero = "/images/home-hero/afair-hero.jpg";
-const afairMockup = "/images/home-hero/afair-mockup.png";
-const dealiaHero = "/images/home-hero/dealia-hero.jpg";
-const dealiaMockup = "/images/home-hero/dealia-mockup.png";
-const strikHero = "/images/home-hero/strik-hero.jpg";
-const strikMockup = "/images/home-hero/strik-mockup.png";
-const zalepHero = "/images/home-hero/zalep-hero.jpg";
-const zalepMockup = "/images/home-hero/zalep-mockup.png";
+const afairHero = "/images/carousel-images/afair-hero.jpg";
+const afairMockup = "/images/carousel-images/afair-mockup.png";
+const dealiaHero = "/images/carousel-images/dealia-hero.jpg";
+const dealiaMockup = "/images/carousel-images/dealia-mockup.png";
+const strikHero = "/images/carousel-images/strik-hero.jpg";
+const strikMockup = "/images/carousel-images/strik-mockup.png";
+const zalepHero = "/images/carousel-images/zalep-hero.jpg";
+const zalepMockup = "/images/carousel-images/zalep-mockup.png";
 
 export const carouselImages = [
   {

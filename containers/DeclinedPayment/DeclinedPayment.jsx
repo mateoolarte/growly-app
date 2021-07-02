@@ -1,10 +1,11 @@
 // vendors
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 // assets
 import { LogoImg } from "../../assets/Logo";
-import FaceIcon from "../../assets/icons/face-sad.svg";
+const faceSadIcon = "/icons/face-sad.svg";
 
 // styles
 import {
@@ -20,7 +21,7 @@ import {
 } from "./styled";
 
 // components
-import Button from "../../components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
 export function DeclinedPayment() {
   function handleChat(e) {
@@ -47,7 +48,7 @@ export function DeclinedPayment() {
         </Link>
         <Content>
           <IconContainer>
-            <FaceIcon />
+            <Image src={faceSadIcon} alt="icono" width={76} height={76} />
           </IconContainer>
           <Heading>Lo sentimos..</Heading>
           <SubHeading>Algo salió mal y no se pudo procesar tu pago</SubHeading>

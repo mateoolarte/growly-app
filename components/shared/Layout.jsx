@@ -3,13 +3,13 @@ import Head from "next/head";
 import styled from "styled-components";
 
 // components
-import Header from "./Header";
-import Footer from "./Footer";
-import CookiesModal from "../CookiesModal";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { CookiesModal } from "../CookiesModal";
 
 const Container = styled.main``;
 
-export default function Layout({ title, description, hideCookies, children }) {
+export function Layout({ title, description, hideCookies, children }) {
   function handleStickyMenu() {
     const headerElm = document.getElementById("sticky-header");
 

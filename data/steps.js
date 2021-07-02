@@ -1,9 +1,8 @@
-// assets
 const step1Img = "/images/steps/step1.png";
 const step2Img = "/images/steps/step2.png";
 const step3Img = "/images/steps/step3.png";
 
-const steps = [
+export const stepsData = [
   {
     id: 1,
     stepNum: 1,
@@ -29,5 +28,3 @@ const steps = [
     image: step3Img,
   },
 ];
-
-export default steps;

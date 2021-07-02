@@ -1,7 +1,7 @@
 // vendors
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: fixed;
   z-index: 3;
   top: 0;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   position: relative;
   width: 80%;
   max-width: 560px;
@@ -23,7 +23,7 @@ const Container = styled.div`
   background-color: ${(props) => props && props.theme.colors.white};
 `;
 
-const BtnClose = styled.button`
+export const BtnClose = styled.button`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -33,5 +33,3 @@ const BtnClose = styled.button`
   outline: none;
   cursor: pointer;
 `;
-
-export { Wrapper, Container, BtnClose };

@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 // components
-import Button from "../../components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
 // assets
 import ArrowIcon from "../../assets/icons/arrow-right.svg";
@@ -21,8 +21,8 @@ import {
   StepArrow,
 } from "./styled";
 
-export function HowDoesWork({ steps }) {
-  const { numbers, content } = steps;
+export function HowDoesWork({ howWorks }) {
+  const { numbers, content } = howWorks;
 
   return (
     <Wrapper>

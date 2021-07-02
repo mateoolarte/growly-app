@@ -1,12 +1,12 @@
 // vendors
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   cursor: pointer;
 `;
 
-const Box = styled.div`
+export const Box = styled.div`
   display: ${({ isActive }) => (isActive ? "block" : "none")};
   position: absolute;
   z-index: 1;
@@ -18,5 +18,3 @@ const Box = styled.div`
   background-color: ${(props) => props && props.theme.colors.gray};
   font-size: 0.9rem;
 `;
-
-export { Wrapper, Box };

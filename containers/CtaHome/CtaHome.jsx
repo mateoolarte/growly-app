@@ -1,5 +1,5 @@
 // components
-import Button from "../../components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
 // assets
 const bg = "/images/cta-home-bg.jpg";

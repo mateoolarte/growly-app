@@ -1,0 +1,1 @@
+export { HeroTemplates } from "./HeroTemplates";

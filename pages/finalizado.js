@@ -3,7 +3,7 @@ import { ApprovedPayment } from "../containers/ApprovedPayment";
 import { DeclinedPayment } from "../containers/DeclinedPayment";
 
 // data
-import { stepsData } from "../data/home";
+import { howWorksData } from "../data/howWorks";
 
 const APPROVED = "APPROVED";
 const DECLINED = "DECLINED";
@@ -11,7 +11,7 @@ const VOIDED = "VOIDED";
 const ERROR = "ERROR";
 const PENDING = "PENDING";
 
-export default function Finished({ status, steps }) {
+export default function Finished({ status, howWorks }) {
   if (!status || status === DECLINED || status === VOIDED || status === ERROR) {
     return <DeclinedPayment />;
   }
@@ -22,7 +22,7 @@ export default function Finished({ status, steps }) {
   }
 
   if (status === APPROVED) {
-    return <ApprovedPayment steps={steps} />;
+    return <ApprovedPayment howWorks={howWorks} />;
   }
 }
 
@@ -43,7 +43,7 @@ export async function getServerSideProps({ query }) {
   return {
     props: {
       status,
-      steps: stepsData,
+      howWorks: howWorksData,
     },
   };
 }

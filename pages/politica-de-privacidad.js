@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 // components
-import Layout from "../components/shared/Layout";
+import { Layout } from "../components/shared/Layout";
 
 const Wrapper = styled.section`
   position: relative;

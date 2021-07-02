@@ -5,8 +5,8 @@ import Image from "next/image";
 
 // assets
 import { LogoImg } from "../../assets/Logo";
-import CheckIcon from "../../assets/icons/check.svg";
 import ArrowIcon from "../../assets/icons/arrow-right.svg";
+const checkIcon = "/icons/check.svg";
 
 // styles
 import {
@@ -31,10 +31,10 @@ import {
 } from "../HowDoesWork/styled";
 
 // components
-import Button from "../../components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
-export function ApprovedPayment({ steps }) {
-  const { numbers, content } = steps;
+export function ApprovedPayment({ howWorks }) {
+  const { numbers, content } = howWorks;
 
   return (
     <Wrapper>
@@ -49,7 +49,7 @@ export function ApprovedPayment({ steps }) {
         </Link>
         <Content>
           <IconContainer>
-            <CheckIcon />
+            <Image src={checkIcon} alt="icono" width={76} height={76} />
           </IconContainer>
           <Heading>¡Felicitaciones!</Heading>
           <SubHeading>Tú sitio web, está en camino</SubHeading>

@@ -5,19 +5,21 @@ import { Features } from "../containers/Features";
 import { CtaHome } from "../containers/CtaHome";
 
 // components
-import Layout from "../components/shared/Layout";
+import { Layout } from "../components/shared/Layout";
 
 // data
-import { featuresData, heroImagesData, stepsData } from "../data/home";
+import { carouselImages } from "../data/carouselImages";
+import { featuresData } from "../data/features";
+import { howWorksData } from "../data/howWorks";
 
-export default function Home({ heroImages, features, steps }) {
+export default function Home({ heroImages, features, howWorks }) {
   return (
     <Layout
       title="Crea el sitio web de tu negocio a bajo costo"
       description="Dale a tu negocio la presencia digital que necesita con sitio web profesional, moderno, económico y al aire en tan solo 5 días."
     >
       <HomeHero images={heroImages} />
-      <HowDoesWork steps={steps} />
+      <HowDoesWork howWorks={howWorks} />
       <Features features={features} />
       <CtaHome />
     </Layout>
@@ -27,9 +29,9 @@ export default function Home({ heroImages, features, steps }) {
 export async function getStaticProps() {
   return {
     props: {
-      heroImages: heroImagesData,
+      heroImages: carouselImages,
       features: featuresData,
-      steps: stepsData,
+      howWorks: howWorksData,
     },
   };
 }

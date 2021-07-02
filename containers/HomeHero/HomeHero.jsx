@@ -3,7 +3,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 
 // components
-import Button from "../../components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
 // styled
 import {

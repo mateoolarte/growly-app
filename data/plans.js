@@ -1,35 +1,35 @@
-// assets
-import StarterIcon from "../assets/icons/rocketship.svg";
-import PortfolioIcon from "../assets/icons/funnel.svg";
-import CoffeeIcon from "../assets/icons/coffee.svg";
-import FoodIcon from "../assets/icons/food.svg";
-import RestaurantIcon from "../assets/icons/restaurant.svg";
-import FilesIcon from "../assets/icons/files.svg";
-import MoneyIcon from "../assets/icons/money.svg";
-import FocusIcon from "../assets/icons/focus.svg";
-import CloudIcon from "../assets/icons/cloud.svg";
-import MegafoneIcon from "../assets/icons/megafone.svg";
-import GearIcon from "../assets/icons/gear.svg";
-import MessageIcon from "../assets/icons/message.svg";
-import VideoIcon from "../assets/icons/video.svg";
-import SofaIcon from "../assets/icons/sofa.svg";
-import BuildingIcon from "../assets/icons/building.svg";
-import BriefCaseIcon from "../assets/icons/briefcase.svg";
-import ComputerIcon from "../assets/icons/computer-2.svg";
-import GirlIcon from "../assets/icons/girl.svg";
-import PresentationIcon from "../assets/icons/presentation.svg";
-import SpeakerIcon from "../assets/icons/speaker.svg";
-import PetIcon from "../assets/icons/pet.svg";
-import BoxIcon from "../assets/icons/box.svg";
-import Presentation2Icon from "../assets/icons/presentation-2.svg";
-import FruitIcon from "../assets/icons/fruit.svg";
-import FlowerIcon from "../assets/icons/flower.svg";
-import RunIcon from "../assets/icons/run.svg";
-import StrechIcon from "../assets/icons/strech.svg";
-import WeighIcon from "../assets/icons/weigh.svg";
-import ScissorsIcon from "../assets/icons/scissors.svg";
-import RazorIcon from "../assets/icons/razor.svg";
-import AnchorIcon from "../assets/icons/anchor.svg";
+const coffeeIcon = "/icons/coffee.svg";
+const foodIcon = "/icons/food.svg";
+const restaurantIcon = "/icons/restaurant.svg";
+const filesIcon = "/icons/files.svg";
+const moneyIcon = "/icons/money.svg";
+const focusIcon = "/icons/focus.svg";
+const cloudIcon = "/icons/cloud.svg";
+const megafoneIcon = "/icons/megafone.svg";
+const gearIcon = "/icons/gear.svg";
+const messageIcon = "/icons/message.svg";
+const videoIcon = "/icons/video.svg";
+const sofaIcon = "/icons/sofa.svg";
+const buildingIcon = "/icons/building.svg";
+const briefCaseIcon = "/icons/briefcase.svg";
+const computerIcon = "/icons/computer-2.svg";
+const girlIcon = "/icons/girl.svg";
+const presentationIcon = "/icons/presentation.svg";
+const speakerIcon = "/icons/speaker.svg";
+const petIcon = "/icons/pet.svg";
+const boxIcon = "/icons/box.svg";
+const presentation2Icon = "/icons/presentation-2.svg";
+const fruitIcon = "/icons/fruit.svg";
+const flowerIcon = "/icons/flower.svg";
+const runIcon = "/icons/run.svg";
+const strechIcon = "/icons/strech.svg";
+const weighIcon = "/icons/weigh.svg";
+const scissorsIcon = "/icons/scissors.svg";
+const razorIcon = "/icons/razor.svg";
+const anchorIcon = "/icons/anchor.svg";
+
+const rocketshipIcon = "/icons/rocketship.svg";
+const funnelIcon = "/icons/funnel.svg";
 
 const dealiaLogo = "/images/templates/dealia-logo.png";
 const dealiaThumbnail = "/images/templates/dealia-thumbnail.png";
@@ -63,17 +63,17 @@ const telloThumbnail = "/images/templates/tello-thumbnail.png";
 const heriaLogo = "/images/templates/heria-logo.png";
 const heriaThumbnail = "/images/templates/heria-thumbnail.png";
 
-const plans = [
+export const plansData = [
   {
     id: 1,
-    title: "Starter",
+    title: "starter",
     description:
       "El plan Starter está diseñado para empresas que necesitan comenzar su presencia digital con poco presupuesto y con una estructura de contenidos básica.",
-    Icon: StarterIcon,
+    icon: rocketshipIcon,
     pricing: "$749.000",
     priceInCents: "74900000",
-    pricingPremium: "$1'049.000",
-    pricePremiumInCents: "104900000",
+    premiumPrice: "$1'049.000",
+    premiumPriceInCents: "104900000",
     features: [
       "Sitio web con hasta 5 secciones incluyendo el Home.",
       "1 Formulario de contacto",
@@ -91,12 +91,12 @@ const plans = [
         thumbnail: dealiaThumbnail,
         logoImg: dealiaLogo,
         preferences: [
-          { id: 1, Icon: CoffeeIcon, tooltipText: "Cafetería" },
-          { id: 2, Icon: FoodIcon, tooltipText: "Heladería" },
-          { id: 3, Icon: RestaurantIcon, tooltipText: "Restaurante" },
+          { id: 1, icon: coffeeIcon, tooltipText: "Cafetería" },
+          { id: 2, icon: foodIcon, tooltipText: "Heladería" },
+          { id: 3, icon: restaurantIcon, tooltipText: "Restaurante" },
         ],
         demoLink: "http://dealia.getgrowly.com",
-        themeLink: "/plantillas/dealia?type=Starter",
+        templateLink: "/plantillas/starter/dealia",
       },
       {
         id: 2,
@@ -106,15 +106,15 @@ const plans = [
         preferences: [
           {
             id: 1,
-            Icon: FilesIcon,
+            icon: filesIcon,
             tooltipText: "Administración y contabilidad",
           },
-          { id: 2, Icon: MoneyIcon, tooltipText: "Negocios y finanzas" },
-          { id: 3, Icon: FocusIcon, tooltipText: "Startups" },
-          { id: 4, Icon: CloudIcon, tooltipText: "Tecnología" },
+          { id: 2, icon: moneyIcon, tooltipText: "Negocios y finanzas" },
+          { id: 3, icon: focusIcon, tooltipText: "Startups" },
+          { id: 4, icon: cloudIcon, tooltipText: "Tecnología" },
         ],
         demoLink: "http://deuter.getgrowly.com",
-        themeLink: "/plantillas/deuter?type=Starter",
+        templateLink: "/plantillas/starter/deuter",
       },
       {
         id: 3,
@@ -124,16 +124,16 @@ const plans = [
         preferences: [
           {
             id: 1,
-            Icon: FilesIcon,
+            icon: filesIcon,
             tooltipText: "Administración y contabilidad",
           },
-          { id: 2, Icon: MoneyIcon, tooltipText: "Negocios y finanzas" },
-          { id: 3, Icon: FocusIcon, tooltipText: "Startups" },
-          { id: 4, Icon: CloudIcon, tooltipText: "Tecnología" },
-          { id: 5, Icon: MegafoneIcon, tooltipText: "Agencias de marketing" },
+          { id: 2, icon: moneyIcon, tooltipText: "Negocios y finanzas" },
+          { id: 3, icon: focusIcon, tooltipText: "Startups" },
+          { id: 4, icon: cloudIcon, tooltipText: "Tecnología" },
+          { id: 5, icon: megafoneIcon, tooltipText: "Agencias de marketing" },
         ],
         demoLink: "http://criket.getgrowly.com",
-        themeLink: "/plantillas/criket?type=Starter",
+        templateLink: "/plantillas/starter/criket",
       },
       {
         id: 4,
@@ -141,13 +141,13 @@ const plans = [
         thumbnail: snapThumbnail,
         logoImg: snapLogo,
         preferences: [
-          { id: 1, Icon: GearIcon, tooltipText: "Software y apps" },
-          { id: 2, Icon: FocusIcon, tooltipText: "Startups" },
-          { id: 3, Icon: CloudIcon, tooltipText: "Tecnología" },
+          { id: 1, icon: gearIcon, tooltipText: "Software y apps" },
+          { id: 2, icon: focusIcon, tooltipText: "Startups" },
+          { id: 3, icon: cloudIcon, tooltipText: "Tecnología" },
         ],
         demoLink:
           "https://drive.google.com/file/d/1vNsd_tJw1BNBgVkggyi1YYJ5bxStRgAW/view?usp=sharing",
-        themeLink: "/plantillas/snap?type=Starter",
+        templateLink: "/plantillas/starter/snap",
       },
       {
         id: 5,
@@ -155,13 +155,13 @@ const plans = [
         thumbnail: strikThumbnail,
         logoImg: strikLogo,
         preferences: [
-          { id: 1, Icon: MessageIcon, tooltipText: "Diseño y publicidad" },
-          { id: 2, Icon: VideoIcon, tooltipText: "Agencias audiovisuales" },
-          { id: 3, Icon: MegafoneIcon, tooltipText: "Agencias de marketing" },
+          { id: 1, icon: messageIcon, tooltipText: "Diseño y publicidad" },
+          { id: 2, icon: videoIcon, tooltipText: "Agencias audiovisuales" },
+          { id: 3, icon: megafoneIcon, tooltipText: "Agencias de marketing" },
         ],
         demoLink:
           "https://drive.google.com/file/d/1T3cy2aQ64UdDFF0gZILuu8TLIfu1eYP8/view?usp=sharing",
-        themeLink: "/plantillas/strik?type=Starter",
+        templateLink: "/plantillas/starter/strik",
       },
       {
         id: 6,
@@ -171,14 +171,14 @@ const plans = [
         preferences: [
           {
             id: 1,
-            Icon: SofaIcon,
+            icon: sofaIcon,
             tooltipText: "Diseño interior y mobiliario",
           },
-          { id: 2, Icon: BuildingIcon, tooltipText: "Arquitectura" },
+          { id: 2, icon: buildingIcon, tooltipText: "Arquitectura" },
         ],
         demoLink:
           "https://drive.google.com/file/d/1inz-RDJPoG8kg2Zmvq1S-xrxB4p8vbxS/view?usp=sharing",
-        themeLink: "/plantillas/amelia?type=Starter",
+        templateLink: "/plantillas/starter/amelia",
       },
       {
         id: 7,
@@ -186,14 +186,14 @@ const plans = [
         thumbnail: cretoThumbnail,
         logoImg: cretoLogo,
         preferences: [
-          { id: 1, Icon: BriefCaseIcon, tooltipText: "Independientes" },
-          { id: 2, Icon: ComputerIcon, tooltipText: "Marketers" },
-          { id: 3, Icon: GirlIcon, tooltipText: "Empresarios" },
-          { id: 4, Icon: PresentationIcon, tooltipText: "Coaching" },
-          { id: 5, Icon: SpeakerIcon, tooltipText: "Speakers" },
+          { id: 1, icon: briefCaseIcon, tooltipText: "Independientes" },
+          { id: 2, icon: computerIcon, tooltipText: "Marketers" },
+          { id: 3, icon: girlIcon, tooltipText: "Empresarios" },
+          { id: 4, icon: presentationIcon, tooltipText: "Coaching" },
+          { id: 5, icon: speakerIcon, tooltipText: "Speakers" },
         ],
         demoLink: "http://creto.getgrowly.com",
-        themeLink: "/plantillas/creto?type=Starter",
+        templateLink: "/plantillas/starter/creto",
       },
       {
         id: 8,
@@ -201,10 +201,10 @@ const plans = [
         thumbnail: veneziaThumbnail,
         logoImg: veneziaLogo,
         preferences: [
-          { id: 1, Icon: PetIcon, tooltipText: "Centros veterinarios" },
+          { id: 1, icon: petIcon, tooltipText: "Centros veterinarios" },
         ],
         demoLink: "http://venezia.getgrowly.com",
-        themeLink: "/plantillas/venezia?type=Starter",
+        templateLink: "/plantillas/starter/venezia",
       },
       {
         id: 9,
@@ -212,13 +212,13 @@ const plans = [
         thumbnail: dynoThumbnail,
         logoImg: dynoLogo,
         preferences: [
-          { id: 1, Icon: BoxIcon, tooltipText: "Lanzamiento de producto" },
-          { id: 2, Icon: FocusIcon, tooltipText: "Startups" },
-          { id: 3, Icon: CloudIcon, tooltipText: "Tecnología" },
+          { id: 1, icon: boxIcon, tooltipText: "Lanzamiento de producto" },
+          { id: 2, icon: focusIcon, tooltipText: "Startups" },
+          { id: 3, icon: cloudIcon, tooltipText: "Tecnología" },
         ],
         demoLink:
           "https://drive.google.com/file/d/1M3iPCSAbrcJ3Bi3Fcw9_sWMQ7OqwoFH1/view?usp=sharing",
-        themeLink: "/plantillas/dyno?type=Starter",
+        templateLink: "/plantillas/starter/dyno",
       },
       {
         id: 10,
@@ -226,24 +226,24 @@ const plans = [
         thumbnail: printaThumbnail,
         logoImg: printaLogo,
         preferences: [
-          { id: 1, Icon: Presentation2Icon, tooltipText: "Eventos" },
+          { id: 1, icon: presentation2Icon, tooltipText: "Eventos" },
         ],
         demoLink:
           "https://drive.google.com/file/d/1zcoALbtD84VTk7UOLUAbQSs22Xug6QqR/view?usp=sharing",
-        themeLink: "/plantillas/printa?type=Starter",
+        templateLink: "/plantillas/starter/printa",
       },
     ],
   },
   {
     id: 2,
-    title: "Portfolio",
+    title: "portfolio",
     description:
       "El plan Portfolio está diseñado para empresas que requieran un sitio web con una estructura más grande y avanzada y que requieran comunicar más información, como sus servicios independientes o su portafolio y casos de éxito.",
-    Icon: PortfolioIcon,
+    icon: funnelIcon,
     pricing: "$1'099.000",
     priceInCents: "109900000",
-    pricingPremium: "$1'399.000",
-    pricePremiumInCents: "139900000",
+    premiumPrice: "$1'399.000",
+    premiumPriceInCents: "139900000",
     features: [
       "Sitio web con hasta 8 secciones incluyendo el Home.",
       "2 Formularios de contacto",
@@ -267,13 +267,13 @@ const plans = [
         description:
           "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump.",
         preferences: [
-          { id: 1, Icon: FruitIcon, tooltipText: "Yoga y relajación" },
-          { id: 2, Icon: FlowerIcon, tooltipText: "SPA" },
-          { id: 3, Icon: RunIcon, tooltipText: "Fitness y CAF" },
-          { id: 4, Icon: StrechIcon, tooltipText: "Academías de baile" },
+          { id: 1, icon: fruitIcon, tooltipText: "Yoga y relajación" },
+          { id: 2, icon: flowerIcon, tooltipText: "SPA" },
+          { id: 3, icon: runIcon, tooltipText: "Fitness y CAF" },
+          { id: 4, icon: strechIcon, tooltipText: "Academías de baile" },
         ],
         demoLink: "https://afair.getgrowly.com/",
-        themeLink: "/plantillas/afair?type=Portfolio",
+        templateLink: "/plantillas/portfolio/afair",
       },
       {
         id: 2,
@@ -283,13 +283,13 @@ const plans = [
         preferences: [
           {
             id: 1,
-            Icon: WeighIcon,
+            icon: weighIcon,
             tooltipText: "Gimnasios y centros de entrenamiento",
           },
-          { id: 2, Icon: RunIcon, tooltipText: "Fitness y CAF" },
+          { id: 2, icon: runIcon, tooltipText: "Fitness y CAF" },
         ],
         demoLink: "https://zalepp.getgrowly.com/",
-        themeLink: "/plantillas/zalep?type=Portfolio",
+        templateLink: "/plantillas/portfolio/zalep",
       },
       {
         id: 3,
@@ -297,11 +297,11 @@ const plans = [
         thumbnail: bentoThumbnail,
         logoImg: bentoLogo,
         preferences: [
-          { id: 1, Icon: ScissorsIcon, tooltipText: "Salones de belleza" },
-          { id: 2, Icon: RazorIcon, tooltipText: "Barberias" },
+          { id: 1, icon: scissorsIcon, tooltipText: "Salones de belleza" },
+          { id: 2, icon: razorIcon, tooltipText: "Barberias" },
         ],
         demoLink: "http://bento.getgrowly.com",
-        themeLink: "/plantillas/bento?type=Portfolio",
+        templateLink: "/plantillas/portfolio/bento",
       },
       {
         id: 4,
@@ -311,16 +311,16 @@ const plans = [
         preferences: [
           {
             id: 1,
-            Icon: FilesIcon,
+            icon: filesIcon,
             tooltipText: "Administración y contabilidad",
           },
-          { id: 2, Icon: MoneyIcon, tooltipText: "Negocios y finanzas" },
-          { id: 3, Icon: FocusIcon, tooltipText: "Startups" },
-          { id: 4, Icon: CloudIcon, tooltipText: "Tecnología" },
-          { id: 5, Icon: MegafoneIcon, tooltipText: "Agencias de marketing" },
+          { id: 2, icon: moneyIcon, tooltipText: "Negocios y finanzas" },
+          { id: 3, icon: focusIcon, tooltipText: "Startups" },
+          { id: 4, icon: cloudIcon, tooltipText: "Tecnología" },
+          { id: 5, icon: megafoneIcon, tooltipText: "Agencias de marketing" },
         ],
         demoLink: "http://tello.getgrowly.com",
-        themeLink: "/plantillas/tello?type=Portfolio",
+        templateLink: "/plantillas/portfolio/tello",
       },
       {
         id: 5,
@@ -328,13 +328,11 @@ const plans = [
         thumbnail: heriaThumbnail,
         logoImg: heriaLogo,
         preferences: [
-          { id: 1, Icon: AnchorIcon, tooltipText: "Estudios de tattoo" },
+          { id: 1, icon: anchorIcon, tooltipText: "Estudios de tattoo" },
         ],
         demoLink: "http://heria.getgrowly.com",
-        themeLink: "/plantillas/heria?type=Portfolio",
+        templateLink: "/plantillas/portfolio/heria",
       },
     ],
   },
 ];
-
-export default plans;

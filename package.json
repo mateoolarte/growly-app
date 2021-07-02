@@ -29,9 +29,8 @@
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-styled-components": "^1.13.1",
     "cypress": "^7.6.0",
-    "eslint": "^7.29.0",
+    "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1",
-    "jest": "^27.0.6",
-    "react-test-renderer": "^17.0.2"
+    "jest": "^27.0.6"
   }
 }

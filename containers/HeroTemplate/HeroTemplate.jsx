@@ -38,9 +38,9 @@ import {
 import { PricingContainer, Pricing, Flag, Note } from "../HeroTemplates/styled";
 
 // assets
-const FlagCOP = "/images/colombia-flag.png";
-import InfoIcon from "../../assets/icons/info.svg";
-import ArrowLeft from "../../assets/icons/left-arrow.svg";
+const flagCOP = "/images/colombia-flag.png";
+const infoIcon = "/icons/info.svg";
+const arrowLeft = "/icons/left-arrow.svg";
 
 const BASIC_PLAN = "basic";
 const PREMIUM_PLAN = "premium";
@@ -63,7 +63,7 @@ export function HeroTemplate({
   function handlePremiumModal(e) {
     e.stopPropagation();
 
-    setPremiumPlanModal(true);
+    setPlanPremiumModal(true);
   }
 
   return (
@@ -82,7 +82,7 @@ export function HeroTemplate({
       <TopActions>
         <Link href="/plantillas" passHref>
           <BtnGoBack>
-            <ArrowLeft />
+            <Image src={arrowLeft} alt="icono" width={40} height={22} />
             Volver
           </BtnGoBack>
         </Link>
@@ -125,7 +125,7 @@ export function HeroTemplate({
               <strong>
                 {type} premium
                 <Icon type="button" onClick={handlePremiumModal}>
-                  <InfoIcon />
+                  <Image src={infoIcon} alt="icono" width={10} height={10} />
                 </Icon>
               </strong>
               <span>
@@ -141,7 +141,7 @@ export function HeroTemplate({
                   {activePlan === BASIC_PLAN && price}
                   {activePlan === PREMIUM_PLAN && premiumPrice}
                 </Pricing>
-                <Flag src={FlagCOP} alt="Bandera de Colombia" />
+                <Flag src={flagCOP} alt="Bandera de Colombia" />
                 <Note>
                   {type} {activePlan === BASIC_PLAN ? "básico" : "premium"}
                 </Note>

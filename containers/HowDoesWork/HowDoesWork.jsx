@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "../../components/ui/Button";
 
 // assets
-import ArrowIcon from "../../assets/icons/arrow-right.svg";
+const arrowIcon = "/icons/arrow-right.svg";
 
 // styled
 import {
@@ -48,7 +48,7 @@ export function HowDoesWork({ howWorks }) {
             {title && <StepContentTitle>{title}</StepContentTitle>}
             {id !== content.length && (
               <StepArrow>
-                <ArrowIcon />
+                <Image src={arrowIcon} alt="icono" width={70} height={20} />
               </StepArrow>
             )}
           </StepContentItem>

@@ -1,5 +1,6 @@
 // vendors
 import { useState } from "react";
+import Image from "next/image";
 
 // components
 import { Modal } from "../../components/ui/Modal";
@@ -17,7 +18,7 @@ import { Features, FeatureItem } from "../HeroTemplates/styled";
 import { Icon } from "../HeroTemplate/styled";
 
 // assets
-import InfoIcon from "../../assets/icons/info.svg";
+const infoIcon = "/icons/info.svg";
 
 const FEATURES = "features";
 const TERMS = "terms";
@@ -63,7 +64,12 @@ export function TermsTemplate({ features }) {
                     <>
                       {feature}
                       <Icon type="button" onClick={() => setHostingModal(true)}>
-                        <InfoIcon />
+                        <Image
+                          src={infoIcon}
+                          alt="icono"
+                          width={10}
+                          height={10}
+                        />
                       </Icon>
                     </>
                   )}

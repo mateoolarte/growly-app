@@ -5,7 +5,7 @@ import Image from "next/image";
 
 // assets
 import { LogoImg } from "../../assets/Logo";
-import ArrowIcon from "../../assets/icons/arrow-right.svg";
+const arrowIcon = "/icons/arrow-right.svg";
 const checkIcon = "/icons/check.svg";
 
 // styles
@@ -71,7 +71,7 @@ export function ApprovedPayment({ howWorks }) {
                 <StepContentTitle>{title}</StepContentTitle>
                 {id !== content.length && (
                   <StepArrow>
-                    <ArrowIcon />
+                    <Image src={arrowIcon} alt="icono" width={70} height={20} />
                   </StepArrow>
                 )}
               </StepContentItem>

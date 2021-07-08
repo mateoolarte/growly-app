@@ -1,7 +1,7 @@
 module.exports = {
   collectCoverageFrom: ['**/*.{js,jsx}', '!**/node_modules/**'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
-  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
+  testPathIgnorePatterns: ['/node_modules/', '/.next/', '/cypress/'],
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(js|jsx)$': '<rootDir>/node_modules/babel-jest',

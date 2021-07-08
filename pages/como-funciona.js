@@ -1,13 +1,13 @@
 // containers
-import { HeroHowWorks } from "../containers/HeroHowWorks";
-import { Steps } from "../containers/Steps";
-import { CtaHowWorks } from "../containers/CtaHowWorks";
+import { HeroHowWorks } from '../containers/HeroHowWorks';
+import { Steps } from '../containers/Steps';
+import { CtaHowWorks } from '../containers/CtaHowWorks';
 
 // components
-import { Layout } from "../components/shared/Layout";
+import { Layout } from '../components/shared/Layout';
 
 // data
-import { stepsData } from "../data/steps";
+import { stepsData } from '../data/steps';
 
 export default function HowWorks({ steps }) {
   return (

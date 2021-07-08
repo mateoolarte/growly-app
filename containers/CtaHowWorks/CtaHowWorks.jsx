@@ -6,13 +6,13 @@ import {
   Description,
   Actions,
   BgImage,
-} from "./styled";
+} from './styled';
 
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 // assets
-const bgImg = "/images/bg-cta-how-works.png";
+const bgImg = '/images/bg-cta-how-works.png';
 
 export function CtaHowWorks() {
   function handleChat(e) {

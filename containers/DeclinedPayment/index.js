@@ -1,1 +1,1 @@
-export { DeclinedPayment } from "./DeclinedPayment";
+export { DeclinedPayment } from './DeclinedPayment';

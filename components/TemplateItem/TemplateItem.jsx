@@ -1,9 +1,9 @@
 // vendors
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
 // components
-import { Button } from "../ui/Button";
+import { Button } from '../ui/Button';
 
 // styled
 import {
@@ -19,7 +19,7 @@ import {
   Actions,
   IconContainer,
   PreferenceText,
-} from "./styled";
+} from './styled';
 
 export function TemplateItem({
   logoImg,

@@ -6,7 +6,7 @@ import {
   Info,
   Title,
   Description,
-} from "./styled";
+} from './styled';
 
 export function FeatureItem({ isAlt, title, image, description, bgText }) {
   return (

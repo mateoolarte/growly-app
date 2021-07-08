@@ -1,11 +1,11 @@
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 // assets
-const bg = "/images/cta-home-bg.jpg";
+const bg = '/images/cta-home-bg.jpg';
 
 // styles
-import { Wrapper, Info, Title, Subtitle, ImageBox, Image } from "./styled";
+import { Wrapper, Info, Title, Subtitle, ImageBox, Image } from './styled';
 
 export function CtaHome() {
   return (

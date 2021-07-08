@@ -1,22 +1,22 @@
 // utils
-import { render, fireEvent, screen } from "test-utils";
+import { render, fireEvent, screen } from 'test-utils';
 
 // components
-import { Modal } from "..";
+import { Modal } from '..';
 
-describe("Modal", () => {
+describe('Modal', () => {
   let props = {
     isActive: false,
     handleClose: () => {},
   };
 
-  it("Should render the default component", () => {
+  it('Should render the default component', () => {
     const { getByTestId } = render(<Modal {...props}>Modal component</Modal>);
 
-    expect(getByTestId("inactive")).toBeTruthy();
+    expect(getByTestId('inactive')).toBeTruthy();
   });
 
-  it("Should render modal active", () => {
+  it('Should render modal active', () => {
     props = {
       ...props,
       isActive: true,
@@ -26,7 +26,7 @@ describe("Modal", () => {
       <Modal {...props}>Modal component</Modal>
     );
 
-    expect(getByTestId("active")).toBeTruthy();
-    expect(getByText("Modal component")).toBeTruthy();
+    expect(getByTestId('active')).toBeTruthy();
+    expect(getByText('Modal component')).toBeTruthy();
   });
 });

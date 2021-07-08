@@ -1,12 +1,12 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   position: fixed;
   z-index: 3;
   top: 0;
   left: 0;
-  display: ${(props) => (props && props.isActive ? "flex" : "none")};
+  display: ${(props) => (props && props.isActive ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
   width: 100%;

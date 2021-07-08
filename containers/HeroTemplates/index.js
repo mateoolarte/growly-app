@@ -1,1 +1,1 @@
-export { HeroTemplates } from "./HeroTemplates";
+export { HeroTemplates } from './HeroTemplates';

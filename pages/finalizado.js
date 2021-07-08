@@ -1,15 +1,15 @@
 // containers
-import { ApprovedPayment } from "../containers/ApprovedPayment";
-import { DeclinedPayment } from "../containers/DeclinedPayment";
+import { ApprovedPayment } from '../containers/ApprovedPayment';
+import { DeclinedPayment } from '../containers/DeclinedPayment';
 
 // data
-import { howWorksData } from "../data/howWorks";
+import { howWorksData } from '../data/howWorks';
 
-const APPROVED = "APPROVED";
-const DECLINED = "DECLINED";
-const VOIDED = "VOIDED";
-const ERROR = "ERROR";
-const PENDING = "PENDING";
+const APPROVED = 'APPROVED';
+const DECLINED = 'DECLINED';
+const VOIDED = 'VOIDED';
+const ERROR = 'ERROR';
+const PENDING = 'PENDING';
 
 export default function Finished({ status, howWorks }) {
   if (!status || status === DECLINED || status === VOIDED || status === ERROR) {
@@ -28,14 +28,14 @@ export default function Finished({ status, howWorks }) {
 
 export async function getServerSideProps({ query }) {
   const url = `https://${process.env.NEXT_PUBLIC_WOMPI_TRANSACTIONS_API_ENV}.wompi.co/v1/transactions/${query?.id}`;
-  let status = "";
+  let status = '';
 
   try {
     const response = await fetch(url);
     const parsedResponse = await response.json();
     const data = parsedResponse?.data;
 
-    status = data?.status || "";
+    status = data?.status || '';
   } catch (error) {
     throw new Error(`Something went wrong: ${error}`);
   }

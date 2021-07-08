@@ -1,12 +1,12 @@
 // vendors
-import styled from "styled-components";
-import Image from "next/image";
+import styled from 'styled-components';
+import Image from 'next/image';
 
 // constants
-import { MEDIA_QUERIES } from "../../../utils/constants";
+import { MEDIA_QUERIES } from '../../../utils/constants';
 
 // assets
-const bgPattern = "/images/bg-pattern.png";
+const bgPattern = '/images/bg-pattern.png';
 
 export const Wrapper = styled.footer`
   max-width: ${(props) => props && props.theme.sizes.container};
@@ -14,7 +14,7 @@ export const Wrapper = styled.footer`
   padding-bottom: 2rem;
 
   ${MEDIA_QUERIES.tablet} {
-    background-image: url("${bgPattern}");
+    background-image: url('${bgPattern}');
     background-position: center 15%;
     background-size: 100%;
     background-repeat: no-repeat;

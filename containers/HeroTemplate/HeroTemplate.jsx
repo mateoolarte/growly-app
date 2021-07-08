@@ -1,12 +1,12 @@
 // vendors
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 // components
-import { Button } from "../../components/ui/Button";
-import { Modal } from "../../components/ui/Modal";
-import { Checkout } from "../../components/Checkout";
+import { Button } from '../../components/ui/Button';
+import { Modal } from '../../components/ui/Modal';
+import { Checkout } from '../../components/Checkout';
 
 // styled
 import {
@@ -23,7 +23,7 @@ import {
   Price,
   Icon,
   BtnGoBack,
-} from "./styled";
+} from './styled';
 
 import {
   PreferenceTitle,
@@ -33,17 +33,17 @@ import {
   PreferenceText,
   LogoContainer,
   Logo,
-} from "../../components/TemplateItem/styled";
+} from '../../components/TemplateItem/styled';
 
-import { PricingContainer, Pricing, Flag, Note } from "../HeroTemplates/styled";
+import { PricingContainer, Pricing, Flag, Note } from '../HeroTemplates/styled';
 
 // assets
-const flagCOP = "/images/colombia-flag.png";
-const infoIcon = "/icons/info.svg";
-const arrowLeft = "/icons/left-arrow.svg";
+const flagCOP = '/images/colombia-flag.png';
+const infoIcon = '/icons/info.svg';
+const arrowLeft = '/icons/left-arrow.svg';
 
-const BASIC_PLAN = "basic";
-const PREMIUM_PLAN = "premium";
+const BASIC_PLAN = 'basic';
+const PREMIUM_PLAN = 'premium';
 
 export function HeroTemplate({
   name,
@@ -143,7 +143,7 @@ export function HeroTemplate({
                 </Pricing>
                 <Flag src={flagCOP} alt="Bandera de Colombia" />
                 <Note>
-                  {type} {activePlan === BASIC_PLAN ? "básico" : "premium"}
+                  {type} {activePlan === BASIC_PLAN ? 'básico' : 'premium'}
                 </Note>
               </PricingContainer>
             </Price>

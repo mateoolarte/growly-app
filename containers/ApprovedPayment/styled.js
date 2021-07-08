@@ -1,23 +1,23 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 // assets
-const bgImg = "/images/hero-confirmacion-growly.jpg";
+const bgImg = '/images/hero-confirmacion-growly.jpg';
 
 export const Wrapper = styled.main`
   ${MEDIA_QUERIES.landscape} {
     position: relative;
-    background-image: url("${bgImg}");
+    background-image: url('${bgImg}');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100%;
   }
 
   &::before {
-    content: "";
+    content: '';
 
     ${MEDIA_QUERIES.landscape} {
       position: absolute;

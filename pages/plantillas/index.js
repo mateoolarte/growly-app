@@ -1,16 +1,16 @@
 // vendors
-import { useState } from "react";
+import { useState } from 'react';
 
 // components
-import { Layout } from "../../components/shared/Layout";
+import { Layout } from '../../components/shared/Layout';
 
 // containers
-import { HeroTemplates } from "../../containers/HeroTemplates";
-import { TemplatesList } from "../../containers/TemplatesList";
-import { CtaTemplates } from "../../containers/CtaTemplates";
+import { HeroTemplates } from '../../containers/HeroTemplates';
+import { TemplatesList } from '../../containers/TemplatesList';
+import { CtaTemplates } from '../../containers/CtaTemplates';
 
 // data
-import { plansData } from "../../data/plans";
+import { plansData } from '../../data/plans';
 
 export default function Templates({ plans }) {
   const [currentPlan, setCurrentPlan] = useState(0);

@@ -1,9 +1,9 @@
 // vendors
-import { useState } from "react";
-import Image from "next/image";
+import { useState } from 'react';
+import Image from 'next/image';
 
 // components
-import { Modal } from "../../components/ui/Modal";
+import { Modal } from '../../components/ui/Modal';
 
 // styled
 import {
@@ -13,15 +13,15 @@ import {
   TabItem,
   TabButton,
   TabContent,
-} from "./styled";
-import { Features, FeatureItem } from "../HeroTemplates/styled";
-import { Icon } from "../HeroTemplate/styled";
+} from './styled';
+import { Features, FeatureItem } from '../HeroTemplates/styled';
+import { Icon } from '../HeroTemplate/styled';
 
 // assets
-const infoIcon = "/icons/info.svg";
+const infoIcon = '/icons/info.svg';
 
-const FEATURES = "features";
-const TERMS = "terms";
+const FEATURES = 'features';
+const TERMS = 'terms';
 
 export function TermsTemplate({ features }) {
   const [activeTab, setActiveTab] = useState(FEATURES);

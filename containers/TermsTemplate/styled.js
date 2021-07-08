@@ -1,8 +1,8 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 const Wrapper = styled.section`
   position: relative;
@@ -28,7 +28,7 @@ const TabButton = styled.button`
   border-bottom: ${(props) =>
     props && props.isActive
       ? `3px solid ${props.theme.colors.secondary}`
-      : "0"};
+      : '0'};
   background: none;
   color: ${(props) =>
     props && props.isActive
@@ -44,7 +44,7 @@ const TabButton = styled.button`
 `;
 
 const TabContent = styled.div`
-  display: ${(props) => (props && props.isActive ? "block" : "none")};
+  display: ${(props) => (props && props.isActive ? 'block' : 'none')};
 
   .terms-item {
     margin-bottom: 0.8rem;

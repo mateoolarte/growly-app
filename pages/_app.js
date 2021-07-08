@@ -1,17 +1,17 @@
 // vendors
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // theme
-import { theme } from "../utils/theme";
+import { theme } from '../utils/theme';
 
 // hooks
-import { useTrackingPage } from "../hooks/useTrackingPage";
-import { useSupportChat } from "../hooks/useSupportChat";
+import { useTrackingPage } from '../hooks/useTrackingPage';
+import { useSupportChat } from '../hooks/useSupportChat';
 
 // components
-import { Scripts } from "../components/shared/Scripts";
+import { Scripts } from '../components/shared/Scripts';
 
 const GlobalStyles = createGlobalStyle`
   * {

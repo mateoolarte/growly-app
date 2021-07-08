@@ -1,8 +1,8 @@
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 // styles
-import { Wrapper, Title, Description } from "./styled";
+import { Wrapper, Title, Description } from './styled';
 
 export function CtaTemplates() {
   function handleChat(e) {

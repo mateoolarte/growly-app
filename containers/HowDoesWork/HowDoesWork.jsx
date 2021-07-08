@@ -1,11 +1,11 @@
 // vendors
-import Image from "next/image";
+import Image from 'next/image';
 
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 // assets
-const arrowIcon = "/icons/arrow-right.svg";
+const arrowIcon = '/icons/arrow-right.svg';
 
 // styled
 import {
@@ -19,7 +19,7 @@ import {
   StepContentItem,
   StepContentTitle,
   StepArrow,
-} from "./styled";
+} from './styled';
 
 export function HowDoesWork({ howWorks }) {
   const { numbers, content } = howWorks;

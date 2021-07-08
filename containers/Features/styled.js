@@ -1,8 +1,8 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 export const FeaturesContainer = styled.div`
   width: 95%;

@@ -1,8 +1,8 @@
 // components
-import { TemplateItem } from "../../components/TemplateItem";
+import { TemplateItem } from '../../components/TemplateItem';
 
 // styles
-import { Wrapper, Heading } from "./styled";
+import { Wrapper, Heading } from './styled';
 
 export function TemplatesList({ plans, currentPlan }) {
   return (

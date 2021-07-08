@@ -1,16 +1,16 @@
 // containers
-import { HomeHero } from "../containers/HomeHero";
-import { HowDoesWork } from "../containers/HowDoesWork";
-import { Features } from "../containers/Features";
-import { CtaHome } from "../containers/CtaHome";
+import { HomeHero } from '../containers/HomeHero';
+import { HowDoesWork } from '../containers/HowDoesWork';
+import { Features } from '../containers/Features';
+import { CtaHome } from '../containers/CtaHome';
 
 // components
-import { Layout } from "../components/shared/Layout";
+import { Layout } from '../components/shared/Layout';
 
 // data
-import { carouselImages } from "../data/carouselImages";
-import { featuresData } from "../data/features";
-import { howWorksData } from "../data/howWorks";
+import { carouselImages } from '../data/carouselImages';
+import { featuresData } from '../data/features';
+import { howWorksData } from '../data/howWorks';
 
 export default function Home({ heroImages, features, howWorks }) {
   return (

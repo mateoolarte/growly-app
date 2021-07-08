@@ -1,8 +1,8 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 10rem;
-    ${(props) => (props && props.isAlt ? "flex-direction: row-reverse" : "")};
+    ${(props) => (props && props.isAlt ? 'flex-direction: row-reverse' : '')};
     overflow: unset;
   }
 
@@ -55,7 +55,7 @@ export const ImageContainer = styled.div`
   ${MEDIA_QUERIES.tablet} {
     width: 55%;
     ${(props) =>
-      props && props.isAlt ? "margin-left: 2rem;" : "margin-right: 2rem;"};
+      props && props.isAlt ? 'margin-left: 2rem;' : 'margin-right: 2rem;'};
     margin-bottom: 0;
     text-align: center;
   }

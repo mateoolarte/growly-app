@@ -1,1 +1,1 @@
-export { CtaTemplates } from "./CtaTemplates";
+export { CtaTemplates } from './CtaTemplates';

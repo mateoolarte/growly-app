@@ -1,8 +1,8 @@
 // components
-import { FeatureItem } from "../../components/FeatureItem";
+import { FeatureItem } from '../../components/FeatureItem';
 
 // styles
-import { FeaturesContainer } from "./styled";
+import { FeaturesContainer } from './styled';
 
 export function Features({ features }) {
   return (

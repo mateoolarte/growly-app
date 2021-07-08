@@ -1,5 +1,5 @@
 // vendors
-import Image from "next/image";
+import Image from 'next/image';
 
 // styled
 import {
@@ -21,10 +21,10 @@ import {
   Description,
   Features,
   FeatureItem,
-} from "./styled";
+} from './styled';
 
 // assets
-const FlagCOP = "/images/colombia-flag.png";
+const FlagCOP = '/images/colombia-flag.png';
 
 export function HeroTemplates({ plans, currentPlan, handleCurrentPlan }) {
   const activePlan = plans[currentPlan];

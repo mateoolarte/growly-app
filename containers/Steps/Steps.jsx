@@ -1,8 +1,8 @@
 // components
-import { StepItem } from "../../components/StepItem";
+import { StepItem } from '../../components/StepItem';
 
 // styles
-import { Wrapper } from "./styled";
+import { Wrapper } from './styled';
 
 export function Steps({ steps }) {
   return (

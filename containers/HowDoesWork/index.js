@@ -1,1 +1,1 @@
-export { HowDoesWork } from "./HowDoesWork";
+export { HowDoesWork } from './HowDoesWork';

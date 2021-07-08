@@ -1,9 +1,9 @@
 // vendors
-import { useState } from "react";
-import Slider from "react-slick";
+import { useState } from 'react';
+import Slider from 'react-slick';
 
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 // styled
 import {
@@ -16,7 +16,7 @@ import {
   Gallery,
   SlideContainer,
   SlideImage,
-} from "./styled";
+} from './styled';
 
 export function HomeHero({ images }) {
   const [currentSlide, setCurrentSlide] = useState(0);

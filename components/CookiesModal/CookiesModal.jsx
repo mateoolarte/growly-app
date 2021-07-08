@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { getCookie, setCookie } from "../../utils/cookies";
+import { getCookie, setCookie } from '../../utils/cookies';
 
-import { Button } from "../ui/Button";
+import { Button } from '../ui/Button';
 
-import { Wrapper, Container, Title, Description, Actions } from "./styled";
+import { Wrapper, Container, Title, Description, Actions } from './styled';
 
 export function CookiesModal() {
-  const [isEnable, setIsEnable] = useState(getCookie("accept-cookies"));
+  const [isEnable, setIsEnable] = useState(getCookie('accept-cookies'));
 
   if (isEnable) {
     return null;
   }
 
   function handleAcceptCookies() {
-    setCookie("accept-cookies", true, 180);
+    setCookie('accept-cookies', true, 180);
     setIsEnable(true);
   }
 

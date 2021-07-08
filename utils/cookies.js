@@ -1,4 +1,4 @@
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
 export function getCookie(name) {
   return Cookies.get(name);
@@ -9,5 +9,5 @@ export function setCookie(name, value, days) {
 }
 
 export function deleteCookie(name) {
-  return Cookies.remove(name, { path: "" });
+  return Cookies.remove(name, { path: '' });
 }

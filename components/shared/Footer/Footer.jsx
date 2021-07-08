@@ -1,8 +1,8 @@
 // vendors
-import Link from "next/link";
+import Link from 'next/link';
 
 // assets
-const LogoSmall = "/images/logo-small.png";
+const LogoSmall = '/images/logo-small.png';
 
 // styled
 import {
@@ -14,10 +14,10 @@ import {
   CopyrightContainer,
   Logo,
   Copyright,
-} from "./styled";
+} from './styled';
 
 // data
-import { secondaryNavItems } from "../../../data/secondaryNavItems";
+import { secondaryNavItems } from '../../../data/secondaryNavItems';
 
 export function Footer() {
   function handleChat(e) {

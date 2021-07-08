@@ -1,14 +1,14 @@
 // vendors
-import Image from "next/image";
+import Image from 'next/image';
 
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 // styled
-import { Wrapper, Icon, Title, Subtitle, Description } from "./styled";
+import { Wrapper, Icon, Title, Subtitle, Description } from './styled';
 
 // assets
-const layoutIcon = "/icons/layout.svg";
+const layoutIcon = '/icons/layout.svg';
 
 export function CtaTemplate() {
   function handleChat(e) {

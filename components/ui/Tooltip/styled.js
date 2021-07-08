@@ -1,5 +1,5 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Box = styled.div`
-  display: ${({ isActive }) => (isActive ? "block" : "none")};
+  display: ${({ isActive }) => (isActive ? 'block' : 'none')};
   position: absolute;
   z-index: 1;
   top: -3.2rem;

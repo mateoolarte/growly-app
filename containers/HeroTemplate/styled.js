@@ -1,8 +1,8 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 export const Wrapper = styled.section`
   position: relative;
@@ -90,7 +90,7 @@ export const SelectPlanItem = styled.button`
   cursor: pointer;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 3px;
     left: 0;
@@ -105,7 +105,7 @@ export const SelectPlanItem = styled.button`
           ${props.theme.colors.secondary}
         );
         `
-        : "gray"};
+        : 'gray'};
   }
 
   span {

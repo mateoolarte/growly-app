@@ -1,17 +1,17 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 // assets
-const bgHowWorks = "/images/bg-how-works.jpg";
+const bgHowWorks = '/images/bg-how-works.jpg';
 
 const Wrapper = styled.section`
   position: relative;
   padding-top: 120px;
   padding-bottom: 3rem;
-  background-image: url("${bgHowWorks}");
+  background-image: url('${bgHowWorks}');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -31,7 +31,7 @@ const Wrapper = styled.section`
   }
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

@@ -1,8 +1,8 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 export const Wrapper = styled.section`
   width: 95%;
@@ -54,8 +54,8 @@ export const StepsContainer = styled.ul`
 export const StepItem = styled.li`
   width: calc(100% / 4 - 1rem);
   margin: 0 0.5rem;
-  filter: ${(props) => (props && props.disabled ? "grayscale(100%)" : "")};
-  opacity: ${(props) => (props && props.disabled ? "0.6" : "1")};
+  filter: ${(props) => (props && props.disabled ? 'grayscale(100%)' : '')};
+  opacity: ${(props) => (props && props.disabled ? '0.6' : '1')};
 
   ${MEDIA_QUERIES.tablet} {
     width: calc(100% / 4 - 2rem);
@@ -93,8 +93,8 @@ export const StepContentItem = styled.div`
   position: relative;
   width: calc(100% / 4 - 1rem);
   margin: 0 0.5rem;
-  filter: ${(props) => (props && props.disabled ? "grayscale(100%)" : "")};
-  opacity: ${(props) => (props && props.disabled ? "0.5" : "1")};
+  filter: ${(props) => (props && props.disabled ? 'grayscale(100%)' : '')};
+  opacity: ${(props) => (props && props.disabled ? '0.5' : '1')};
 `;
 
 export const StepContentTitle = styled.h3`

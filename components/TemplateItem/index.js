@@ -1,1 +1,1 @@
-export { TemplateItem } from "./TemplateItem";
+export { TemplateItem } from './TemplateItem';

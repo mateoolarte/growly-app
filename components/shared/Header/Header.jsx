@@ -1,12 +1,12 @@
 // vendors
-import Link from "next/link";
-import { useState } from "react";
+import Link from 'next/link';
+import { useState } from 'react';
 
 // assets
-import { LogoImg } from "../../../assets/Logo";
+import { LogoImg } from '../../../assets/Logo';
 
 // components
-import { Button } from "../../ui/Button";
+import { Button } from '../../ui/Button';
 
 // styled
 import {
@@ -18,7 +18,7 @@ import {
   NavigationLink,
   HamburgerIconContainer,
   HamburgerIconLine,
-} from "./styled";
+} from './styled';
 
 export function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);

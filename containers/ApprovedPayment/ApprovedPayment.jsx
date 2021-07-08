@@ -1,12 +1,12 @@
 // vendors
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
 
 // assets
-import { LogoImg } from "../../assets/Logo";
-const arrowIcon = "/icons/arrow-right.svg";
-const checkIcon = "/icons/check.svg";
+import { LogoImg } from '../../assets/Logo';
+const arrowIcon = '/icons/arrow-right.svg';
+const checkIcon = '/icons/check.svg';
 
 // styles
 import {
@@ -19,7 +19,7 @@ import {
   SubHeading,
   Description,
   Actions,
-} from "./styled";
+} from './styled';
 import {
   StepsContainer,
   StepItem,
@@ -28,10 +28,10 @@ import {
   StepContentItem,
   StepContentTitle,
   StepArrow,
-} from "../HowDoesWork/styled";
+} from '../HowDoesWork/styled';
 
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 export function ApprovedPayment({ howWorks }) {
   const { numbers, content } = howWorks;
@@ -81,7 +81,7 @@ export function ApprovedPayment({ howWorks }) {
           <Description>
             Nuestro equipo ha comenzado a preparar la creación de tu sitio web y
             en breve te estaremos contactando para darte los pasos a seguir.
-            Recuerda que tu sitio web estará al aire{" "}
+            Recuerda que tu sitio web estará al aire{' '}
             <strong>5 días hábiles</strong> luego de que hayas enviado la
             información requerida por nuestro equipo.
           </Description>

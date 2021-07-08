@@ -1,17 +1,17 @@
 // containers
-import { HeroTemplate } from "../../../containers/HeroTemplate";
-import { TermsTemplate } from "../../../containers/TermsTemplate";
-import { CtaTemplate } from "../../../containers/CtaTemplate";
+import { HeroTemplate } from '../../../containers/HeroTemplate';
+import { TermsTemplate } from '../../../containers/TermsTemplate';
+import { CtaTemplate } from '../../../containers/CtaTemplate';
 
 // components
-import { Layout } from "../../../components/shared/Layout";
+import { Layout } from '../../../components/shared/Layout';
 
 // data
-import { plansData } from "../../../data/plans";
+import { plansData } from '../../../data/plans';
 
 // utils
-import { getAllTemplates } from "../../../utils/getAllTemplates";
-import { getTemplateData } from "../../../utils/getTemplateData";
+import { getAllTemplates } from '../../../utils/getAllTemplates';
+import { getTemplateData } from '../../../utils/getTemplateData';
 
 export default function Template({ template, type }) {
   const { name, features } = template;

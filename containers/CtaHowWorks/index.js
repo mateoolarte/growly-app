@@ -1,1 +1,1 @@
-export { CtaHowWorks } from "./CtaHowWorks";
+export { CtaHowWorks } from './CtaHowWorks';

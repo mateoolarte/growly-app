@@ -1,1 +1,1 @@
-export { ApprovedPayment } from "./ApprovedPayment";
+export { ApprovedPayment } from './ApprovedPayment';

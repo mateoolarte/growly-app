@@ -1,11 +1,11 @@
 // vendors
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
 
 // assets
-import { LogoImg } from "../../assets/Logo";
-const faceSadIcon = "/icons/face-sad.svg";
+import { LogoImg } from '../../assets/Logo';
+const faceSadIcon = '/icons/face-sad.svg';
 
 // styles
 import {
@@ -18,10 +18,10 @@ import {
   Subtitle,
   Description,
   Actions,
-} from "./styled";
+} from './styled';
 
 // components
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../components/ui/Button';
 
 export function DeclinedPayment() {
   function handleChat(e) {

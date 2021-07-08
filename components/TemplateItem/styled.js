@@ -1,8 +1,8 @@
 // vendors
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // constants
-import { MEDIA_QUERIES } from "../../utils/constants";
+import { MEDIA_QUERIES } from '../../utils/constants';
 
 export const Wrapper = styled.article`
   display: flex;
@@ -12,7 +12,7 @@ export const Wrapper = styled.article`
 
   ${MEDIA_QUERIES.tablet} {
     flex-direction: ${(props) =>
-      props && props.isReverse ? "row-reverse" : "row"};
+      props && props.isReverse ? 'row-reverse' : 'row'};
     margin-bottom: 4rem;
   }
 

@@ -14,7 +14,7 @@ import {
   CopyrightContainer,
   Logo,
   Copyright,
-} from './styled';
+} from './Footer.styles';
 
 // data
 import { secondaryNavItems } from '../../../data/secondaryNavItems';

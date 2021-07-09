@@ -19,7 +19,7 @@ import {
   StepContentItem,
   StepContentTitle,
   StepArrow,
-} from './styled';
+} from './HowDoesWork.styles';
 
 export function HowDoesWork({ howWorks }) {
   const { numbers, content } = howWorks;

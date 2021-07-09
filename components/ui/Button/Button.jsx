@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 // styles
-import { ContainerBtn, ContainerLink } from './styled';
+import { ContainerBtn, ContainerLink } from './Button.styles';
 
 export function Button(props) {
   if (props.type === 'link') {

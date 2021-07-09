@@ -7,7 +7,7 @@ import {
   StepNum,
   Title,
   Description,
-} from './styled';
+} from './StepItem.styles';
 
 export function StepItem({ stepNum, title, description, image, isReverse }) {
   return (

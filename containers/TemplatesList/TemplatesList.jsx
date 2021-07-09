@@ -2,7 +2,7 @@
 import { TemplateItem } from '../../components/TemplateItem';
 
 // styles
-import { Wrapper, Heading } from './styled';
+import { Wrapper, Heading } from './TemplatesList.styles';
 
 export function TemplatesList({ plans, currentPlan }) {
   return (

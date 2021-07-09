@@ -6,7 +6,7 @@ import {
   Description,
   Actions,
   BgImage,
-} from './styled';
+} from './CtaHowWorks.styles';
 
 // components
 import { Button } from '../../components/ui/Button';

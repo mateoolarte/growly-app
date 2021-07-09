@@ -19,7 +19,7 @@ import {
   Actions,
   IconContainer,
   PreferenceText,
-} from './styled';
+} from './TemplateItem.styles';
 
 export function TemplateItem({
   logoImg,

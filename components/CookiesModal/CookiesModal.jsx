@@ -4,7 +4,7 @@ import { getCookie, setCookie } from '../../utils/cookies';
 
 import { Button } from '../ui/Button';
 
-import { Wrapper, Container, Title, Description, Actions } from './styled';
+import { Wrapper, Container, Title, Description, Actions } from './CookiesModal.styles';
 
 export function CookiesModal() {
   const [isEnable, setIsEnable] = useState(getCookie('accept-cookies'));

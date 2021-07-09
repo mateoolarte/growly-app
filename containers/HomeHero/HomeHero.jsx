@@ -16,7 +16,7 @@ import {
   Gallery,
   SlideContainer,
   SlideImage,
-} from './styled';
+} from './HomeHero.styles';
 
 export function HomeHero({ images }) {
   const [currentSlide, setCurrentSlide] = useState(0);

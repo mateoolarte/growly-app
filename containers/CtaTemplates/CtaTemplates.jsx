@@ -2,7 +2,7 @@
 import { Button } from '../../components/ui/Button';
 
 // styles
-import { Wrapper, Title, Description } from './styled';
+import { Wrapper, Title, Description } from './CtaTemplates.styles';
 
 export function CtaTemplates() {
   function handleChat(e) {

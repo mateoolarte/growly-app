@@ -2,7 +2,7 @@
 import { StepItem } from '../../components/StepItem';
 
 // styles
-import { Wrapper } from './styled';
+import { Wrapper } from './Steps.styles';
 
 export function Steps({ steps }) {
   return (

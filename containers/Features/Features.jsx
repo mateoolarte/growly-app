@@ -2,7 +2,7 @@
 import { FeatureItem } from '../../components/FeatureItem';
 
 // styles
-import { FeaturesContainer } from './styled';
+import { FeaturesContainer } from './Features.styles';
 
 export function Features({ features }) {
   return (

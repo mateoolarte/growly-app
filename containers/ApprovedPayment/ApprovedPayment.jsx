@@ -19,7 +19,7 @@ import {
   SubHeading,
   Description,
   Actions,
-} from './styled';
+} from './ApprovedPayment.styles';
 import {
   StepsContainer,
   StepItem,
@@ -28,7 +28,7 @@ import {
   StepContentItem,
   StepContentTitle,
   StepArrow,
-} from '../HowDoesWork/styled';
+} from '../HowDoesWork/HowDoesWork.styles';
 
 // components
 import { Button } from '../../components/ui/Button';

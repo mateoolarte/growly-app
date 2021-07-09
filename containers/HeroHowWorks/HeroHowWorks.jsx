@@ -1,5 +1,5 @@
 // styled
-import { Wrapper, Container, Heading, Description, SubHeading } from './styled';
+import { Wrapper, Container, Heading, Description, SubHeading } from './HeroHowWorks.styles';
 
 export function HeroHowWorks() {
   return (

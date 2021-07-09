@@ -18,7 +18,7 @@ import {
   NavigationLink,
   HamburgerIconContainer,
   HamburgerIconLine,
-} from './styled';
+} from './Header.styles';
 
 export function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);

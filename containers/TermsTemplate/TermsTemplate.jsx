@@ -13,9 +13,9 @@ import {
   TabItem,
   TabButton,
   TabContent,
-} from './styled';
-import { Features, FeatureItem } from '../HeroTemplates/styled';
-import { Icon } from '../HeroTemplate/styled';
+} from './TermsTemplate.styles';
+import { Features, FeatureItem } from '../HeroTemplates/HeroTemplates.styles';
+import { Icon } from '../HeroTemplate/HeroTemplate.styles';
 
 // assets
 const infoIcon = '/icons/info.svg';

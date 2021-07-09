@@ -21,7 +21,7 @@ import {
   Description,
   Features,
   FeatureItem,
-} from './styled';
+} from './HeroTemplates.styles';
 
 // assets
 const FlagCOP = '/images/colombia-flag.png';

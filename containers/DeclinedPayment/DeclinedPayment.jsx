@@ -18,7 +18,7 @@ import {
   Subtitle,
   Description,
   Actions,
-} from './styled';
+} from './DeclinedPayment.styles';
 
 // components
 import { Button } from '../../components/ui/Button';

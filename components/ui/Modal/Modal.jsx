@@ -1,5 +1,5 @@
 // styled
-import { Wrapper, Container, BtnClose } from './styled';
+import { Wrapper, Container, BtnClose } from './Modal.styles';
 
 export function Modal({ isActive, handleClose, children }) {
   return (

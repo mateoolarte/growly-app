@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // styled
-import { Wrapper, Box } from './styled';
+import { Wrapper, Box } from './Tooltip.styles';
 
 export function Tooltip({ text, children }) {
   const [isActive, setIsActive] = useState(false);

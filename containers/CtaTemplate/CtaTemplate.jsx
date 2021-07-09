@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Button } from '../../components/ui/Button';
 
 // styled
-import { Wrapper, Icon, Title, Subtitle, Description } from './styled';
+import { Wrapper, Icon, Title, Subtitle, Description } from './CtaTemplate.styles';
 
 // assets
 const layoutIcon = '/icons/layout.svg';

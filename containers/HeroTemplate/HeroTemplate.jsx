@@ -23,7 +23,7 @@ import {
   Price,
   Icon,
   BtnGoBack,
-} from './styled';
+} from './HeroTemplate.styles';
 
 import {
   PreferenceTitle,
@@ -33,9 +33,9 @@ import {
   PreferenceText,
   LogoContainer,
   Logo,
-} from '../../components/TemplateItem/styled';
+} from '../../components/TemplateItem/TemplateItem.styles';
 
-import { PricingContainer, Pricing, Flag, Note } from '../HeroTemplates/styled';
+import { PricingContainer, Pricing, Flag, Note } from '../HeroTemplates/HeroTemplates.styles';
 
 // assets
 const flagCOP = '/images/colombia-flag.png';

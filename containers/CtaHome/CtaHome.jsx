@@ -5,7 +5,14 @@ import { Button } from '../../components/ui/Button';
 const bg = '/images/cta-home-bg.jpg';
 
 // styles
-import { Wrapper, Info, Title, Subtitle, ImageBox, Image } from './styled';
+import {
+  Wrapper,
+  Info,
+  Title,
+  Subtitle,
+  ImageBox,
+  Image,
+} from './CtaHome.styles';
 
 export function CtaHome() {
   return (

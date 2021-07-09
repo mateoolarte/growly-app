@@ -9,9 +9,11 @@
     "lint": "next lint",
     "fmt": "prettier --write .",
     "pretty": "yarn fmt && yarn lint",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "cypress:open": "cypress open"
+    "test:jest": "jest",
+    "test:cypress": "cypress run",
+    "test:jest:watch": "jest --watch",
+    "test:cypress:watch": "cypress open",
+    "test": "yarn test:jest && yarn test:cypress"
   },
   "dependencies": {
     "js-cookie": "^2.2.1",

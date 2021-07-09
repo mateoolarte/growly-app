@@ -10,8 +10,9 @@
     "fmt": "prettier --write .",
     "pretty": "yarn fmt && yarn lint",
     "test:jest": "jest",
-    "test:cypress": "cypress run",
+    "test:jest:coverage": "jest --coverage",
     "test:jest:watch": "jest --watch",
+    "test:cypress": "cypress run",
     "test:cypress:watch": "cypress open",
     "test": "yarn test:jest && yarn test:cypress"
   },

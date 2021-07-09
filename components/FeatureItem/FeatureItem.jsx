@@ -9,11 +9,17 @@ import {
 } from './FeatureItem.styles';
 
 export function FeatureItem({ isAlt, title, image, description, bgText }) {
+  if (!title && !description) {
+    return null;
+  }
+
   return (
     <Wrapper isAlt={isAlt} bgText={bgText}>
-      <ImageContainer isAlt={isAlt}>
-        <Image src={image} alt={title} />
-      </ImageContainer>
+      {image && (
+        <ImageContainer isAlt={isAlt}>
+          <Image src={image} alt={title} />
+        </ImageContainer>
+      )}
       <Info>
         <Title>{title}</Title>
         <Description>{description}</Description>

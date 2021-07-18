@@ -29,41 +29,73 @@ export function TemplateItem({
   thumbnail,
   isReverse,
 }) {
+  if (!logoImg && !thumbnail || (!preferences || preferences?.length === 0)) {
+    return null;
+  }
+
   return (
-    <Wrapper isReverse={isReverse}>
-      <ImageContainer>
-        <Link href={demoLink} passHref>
-          <a target="_blank">
-            <Thumbnail src={thumbnail} alt="Thumbnail" />
-          </a>
-        </Link>
-      </ImageContainer>
+    <Wrapper isReverse={isReverse} data-testid={isReverse ? 'reverse' : ''}>
+      {thumbnail && (
+        <ImageContainer>
+          {demoLink && (
+            <Link href={demoLink} passHref>
+              <a target="_blank">
+                <Thumbnail src={thumbnail} alt="Thumbnail" />
+              </a>
+            </Link>
+          )}
+
+          {!demoLink && <Thumbnail src={thumbnail} alt="Thumbnail" />}
+        </ImageContainer>
+      )}
 
       <Info>
-        <LogoContainer>
-          <Logo src={logoImg} alt="Logo" />
-        </LogoContainer>
-        <PreferenceTitle>
-          Esta plantilla es ideal para negocios como:
-        </PreferenceTitle>
-        <Preferences>
-          {preferences.map(({ id, icon, tooltipText }) => (
-            <PreferenceItem key={id}>
-              <IconContainer>
-                <Image src={icon} alt="icono" width={35} height={35} />
-              </IconContainer>
-              <PreferenceText>{tooltipText}</PreferenceText>
-            </PreferenceItem>
-          ))}
-        </Preferences>
-        <Actions>
-          <Button type="link" href={demoLink} white target="_blank">
-            Ver demo
-          </Button>
-          <Button type="link" href={templateLink}>
-            Lo quiero
-          </Button>
-        </Actions>
+        {logoImg && (
+          <LogoContainer>
+            <Logo src={logoImg} alt="Logo" />
+          </LogoContainer>
+        )}
+        {preferences?.length > 0 && (
+          <>
+            <PreferenceTitle>
+              Esta plantilla es ideal para negocios como:
+            </PreferenceTitle>
+            <Preferences>
+              {preferences.map(({ id, icon, tooltipText }) => {
+                if (!icon && !tooltipText) {
+                  return null;
+                }
+
+                return (
+                  <PreferenceItem key={id}>
+                    {icon && (
+                      <IconContainer>
+                        <Image src={icon} alt="icono" width={35} height={35} />
+                      </IconContainer>
+                    )}
+                    {tooltipText && (
+                      <PreferenceText>{tooltipText}</PreferenceText>
+                    )}
+                  </PreferenceItem>
+                );
+              })}
+            </Preferences>
+          </>
+        )}
+        {demoLink && templateLink && (
+          <Actions>
+            {demoLink && (
+              <Button type="link" href={demoLink} white target="_blank">
+                Ver demo
+              </Button>
+            )}
+            {templateLink && (
+              <Button type="link" href={templateLink}>
+                Lo quiero
+              </Button>
+            )}
+          </Actions>
+        )}
       </Info>
     </Wrapper>
   );

@@ -2,6 +2,9 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
+// hooks
+import { useStickyMenu } from '../../hooks/useStickyMenu';
+
 // components
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -10,15 +13,7 @@ import { CookiesModal } from '../CookiesModal';
 const Container = styled.main``;
 
 export function Layout({ title, description, hideCookies, children }) {
-  function handleStickyMenu() {
-    const headerElm = document.getElementById('sticky-header');
-
-    if (window.scrollY >= 80) {
-      headerElm.classList.add('active');
-    } else {
-      headerElm.classList.remove('active');
-    }
-  }
+  const { handleStickyMenu } = useStickyMenu();
 
   return (
     <>

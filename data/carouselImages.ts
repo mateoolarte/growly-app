@@ -7,6 +7,12 @@ const strikMockup = '/images/carousel-images/strik-mockup.png';
 const zalepHero = '/images/carousel-images/zalep-hero.jpg';
 const zalepMockup = '/images/carousel-images/zalep-mockup.png';
 
+export interface ICarouselImage {
+  id: number;
+  thumbnail: string;
+  background: string;
+}
+
 export const carouselImages = [
   {
     id: 1,

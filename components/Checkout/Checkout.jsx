@@ -2,7 +2,7 @@
 import { createRef, forwardRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const PaymentButton = forwardRef(function paymentButton(props, ref) {
+const PaymentButton = forwardRef(function paymentButton(_, ref) {
   return <form ref={ref}></form>;
 });
 

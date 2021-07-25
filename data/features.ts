@@ -2,6 +2,14 @@ const responsiveImage = '/images/features/responsive.png';
 const customizeImage = '/images/features/customize.png';
 const seoImage = '/images/features/seo.png';
 
+export interface IFeatures {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  bgText: string;
+}
+
 export const featuresData = [
   {
     id: 1,

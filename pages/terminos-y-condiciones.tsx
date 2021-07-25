@@ -18,7 +18,10 @@ const Wrapper = styled.section`
 
 export default function Terms() {
   return (
-    <Layout title="Términos y condiciones">
+    <Layout
+      title="Términos y condiciones"
+      description="Growly es un servicio para crear sitios web profesionales bajo plantillas prediseñadas, por lo cual, no se hacen sitios web personalizados o desarrollos a la medida."
+    >
       <Wrapper>
         <h2>Términos y condiciones</h2>
         <ul>

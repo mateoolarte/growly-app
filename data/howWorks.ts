@@ -3,6 +3,17 @@ const cardIcon = '/icons/card.svg';
 const emailIcon = '/icons/email.svg';
 const layoutIcon = '/icons/layout.svg';
 
+interface Item {
+  id: number;
+  icon: string;
+  title: string;
+}
+
+export interface IHowWorks {
+  numbers: Array<number>;
+  content: Array<Item>;
+}
+
 export const howWorksData = {
   numbers: [1, 2, 3, 4],
   content: [

@@ -8,11 +8,17 @@ import { CtaHome } from '../containers/CtaHome';
 import { Layout } from '../components/shared/Layout';
 
 // data
-import { carouselImages } from '../data/carouselImages';
-import { featuresData } from '../data/features';
-import { howWorksData } from '../data/howWorks';
+import { carouselImages, ICarouselImage } from '../data/carouselImages';
+import { featuresData, IFeatures } from '../data/features';
+import { howWorksData, IHowWorks } from '../data/howWorks';
 
-export default function Home({ heroImages, features, howWorks }) {
+interface HomePageProps {
+  heroImages: Array<ICarouselImage>;
+  features: Array<IFeatures>;
+  howWorks: IHowWorks;
+}
+
+export default function Home({ heroImages, features, howWorks }: HomePageProps) {
   return (
     <Layout
       title="Crea el sitio web de tu negocio a bajo costo"

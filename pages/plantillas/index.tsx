@@ -10,9 +10,13 @@ import { TemplatesList } from '../../containers/TemplatesList';
 import { CtaTemplates } from '../../containers/CtaTemplates';
 
 // data
-import { plansData } from '../../data/plans';
+import { plansData, IPlan } from '../../data/plans';
 
-export default function Templates({ plans }) {
+interface TemplatesPageProps {
+  plans: Array<IPlan>;
+}
+
+export default function Templates({ plans }: TemplatesPageProps) {
   const [currentPlan, setCurrentPlan] = useState(0);
 
   return (

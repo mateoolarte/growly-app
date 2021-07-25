@@ -11,9 +11,18 @@ import { plansData } from '../../../data/plans';
 
 // utils
 import { getAllTemplates } from '../../../utils/getAllTemplates';
-import { getTemplateData } from '../../../utils/getTemplateData';
+import {
+  getTemplateData,
+  ISingleTemplateData,
+} from '../../../utils/getTemplateData';
 
-export default function Template({ template, type }) {
+interface ITemplatePageProps {
+  template: ISingleTemplateData;
+  type: string;
+}
+
+export default function Template({ template, type }: ITemplatePageProps) {
+  // TODO: add description to every template to improve SEO search
   const { name, features } = template;
 
   return (

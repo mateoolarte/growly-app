@@ -1,6 +1,5 @@
 // vendors
 import Head from 'next/head';
-import styled from 'styled-components';
 
 // hooks
 import { useStickyMenu } from '../../hooks/useStickyMenu';
@@ -10,23 +9,28 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { CookiesModal } from '../CookiesModal';
 
-const Container = styled.main``;
+interface Props {
+  title: string;
+  description?: string;
+  hideCookies?: boolean;
+  children: any;
+}
 
-export function Layout({ title, description, hideCookies, children }) {
+export function Layout({ title, description, hideCookies, children }: Props) {
   const { handleStickyMenu } = useStickyMenu();
 
   return (
     <>
       <Head>
         <title>{title} | Growly</title>
-        <meta name="description" content={description} />
+        {description && <meta name="description" content={description} />}
       </Head>
 
       <Header />
 
-      <Container onWheel={handleStickyMenu} onTouchMove={handleStickyMenu}>
+      <main onWheel={handleStickyMenu} onTouchMove={handleStickyMenu}>
         {children}
-      </Container>
+      </main>
 
       {!hideCookies && <CookiesModal />}
       <Footer />

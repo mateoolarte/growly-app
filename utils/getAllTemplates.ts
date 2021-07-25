@@ -1,4 +1,7 @@
-export function getAllTemplates(plans) {
+// interfaces
+import { IPlan } from '../data/plans';
+
+export function getAllTemplates(plans: Array<IPlan>) {
   const allTemplates = [];
 
   plans.forEach((plan) => {

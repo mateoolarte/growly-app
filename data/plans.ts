@@ -63,6 +63,38 @@ const telloThumbnail = '/images/templates/tello-thumbnail.png';
 const heriaLogo = '/images/templates/heria-logo.png';
 const heriaThumbnail = '/images/templates/heria-thumbnail.png';
 
+interface IPreference {
+  id: number;
+  icon: string;
+  tooltipText: string;
+}
+
+export interface ITemplate {
+  id: number;
+  name: string;
+  thumbnail: string;
+  logoImg: string;
+  preferences: Array<IPreference>;
+  demoLink: string;
+  templateLink: string;
+}
+
+export interface IPricing {
+  price: string;
+  priceInCents: string;
+  premiumPrice: string;
+  premiumPriceInCents: string;
+}
+
+export interface IPlan extends IPricing {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  features: Array<string>;
+  templates: Array<ITemplate>;
+}
+
 export const plansData = [
   {
     id: 1,
@@ -70,7 +102,7 @@ export const plansData = [
     description:
       'El plan Starter está diseñado para empresas que necesitan comenzar su presencia digital con poco presupuesto y con una estructura de contenidos básica.',
     icon: rocketshipIcon,
-    pricing: '$749.000',
+    price: '$749.000',
     priceInCents: '74900000',
     premiumPrice: "$1'049.000",
     premiumPriceInCents: '104900000',
@@ -240,7 +272,7 @@ export const plansData = [
     description:
       'El plan Portfolio está diseñado para empresas que requieran un sitio web con una estructura más grande y avanzada y que requieran comunicar más información, como sus servicios independientes o su portafolio y casos de éxito.',
     icon: funnelIcon,
-    pricing: "$1'099.000",
+    price: "$1'099.000",
     priceInCents: '109900000',
     premiumPrice: "$1'399.000",
     premiumPriceInCents: '139900000',

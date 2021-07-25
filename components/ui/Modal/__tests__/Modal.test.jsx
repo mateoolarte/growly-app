@@ -1,5 +1,5 @@
 // utils
-import { render, fireEvent, screen } from 'test-utils';
+import { render, fireEvent, screen } from 'testUtils';
 
 // components
 import { Modal } from '..';

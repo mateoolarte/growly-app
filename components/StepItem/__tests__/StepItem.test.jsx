@@ -1,5 +1,5 @@
 // utils
-import { render } from 'test-utils';
+import { render } from 'testUtils';
 
 // components
 import { StepItem } from '..';

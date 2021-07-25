@@ -51,6 +51,7 @@ export function Header() {
         <HamburgerIconContainer
           onClick={handleToggleMenu}
           isActive={toggleMenu}
+          aria-label="hamburger-button"
         >
           <HamburgerIconLine />
           <HamburgerIconLine />

@@ -1,3 +1,6 @@
+// vendors
+import { GetStaticProps } from 'next';
+
 // containers
 import { HomeHero } from '../containers/HomeHero';
 import { HowDoesWork } from '../containers/HowDoesWork';
@@ -18,7 +21,11 @@ interface HomePageProps {
   howWorks: IHowWorks;
 }
 
-export default function Home({ heroImages, features, howWorks }: HomePageProps) {
+export default function Home({
+  heroImages,
+  features,
+  howWorks,
+}: HomePageProps) {
   return (
     <Layout
       title="Crea el sitio web de tu negocio a bajo costo"
@@ -32,7 +39,7 @@ export default function Home({ heroImages, features, howWorks }: HomePageProps) 
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       heroImages: carouselImages,
@@ -40,4 +47,4 @@ export async function getStaticProps() {
       howWorks: howWorksData,
     },
   };
-}
+};

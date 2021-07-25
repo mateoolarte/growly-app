@@ -8,8 +8,8 @@ export interface ISingleTemplateData extends ITemplate {
 
 export function getTemplateData(
   plans: Array<IPlan>,
-  type: string,
-  template: string
+  type: string | string[],
+  template: string | string[]
 ): ISingleTemplateData {
   const templateType = plans.find((item) => item.title === type);
   const currentTemplate = templateType?.templates?.find(

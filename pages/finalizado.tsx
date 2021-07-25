@@ -1,9 +1,12 @@
+// vendors
+import { GetServerSideProps } from 'next';
+
 // containers
 import { ApprovedPayment } from '../containers/ApprovedPayment';
 import { DeclinedPayment } from '../containers/DeclinedPayment';
 
 // data
-import { howWorksData } from '../data/howWorks';
+import { howWorksData, IHowWorks } from '../data/howWorks';
 
 const APPROVED = 'APPROVED';
 const DECLINED = 'DECLINED';
@@ -11,7 +14,20 @@ const VOIDED = 'VOIDED';
 const ERROR = 'ERROR';
 const PENDING = 'PENDING';
 
-export default function Finished({ status, howWorks }) {
+enum PaymentStatus {
+  APPROVED = 'APPROVED',
+  DECLINED = 'DECLINED',
+  VOIDED = 'VOIDED',
+  ERROR = 'ERROR',
+  PENDING = 'PENDING',
+}
+
+interface IFinishedPaymentProps {
+  status: PaymentStatus;
+  howWorks: IHowWorks;
+}
+
+export default function Finished({ status, howWorks }: IFinishedPaymentProps) {
   if (!status || status === DECLINED || status === VOIDED || status === ERROR) {
     return <DeclinedPayment />;
   }
@@ -26,7 +42,7 @@ export default function Finished({ status, howWorks }) {
   }
 }
 
-export async function getServerSideProps({ query }) {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const url = `https://${process.env.NEXT_PUBLIC_WOMPI_TRANSACTIONS_API_ENV}.wompi.co/v1/transactions/${query?.id}`;
   let status = '';
 
@@ -46,4 +62,4 @@ export async function getServerSideProps({ query }) {
       howWorks: howWorksData,
     },
   };
-}
+};

@@ -1,4 +1,5 @@
 // vendors
+import { GetStaticProps } from 'next';
 import { useState } from 'react';
 
 // components
@@ -35,10 +36,10 @@ export default function Templates({ plans }: TemplatesPageProps) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       plans: plansData,
     },
   };
-}
+};

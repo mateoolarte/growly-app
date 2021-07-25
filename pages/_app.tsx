@@ -1,4 +1,5 @@
 // vendors
+import type { AppProps } from 'next/app';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -26,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export default function Growly({ Component, pageProps }) {
+export default function Growly({ Component, pageProps }: AppProps) {
   useTrackingPage();
   useSupportChat(Component);
 

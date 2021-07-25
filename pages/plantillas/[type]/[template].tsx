@@ -1,3 +1,6 @@
+// vendors
+import { GetStaticPaths, GetStaticProps } from 'next';
+
 // containers
 import { HeroTemplate } from '../../../containers/HeroTemplate';
 import { TermsTemplate } from '../../../containers/TermsTemplate';
@@ -34,7 +37,7 @@ export default function Template({ template, type }: ITemplatePageProps) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { type, template } = params;
   const templateData = getTemplateData(plansData, type, template);
 
@@ -44,13 +47,13 @@ export async function getStaticProps({ params }) {
       type,
     },
   };
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllTemplates(plansData);
 
   return {
     paths,
     fallback: false,
   };
-}
+};

@@ -2,6 +2,14 @@ const step1Img = '/images/steps/step1.png';
 const step2Img = '/images/steps/step2.png';
 const step3Img = '/images/steps/step3.png';
 
+export interface IStep {
+  id: number;
+  stepNum: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
 export const stepsData = [
   {
     id: 1,

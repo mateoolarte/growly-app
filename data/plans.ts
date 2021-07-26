@@ -63,7 +63,7 @@ const telloThumbnail = '/images/templates/tello-thumbnail.png';
 const heriaLogo = '/images/templates/heria-logo.png';
 const heriaThumbnail = '/images/templates/heria-thumbnail.png';
 
-interface IPreference {
+export interface IPreference {
   id: number;
   icon: string;
   tooltipText: string;

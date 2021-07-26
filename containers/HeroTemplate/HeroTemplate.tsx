@@ -35,7 +35,12 @@ import {
   Logo,
 } from '../../components/TemplateItem/TemplateItem.styles';
 
-import { PricingContainer, Pricing, Flag, Note } from '../HeroTemplates/HeroTemplates.styles';
+import {
+  PricingContainer,
+  Pricing,
+  Flag,
+  Note,
+} from '../HeroTemplates/HeroTemplates.styles';
 
 // assets
 const flagCOP = '/images/colombia-flag.png';
@@ -45,6 +50,19 @@ const arrowLeft = '/icons/left-arrow.svg';
 const BASIC_PLAN = 'basic';
 const PREMIUM_PLAN = 'premium';
 
+// interfaces
+import { IPreference, IPricing } from '../../data/plans';
+
+interface IHeroTemplateProps {
+  name: string;
+  thumbnail: string;
+  preferences: Array<IPreference>;
+  type: string;
+  pricing: IPricing;
+  logoImg: string;
+  demoLink: string;
+}
+
 export function HeroTemplate({
   name,
   thumbnail,
@@ -53,7 +71,7 @@ export function HeroTemplate({
   pricing,
   logoImg,
   demoLink,
-}) {
+}: IHeroTemplateProps) {
   const [activePlan, setActivePlan] = useState(BASIC_PLAN);
   const [planPremiumModal, setPlanPremiumModal] = useState(false);
   const { price, priceInCents, premiumPrice, premiumPriceInCents } = pricing;

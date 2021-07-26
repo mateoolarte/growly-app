@@ -33,7 +33,14 @@ import {
 // components
 import { Button } from '../../components/ui/Button';
 
-export function ApprovedPayment({ howWorks }) {
+// interfaces
+import { IHowWorks } from '../../data/howWorks';
+
+interface IApprovePaymentProps {
+  howWorks: IHowWorks;
+}
+
+export function ApprovedPayment({ howWorks }: IApprovePaymentProps) {
   const { numbers, content } = howWorks;
 
   return (

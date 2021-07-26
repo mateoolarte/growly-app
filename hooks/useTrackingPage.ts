@@ -8,15 +8,15 @@ const ENV = process.env.NODE_ENV;
 export function useTrackingPage() {
   const router = useRouter();
 
+  function handleRouteChangeComplete(url: string) {
+    ReactGA.pageview(url);
+  }
+
   useEffect(() => {
     if (ENV !== 'development') {
       ReactGA.initialize(gaTrackingId);
 
       router.events.on('routeChangeComplete', handleRouteChangeComplete);
-
-      function handleRouteChangeComplete(url) {
-        ReactGA.pageview(url);
-      }
     }
   }, [router]);
 }

@@ -1,14 +1,9 @@
-// vendors
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 
-// assets
 import { LogoImg } from '../../assets/Logo';
 const arrowIcon = '/icons/arrow-right.svg';
 const checkIcon = '/icons/check.svg';
-
-// styles
 import {
   Wrapper,
   Container,
@@ -29,11 +24,7 @@ import {
   StepContentTitle,
   StepArrow,
 } from '../HowDoesWork/HowDoesWork.styles';
-
-// components
 import { Button } from '../../components/ui/Button';
-
-// interfaces
 import { IHowWorks } from '../../data/howWorks';
 
 interface IApprovePaymentProps {
@@ -49,11 +40,9 @@ export function ApprovedPayment({ howWorks }: IApprovePaymentProps) {
         <title>Confirmación de compra | Growly</title>
       </Head>
       <Container>
-        <Link href="/" passHref>
-          <LogoContainer>
-            <LogoImg />
-          </LogoContainer>
-        </Link>
+        <LogoContainer href="/">
+          <LogoImg />
+        </LogoContainer>
         <Content>
           <IconContainer>
             <Image src={checkIcon} alt="icono" width={76} height={76} />

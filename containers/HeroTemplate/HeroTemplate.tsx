@@ -1,6 +1,5 @@
 // vendors
 import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 // components
@@ -98,12 +97,10 @@ export function HeroTemplate({
         </p>
       </Modal>
       <TopActions>
-        <Link href="/plantillas" passHref>
-          <BtnGoBack>
-            <Image src={arrowLeft} alt="icono" width={40} height={22} />
-            Volver
-          </BtnGoBack>
-        </Link>
+        <BtnGoBack href="/plantillas">
+          <Image src={arrowLeft} alt="icono" width={40} height={22} />
+          Volver
+        </BtnGoBack>
       </TopActions>
       <Container>
         <ImageContainer>

@@ -1,14 +1,7 @@
-// vendors
-import Link from 'next/link';
 import { useState } from 'react';
 
-// assets
 import { LogoImg } from '../../../assets/Logo';
-
-// components
 import { Button } from '../../ui/Button';
-
-// styled
 import {
   Container,
   LogoContainer,
@@ -41,11 +34,9 @@ export function Header() {
 
   return (
     <Container isActive={toggleMenu} id="sticky-header">
-      <Link href="/" passHref>
-        <LogoContainer>
-          <LogoImg />
-        </LogoContainer>
-      </Link>
+      <LogoContainer href="/">
+        <LogoImg />
+      </LogoContainer>
 
       <Navigation>
         <HamburgerIconContainer
@@ -60,23 +51,17 @@ export function Header() {
 
         <NavigationList isActive={toggleMenu}>
           <NavigationItem>
-            <Link href="/plantillas" passHref>
-              <NavigationLink>Plantillas</NavigationLink>
-            </Link>
+            <NavigationLink href="/plantillas">Plantillas</NavigationLink>
           </NavigationItem>
 
           <NavigationItem>
-            <Link href="/como-funciona" passHref>
-              <NavigationLink>Como funciona</NavigationLink>
-            </Link>
+            <NavigationLink href="/como-funciona">Como funciona</NavigationLink>
           </NavigationItem>
 
           <NavigationItem>
-            <Link href="#" passHref>
-              <NavigationLink onClick={handleChat}>
-                Contacta un asesor
-              </NavigationLink>
-            </Link>
+            <NavigationLink href="#" onClick={handleChat}>
+              Contacta un asesor
+            </NavigationLink>
           </NavigationItem>
 
           <NavigationItem>

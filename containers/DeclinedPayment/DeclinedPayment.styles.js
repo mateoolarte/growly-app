@@ -1,7 +1,6 @@
-// vendors
+import Link from 'next/link';
 import styled from 'styled-components';
 
-// constants
 import { MEDIA_QUERIES } from '../../utils/constants';
 
 export const Container = styled.section`
@@ -12,7 +11,7 @@ export const Container = styled.section`
   padding-top: 1rem;
 `;
 
-export const LogoContainer = styled.a`
+export const LogoContainer = styled(Link)`
   display: block;
   width: 80%;
   margin-bottom: 2rem;

@@ -1,11 +1,9 @@
-// vendors
+import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-// constants
 import { MEDIA_QUERIES } from '../../../utils/constants';
 
-// assets
 const bgPattern = '/images/bg-pattern.png';
 
 export const Wrapper = styled.footer`
@@ -56,7 +54,7 @@ export const NavigationItem = styled.li`
   }
 `;
 
-export const NavigationLink = styled.a`
+export const NavigationLink = styled(Link)`
   color: ${(props) => props && props.theme.colors.terciary};
   font-size: 0.8rem;
   font-weight: bold;

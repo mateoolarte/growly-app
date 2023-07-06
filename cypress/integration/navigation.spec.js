@@ -12,10 +12,4 @@ describe('Navigation', () => {
     cy.contains('Como funciona').click();
     cy.url().should('include', '/como-funciona');
   });
-
-  // it("Should go to /plantillas", () => {
-  //   cy.contains("Plantillas").click();
-  //   cy.url().should("include", "/plantillas");
-  //   expect(true).to.equal(true);
-  // });
 });

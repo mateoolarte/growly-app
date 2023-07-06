@@ -1,4 +1,4 @@
-// vendors
+import Link from 'next/link';
 import styled from 'styled-components';
 
 function styles(props) {
@@ -35,7 +35,7 @@ export const ContainerBtn = styled.button`
   ${(props) => styles(props)}
 `;
 
-export const ContainerLink = styled.a`
+export const ContainerLink = styled(Link)`
   ${(props) => styles(props)}
   text-decoration: none;
 `;

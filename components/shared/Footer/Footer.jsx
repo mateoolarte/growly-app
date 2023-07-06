@@ -1,10 +1,3 @@
-// vendors
-import Link from 'next/link';
-
-// assets
-const LogoSmall = '/images/logo-small.png';
-
-// styled
 import {
   Wrapper,
   NavigationContainer,
@@ -15,9 +8,9 @@ import {
   Logo,
   Copyright,
 } from './Footer.styles';
-
-// data
 import { secondaryNavItems } from '../../../data/secondaryNavItems';
+
+const LogoSmall = '/images/logo-small.png';
 
 export function Footer() {
   function handleChat(e) {
@@ -40,20 +33,16 @@ export function Footer() {
             if (hasOnClick) {
               return (
                 <NavigationItem key={id}>
-                  <Link href={link} passHref>
-                    <NavigationLink {...linkOptions} onClick={handleChat}>
-                      {title}
-                    </NavigationLink>
-                  </Link>
+                  <NavigationLink href={link} {...linkOptions} onClick={handleChat}>
+                    {title}
+                  </NavigationLink>
                 </NavigationItem>
               );
             }
 
             return (
               <NavigationItem key={id}>
-                <Link href={link} passHref>
-                  <NavigationLink {...linkOptions}>{title}</NavigationLink>
-                </Link>
+                <NavigationLink href={link} {...linkOptions}>{title}</NavigationLink>
               </NavigationItem>
             );
           })}

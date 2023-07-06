@@ -1,11 +1,7 @@
-// vendors
 import Link from 'next/link';
 import Image from 'next/image';
 
-// components
 import { Button } from '../ui/Button';
-
-// styled
 import {
   Wrapper,
   ImageContainer,
@@ -38,10 +34,8 @@ export function TemplateItem({
       {thumbnail && (
         <ImageContainer>
           {demoLink && (
-            <Link href={demoLink} passHref>
-              <a target="_blank">
-                <Thumbnail src={thumbnail} alt="Thumbnail" />
-              </a>
+            <Link href={demoLink} target="_blank">
+              <Thumbnail src={thumbnail} alt="Thumbnail" />
             </Link>
           )}
 

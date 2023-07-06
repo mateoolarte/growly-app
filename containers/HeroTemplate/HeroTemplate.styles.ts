@@ -1,7 +1,6 @@
-// vendors
+import Link from 'next/link';
 import styled from 'styled-components';
 
-// constants
 import { MEDIA_QUERIES } from '../../utils/constants';
 
 export const Wrapper = styled.section`
@@ -194,7 +193,7 @@ export const Icon = styled.button`
   }
 `;
 
-export const BtnGoBack = styled.a`
+export const BtnGoBack = styled(Link)`
   display: inline-flex;
   align-items: center;
   color: ${(props) => props && props.theme.colors.primary};

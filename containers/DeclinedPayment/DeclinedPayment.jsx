@@ -1,13 +1,8 @@
-// vendors
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 
-// assets
 import { LogoImg } from '../../assets/Logo';
 const faceSadIcon = '/icons/face-sad.svg';
-
-// styles
 import {
   Container,
   LogoContainer,
@@ -19,8 +14,6 @@ import {
   Description,
   Actions,
 } from './DeclinedPayment.styles';
-
-// components
 import { Button } from '../../components/ui/Button';
 
 export function DeclinedPayment() {
@@ -41,11 +34,9 @@ export function DeclinedPayment() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <Link href="/" passHref>
-          <LogoContainer>
-            <LogoImg />
-          </LogoContainer>
-        </Link>
+        <LogoContainer href="/">
+          <LogoImg />
+        </LogoContainer>
         <Content>
           <IconContainer>
             <Image src={faceSadIcon} alt="icono" width={76} height={76} />

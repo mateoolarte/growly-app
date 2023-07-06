@@ -1,4 +1,4 @@
-// vendors
+import Link from 'next/link';
 import styled from 'styled-components';
 
 // constants
@@ -24,7 +24,7 @@ export const Container = styled.header`
   }
 `;
 
-export const LogoContainer = styled.a`
+export const LogoContainer = styled(Link)`
   display: block;
   width: 80%;
   text-decoration: none;
@@ -94,7 +94,7 @@ export const NavigationItem = styled.li`
   }
 `;
 
-export const NavigationLink = styled.a`
+export const NavigationLink = styled(Link)`
   color: ${(props) => props && props.theme.colors.black};
   font-size: ${(props) => props && props.theme.sizes.textNormal};
   font-weight: ${(props) => props && props.theme.fonts.medium};

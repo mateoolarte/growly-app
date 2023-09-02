@@ -1,0 +1,12 @@
+.button {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--border-radius-base);
+  font-size: var(--text);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  &--primary {
+    border: 0;
+    background-color: var(--primary-color);
+    color: #fef0ed;
+  }
+}

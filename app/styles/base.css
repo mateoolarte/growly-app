@@ -1,10 +1,30 @@
 :root {
   /* Colors */
   --bg: #f5f2f0;
+  --primary-color: #f26a4b;
 
   /* Spacing */
   --space-2: 0.5rem;
-  --space-6: 2.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+
+  /* Typography */
+  --heading: 3rem;
+  --text: 1rem;
+  --text-lg: 1.25rem;
+
+  /* Weights */
+  --weight-base: 400;
+  --weight-medium: 600;
+
+  /* Border */
+  --border-radius-base: 0.75rem;
+
+  --screen-xl: 1600px;
 }
 
 * {
@@ -15,6 +35,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg);
+  overflow-x: hidden;
 }
 
 .container-box {

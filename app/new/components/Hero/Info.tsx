@@ -1,4 +1,5 @@
-import { ButtonLink } from "@/components/Button";
+import { ArrowCircleRight } from "@/assets/icons/ArrowCircleRight";
+import { Button } from "@/components/Button";
 
 export function Info() {
   return (
@@ -9,7 +10,10 @@ export function Info() {
         Nuestra herramienta te proporciona los cimientos sólidos y las
         herramientas necesarias para crecer y prosperar en el mundo digital.
       </p>
-      <ButtonLink url="/">Comienza ahora</ButtonLink>
+      <Button type="button" className="hero-cta">
+        Comienza ahora
+        <ArrowCircleRight />
+      </Button>
     </div>
   );
 }

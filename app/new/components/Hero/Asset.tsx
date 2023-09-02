@@ -7,6 +7,7 @@ export function Asset() {
     <div className="hero-asset">
       <Image
         src={IMG_ASSET}
+        className="hero-image"
         alt="Sitios web con super poderes"
         width="704"
         height="515"

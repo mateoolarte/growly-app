@@ -1,0 +1,89 @@
+.hero {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    right: -350px;
+    width: 700px;
+    height: 700px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: -1;
+
+    @media screen and (min-width: 1600px) {
+      display: none;
+    }
+  }
+
+  &-bg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    background-image: url("/home/blur-circle.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 60%;
+    z-index: -1;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    column-gap: var(--space-6);
+    align-items: center;
+    margin-bottom: var(--space-8);
+  }
+
+  &-info {
+    &-btnIcon {
+      display: inline-block;
+      margin-left: --space-2;
+    }
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: var(--space-3);
+    font-size: var(--heading);
+    line-height: 1.2;
+  }
+
+  &-description {
+    margin-top: 0;
+    margin-bottom: var(--space-6);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-base);
+    line-height: 1.6;
+  }
+
+  &-cta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  &-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &-feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-right: var(--space-2);
+    }
+  }
+}

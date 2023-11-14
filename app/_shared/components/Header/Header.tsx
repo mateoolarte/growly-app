@@ -1,4 +1,4 @@
-import { Logo } from "@/components/Logo";
+import { Logo } from "@/_shared/components/Logo";
 import "./Header.scss";
 
 export function Header() {

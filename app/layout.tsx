@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
-import { DEFAULT_FONT } from "@/_shared/constants";
-import { Header } from "@/_shared/components/Header";
-import "@/_shared/styles/base.css";
+import { DEFAULT_FONT } from "@/constants";
+import { Header } from "@/components/Header";
+import "@/styles/base.css";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

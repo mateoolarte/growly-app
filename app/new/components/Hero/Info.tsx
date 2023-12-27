@@ -1,5 +1,5 @@
-import { ArrowCircleRight } from "@/_shared/assets/icons/ArrowCircleRight";
-import { Button } from "@/_shared/components/Button";
+import { ArrowCircleRight } from "@/assets/icons/ArrowCircleRight";
+import { Button } from "@/components/Button";
 
 export function Info() {
   return (

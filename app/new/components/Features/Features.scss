@@ -1,0 +1,36 @@
+.features {
+  padding: 8rem 0;
+  background-image: url("/home/waves-circle.png");
+  background-repeat: no-repeat;
+  background-position: center 80%;
+  background-size: 100%;
+
+  &-info {
+    text-align: center;
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--color-darker);
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  &-description {
+    margin-top: 0;
+    margin-bottom: 4rem;
+    color: var(--color-black);
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+}

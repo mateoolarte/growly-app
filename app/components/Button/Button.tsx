@@ -2,7 +2,8 @@ import classnames from "classnames";
 
 import "./Button.scss";
 
-export function Button({ type, children, style = "primary", className }) {
+export function Button(props) {
+  const { type = "button", children, style = "primary", className } = props;
   const classNames = classnames("button", className, {
     "button--primary": style === "primary",
   });

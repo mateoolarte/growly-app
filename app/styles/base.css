@@ -2,6 +2,8 @@
   /* Colors */
   --bg: #f5f2f0;
   --primary-color: #f26a4b;
+  --color-black: #22252b;
+  --color-darker: #130101;
 
   /* Spacing */
   --space-2: 0.5rem;
@@ -34,7 +36,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg);
   overflow-x: hidden;
 }
 

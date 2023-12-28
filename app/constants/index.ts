@@ -6,3 +6,6 @@ export const DEFAULT_FONT = Hind_Madurai({
   weight: ["400", "500", "600"],
   display: "swap",
 });
+
+export const CMS_API_URL = process.env.CMS_API_URL;
+export const CMS_API_TOKEN_ACCESS = process.env.CMS_API_TOKEN_ACCESS;

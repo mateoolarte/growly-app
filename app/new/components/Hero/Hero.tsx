@@ -1,29 +1,34 @@
-"use client";
-
-import { useEffect } from "react";
-
-import { Info } from "./Info";
-import { Asset } from "./Asset";
-import { Features } from "./Features";
-
+import { Button } from "@/components/Button";
 import "./Hero.scss";
+import Image from "next/image";
 
-export function Hero() {
-  useEffect(() => {
-    const bgCircleElm = document.createElement("span");
-    bgCircleElm.classList.add("hero-bg");
-
-    document.body.prepend(bgCircleElm);
-  }, []);
+export function Hero(props) {
+  const { title, description, cta, image } = props;
+  const imageData = image.data.attributes;
+  const imageUrl = imageData?.url;
+  const imageWidth = imageData.width;
+  const imageHeight = imageData.height;
+  const imageName = imageData.name;
 
   return (
     <section className="hero">
-      <div className="container-box">
-        <div className="hero-container">
-          <Info />
-          <Asset />
-        </div>
-        <Features />
+      <div className="hero-container">
+        <h1 className="hero-title">{title}</h1>
+        <p className="hero-description">{description}</p>
+        {cta && (
+          <>
+            {cta?.title && <p className="hero-ctaTitle">{cta?.title}</p>}
+            <Button className="hero-cta">{cta.textBtn}</Button>
+          </>
+        )}
+        <Image
+          src={imageUrl}
+          width={imageWidth}
+          height={imageHeight}
+          alt={imageName}
+          className="hero-image"
+          priority
+        />
       </div>
     </section>
   );

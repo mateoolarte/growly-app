@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import "./Hero.scss";
 import Image from "next/image";
+import { IS_DEV_ENV, CMS_URL } from "@/constants";
 
 export function Hero(props) {
   const { title, description, cta, image } = props;
@@ -25,12 +26,11 @@ export function Hero(props) {
 
         {imageUrl && (
           <Image
-            src={imageUrl}
+            src={`${IS_DEV_ENV ? `${CMS_URL}${imageUrl}` : imageUrl}`}
             width={imageWidth}
             height={imageHeight}
             alt={imageName}
             className="hero-image"
-            priority
           />
         )}
       </div>

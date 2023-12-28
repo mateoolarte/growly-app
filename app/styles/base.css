@@ -1,9 +1,11 @@
 :root {
   /* Colors */
   --bg: #f5f2f0;
+  --color-white: #f7f5f3;
   --primary-color: #f26a4b;
   --color-black: #22252b;
   --color-darker: #130101;
+  --color-black-2: #191510;
 
   /* Spacing */
   --space-2: 0.5rem;

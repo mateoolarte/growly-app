@@ -1,0 +1,34 @@
+.ai {
+  padding: 4rem 0 6rem;
+  background-color: var(--color-black-2);
+
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background-image: url("/home/blur-circle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-title {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  &-description {
+    margin-bottom: 2rem;
+    color: var(--color-white);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &-image {
+    width: auto;
+    height: 650px;
+  }
+}

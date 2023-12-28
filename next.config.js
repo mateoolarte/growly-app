@@ -40,6 +40,11 @@ module.exports = {
         protocol: "https",
         hostname: "growly-strapi-images.s3.us-east-1.amazonaws.com",
       },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+      },
     ],
   },
 };

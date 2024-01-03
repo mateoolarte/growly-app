@@ -7,6 +7,7 @@ export async function getLandingData() {
     headers: {
       Authorization: `Bearer ${CMS_TOKEN_ACCESS}`,
     },
+    cache: "no-store", // TODO: Temp until integrate with webhooks
   });
   const json = await res.json();
 

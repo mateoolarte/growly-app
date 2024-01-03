@@ -10,6 +10,9 @@ import { Lightning } from "@/assets/icons/Lightning";
 import { Lock } from "@/assets/icons/Lock";
 import { Mail } from "@/assets/icons/Mail";
 import { Seo } from "@/assets/icons/Seo";
+import { Pricing } from "./components/Pricing";
+import { HowItWorks } from "./components/HowItWorks";
+import { FAQ } from "./components/FAQ";
 
 export const LANDING_API = `${CMS_URL}/api/growly-landing?populate[sections][populate]=*`;
 
@@ -17,6 +20,9 @@ export const SECTIONS_MAPPER = {
   "growly.hero": Hero,
   "growly.ai": Ai,
   "growly.features": Features,
+  "growly.pricing": Pricing,
+  "growly.how-it-works": HowItWorks,
+  "growly.faq": FAQ,
 };
 
 export const ICONS_MAPPER = {

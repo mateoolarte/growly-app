@@ -13,6 +13,9 @@ import { Seo } from "@/assets/icons/Seo";
 import { Pricing } from "./components/Pricing";
 import { HowItWorks } from "./components/HowItWorks";
 import { FAQ } from "./components/FAQ";
+import { Megafone } from "@/assets/icons/Megafone";
+import { Layers } from "@/assets/icons/Layers";
+import { Shop } from "@/assets/icons/Shop";
 
 export const LANDING_API = `${CMS_URL}/api/growly-landing?populate[sections][populate]=*`;
 
@@ -32,4 +35,9 @@ export const ICONS_MAPPER = {
   magic: Magic,
   mail: Mail,
   seo: Seo,
+  landing: Megafone,
+  corporate: Layers,
+  ecommerce: Shop,
 };
+
+export const HIGHLIGHTED_PLAN = "corporate";

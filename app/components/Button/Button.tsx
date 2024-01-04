@@ -1,15 +1,13 @@
 import classnames from "classnames";
 
 import "./Button.scss";
+import { classNamesBtn } from "./classNames";
 
 export function Button(props) {
-  const { type = "button", children, style = "primary", className } = props;
-  const classNames = classnames("button", className, {
-    "button--primary": style === "primary",
-  });
+  const { type = "button", children } = props;
 
   return (
-    <button type={type} className={classNames}>
+    <button type={type} className={classNamesBtn(props)}>
       {children}
     </button>
   );

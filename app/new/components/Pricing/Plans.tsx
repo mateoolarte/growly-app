@@ -1,11 +1,15 @@
+import { Plan } from "./Plan";
+
 export function Plans(props) {
   const { data, withInstallments } = props;
 
   return (
-    <ul className="pricing-plans">
+    <div className="pricing-plans">
       {data?.map((item) => {
-        return <li key={item.id}>{item.name}</li>;
+        return (
+          <Plan key={item.id} {...item} withInstallments={withInstallments} />
+        );
       })}
-    </ul>
+    </div>
   );
 }

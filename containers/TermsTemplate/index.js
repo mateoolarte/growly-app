@@ -1,1 +1,0 @@
-export { TermsTemplate } from './TermsTemplate';

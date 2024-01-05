@@ -1,1 +1,0 @@
-export { ApprovedPayment } from './ApprovedPayment';

@@ -1,4 +1,5 @@
 import { Feature } from "./Feature";
+
 import "./Features.scss";
 
 export function Features(props) {

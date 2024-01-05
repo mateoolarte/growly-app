@@ -1,4 +1,4 @@
-import { SECTIONS_MAPPER } from "@/new/constants";
+import { SECTIONS_MAPPER } from "@/constants/sectionsMapper";
 
 export function SectionRenderer({ data }) {
   if (!data || data.length <= 0) return null;

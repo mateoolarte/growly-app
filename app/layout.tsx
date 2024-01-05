@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { DEFAULT_FONT } from "@/constants";
+import { DEFAULT_FONT } from "@/constants/assets";
 // import { Header } from "@/components/Header";
 import "@/styles/base.css";
 

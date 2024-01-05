@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-import "./Button.scss";
 import { classNamesBtn } from "./classNames";
+
+import "./Button.scss";
 
 export function ButtonLink(props) {
   const { url, children } = props;

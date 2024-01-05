@@ -1,4 +1,5 @@
-import { ICONS_MAPPER } from "@/new/constants";
+import { ICONS_MAPPER } from "@/constants/iconMapper";
+
 import "./Feature.scss";
 
 export function Feature(props) {

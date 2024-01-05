@@ -1,4 +1,4 @@
-import { CURRENCY_CONVERT_API } from "../constants";
+import { CURRENCY_CONVERT_API } from "@/constants/apis";
 
 export async function getLocalPrice(options) {
   const { price, priceMaintenance, priceInstallments, countryCode } = options;

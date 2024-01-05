@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 
-import "./Pricing.scss";
 import { ToggleInstallments } from "./ToggleInstallments";
 import { Plans } from "./Plans";
+
+import "./Pricing.scss";
 
 export function Pricing(props) {
   const { title, description, plans } = props;

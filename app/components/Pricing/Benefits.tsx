@@ -1,6 +1,7 @@
-import { CheckCircle } from "@/assets/icons/CheckCircle";
-import { getBenefitsData } from "@/new/utils/getBenefitsData";
 import { useEffect, useState } from "react";
+
+import { CheckCircle } from "@/assets/icons/CheckCircle";
+import { getBenefitsData } from "@/utils/getBenefitsData";
 
 export function Benefits(props) {
   const { slug } = props;

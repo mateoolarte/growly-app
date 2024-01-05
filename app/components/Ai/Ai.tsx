@@ -1,6 +1,8 @@
-import { Button } from "@/components/Button";
-import { IS_DEV_ENV, CMS_URL } from "@/constants";
 import Image from "next/image";
+
+import { Button } from "@/components/Button";
+import { IS_DEV_ENV, CMS_URL } from "@/constants/envs";
+
 import "./Ai.scss";
 
 export function Ai(props) {

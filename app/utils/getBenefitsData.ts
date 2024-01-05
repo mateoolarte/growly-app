@@ -1,5 +1,5 @@
-import { CMS_TOKEN_ACCESS } from "@/constants";
-import { BENEFITS_API } from "../constants";
+import { BENEFITS_API } from "@/constants/apis";
+import { CMS_TOKEN_ACCESS } from "@/constants/envs";
 
 export async function getBenefitsData(planSlug) {
   const res = await fetch(BENEFITS_API, {

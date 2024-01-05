@@ -1,7 +1,6 @@
-import classnames from "classnames";
+import { classNamesBtn } from "./classNames";
 
 import "./Button.scss";
-import { classNamesBtn } from "./classNames";
 
 export function Button(props) {
   const { type = "button", children } = props;

@@ -1,7 +1,9 @@
-import { Button } from "@/components/Button";
-import "./Hero.scss";
 import Image from "next/image";
-import { IS_DEV_ENV, CMS_URL } from "@/constants";
+
+import { IS_DEV_ENV, CMS_URL } from "@/constants/envs";
+import { Button } from "@/components/Button";
+
+import "./Hero.scss";
 
 export function Hero(props) {
   const { title, description, cta, image } = props;

@@ -2,10 +2,11 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 import { ButtonLink } from "@/components/Button";
-import { HIGHLIGHTED_PLAN, ICONS_MAPPER } from "@/new/constants";
+import { ICONS_MAPPER } from "@/constants/iconMapper";
+import { HIGHLIGHTED_PLAN } from "@/constants";
+import { getLocalPrice } from "@/utils/getLocalPrice";
 
 import { Benefits } from "./Benefits";
-import { getLocalPrice } from "@/new/utils/getLocalPrice";
 
 export function Plan(props) {
   const {

@@ -1,5 +1,5 @@
-import { CMS_TOKEN_ACCESS } from "@/constants";
-import { LANDING_API } from "../constants";
+import { LANDING_API } from "@/constants/apis";
+import { CMS_TOKEN_ACCESS } from "@/constants/envs";
 
 export async function getLandingData() {
   const res = await fetch(LANDING_API, {

@@ -1,19 +1,18 @@
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 
 export function Step(props) {
-  const { step, title, description, icon } = props
+  const { step, title, description, icon } = props;
   const Icon = ICONS_MAPPER[icon];
   return (
-    <div className="how_it_works-step">
-      <div className="how_it_works-stepContent">
-        <div className="how_it_works-stepHeading">
+    <div className="howItWorks-step">
+      <div className="howItWorks-stepContent">
+        <div className="howItWorks-stepHeading">
           {icon && <Icon className="pricing-planBadge" />}
-          <h3>{title}</h3>
+          <h3 className="howItWorks-stepTitle">{title}</h3>
         </div>
-        <p className="how_it_works-stepDescription">{description}</p>
-        <span className="how_it_works-stepNumber">{step}</span>
+        <p className="howItWorks-stepDescription">{description}</p>
+        <span className="howItWorks-stepNumber">{step}</span>
       </div>
-
     </div>
   );
 }

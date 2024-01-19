@@ -1,0 +1,28 @@
+.cta {
+  padding: 20rem 0 8rem;
+  background-image: url("/home/graph2.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  &-info {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  &-description {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+}

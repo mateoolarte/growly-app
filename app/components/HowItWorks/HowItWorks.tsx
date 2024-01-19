@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import { Button } from "@/ui/Button";
 import { Steps } from "./Steps";
 import "./HowItWorks.scss";
 

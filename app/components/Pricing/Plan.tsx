@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
-import { ButtonLink } from "@/components/Button";
+import { ButtonLink } from "@/ui/Button";
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 import { HIGHLIGHTED_PLAN } from "@/constants";
 import { getLocalPrice } from "@/utils/getLocalPrice";

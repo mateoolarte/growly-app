@@ -1,0 +1,45 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &-item {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--orange-color);
+    border-radius: 0.75rem;
+    background-color: var(--organge-color-lighted-100);
+    font-size: 1.25rem;
+
+    &[data-state="closed"] {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  &-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+    border: 0;
+    background: none;
+    color: var(--color-black);
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &[data-state="open"] {
+      .accordion-icon {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &-icon {
+    fill: var(--primary-color);
+  }
+
+  &-content {
+    margin-top: 0.5rem;
+  }
+}

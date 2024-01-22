@@ -4,7 +4,7 @@ import { SectionRenderer } from "./ui/SectionRenderer";
 import { getLandingData } from "./utils/getLandingData";
 import { Header } from "./ui/Header";
 
-export default async function Page() {
+export default async function Home() {
   const sections = await getLandingData();
 
   if (!sections || sections.length <= 0)

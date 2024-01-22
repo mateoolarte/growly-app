@@ -1,8 +1,8 @@
-import { HEADER_API } from "@/constants/apis";
+import { navigationApi } from "@/constants/apis";
 import { CMS_TOKEN_ACCESS } from "@/constants/envs";
 
-export async function getHeaderData() {
-  const res = await fetch(HEADER_API, {
+export async function getNavigationData(location) {
+  const res = await fetch(navigationApi(location), {
     method: "GET",
     headers: {
       Authorization: `Bearer ${CMS_TOKEN_ACCESS}`,
@@ -13,7 +13,7 @@ export async function getHeaderData() {
 
   const data = json?.data;
   const attributes = data?.attributes;
-  const links = attributes?.links;
+  const links = attributes?.[location];
 
   return links;
 }

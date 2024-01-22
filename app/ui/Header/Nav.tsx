@@ -1,20 +1,29 @@
 import Link from "next/link";
-import { ButtonLink } from "../Button";
+
+import { getNavigationData } from "@/utils/getNavigationData";
 import { User } from "@/assets/icons/User";
 
-export function Nav(props) {
-  const { data } = props;
+import { ButtonLink } from "../Button";
+
+export async function Nav() {
+  const data = await getNavigationData("header");
+
+  const hasData = data && data.length > 0;
+
+  if (!hasData) return null;
 
   return (
-    <ul className="header-list">
-      {data.map((item) => {
-        return (
-          <li className="header-listItem" key={item.id}>
-            {renderLink(item)}
-          </li>
-        );
-      })}
-    </ul>
+    <nav className="header-nav">
+      <ul className="header-list">
+        {data.map((item) => {
+          return (
+            <li key={item.id} className="header-listItem">
+              {renderLink(item)}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }
 

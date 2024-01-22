@@ -18,4 +18,9 @@
     background-color: var(--color-white);
     color: var(--primary-color);
   }
+
+  &--small {
+    padding: var(--space-3);
+    font-size: var(--text-xs);
+  }
 }

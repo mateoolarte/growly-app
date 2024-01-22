@@ -1,11 +1,11 @@
-import { SECTIONS_MAPPER } from "@/constants/sectionsMapper";
+export function SectionRenderer(props) {
+  const { data, components } = props;
 
-export function SectionRenderer({ data }) {
   if (!data || data.length <= 0) return null;
 
   return data.map((section) => {
     const componentName = section["__component"];
-    const Component = SECTIONS_MAPPER[componentName];
+    const Component = components[componentName];
 
     if (!Component) return null;
 

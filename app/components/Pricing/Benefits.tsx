@@ -16,7 +16,7 @@ export function Benefits(props) {
 
   return (
     <ul className="pricing-benefits">
-      {benefits.map((benefit) => (
+      {benefits && benefits.map((benefit) => (
         <li key={benefit.id} className="pricing-benefit">
           <CheckCircle className="pricing-benefitIcon" />
           {benefit.name}

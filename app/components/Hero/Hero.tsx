@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { IS_DEV_ENV, CMS_URL } from "@/constants/envs";
-import { Button } from "@/components/Button";
+import { Button } from "@/ui/Button";
 
 import "./Hero.scss";
 

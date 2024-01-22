@@ -4,6 +4,7 @@ import { Features } from "@/components/Features";
 import { Pricing } from "@/components/Pricing";
 import { HowItWorks } from "@/components/HowItWorks";
 import { FAQ } from "@/components/FAQ";
+import { Cta } from "@/components/Cta";
 
 export const SECTIONS_MAPPER = {
   "growly.hero": Hero,
@@ -12,4 +13,5 @@ export const SECTIONS_MAPPER = {
   "growly.pricing": Pricing,
   "growly.how-it-works": HowItWorks,
   "growly.faq": FAQ,
+  "growly.banner-cta": Cta,
 };

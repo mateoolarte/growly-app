@@ -1,0 +1,125 @@
+.howItWorks {
+  padding: 6rem 0;
+  background-color: var(--color-black-2);
+  background-image: url("/home/blur-circle-dark.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-white);
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-color);
+  }
+
+  &-description {
+    margin-top: 0;
+    margin-bottom: 4.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &-steps {
+    display: grid;
+    grid-auto-flow: row;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &-step {
+    display: flex;
+    width: 100%;
+
+    &:first-child {
+      .howItWorks-step {
+        &Number {
+          background-color: var(--primary-color);
+          color: var(--orange-color-lighted);
+        }
+
+        &Content {
+          &::before {
+            background-color: var(--primary-color);
+          }
+        }
+      }
+    }
+
+    &Title {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 2rem;
+    }
+
+    &Description {
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    &Content {
+      max-width: 50%;
+      padding: 0 4rem 2rem 4rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 2px;
+        right: 0;
+        background-color: var(--orange-color-lighted);
+      }
+    }
+    &Heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    &Number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      text-align: center;
+      right: -24px;
+      top: 0;
+      border-radius: 50%;
+      color: var(--primary-color);
+      background-color: var(--orange-color-lighted);
+      width: 48px;
+      height: 48px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  &-step:nth-child(2n) {
+    flex-direction: row-reverse;
+    .howItWorks-step {
+      &Number {
+        left: -25px;
+        top: 0;
+      }
+      &Content {
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &-step:last-child {
+    .howItWorks-step {
+      &Content::before {
+        display: none;
+      }
+    }
+  }
+}

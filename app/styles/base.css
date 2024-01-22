@@ -6,6 +6,8 @@
   --primary-color: #f26a4b;
   --primary-color-lighted: #f69781;
   --orange-color: #d94141;
+  --orange-color-lighted: #fbd2c9;
+  --organge-color-lighted-100: #fef0ed;
   --color-black: #22252b;
   --color-darker: #130101;
   --color-black-2: #191510;
@@ -48,4 +50,8 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--space-2);
+}
+
+.text-center {
+  text-align: center;
 }

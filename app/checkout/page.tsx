@@ -1,39 +1,46 @@
 "use client";
 
-import { initMercadoPago, CardPayment } from "@mercadopago/sdk-react";
-
-import { sendPayment } from "./sendPayment";
+import { initMercadoPago } from "@mercadopago/sdk-react";
 import { MERCADO_PAGO_PUBLIC_KEY } from "@/constants/envs";
+import CardPaymentForm from "./components/CardPaymentForm/CardPaymentForm";
+import { useState } from "react";
+import PaymentStatus from "./components/PaymentStatus/PaymentStatus";
+import { sendPayment } from "./sendPayment";
 
 export default function Checkout() {
+  const [paymentId, setPaymentId] = useState(0)
+  const [paymentError, setPaymentError] = useState(false)
+
   if (!MERCADO_PAGO_PUBLIC_KEY) {
     return null;
   }
 
   initMercadoPago(MERCADO_PAGO_PUBLIC_KEY);
 
-  const initialization = {
-    amount: 100000,
-  };
-
   async function onSubmit(formData) {
-    console.log({ formData });
-
-    sendPayment(formData);
-  }
-
-  async function onError(error) {
-    console.log("onError", error);
+    try {
+      const { id: paymentId } = await sendPayment(formData);
+      setPaymentId(paymentId)
+    } catch (error) {
+      setPaymentError(true)
+    }
   }
 
   return (
     <div>
       <h1>Checkout</h1>
-      <CardPayment
-        initialization={initialization}
-        onSubmit={onSubmit}
-        onError={onError}
-      />
+      {!paymentError && paymentId ?
+        <PaymentStatus paymentId={paymentId} /> :
+        <CardPaymentForm onSubmit={onSubmit} />
+      }
+      {paymentError && (
+        <div>
+          Ha ocurrido un problema ! intenta de nuevo más tarde
+          <button>
+            intentar de nuevo
+          </button>
+        </div>
+      )}
     </div>
   );
 }

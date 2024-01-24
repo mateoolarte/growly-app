@@ -1,8 +1,9 @@
 import { MercadoPagoConfig, Payment } from "mercadopago";
-
 import { MERCADO_PAGO_ACCESS_KEY } from "@/constants/envs";
 
 export async function POST(request: Request) {
+
+  const requestData = await request.json();
   const {
     token,
     transaction_amount,
@@ -10,11 +11,11 @@ export async function POST(request: Request) {
     payment_method_id,
     payer,
     issuer_id,
-  } = await request.json();
-  const email = payer?.email;
+    selected_plan
+  } = requestData
 
   if (!MERCADO_PAGO_ACCESS_KEY) {
-    return Response.json({ error: "No existe una llave de acceso" });
+    throw Error('Mercado Pago access key not seated')
   }
   const client = new MercadoPagoConfig({
     accessToken: MERCADO_PAGO_ACCESS_KEY,
@@ -30,21 +31,14 @@ export async function POST(request: Request) {
         installments,
         issuer_id,
         token,
-        description: "Landing plan",
-        payer: {
-          email,
-        },
+        description: selected_plan,
+        payer,
       },
     });
 
-    console.log({ transaction });
-
-    return Response.json({ ok: true });
+    return Response.json({ ok: true, id: transaction.id });
   } catch (error) {
     console.log({ error });
-
-    return Response.json({ error: "Algo salió mal" });
+    throw Error('ERROR Creating payment', { cause: error })
   }
-
-  return Response.json({ ok: true });
 }

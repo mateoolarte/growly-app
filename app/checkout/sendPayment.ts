@@ -10,13 +10,7 @@ export async function sendPayment(data) {
     },
     body: JSON.stringify(data),
   };
-
-  try {
-    const res = await fetch("/api/process-payment", options);
-    const json = await res.json();
-
-    console.log({ json });
-  } catch (error) {
-    console.error({ error });
-  }
+  const res = await fetch("/api/process-payment", options);
+  const json = await res.json();
+  return json;
 }

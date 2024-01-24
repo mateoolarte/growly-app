@@ -15,7 +15,7 @@ export function Hero(props) {
 
   return (
     <section className="hero">
-      <div className="hero-container">
+      <div className="container-box text-center">
         <h1 className="hero-title">{title}</h1>
         <p className="hero-description">{description}</p>
 

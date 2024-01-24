@@ -34,7 +34,7 @@ function renderLink(item) {
     return (
       <Link href={url || ""} className="header-listLogin">
         <User className="header-listLoginIcon" />
-        {title}
+        <span>{title}</span>
       </Link>
     );
   }

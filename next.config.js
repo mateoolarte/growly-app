@@ -47,4 +47,8 @@ module.exports = {
       },
     ],
   },
+  sassOptions: {
+    includePaths: ["./app/styles"],
+    prependData: `@import "breakpoints.scss";`,
+  },
 };

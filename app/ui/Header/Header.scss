@@ -1,5 +1,9 @@
 .header {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+
+  @include screen(lg) {
+    padding: 1.5rem 0;
+  }
 
   &-container {
     display: flex;
@@ -9,16 +13,38 @@
 
   &-logo {
     width: auto;
-    height: 60px;
+    height: 50px;
+
+    @include screen(md) {
+      height: 60px;
+    }
   }
 
   &-list {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.5rem;
     margin: 0;
     padding: 0;
     list-style-type: none;
+
+    @include screen(md) {
+      gap: 1rem;
+    }
+
+    @include screen(lg) {
+      gap: 1.5rem;
+    }
+
+    &Item {
+      &:not(:last-child):not(:nth-last-child(2)) {
+        display: none;
+
+        @include screen(md) {
+          display: block;
+        }
+      }
+    }
 
     &Link {
       color: var(--color-black);
@@ -37,6 +63,14 @@
       font-weight: 600;
       color: var(--primary-color);
       text-decoration: none;
+
+      span {
+        display: none;
+
+        @include screen(md) {
+          display: inline-block;
+        }
+      }
 
       &Icon {
         fill: var(--primary-color);

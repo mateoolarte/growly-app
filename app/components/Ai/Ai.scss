@@ -4,31 +4,57 @@
 
   &-container {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 3rem;
     background-image: url("/home/blur-circle-dark.png");
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include screen(lg) {
+      flex-direction: row;
+    }
+  }
+
+  &-content {
+    text-align: center;
+
+    @include screen(lg) {
+      text-align: left;
+    }
   }
 
   &-title {
     margin: 0;
     color: var(--primary-color);
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.1;
+
+    @include screen(lg) {
+      font-size: 3rem;
+    }
   }
 
   &-description {
     margin-bottom: 2rem;
     color: var(--color-white);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
+
+    @include screen(lg) {
+      font-size: 1.25rem;
+    }
   }
 
   &-image {
-    width: auto;
-    height: 650px;
+    width: 100%;
+    height: auto;
+
+    @include screen(lg) {
+      width: auto;
+      height: 650px;
+    }
   }
 }

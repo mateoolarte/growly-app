@@ -8,11 +8,14 @@
     align-items: center;
     gap: 3rem;
     background-image: url("/home/blur-circle-dark.png");
+    background-position: 30% 50%;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 
     @include screen(lg) {
       flex-direction: row;
+      background-position: unset;
+      background-size: contain;
     }
   }
 

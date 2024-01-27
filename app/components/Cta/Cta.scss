@@ -1,9 +1,13 @@
 .cta {
-  padding: 20rem 0 8rem;
+  padding: 8rem 0;
   background-image: url("/home/graph2.png");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 100%;
+
+  @include screen(lg) {
+    padding: 20rem 0 8rem;
+  }
 
   &-info {
     width: 90%;
@@ -14,15 +18,22 @@
   &-title {
     margin-top: 0;
     margin-bottom: 0.75rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.1;
+
+    @include screen(lg) {
+      font-size: 3rem;
+    }
   }
 
   &-description {
     margin-top: 0;
     margin-bottom: 2rem;
-    font-size: 1.25rem;
     line-height: 1.6;
+
+    @include screen(lg) {
+      font-size: 1.25rem;
+    }
   }
 }

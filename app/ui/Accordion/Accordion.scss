@@ -8,10 +8,17 @@
     border: 1px solid var(--orange-color);
     border-radius: 0.75rem;
     background-color: var(--organge-color-lighted-100);
-    font-size: 1.25rem;
+
+    @include screen(lg) {
+      font-size: 1.25rem;
+    }
 
     &[data-state="closed"] {
-      padding: 1.5rem 1rem;
+      padding: 0.75rem 1rem;
+
+      @include screen(lg) {
+        padding: 1.5rem 1rem;
+      }
     }
   }
 
@@ -25,9 +32,12 @@
     border: 0;
     background: none;
     color: var(--color-black);
-    font-size: 1.25rem;
     font-weight: 600;
     cursor: pointer;
+
+    @include screen(lg) {
+      font-size: 1.25rem;
+    }
 
     &[data-state="open"] {
       .accordion-icon {
@@ -37,7 +47,14 @@
   }
 
   &-icon {
+    width: 20px;
+    height: 20px;
     fill: var(--primary-color);
+
+    @include screen(lg) {
+      width: 26px;
+      height: 26px;
+    }
   }
 
   &-content {

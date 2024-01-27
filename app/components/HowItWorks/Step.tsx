@@ -7,7 +7,7 @@ export function Step(props) {
     <div className="howItWorks-step">
       <div className="howItWorks-stepContent">
         <div className="howItWorks-stepHeading">
-          {icon && <Icon className="pricing-planBadge" />}
+          {icon && <Icon className="howItWorks-stepBadge" />}
           <h3 className="howItWorks-stepTitle">{title}</h3>
         </div>
         <p className="howItWorks-stepDescription">{description}</p>

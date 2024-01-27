@@ -1,5 +1,5 @@
 .howItWorks {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background-color: var(--color-black-2);
   background-image: url("/home/blur-circle-dark.png");
   background-position: 50% 50%;
@@ -7,29 +7,44 @@
   background-size: cover;
   color: var(--color-white);
 
+  @include screen(lg) {
+    padding: 6rem 0;
+  }
+
   &-title {
     margin-top: 0;
     margin-bottom: 0.75rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     text-align: center;
     color: var(--primary-color);
+
+    @include screen(lg) {
+      font-size: 3rem;
+    }
   }
 
   &-description {
     margin-top: 0;
-    margin-bottom: 4.5rem;
-    font-size: 1.25rem;
+    margin-bottom: 3rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
     text-align: center;
+
+    @include screen(lg) {
+      margin-bottom: 4.5rem;
+      font-size: 1.25rem;
+    }
   }
 
   &-steps {
     display: grid;
     grid-auto-flow: row;
-    width: 90%;
-    margin: 0 auto;
+
+    @include screen(lg) {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 
   &-step {
@@ -54,62 +69,107 @@
     &Title {
       margin: 0;
       color: var(--primary-color);
-      font-size: 2rem;
+      font-size: 1rem;
+
+      @include screen(lg) {
+        font-size: 2rem;
+      }
     }
 
     &Description {
       margin: 0;
+      font-size: 0.813rem;
       line-height: 1.8;
+
+      @include screen(lg) {
+        font-size: 1rem;
+      }
     }
 
     &Content {
-      max-width: 50%;
-      padding: 0 4rem 2rem 4rem;
+      padding: 0 0 3rem 4rem;
       position: relative;
+
+      @include screen(lg) {
+        max-width: 50%;
+        padding: 0 4rem 2rem 4rem;
+      }
 
       &::before {
         content: "";
         position: absolute;
         height: 100%;
         width: 2px;
-        right: 0;
+        left: 2rem;
         background-color: var(--orange-color-lighted);
+
+        @include screen(lg) {
+          right: 0;
+          left: unset;
+        }
       }
     }
+
     &Heading {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       margin-bottom: 0.75rem;
     }
+
+    &Badge {
+      width: 20px;
+      height: 20px;
+
+      @include screen(lg) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
     &Number {
       display: flex;
       align-items: center;
       justify-content: center;
       position: absolute;
       text-align: center;
-      right: -24px;
-      top: 0;
+      left: 1rem;
+      top: -0.25rem;
       border-radius: 50%;
       color: var(--primary-color);
       background-color: var(--orange-color-lighted);
-      width: 48px;
-      height: 48px;
-      font-size: 1.5rem;
+      width: 32px;
+      height: 32px;
+      font-size: 1.25rem;
       font-weight: 600;
+
+      @include screen(lg) {
+        top: 0;
+        right: -24px;
+        left: unset;
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+      }
     }
   }
 
   &-step:nth-child(2n) {
-    flex-direction: row-reverse;
+    @include screen(lg) {
+      flex-direction: row-reverse;
+    }
+
     .howItWorks-step {
       &Number {
-        left: -25px;
-        top: 0;
+        @include screen(lg) {
+          left: -25px;
+        }
       }
       &Content {
         &::before {
-          left: 0;
+          @include screen(lg) {
+            left: 0;
+          }
         }
       }
     }

@@ -27,5 +27,5 @@ export const ICONS_MAPPER = {
   card: Card,
   laptop: Laptop,
   pepper: Pepper,
-  rocket: Rocket
+  rocket: Rocket,
 };

@@ -1,0 +1,15 @@
+.checkout {
+  max-width: 1024px;
+  margin: 0 auto;
+  &-title {
+    text-align: center;
+    &--left {
+      font-size: 1.25;
+      font-weight: 500;
+    }
+  }
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

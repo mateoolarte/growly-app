@@ -1,21 +1,25 @@
 'use client'
 import { sendPayment } from "@/checkout/sendPayment";
 import { CardPayment } from "@mercadopago/sdk-react";
-import { initMercadoPago } from "@mercadopago/sdk-react";
-import { MERCADO_PAGO_PUBLIC_KEY } from "@/constants/envs";
+import { MercadoPagoWrapper } from "../MercadoPagoWrapper";
+import { useRouter } from "next/navigation";
 
-export default function CardPaymentForm() {
-  if (!MERCADO_PAGO_PUBLIC_KEY) {
-    return null;
-  }
-
-  initMercadoPago(MERCADO_PAGO_PUBLIC_KEY);
+export function CardPaymentForm() {
+  const router = useRouter()
 
   const initialization = {
     amount: 100000,
   };
 
   const customization = {
+    visual: {
+      style: {
+        customVariables: {
+          theme: 'default',
+          baseColor: "#f69781"
+        }
+      }
+    },
     paymentMethods: {
       maxInstallments: 3,
     },
@@ -23,7 +27,7 @@ export default function CardPaymentForm() {
 
 
   async function onError(error) {
-    console.log("onError", error);
+    console.error("onError", error);
   }
 
   async function onReady() {
@@ -33,19 +37,23 @@ export default function CardPaymentForm() {
   async function onSubmit(formData) {
     try {
       const response = await sendPayment(formData);
+      const { id: paymentId } = response;
+      router.push(`/checkout/status/${paymentId}`)
     } catch (error) {
 
     }
   }
 
   return (
-    <CardPayment
-      initialization={initialization}
-      customization={customization}
-      onSubmit={onSubmit}
-      onError={onError}
-      onReady={onReady}
-    />
+    <MercadoPagoWrapper>
+      <CardPayment
+        initialization={initialization}
+        customization={customization}
+        onSubmit={onSubmit}
+        onError={onError}
+        onReady={onReady}
+      />
+    </MercadoPagoWrapper>
   )
 
 

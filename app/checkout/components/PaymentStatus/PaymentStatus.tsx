@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import { StatusScreen } from "@mercadopago/sdk-react";
 
 export default function PaymentStatus({ paymentId }) {

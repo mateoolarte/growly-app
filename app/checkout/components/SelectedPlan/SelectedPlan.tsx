@@ -1,15 +1,20 @@
 'use client'
-
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 import { ArrowsClockwise } from "@/assets/icons/ArrowsClockwise";
-import './SelectedPlan.scss';
 import { useRouter } from "next/navigation";
 import { PLANS } from "@/constants/plans";
+import './SelectedPlan.scss';
 
-export function SelectedPlan({ plan }) {
+export function SelectedPlan({ plan, planBenefits }) {
   const { name, price, priceMaintenance, slug } = plan;
   const Icon = ICONS_MAPPER[slug];
   const router = useRouter();
+
+  const formattedPrice = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumSignificantDigits: 3
+  }).format(price);
 
   const PLANS_TO_SELECT = PLANS.filter(planName => planName !== slug);
 
@@ -39,17 +44,20 @@ export function SelectedPlan({ plan }) {
                 {plan}
               </option>
             ))}
-
           </select>
           <ArrowsClockwise className="selectedPlan-button--icon" />
         </div>
       </div>
       <div className="selectedPlan-priceContainer">
-        <p className="selectedPlan-price">${price} USD</p>
+        <p className="selectedPlan-price">{formattedPrice} USD</p>
         <p className="selectedPlan-priceMaintenance">Luego de un año el valor de renovación será de ${priceMaintenance} USD</p>
-        <p className="selectedPlan-benefits">Tu plan incluye:</p>
+        <p className="selectedPlan-benefitsTitle">Tu plan incluye:</p>
+        {planBenefits.map(benefit => (
+          <p key={benefit.id} className="selectedPlan-benefits">
+            {benefit.name}
+          </p>
+        ))}
       </div>
-
     </div>
   )
 }

@@ -12,6 +12,7 @@ import { Card } from "@/assets/icons/Card";
 import { Laptop } from "@/assets/icons/Laptop";
 import { Pepper } from "@/assets/icons/Pepper";
 import { Rocket } from "@/assets/icons/Rocket";
+import { SealWarning } from "@/assets/icons/SealWarning";
 
 export const ICONS_MAPPER = {
   devices: Devices,
@@ -28,4 +29,5 @@ export const ICONS_MAPPER = {
   laptop: Laptop,
   pepper: Pepper,
   rocket: Rocket,
+  sealWarning: SealWarning
 };

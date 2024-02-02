@@ -24,6 +24,11 @@
     cursor: pointer;
   }
 
+  &-benefitsTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
   &-button {
     min-width: 85px;
     display: flex;

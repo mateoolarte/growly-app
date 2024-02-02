@@ -1,11 +1,23 @@
+'use client'
 
 import { ICONS_MAPPER } from "@/constants/iconMapper";
-import './SelectedPlan.scss';
 import { ArrowsClockwise } from "@/assets/icons/ArrowsClockwise";
+import './SelectedPlan.scss';
+import { useRouter } from "next/navigation";
+import { PLANS } from "@/constants/plans";
 
 export function SelectedPlan({ plan }) {
   const { name, price, priceMaintenance, slug } = plan;
   const Icon = ICONS_MAPPER[slug];
+  const router = useRouter();
+
+  const PLANS_TO_SELECT = PLANS.filter(planName => planName !== slug);
+
+  const handleChangePlan = (e) => {
+    const value = e.target.value;
+    router.push(value)
+  }
+
   return (
     <div className="selectedPlan">
       <div className="selectedPlan-infoContainer">
@@ -15,11 +27,22 @@ export function SelectedPlan({ plan }) {
             Plan {name}
           </h2>
         </div>
+        <div className="selectedPlan-buttonContainer">
+          <select name="pets" id="pet-select" className="selectedPlan-button" onChange={handleChangePlan}>
+            <option value="">
+              <div>
+                cambiar
+              </div>
+            </option>
+            {PLANS_TO_SELECT.map(plan => (
+              <option key={plan} value={plan}>
+                {plan}
+              </option>
+            ))}
 
-        <button className="selectedPlan-button">
-          cambiar
-          <ArrowsClockwise className={''} />
-        </button>
+          </select>
+          <ArrowsClockwise className="selectedPlan-button--icon" />
+        </div>
       </div>
       <div className="selectedPlan-priceContainer">
         <p className="selectedPlan-price">${price} USD</p>

@@ -2,11 +2,10 @@
   &-infoContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0.5rem 1.5rem;
     border: 1px solid var(--orange-color);
     border-radius: 0.5rem;
-    width: 100%;
+    width: max-content;
   }
 
   &-titleContainer {
@@ -15,13 +14,20 @@
   }
 
   &-name {
-    margin: 0 0 0 10px;
+    margin: 0 10px 0 10px;
     font-size: 1.25rem;
     font-weight: 500;
   }
 
+  &-buttonContainer {
+    position: relative;
+    cursor: pointer;
+  }
+
   &-button {
+    min-width: 85px;
     display: flex;
+    appearance: none;
     align-items: center;
     background-color: var(--color-white);
     border: 1px solid var(--primary-color);
@@ -29,11 +35,21 @@
     color: var(--primary-color);
     cursor: pointer;
     padding: 0.5rem;
+    position: relative;
     &:hover {
       opacity: 0.7;
     }
     svg {
       margin-left: 5px;
+    }
+    &--icon {
+      position: absolute;
+      right: 10%;
+      top:25%
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid var(--primary-color);
     }
   }
 

@@ -1,10 +1,15 @@
 'use client'
 import { sendPayment } from "@/checkout/sendPayment";
 import { CardPayment } from "@mercadopago/sdk-react";
-import { useRouter } from 'next/navigation'
+import { initMercadoPago } from "@mercadopago/sdk-react";
+import { MERCADO_PAGO_PUBLIC_KEY } from "@/constants/envs";
 
 export default function CardPaymentForm() {
-  const router = useRouter()
+  if (!MERCADO_PAGO_PUBLIC_KEY) {
+    return null;
+  }
+
+  initMercadoPago(MERCADO_PAGO_PUBLIC_KEY);
 
   const initialization = {
     amount: 100000,
@@ -27,7 +32,7 @@ export default function CardPaymentForm() {
 
   async function onSubmit(formData) {
     try {
-      const { id: paymentId } = await sendPayment(formData);
+      const response = await sendPayment(formData);
     } catch (error) {
 
     }

@@ -1,6 +1,6 @@
 //import { initMercadoPago } from "@mercadopago/sdk-react";
 //import { MERCADO_PAGO_PUBLIC_KEY } from "@/constants/envs";
-//import CardPaymentForm from "../components/CardPaymentForm/CardPaymentForm";
+import CardPaymentForm from "../components/CardPaymentForm/CardPaymentForm";
 import './checkout.scss'
 import { SelectedPlan } from "../components/SelectedPlan";
 import { getPlanDetail } from "@/utils/getPlanDetails";
@@ -9,11 +9,7 @@ export default async function Checkout({ params }) {
   const { planSlug } = params
   const plan = await getPlanDetail(planSlug);
 
-  /*   if (!MERCADO_PAGO_PUBLIC_KEY) {
-      return null;
-    }
 
-    initMercadoPago(MERCADO_PAGO_PUBLIC_KEY); */
 
 
 
@@ -25,7 +21,8 @@ export default async function Checkout({ params }) {
           <h3 className="checkout-title--left">Resumen de tu compra</h3>
           <SelectedPlan plan={plan} />
         </div>
-        {/*         <CardPaymentForm />
+        <CardPaymentForm />
+        {/*
  */}        {/*    </div>
       {!paymentError && paymentId ?
         <PaymentStatus paymentId={paymentId} /> :

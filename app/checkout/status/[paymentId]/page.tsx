@@ -1,25 +1,23 @@
 "use client";
 
-import { initMercadoPago, CardPayment } from "@mercadopago/sdk-react";
-
-import { sendPayment } from "./sendPayment";
 import { MERCADO_PAGO_PUBLIC_KEY } from "@/constants/envs";
+import { StatusScreen, initMercadoPago } from "@mercadopago/sdk-react";
 
-export default function Checkout() {
+export default function PaymentStatus({ params }) {
   if (!MERCADO_PAGO_PUBLIC_KEY) {
     return null;
   }
 
   initMercadoPago(MERCADO_PAGO_PUBLIC_KEY);
 
+  const { paymentId } = params
+
   const initialization = {
-    amount: 100000,
+    paymentId
   };
 
-  async function onSubmit(formData) {
-    console.log({ formData });
-
-    sendPayment(formData);
+  async function onReady() {
+    console.log('ready');
   }
 
   async function onError(error) {
@@ -28,10 +26,9 @@ export default function Checkout() {
 
   return (
     <div>
-      <h1>Checkout</h1>
-      <CardPayment
+      <StatusScreen
         initialization={initialization}
-        onSubmit={onSubmit}
+        onReady={onReady}
         onError={onError}
       />
     </div>

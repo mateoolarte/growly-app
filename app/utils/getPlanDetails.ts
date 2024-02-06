@@ -1,4 +1,4 @@
-import { LANDING_API, PLAN_API } from "@/constants/apis";
+import { PLAN_API } from "@/constants/apis";
 import { CMS_TOKEN_ACCESS } from "@/constants/envs";
 
 export async function getPlanDetail(planSlug) {
@@ -14,7 +14,11 @@ export async function getPlanDetail(planSlug) {
     const data = json?.data;
     const attributes = data?.attributes;
     const sections = attributes?.sections;
-    const plan = sections[0]?.plans[0]
+    const pricing = sections.find(
+      (section) => section["__component"] === "growly.pricing",
+    );
+    const plans = pricing?.plans;
+    const plan = plans[0];
 
     return plan;
   } catch (error) {

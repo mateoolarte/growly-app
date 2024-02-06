@@ -1,4 +1,4 @@
-import { getNavigationData } from "@/utils/getNavigationData";
+import { getNavigationData } from "@/services/getNavigationData";
 import Link from "next/link";
 
 export async function Nav() {

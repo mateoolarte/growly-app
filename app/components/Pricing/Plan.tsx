@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ButtonLink } from "@/ui/Button";
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 import { HIGHLIGHTED_PLAN } from "@/constants";
-import { getLocalPrice } from "@/utils/getLocalPrice";
+import { getLocalPrice } from "@/services/getLocalPrice";
 
 import { Benefits } from "./Benefits";
 
@@ -16,6 +16,7 @@ export function Plan(props) {
     price,
     priceMaintenance,
     priceInstallments,
+    benefits,
   } = props;
 
   const [pricing, setPricing] = useState({
@@ -71,7 +72,7 @@ export function Plan(props) {
         </p>
       </div>
 
-      <Benefits slug={slug} />
+      <Benefits data={benefits} slug={slug} />
 
       <ButtonLink url="" style={btnStyle} className="pricing-planCta">
         Contratar {name}

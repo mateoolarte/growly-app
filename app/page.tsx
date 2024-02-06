@@ -1,7 +1,7 @@
 import { SECTIONS_MAPPER } from "@/constants/sectionsMapper";
 
 import { SectionRenderer } from "./ui/SectionRenderer";
-import { getLandingData } from "./utils/getLandingData";
+import { getLandingData } from "./services/getLandingData";
 import { Header } from "./ui/Header";
 import { Footer } from "./ui/Footer";
 

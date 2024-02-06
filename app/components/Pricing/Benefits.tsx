@@ -1,22 +1,20 @@
-import { useEffect, useState } from "react";
-
 import { CheckCircle } from "@/assets/icons/CheckCircle";
-import { getBenefitsData } from "@/utils/getBenefitsData";
 
 export function Benefits(props) {
-  const { slug } = props;
+  const { slug, data } = props;
 
-  const [benefits, setBenefits] = useState([]);
-
-  useEffect(() => {
-    getBenefitsData(slug).then((data) => {
-      setBenefits(data);
-    });
-  }, [slug]);
+  const benefits = data?.filter((item) => {
+    if (item.belongPlans[slug] === "true") {
+      return {
+        id: item.id,
+        name: item.name,
+      };
+    }
+  });
 
   return (
     <ul className="pricing-benefits">
-      {benefits && benefits.map((benefit) => (
+      {benefits?.map((benefit) => (
         <li key={benefit.id} className="pricing-benefit">
           <CheckCircle className="pricing-benefitIcon" />
           {benefit.name}

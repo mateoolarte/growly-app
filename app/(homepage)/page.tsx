@@ -1,9 +1,9 @@
-import { SECTIONS_MAPPER } from "@/constants/sectionsMapper";
+import { SECTIONS_MAPPER } from "@/(homepage)/constants/sectionsMapper";
 
-import { SectionRenderer } from "./ui/SectionRenderer";
-import { getLandingData } from "./services/getLandingData";
-import { Header } from "./ui/Header";
-import { Footer } from "./ui/Footer";
+import { SectionRenderer } from "@/ui/SectionRenderer";
+import { getLandingData } from "@/services/getLandingData";
+import { Header } from "@/ui/Header";
+import { Footer } from "@/ui/Footer";
 
 export default async function Page() {
   const sections = await getLandingData();

@@ -1,9 +1,12 @@
-import { CardPaymentForm } from "../components/CardPaymentForm";
-import { SelectedPlan } from "../components/SelectedPlan";
-import { getPlanDetail } from "@/utils/getPlanDetails";
-import "./checkout.scss";
-import { ICONS_MAPPER } from "@/constants/iconMapper";
+import { getPlanDetail } from "@/services/getPlanDetails";
 import { getBenefitsData } from "@/services/getBenefitsData";
+
+import { CardPaymentForm } from "@/(payment)/components/CardPaymentForm";
+import { SelectedPlan } from "@/(payment)/components/SelectedPlan";
+
+import { ICONS_MAPPER } from "@/constants/iconMapper";
+
+import "./checkout.scss";
 
 const SealWarningIcon = ICONS_MAPPER.sealWarning;
 
@@ -31,7 +34,7 @@ export default async function Checkout({ params }) {
         <CardPaymentForm />
       </div>
       <div className="checkout-disclaimerContainer">
-        <SealWarningIcon className="" />
+        <SealWarningIcon />
         <p className="checkout-disclaimer">
           Si no cumplimos tus expectativas, te devolvemos el dinero.
         </p>

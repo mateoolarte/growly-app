@@ -1,11 +1,14 @@
-'use client'
-import { sendPayment } from "@/checkout/sendPayment";
+"use client";
+
 import { CardPayment } from "@mercadopago/sdk-react";
-import { MercadoPagoWrapper } from "../MercadoPagoWrapper";
 import { useRouter } from "next/navigation";
 
+import { sendPayment } from "@/services/sendPayment";
+
+import { MercadoPagoWrapper } from "../MercadoPagoWrapper";
+
 export function CardPaymentForm() {
-  const router = useRouter()
+  const router = useRouter();
 
   const initialization = {
     amount: 100000,
@@ -15,33 +18,30 @@ export function CardPaymentForm() {
     visual: {
       style: {
         customVariables: {
-          theme: 'default',
-          baseColor: "#f69781"
-        }
-      }
+          theme: "default",
+          baseColor: "#f69781",
+        },
+      },
     },
     paymentMethods: {
       maxInstallments: 3,
     },
   };
 
-
   async function onError(error) {
     console.error("onError", error);
   }
 
   async function onReady() {
-    console.log('ready!!')
+    console.log("ready!!");
   }
 
   async function onSubmit(formData) {
     try {
       const response = await sendPayment(formData);
       const { id: paymentId } = response;
-      router.push(`/checkout/status/${paymentId}`)
-    } catch (error) {
-
-    }
+      router.push(`/checkout/status/${paymentId}`);
+    } catch (error) {}
   }
 
   return (
@@ -54,7 +54,5 @@ export function CardPaymentForm() {
         onReady={onReady}
       />
     </MercadoPagoWrapper>
-  )
-
-
+  );
 }

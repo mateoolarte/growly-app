@@ -8,7 +8,7 @@ export function FAQ(props) {
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="faq">
+    <section className="faq" id="faq">
       <div className="container-box">
         <div className="faq-container">
           <div className="faq-info">

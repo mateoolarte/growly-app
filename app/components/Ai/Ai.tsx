@@ -1,9 +1,12 @@
+"use client"
+
 import Image from "next/image";
 
 import { Button } from "@/ui/Button";
 import { IS_DEV_ENV, CMS_URL } from "@/constants/envs";
 
 import "./Ai.scss";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 export function Ai(props) {
   const { title, description, cta, image } = props;
@@ -19,7 +22,7 @@ export function Ai(props) {
         <div className="ai-content">
           <h2 className="ai-title">{title}</h2>
           <p className="ai-description">{description}</p>
-          {cta && <Button>{cta?.textBtn}</Button>}
+          {cta && <Button onClick={() => scrollToSection(cta?.linkBtn)}>{cta?.textBtn}</Button>}
         </div>
 
         {imageUrl && (

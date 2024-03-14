@@ -12,7 +12,7 @@ export function Pricing(props) {
   const [withInstallments, setWithInstallments] = useState(false);
 
   return (
-    <section className="pricing">
+    <section className="pricing" id="precios">
       <div className="container-box">
         <h2 className="pricing-title">{title}</h2>
         <p className="pricing-description">{description}</p>

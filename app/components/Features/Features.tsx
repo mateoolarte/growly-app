@@ -6,7 +6,7 @@ export function Features(props) {
   const { title, description, features } = props;
 
   return (
-    <section className="features">
+    <section className="features" id="caracteristicas">
       <div className="container-box">
         <div className="features-info">
           <h2 className="features-title">{title}</h2>

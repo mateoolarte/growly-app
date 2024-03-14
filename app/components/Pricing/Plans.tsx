@@ -1,10 +1,18 @@
+import { useEffect, useState } from "react";
+
 import { getBenefitsData } from "@/services/getBenefitsData";
 import { Plan } from "./Plan";
 
-export async function Plans(props) {
+export function Plans(props) {
   const { data, withInstallments } = props;
 
-  const benefits = await getBenefitsData();
+  const [benefits, setBenefits] = useState([]);
+
+  useEffect(() => {
+    getBenefitsData()
+      .then((res) => setBenefits(res))
+      .catch((err) => console.error(err));
+  }, [])
 
   return (
     <div className="pricing-plans">

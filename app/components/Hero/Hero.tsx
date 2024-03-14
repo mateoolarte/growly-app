@@ -1,9 +1,13 @@
+"use client"
+
 import Image from "next/image";
 
 import { IS_DEV_ENV, CMS_URL } from "@/constants/envs";
 import { Button } from "@/ui/Button";
 
 import "./Hero.scss";
+import { ArrowCircleRight } from "@/assets/icons/ArrowCircleRight";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 export function Hero(props) {
   const { title, description, cta, image } = props;
@@ -14,7 +18,7 @@ export function Hero(props) {
   const imageName = imageData?.name;
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="container-box text-center">
         <h1 className="hero-title">{title}</h1>
         <p className="hero-description">{description}</p>
@@ -22,7 +26,10 @@ export function Hero(props) {
         {cta && (
           <>
             {cta?.title && <p className="hero-ctaTitle">{cta?.title}</p>}
-            <Button className="hero-cta">{cta?.textBtn}</Button>
+            <Button className="hero-cta" onClick={() => scrollToSection(cta?.linkBtn)}>
+              {cta?.textBtn}
+              <ArrowCircleRight />
+            </Button>
           </>
         )}
 

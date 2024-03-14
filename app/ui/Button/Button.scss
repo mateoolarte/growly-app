@@ -1,5 +1,7 @@
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   padding: var(--space-4) var(--space-5);
   border-radius: var(--border-radius-base);
   font-size: var(--text);
@@ -10,8 +12,8 @@
 
   &--primary {
     border: 0;
-    background-color: var(--primary-color);
-    color: #fef0ed;
+    background: linear-gradient(283.28deg, var(--primary-color) -130.94%, var(--orange-color) 230.94%);
+    color: var(--orange-color-lighted-100);
   }
 
   &--secondary {

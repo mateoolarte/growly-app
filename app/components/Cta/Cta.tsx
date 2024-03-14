@@ -1,4 +1,9 @@
+"use client";
+
 import { Button } from "@/ui/Button";
+
+import { scrollToSection } from "@/utils/scrollToSection";
+
 import "./Cta.scss";
 
 export function Cta(props) {
@@ -10,7 +15,14 @@ export function Cta(props) {
         <div className="cta-info">
           <h2 className="cta-title">{title}</h2>
           <p className="cta-description">{description}</p>
-          {cta && <Button className="cta-btn">{cta?.textBtn}</Button>}
+          {cta && (
+            <Button
+              className="cta-btn"
+              onClick={() => scrollToSection(cta?.linkBtn)}
+            >
+              {cta?.textBtn}
+            </Button>
+          )}
         </div>
       </div>
     </section>

@@ -3,6 +3,8 @@ import { CheckCircle } from "@/assets/icons/CheckCircle";
 export function Benefits(props) {
   const { slug, data } = props;
 
+  if (!data || data.length === 0) return null;
+
   const benefits = data?.filter((item) => {
     if (item.belongPlans[slug] === "true") {
       return {

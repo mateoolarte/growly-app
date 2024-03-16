@@ -32,7 +32,7 @@ export function Accordion(props) {
               <Plus className="accordion-icon" />
             </AccordionUI.Trigger>
             <AccordionUI.Content className="accordion-content">
-              {answer}
+              <div dangerouslySetInnerHTML={{ __html: answer }} />
             </AccordionUI.Content>
           </AccordionUI.Item>
         );

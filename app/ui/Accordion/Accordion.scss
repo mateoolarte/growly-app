@@ -33,6 +33,7 @@
     background: none;
     color: var(--color-black);
     font-weight: 600;
+    text-align: left;
     cursor: pointer;
 
     @include screen(lg) {

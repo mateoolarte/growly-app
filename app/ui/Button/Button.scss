@@ -12,11 +12,16 @@
 
   &--primary {
     border: 0;
-    background: linear-gradient(283.28deg, var(--primary-color) -130.94%, var(--orange-color) 230.94%);
+    background: linear-gradient(
+      283.28deg,
+      var(--primary-color) -130.94%,
+      var(--orange-color) 230.94%
+    );
     color: var(--orange-color-lighted-100);
   }
 
   &--secondary {
+    border: 1px solid var(--primary-color);
     background-color: var(--color-white);
     color: var(--primary-color);
   }

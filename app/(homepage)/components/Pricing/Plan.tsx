@@ -1,30 +1,16 @@
 import classNames from "classnames";
-import { useEffect, useState } from "react";
 
 import { ButtonLink } from "@/ui/Button";
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 import { HIGHLIGHTED_PLAN } from "@/constants";
-import { getLocalPrice } from "@/services/getLocalPrice";
+import { useGetLocalPricing } from "@/(homepage)/hooks/useGetLocalPricing";
 
 import { Benefits } from "./Benefits";
 
 export function Plan(props) {
-  const {
-    withInstallments,
-    name,
-    slug,
-    price,
-    priceMaintenance,
-    priceInstallments,
-    benefits,
-  } = props;
+  const { withInstallments, name, slug, benefits } = props;
 
-  const [pricing, setPricing] = useState({
-    price,
-    priceMaintenance,
-    priceInstallments,
-    currency: "USD",
-  });
+  const pricing = useGetLocalPricing(props);
 
   const Icon = ICONS_MAPPER[slug];
   const highlightedPlan = slug === HIGHLIGHTED_PLAN;
@@ -33,24 +19,9 @@ export function Plan(props) {
     "pricing-plan--highlighted": highlightedPlan,
   });
   const btnStyle = highlightedPlan ? "secondary" : "primary";
-
-  useEffect(() => {
-    const pricingOptions = {
-      price,
-      priceMaintenance,
-      priceInstallments,
-      countryCode: "COP",
-    };
-
-    getLocalPrice(pricingOptions).then((res) => {
-      setPricing({
-        price: res?.price?.toLocaleString("es-CO"),
-        priceMaintenance: res?.priceMaintenance?.toLocaleString("es-CO"),
-        priceInstallments: res?.priceInstallments?.toLocaleString("es-CO"),
-        currency: res.currency,
-      });
-    });
-  }, [price, priceMaintenance, priceInstallments]);
+  const price = withInstallments ? pricing?.priceInstallments : pricing?.price;
+  const installmentsLabel = withInstallments ? "3 cuotas de:" : "";
+  const url = `/checkout/${slug}`;
 
   return (
     <div className={classNamesPlan}>
@@ -60,21 +31,23 @@ export function Plan(props) {
           <Icon className="pricing-planBadge" />
         </h3>
 
+        {installmentsLabel && (
+          <p className="pricing-planLabel">{installmentsLabel}</p>
+        )}
+
         <p className="pricing-planPrice">
-          <strong>
-            ${withInstallments ? pricing?.priceInstallments : pricing?.price}
-          </strong>
+          <strong>${price}</strong>
           {pricing?.currency}
         </p>
 
-        <p className="pricing-planMaintenance">
+        <p className="pricing-planLabel">
           Luego ${pricing?.priceMaintenance} {pricing?.currency}/año
         </p>
       </div>
 
       <Benefits data={benefits} slug={slug} />
 
-      <ButtonLink url="" style={btnStyle} className="pricing-planCta">
+      <ButtonLink url={url} style={btnStyle} className="pricing-planCta">
         Contratar {name}
       </ButtonLink>
     </div>

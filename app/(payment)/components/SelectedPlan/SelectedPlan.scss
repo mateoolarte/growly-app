@@ -2,7 +2,8 @@
   &-infoContainer {
     display: flex;
     align-items: center;
-    padding: 0.5rem 1.5rem;
+    margin-bottom: var(--space-3);
+    padding: 1rem 1.5rem;
     border: 1px solid var(--orange-color);
     border-radius: 0.5rem;
     width: max-content;
@@ -14,9 +15,9 @@
   }
 
   &-name {
-    margin: 0 10px 0 10px;
+    margin: 0 var(--space-4) 0 var(--space-2);
     font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   &-buttonContainer {
@@ -24,9 +25,20 @@
     cursor: pointer;
   }
 
-  &-benefitsTitle {
-    font-size: 1.25rem;
-    font-weight: 500;
+  &-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &Title {
+      margin-top: 0;
+      margin-bottom: var(--space-3);
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
   }
 
   &-button {
@@ -41,20 +53,21 @@
     cursor: pointer;
     padding: 0.5rem;
     position: relative;
+    font-size: 0.813rem;
+    font-weight: 600;
+
     &:hover {
       opacity: 0.7;
     }
-    svg {
-      margin-left: 5px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--primary-color);
     }
     &--icon {
       position: absolute;
       right: 10%;
-      top:25%
-    }
-    &:focus {
-      outline: none;
-      border: 1px solid var(--primary-color);
+      top: 25%;
     }
   }
 
@@ -63,16 +76,17 @@
   }
 
   &-priceContainer {
-    margin: 0 1rem
+    margin: 0 var(--space-3);
   }
 
   &-price {
+    margin: 0;
     font-size: 2rem;
     font-weight: 600;
-    margin: 1rem 0 0rem 0;
   }
 
   &-priceMaintenance {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: var(--space-6);
   }
 }

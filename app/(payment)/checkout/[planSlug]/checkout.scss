@@ -1,9 +1,31 @@
+body {
+  @include screen(sm) {
+    background-image: url("/checkout/blur-circle-light.png");
+    background-repeat: no-repeat;
+    background-position: -40% 50%;
+    background-size: 550px;
+  }
+
+  @include screen(lg) {
+    background-position: 0% 50%;
+    background-size: 700px;
+  }
+
+  @include screen(xl) {
+    background-position: 0% 100%;
+    background-size: 1000px;
+  }
+}
+
 .checkout {
   margin-bottom: var(--space-8);
 
   &-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @include screen(sm) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: var(--space-8);
+    }
   }
 
   #cardPaymentBrick_container {

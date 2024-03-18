@@ -7,6 +7,14 @@ export function FAQ(props) {
 
   if (!items || items.length === 0) return null;
 
+  const parsedItems = items?.map((item) => {
+    return {
+      id: item.id,
+      title: item.question,
+      content: item.answer,
+    };
+  });
+
   return (
     <section className="faq" id="faq">
       <div className="container-box">
@@ -16,7 +24,7 @@ export function FAQ(props) {
             <p className="faq-description">{description}</p>
           </div>
           <div className="faq-content">
-            <Accordion data={items} />
+            <Accordion data={parsedItems} hasHTMLContent />
           </div>
         </div>
       </div>

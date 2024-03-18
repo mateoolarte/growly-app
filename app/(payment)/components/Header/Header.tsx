@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ArrowCircleLeft } from "@/assets/icons/ArrowCircleLeft";
 import { ButtonLink } from "@/ui/Button";
 import { Logo } from "@/ui/Logo";
@@ -8,9 +10,15 @@ export function Header() {
   return (
     <header className="checkout-header">
       <div className="checkout-headerContainer">
-        <Logo className="checkout-headerLogo" />
+        <Link href="/">
+          <Logo className="checkout-headerLogo" />
+        </Link>
 
-        <ButtonLink url="/" style="secondary">
+        <ButtonLink
+          url="/"
+          style="secondary"
+          className="checkout-headerBtnBack"
+        >
           <ArrowCircleLeft />
           Volver
         </ButtonLink>

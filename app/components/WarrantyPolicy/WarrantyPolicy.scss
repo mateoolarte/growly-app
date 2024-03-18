@@ -1,10 +1,17 @@
 .warranty-policy {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+
+  @include screen(md) {
+    font-size: var(--text);
+  }
 
   p {
-    margin: 0 0.5rem;
+    margin: 0;
   }
 
   a {

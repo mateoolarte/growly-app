@@ -1,20 +1,53 @@
 .checkout-header {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-5);
+
+  @include screen(sm) {
+    margin-bottom: var(--space-6);
+  }
+
+  @include screen(lg) {
+    margin-bottom: var(--space-8);
+  }
 
   &Container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-5) 0 var(--space-6);
+    padding: var(--space-4) 0 var(--space-5);
+
+    @include screen(sm) {
+      padding: var(--space-5) 0 var(--space-6);
+    }
   }
 
   &Logo {
-    height: 60px;
+    width: auto;
+    height: 50px;
+
+    @include screen(sm) {
+      height: 60px;
+    }
   }
 
   &Title {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
+
+    @include screen(lg) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &BtnBack {
+    gap: var(--space-1);
+    padding: var(--space-2);
+    font-size: var(--text-xs);
+
+    @include screen(sm) {
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text);
+      gap: var(--space-2);
+    }
   }
 }

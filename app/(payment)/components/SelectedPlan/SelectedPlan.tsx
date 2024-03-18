@@ -7,19 +7,24 @@ import { ArrowsClockwise } from "@/assets/icons/ArrowsClockwise";
 import { PLANS } from "@/constants/plans";
 
 import "./SelectedPlan.scss";
+import { useGetLocalPricing } from "@/(homepage)/hooks/useGetLocalPricing";
+import { Accordion } from "@/ui/Accordion";
 
 export function SelectedPlan({ plan, planBenefits }) {
-  const { name, price, priceMaintenance, slug } = plan;
+  const { name, slug } = plan;
   const Icon = ICONS_MAPPER[slug];
   const router = useRouter();
 
-  const formattedPrice = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumSignificantDigits: 3,
-  }).format(price);
+  const pricing = useGetLocalPricing(plan);
 
   const PLANS_TO_SELECT = PLANS.filter((planName) => planName !== slug);
+  const mobileBenefits = [
+    {
+      id: 1,
+      title: "Tu plan incluye",
+      content: <BenefitList data={planBenefits} />,
+    },
+  ];
 
   const handleChangePlan = (e) => {
     const value = e.target.value;
@@ -55,19 +60,40 @@ export function SelectedPlan({ plan, planBenefits }) {
       </div>
 
       <div className="selectedPlan-priceContainer">
-        <p className="selectedPlan-price">{formattedPrice} USD</p>
-        <p className="selectedPlan-priceMaintenance">
-          Luego de un año el valor de renovación será de ${priceMaintenance} USD
+        <p className="selectedPlan-price">
+          ${pricing?.price} {pricing?.currency}
         </p>
-        <p className="selectedPlan-benefitsTitle">Tu plan incluye:</p>
-        <ul className="selectedPlan-benefits">
-          {planBenefits.map((benefit) => (
-            <li key={benefit.id} className="selectedPlan-benefit">
-              {benefit.name}
-            </li>
-          ))}
-        </ul>
+
+        <p className="selectedPlan-priceMaintenance">
+          Luego de un año el valor de renovación será de $
+          {pricing?.priceMaintenance} {pricing?.currency}
+        </p>
+
+        <Accordion
+          data={mobileBenefits}
+          collapsed
+          className="selectedPlan-benefits--mobile"
+        />
+
+        <div className="selectedPlan-benefits--desktop">
+          <p className="selectedPlan-benefitsTitle">Tu plan incluye:</p>
+          <BenefitList data={planBenefits} />
+        </div>
       </div>
     </div>
+  );
+}
+
+function BenefitList(props) {
+  const { data } = props;
+
+  return (
+    <ul className="selectedPlan-benefitList">
+      {data.map((benefit) => (
+        <li key={benefit.id} className="selectedPlan-benefit">
+          {benefit.name}
+        </li>
+      ))}
+    </ul>
   );
 }

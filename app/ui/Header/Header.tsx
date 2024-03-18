@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Logo } from "@/ui/Logo";
 
 import { Nav } from "./Nav";
@@ -9,7 +11,9 @@ export function Header() {
     <header className="header">
       <div className="container-box">
         <div className="header-container">
-          <Logo className="header-logo" />
+          <Link href="/">
+            <Logo className="header-logo" />
+          </Link>
 
           <Nav />
         </div>

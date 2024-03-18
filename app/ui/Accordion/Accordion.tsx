@@ -1,25 +1,28 @@
 "use client";
 
 import * as AccordionUI from "@radix-ui/react-accordion";
+import classNames from "classnames";
 
 import { Plus } from "@/assets/icons/Plus";
 
 import "./Accordion.scss";
 
 export function Accordion(props) {
-  const { data } = props;
+  const { data, collapsed, hasHTMLContent, className } = props;
 
   if (!data || data.length === 0) return null;
+
+  const classNamesRoot = classNames("accordion", className);
 
   return (
     <AccordionUI.Root
       type="single"
       collapsible
-      defaultValue="item-1"
-      className="accordion"
+      defaultValue={!collapsed ? "item-1" : undefined}
+      className={classNamesRoot}
     >
       {data.map((item) => {
-        const { id, question, answer } = item;
+        const { id, title, content } = item;
 
         return (
           <AccordionUI.Item
@@ -28,11 +31,15 @@ export function Accordion(props) {
             className="accordion-item"
           >
             <AccordionUI.Trigger className="accordion-trigger">
-              {question}
+              {title}
               <Plus className="accordion-icon" />
             </AccordionUI.Trigger>
             <AccordionUI.Content className="accordion-content">
-              <div dangerouslySetInnerHTML={{ __html: answer }} />
+              {hasHTMLContent && (
+                <div dangerouslySetInnerHTML={{ __html: content }} />
+              )}
+
+              {!hasHTMLContent && content}
             </AccordionUI.Content>
           </AccordionUI.Item>
         );

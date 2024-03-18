@@ -1,13 +1,12 @@
 .checkout-planInfo {
-  background-image: url("/checkout/blur-circle-light.png");
-  background-repeat: no-repeat;
-  background-position: 0% 30%;
-  background-size: 700px;
-
   &Headline {
     margin-top: 0;
-    margin-bottom: var(--space-5);
-    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
     font-weight: 500;
+
+    @include screen(lg) {
+      margin-bottom: var(--space-5);
+      font-size: 1.25rem;
+    }
   }
 }

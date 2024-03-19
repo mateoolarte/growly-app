@@ -2,44 +2,71 @@
 
 import { CardPayment } from "@mercadopago/sdk-react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { sendPayment } from "@/services/sendPayment";
 
 import { MercadoPagoWrapper } from "../MercadoPagoWrapper";
 
-export function CardPaymentForm() {
-  const router = useRouter();
-
-  const initialization = {
-    amount: 100000,
-  };
-
-  const customization = {
-    visual: {
-      style: {
-        customVariables: {
-          theme: "default",
-          baseColor: "#f69781",
-        },
+const customization = {
+  paymentMethods: {
+    minInstallments: 1,
+    maxInstallments: 1,
+  },
+  visual: {
+    style: {
+      customVariables: {
+        baseColor: "#f26a4b",
       },
     },
-    paymentMethods: {
-      maxInstallments: 3,
-    },
+  },
+};
+
+export function CardPaymentForm(props) {
+  const { plan } = props;
+  const { price, priceMaintenance, priceInstallments } = plan;
+
+  const router = useRouter();
+  const [error, setError] = useState("");
+  const pricing = {
+    price: price?.toLocaleString("es-CO"),
+    priceNum: price,
+    priceMaintenance: priceMaintenance?.toLocaleString("es-CO"),
+    priceMaintenanceNum: priceMaintenance,
+    priceInstallments: priceInstallments?.toLocaleString("es-CO"),
+    priceInstallmentsNum: priceInstallments,
+    currency: "COP",
   };
+
+  const initialization = {
+    amount: pricing?.priceNum,
+  };
+
+  useEffect(() => {
+    return () => {
+      if (typeof window !== "undefined" && window.cardPaymentBrickController) {
+        window.cardPaymentBrickController.unmount();
+      }
+    };
+  }, []);
 
   async function onError(error) {
     console.error("onError", error);
-  }
 
-  async function onReady() {
-    console.log("ready!!");
+    setError(error.message);
   }
 
   async function onSubmit(formData) {
     try {
-      const response = await sendPayment(formData);
+      const payload = {
+        ...formData,
+        description: `Growly plan: ${plan?.slug} a un pago`,
+      };
+
+      const response = await sendPayment(payload);
+
       const { id: paymentId } = response;
+
       router.push(`/checkout/status/${paymentId}`);
     } catch (error) {}
   }
@@ -51,8 +78,8 @@ export function CardPaymentForm() {
         customization={customization}
         onSubmit={onSubmit}
         onError={onError}
-        onReady={onReady}
       />
+      {error && <p>{error}</p>}
     </MercadoPagoWrapper>
   );
 }

@@ -1,3 +1,5 @@
+import { PLANS } from "@/constants/plans";
+
 import { getPlanDetail } from "@/services/getPlanDetails";
 import { getBenefitsData } from "@/services/getBenefitsData";
 
@@ -12,6 +14,11 @@ import "./checkout.scss";
 export default async function Checkout({ params }) {
   const { planSlug } = params;
 
+  // TODO: Improve layout for not existing plan
+  if (!PLANS.includes(planSlug)) {
+    return <h1>El plan {planSlug} no existe</h1>;
+  }
+
   const plan = await getPlanDetail(planSlug);
   const planBenefits = await getBenefitsData();
 
@@ -20,7 +27,7 @@ export default async function Checkout({ params }) {
       <Header />
       <div className="checkout-container">
         <PlanInfo plan={plan} benefits={planBenefits} planSlug={planSlug} />
-        <CardPaymentForm />
+        <CardPaymentForm plan={plan} />
       </div>
       <WarrantyPolicy />
     </main>

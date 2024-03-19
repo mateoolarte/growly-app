@@ -14,21 +14,13 @@ export default function PaymentStatus({ params }) {
     paymentId,
   };
 
-  async function onReady() {
-    console.log("ready");
-  }
-
   async function onError(error) {
     console.log("onError", error);
   }
 
   return (
-    <div>
-      <StatusScreen
-        initialization={initialization}
-        onReady={onReady}
-        onError={onError}
-      />
-    </div>
+    <main>
+      <StatusScreen initialization={initialization} onError={onError} />
+    </main>
   );
 }

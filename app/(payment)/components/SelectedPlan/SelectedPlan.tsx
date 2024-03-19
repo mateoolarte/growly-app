@@ -7,15 +7,22 @@ import { ArrowsClockwise } from "@/assets/icons/ArrowsClockwise";
 import { PLANS } from "@/constants/plans";
 
 import "./SelectedPlan.scss";
-import { useGetLocalPricing } from "@/(homepage)/hooks/useGetLocalPricing";
 import { Accordion } from "@/ui/Accordion";
 
 export function SelectedPlan({ plan, planBenefits }) {
-  const { name, slug } = plan;
+  const { name, slug, price, priceMaintenance, priceInstallments } = plan;
   const Icon = ICONS_MAPPER[slug];
   const router = useRouter();
 
-  const pricing = useGetLocalPricing(plan);
+  const pricing = {
+    price: price?.toLocaleString("es-CO"),
+    priceNum: price,
+    priceMaintenance: priceMaintenance?.toLocaleString("es-CO"),
+    priceMaintenanceNum: priceMaintenance,
+    priceInstallments: priceInstallments?.toLocaleString("es-CO"),
+    priceInstallmentsNum: priceInstallments,
+    currency: "COP",
+  };
 
   const PLANS_TO_SELECT = PLANS.filter((planName) => planName !== slug);
   const mobileBenefits = [
@@ -46,9 +53,7 @@ export function SelectedPlan({ plan, planBenefits }) {
             className="selectedPlan-button"
             onChange={handleChangePlan}
           >
-            <option value="">
-              <div>cambiar</div>
-            </option>
+            <option value="">cambiar</option>
             {PLANS_TO_SELECT.map((plan) => (
               <option key={plan} value={plan}>
                 {plan}

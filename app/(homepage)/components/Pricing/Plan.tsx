@@ -3,14 +3,28 @@ import classNames from "classnames";
 import { ButtonLink } from "@/ui/Button";
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 import { HIGHLIGHTED_PLAN } from "@/constants";
-import { useGetLocalPricing } from "@/(homepage)/hooks/useGetLocalPricing";
 
 import { Benefits } from "./Benefits";
 
 export function Plan(props) {
-  const { withInstallments, name, slug, benefits } = props;
+  const {
+    withInstallments,
+    name,
+    slug,
+    benefits,
+    priceMaintenance,
+    priceInstallments,
+  } = props;
 
-  const pricing = useGetLocalPricing(props);
+  const pricing = {
+    price: props.price?.toLocaleString("es-CO"),
+    priceNum: props.price,
+    priceMaintenance: priceMaintenance?.toLocaleString("es-CO"),
+    priceMaintenanceNum: priceMaintenance,
+    priceInstallments: priceInstallments?.toLocaleString("es-CO"),
+    priceInstallmentsNum: priceInstallments,
+    currency: "COP",
+  };
 
   const Icon = ICONS_MAPPER[slug];
   const highlightedPlan = slug === HIGHLIGHTED_PLAN;

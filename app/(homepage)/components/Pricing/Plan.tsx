@@ -35,7 +35,7 @@ export function Plan(props) {
   const btnStyle = highlightedPlan ? "secondary" : "primary";
   const price = withInstallments ? pricing?.priceInstallments : pricing?.price;
   const installmentsLabel = withInstallments ? "3 cuotas de:" : "";
-  const url = `/checkout/${slug}`;
+  const url = `/checkout/${slug}${withInstallments ? "?type=installments" : ""}`;
 
   return (
     <div className={classNamesPlan}>

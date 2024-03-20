@@ -1,3 +1,4 @@
+import { PAYMENT_API } from "@/constants/apis";
 import { v4 as uuid } from "uuid";
 
 export async function sendPayment(data) {
@@ -12,10 +13,10 @@ export async function sendPayment(data) {
       body: JSON.stringify(data),
     };
 
-    const res = await fetch("/api/process-payment", options);
-    const json = await res.json();
+    const response = await fetch(PAYMENT_API, options);
+    const result = await response.json();
 
-    return json;
+    return result;
   } catch (error) {
     throw Error("ERROR Sending payment", { cause: error });
   }

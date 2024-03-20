@@ -3,7 +3,7 @@ import { SelectedPlan } from "../SelectedPlan";
 import "./PlanInfo.scss";
 
 export function PlanInfo(props) {
-  const { plan, benefits, planSlug } = props;
+  const { plan, benefits, planSlug, type } = props;
 
   const parsedBenefits = benefits?.filter((item) => {
     if (item.belongPlans[planSlug] === "true") {
@@ -17,7 +17,7 @@ export function PlanInfo(props) {
   return (
     <div className="checkout-planInfo">
       <h3 className="checkout-planInfoHeadline">Resumen de tu compra</h3>
-      <SelectedPlan plan={plan} planBenefits={parsedBenefits} />
+      <SelectedPlan plan={plan} planBenefits={parsedBenefits} type={type} />
     </div>
   );
 }

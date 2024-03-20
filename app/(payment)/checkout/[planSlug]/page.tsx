@@ -11,8 +11,10 @@ import { Header } from "@/(payment)/components/Header";
 
 import "./checkout.scss";
 
-export default async function Checkout({ params }) {
+export default async function Checkout(props) {
+  const { params, searchParams } = props;
   const { planSlug } = params;
+  const { type } = searchParams;
 
   // TODO: Improve layout for not existing plan
   if (!PLANS.includes(planSlug)) {
@@ -26,8 +28,13 @@ export default async function Checkout({ params }) {
     <main className="checkout container-box">
       <Header />
       <div className="checkout-container">
-        <PlanInfo plan={plan} benefits={planBenefits} planSlug={planSlug} />
-        <CardPaymentForm plan={plan} />
+        <PlanInfo
+          plan={plan}
+          benefits={planBenefits}
+          planSlug={planSlug}
+          type={type}
+        />
+        <CardPaymentForm plan={plan} type={type} />
       </div>
       <WarrantyPolicy />
     </main>

@@ -9,20 +9,20 @@ import { PLANS } from "@/constants/plans";
 import "./SelectedPlan.scss";
 import { Accordion } from "@/ui/Accordion";
 
-export function SelectedPlan({ plan, planBenefits }) {
+export function SelectedPlan(props) {
+  const { plan, planBenefits, type } = props;
   const { name, slug, price, priceMaintenance, priceInstallments } = plan;
   const Icon = ICONS_MAPPER[slug];
   const router = useRouter();
 
   const pricing = {
     price: price?.toLocaleString("es-CO"),
-    priceNum: price,
     priceMaintenance: priceMaintenance?.toLocaleString("es-CO"),
-    priceMaintenanceNum: priceMaintenance,
     priceInstallments: priceInstallments?.toLocaleString("es-CO"),
-    priceInstallmentsNum: priceInstallments,
     currency: "COP",
   };
+  const getPrice =
+    type === "installments" ? pricing?.priceInstallments : pricing?.price;
 
   const PLANS_TO_SELECT = PLANS.filter((planName) => planName !== slug);
   const mobileBenefits = [
@@ -66,7 +66,7 @@ export function SelectedPlan({ plan, planBenefits }) {
 
       <div className="selectedPlan-priceContainer">
         <p className="selectedPlan-price">
-          ${pricing?.price} {pricing?.currency}
+          ${getPrice} {pricing?.currency}
         </p>
 
         <p className="selectedPlan-priceMaintenance">

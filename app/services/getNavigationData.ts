@@ -1,8 +1,8 @@
-import { navigationApi } from "@/constants/apis";
+import { NAVIGATION_API } from "@/constants/apis";
 import { CMS_TOKEN_ACCESS } from "@/constants/envs";
 
 export async function getNavigationData(location) {
-  const res = await fetch(navigationApi(location), {
+  const res = await fetch(NAVIGATION_API(location), {
     method: "GET",
     headers: {
       Authorization: `Bearer ${CMS_TOKEN_ACCESS}`,

@@ -36,7 +36,7 @@ export async function POST(request: Request) {
       },
     });
 
-    return Response.json({ ok: true, id: transaction.id });
+    return Response.json({ id: transaction.id });
   } catch (error) {
     console.log({ error });
     throw Error("ERROR Creating payment", { cause: error });

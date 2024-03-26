@@ -1,0 +1,11 @@
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+
+  @include screen(sm) {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,35 @@
+.headline {
+  width: 90%;
+  margin: 0 auto var(--space-5);
+
+  @include screen(sm) {
+    width: 100%;
+    margin-bottom: var(--space-6);
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: var(--space-2);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    @include screen(xl) {
+      font-size: 3rem;
+    }
+  }
+
+  &-description {
+    margin: 0;
+    font-size: var(--text-xs);
+    font-weight: 400;
+
+    @include screen(sm) {
+      font-size: 1rem;
+    }
+
+    @include screen(xl) {
+      font-size: 1.25rem;
+    }
+  }
+}

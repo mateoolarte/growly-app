@@ -5,10 +5,10 @@ import { classNamesBtn } from "./classNames";
 import "./Button.scss";
 
 export function ButtonLink(props) {
-  const { url, children } = props;
+  const { href, children } = props;
 
   return (
-    <Link href={url} className={classNamesBtn(props)}>
+    <Link href={href} className={classNamesBtn(props)}>
       {children}
     </Link>
   );

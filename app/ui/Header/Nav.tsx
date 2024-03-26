@@ -41,7 +41,7 @@ function renderLink(item) {
 
   if (type === "button") {
     return (
-      <ButtonLink url={url || ""} size="small">
+      <ButtonLink href={url || ""} size="small">
         {title}
       </ButtonLink>
     );

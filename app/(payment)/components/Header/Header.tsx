@@ -15,7 +15,7 @@ export function Header() {
         </Link>
 
         <ButtonLink
-          url="/"
+          href="/"
           style="secondary"
           className="checkout-headerBtnBack"
         >

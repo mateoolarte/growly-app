@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  justify-content: center;
+  min-height: 400px;
+  margin-bottom: var(--space-5);
+
+  @include screen(sm) {
+    min-height: 385px;
+    margin-bottom: var(--space-6);
+  }
+}

@@ -61,7 +61,7 @@ export function Plan(props) {
 
       <Benefits data={benefits} slug={slug} />
 
-      <ButtonLink url={url} style={btnStyle} className="pricing-planCta">
+      <ButtonLink href={url} style={btnStyle} className="pricing-planCta">
         Contratar {name}
       </ButtonLink>
     </div>

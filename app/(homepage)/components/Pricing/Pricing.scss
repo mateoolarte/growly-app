@@ -64,6 +64,7 @@
   &-plans {
     display: grid;
     gap: 2rem;
+    margin-bottom: var(--space-6);
 
     @include screen(lg) {
       grid-template-columns: repeat(3, 1fr);

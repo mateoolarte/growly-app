@@ -6,6 +6,7 @@ import { ToggleInstallments } from "./ToggleInstallments";
 import { Plans } from "./Plans";
 
 import "./Pricing.scss";
+import { WarrantyPolicy } from "@/components/WarrantyPolicy";
 
 export function Pricing(props) {
   const { title, description, plans } = props;
@@ -29,6 +30,8 @@ export function Pricing(props) {
         />
 
         <Plans data={plans} withInstallments={withInstallments} />
+
+        <WarrantyPolicy />
       </div>
     </section>
   );

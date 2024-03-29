@@ -30,7 +30,7 @@ export async function Nav() {
 function renderLink(item) {
   const { title, type, url } = item;
 
-  if (title === "Login") {
+  if (type === "button-alt") {
     return (
       <Link href={url || ""} className="header-listLogin">
         <User className="header-listLoginIcon" />

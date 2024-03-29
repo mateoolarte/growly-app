@@ -1,0 +1,148 @@
+.sign-in {
+  min-height: 100vh;
+  background-color: var(--color-black-2);
+  background-image: url("/homepage/blur-circle-dark.png");
+  background-position: 30% 0%;
+  background-repeat: no-repeat;
+  background-size: 800px;
+
+  @include screen(sm) {
+    background-position: unset;
+    background-size: contain;
+  }
+
+  @include screen(md) {
+    background-size: cover;
+  }
+
+  &-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: var(--space-6);
+    text-align: center;
+
+    @include screen(sm) {
+      padding-top: var(--space-8);
+      padding-bottom: 0;
+    }
+  }
+
+  &-logo {
+    margin-bottom: var(--space-5);
+
+    @include screen(sm) {
+      margin-bottom: var(--space-6);
+    }
+  }
+
+  /* Clerk components */
+  .cl {
+    &-cardBox {
+      box-shadow: none;
+    }
+
+    &-card {
+      padding: var(--space-1);
+      background: none;
+    }
+
+    &-header {
+      display: none;
+    }
+
+    &-socialButtonsBlockButton {
+      padding: var(--space-3);
+      border: 1px solid var(--primary-color-lighted);
+      background-color: var(--color-white-2);
+      box-shadow: none;
+
+      @include screen(xl) {
+        padding: var(--space-4);
+      }
+
+      &:hover {
+        background-color: var(--orange-color-lighted-100);
+      }
+    }
+
+    &-socialButtonsBlockButtonText {
+      color: var(--primary-color);
+      font-size: var(--text);
+      font-weight: 600;
+    }
+
+    &-dividerLine {
+      background-color: var(--primary-color-lighted);
+    }
+
+    &-dividerText {
+      color: var(--color-white);
+      font-size: 1.25rem;
+    }
+
+    &-form {
+      gap: var(--space-5);
+    }
+
+    &-formFieldLabel {
+      color: var(--color-white);
+      font-size: var(--text-xs);
+
+      @include screen(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    &-formFieldInput {
+      padding: var(--space-3);
+      border: 1px solid var(--color-white);
+      background: none;
+      color: var(--color-white);
+      box-shadow: none;
+
+      &:hover,
+      &:focus-within {
+        box-shadow: none;
+      }
+
+      &:focus-within {
+        border-width: 2px;
+      }
+    }
+
+    &-formButtonPrimary,
+    &-alternativeMethodsBlockButton {
+      padding: var(--space-4) var(--space-5);
+      border-radius: 0.75rem;
+      background: linear-gradient(
+        283.28deg,
+        var(--primary-color) -130.94%,
+        var(--orange-color) 230.94%
+      );
+      font-size: var(--text);
+      font-weight: var(--weight-medium);
+      text-align: center;
+      box-shadow: none !important;
+      isolation: unset;
+    }
+
+    &-formFieldInputShowPasswordButton {
+      color: var(--color-white);
+
+      &:focus {
+        box-shadow: rgba(255, 255, 255, 0.35) 0px 0px 0px 2px;
+      }
+    }
+
+    &-formFieldAction,
+    &-footerActionLink,
+    &-backLink {
+      color: var(--color-white);
+    }
+
+    &-footer {
+      display: none;
+    }
+  }
+  /* End Clerk components */
+}

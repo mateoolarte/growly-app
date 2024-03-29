@@ -20,7 +20,10 @@ export default function Signup() {
   return (
     <main className="sign-up">
       <Logo className="sign-up-logo" />
-      <Headline />
+      <Headline
+        title="El futuro digital comienza aquí"
+        description="Crea tu cuenta para comenzar"
+      />
       <Form />
       <Terms />
       <Cta {...ctaProps} />

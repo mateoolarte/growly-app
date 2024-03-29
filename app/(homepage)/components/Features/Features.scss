@@ -1,13 +1,13 @@
 .features {
   padding: 4rem 0;
-  background-image: url("/home/blur-circle-light.png");
+  background-image: url("/homepage/blur-circle-light.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
 
   @include screen(lg) {
     padding: 8rem 0 6rem;
-    background-image: url("/home/waves-circle.png");
+    background-image: url("/homepage/waves-circle.png");
     background-position: center 80%;
     background-size: 100%;
   }

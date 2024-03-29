@@ -1,14 +1,17 @@
+import classNames from "classnames";
+
 import styles from "./Headline.module.scss";
 
-export function Headline() {
+export function Headline(props) {
+  const { title, description, theme } = props;
+  const containerClassNames = classNames(styles.headline, {
+    [styles["headline--dark"]]: theme === "dark",
+  });
+
   return (
-    <div className={styles.headline}>
-      <h1 className={styles["headline-title"]}>
-        El futuro digital comienza aquí
-      </h1>
-      <h2 className={styles["headline-description"]}>
-        Crea tu cuenta para comenzar
-      </h2>
+    <div className={containerClassNames}>
+      <h1 className={styles["headline-title"]}>{title}</h1>
+      <h2 className={styles["headline-description"]}>{description}</h2>
     </div>
   );
 }

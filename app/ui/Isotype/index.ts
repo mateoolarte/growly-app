@@ -1,0 +1,1 @@
+export { Isotype } from "./Isotype";

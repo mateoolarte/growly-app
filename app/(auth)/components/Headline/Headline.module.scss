@@ -7,6 +7,18 @@
     margin-bottom: var(--space-6);
   }
 
+  &--dark {
+    .headline {
+      &-title {
+        color: var(--primary-color);
+      }
+
+      &-description {
+        color: var(--color-white);
+      }
+    }
+  }
+
   &-title {
     margin-top: 0;
     margin-bottom: var(--space-2);

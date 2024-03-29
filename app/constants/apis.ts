@@ -1,6 +1,6 @@
 import { CMS_URL } from "./envs";
 
-export const LANDING_API = `${CMS_URL}/api/growly-landing?populate[sections][populate]=*`;
+export const LANDING_API = `${CMS_URL}/api/growly-landing?populate[sections][populate]=*&populate[seo][populate]=*`;
 
 export const PLAN_API = (planSlug) =>
   `${CMS_URL}/api/growly-landing?populate[sections][filters][name][$contains]=pricing&populate[sections][populate][plans][filters][slug][$eq]=${planSlug}`;

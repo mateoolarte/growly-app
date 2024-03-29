@@ -15,11 +15,15 @@ export async function getLandingData() {
     const data = json?.data;
     const attributes = data?.attributes;
     const sections = attributes?.sections;
+    const seoTags = attributes?.seo;
 
-    return sections;
+    return { sections, seoTags };
   } catch (error) {
     console.error({ function: "getLandingData", error });
 
-    return null;
+    return {
+      sections: null,
+      seoTags: null,
+    };
   }
 }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 
@@ -20,9 +20,19 @@ export function Ai(props) {
     <section className="ai">
       <div className="ai-container container-box">
         <div className="ai-content">
-          <h2 className="ai-title">{title}</h2>
-          <p className="ai-description">{description}</p>
-          {cta && <Button onClick={() => scrollToSection(cta?.linkBtn)}>{cta?.textBtn}</Button>}
+          <h2
+            className="ai-title"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <p
+            className="ai-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+          {cta && (
+            <Button onClick={() => scrollToSection(cta?.linkBtn)}>
+              {cta?.textBtn}
+            </Button>
+          )}
         </div>
 
         {imageUrl && (

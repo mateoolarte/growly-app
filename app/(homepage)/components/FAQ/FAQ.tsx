@@ -20,8 +20,14 @@ export function FAQ(props) {
       <div className="container-box">
         <div className="faq-container">
           <div className="faq-info">
-            <h2 className="faq-title">{title}</h2>
-            <p className="faq-description">{description}</p>
+            <h2
+              className="faq-title"
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
+            <p
+              className="faq-description"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
           </div>
           <div className="faq-content">
             <Accordion data={parsedItems} hasHTMLContent />

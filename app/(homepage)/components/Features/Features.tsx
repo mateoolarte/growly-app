@@ -9,8 +9,14 @@ export function Features(props) {
     <section className="features" id="caracteristicas">
       <div className="container-box">
         <div className="features-info">
-          <h2 className="features-title">{title}</h2>
-          <p className="features-description">{description}</p>
+          <h2
+            className="features-title"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <p
+            className="features-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
         <ul className="features-list">
           {features.map((feature) => {

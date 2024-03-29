@@ -10,12 +10,21 @@ import "./HowItWorks.scss";
 
 export function HowItWorks(props) {
   const { title, description, cta, steps } = props;
+
   return (
     <section className="howItWorks" id="como-funciona">
       <div className="container-box">
-        <h2 className="howItWorks-title">{title}</h2>
-        <p className="howItWorks-description">{description}</p>
+        <h2
+          className="howItWorks-title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+        <p
+          className="howItWorks-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+
         <Steps data={steps} />
+
         {cta && (
           <div className="text-center">
             {cta?.title && <p className="hero-ctaTitle">{cta?.title}</p>}

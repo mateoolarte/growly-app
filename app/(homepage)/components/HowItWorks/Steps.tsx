@@ -2,6 +2,7 @@ import { Step } from "./Step";
 
 export function Steps(props) {
   const { data } = props;
+
   return (
     <div className="howItWorks-steps">
       {data?.map((step, index) => {

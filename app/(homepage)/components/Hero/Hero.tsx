@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 
@@ -20,13 +20,22 @@ export function Hero(props) {
   return (
     <section className="hero" id="hero">
       <div className="container-box text-center">
-        <h1 className="hero-title">{title}</h1>
-        <p className="hero-description">{description}</p>
+        <h1
+          className="hero-title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+        <p
+          className="hero-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
 
         {cta && (
           <>
             {cta?.title && <p className="hero-ctaTitle">{cta?.title}</p>}
-            <Button className="hero-cta" onClick={() => scrollToSection(cta?.linkBtn)}>
+            <Button
+              className="hero-cta"
+              onClick={() => scrollToSection(cta?.linkBtn)}
+            >
               {cta?.textBtn}
               <ArrowCircleRight />
             </Button>

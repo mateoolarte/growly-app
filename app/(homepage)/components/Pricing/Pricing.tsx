@@ -14,8 +14,14 @@ export function Pricing(props) {
   return (
     <section className="pricing" id="precios">
       <div className="container-box">
-        <h2 className="pricing-title">{title}</h2>
-        <p className="pricing-description">{description}</p>
+        <h2
+          className="pricing-title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+        <p
+          className="pricing-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
 
         <ToggleInstallments
           withInstallments={withInstallments}

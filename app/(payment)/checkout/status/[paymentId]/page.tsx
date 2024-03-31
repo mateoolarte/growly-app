@@ -15,7 +15,7 @@ export default function PaymentStatus({ params }) {
   };
 
   async function onError(error) {
-    console.log("onError", error);
+    console.error("onError", error);
   }
 
   return (

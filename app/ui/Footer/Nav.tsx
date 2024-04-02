@@ -1,19 +1,22 @@
-import { getNavigationData } from "@/services/getNavigationData";
 import Link from "next/link";
 
-export async function Nav() {
+import { getNavigationData } from "@/services/getNavigationData";
+
+export async function Nav(props) {
+  const { styles } = props;
+
   const data = await getNavigationData("footer");
   const hasData = data && data.length > 0;
 
   if (!hasData) return null;
 
   return (
-    <nav className="footer-nav">
-      <ul className="footer-list">
+    <nav className={styles["footer-nav"]}>
+      <ul className={styles["footer-list"]}>
         {data.map((item) => {
           return (
-            <li key={item.id} className="footer-listItem">
-              <Link href={item.url || ""} className="footer-listLink">
+            <li key={item.id} className={styles["footer-item"]}>
+              <Link href={item.url || ""} className={styles["footer-link"]}>
                 {item.title}
               </Link>
             </li>

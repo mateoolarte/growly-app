@@ -5,14 +5,14 @@ import classNames from "classnames";
 
 import { Plus } from "@/assets/icons/Plus";
 
-import "./Accordion.scss";
+import styles from "./Accordion.module.scss";
 
 export function Accordion(props) {
   const { data, collapsed, hasHTMLContent, className } = props;
 
   if (!data || data.length === 0) return null;
 
-  const classNamesRoot = classNames("accordion", className);
+  const classNamesRoot = classNames(styles.accordion, className);
 
   return (
     <AccordionUI.Root
@@ -28,13 +28,13 @@ export function Accordion(props) {
           <AccordionUI.Item
             key={id}
             value={`item-${id}`}
-            className="accordion-item"
+            className={styles["accordion-item"]}
           >
-            <AccordionUI.Trigger className="accordion-trigger">
+            <AccordionUI.Trigger className={styles["accordion-trigger"]}>
               {title}
-              <Plus className="accordion-icon" />
+              <Plus className={styles["accordion-icon"]} />
             </AccordionUI.Trigger>
-            <AccordionUI.Content className="accordion-content">
+            <AccordionUI.Content className={styles["accordion-content"]}>
               {hasHTMLContent && (
                 <div dangerouslySetInnerHTML={{ __html: content }} />
               )}

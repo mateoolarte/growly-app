@@ -1,22 +1,23 @@
+import Image from "next/image";
+
 import { Nav } from "./Nav";
 
-import "./Footer.scss";
-import Image from "next/image";
+import styles from "./Footer.module.scss";
 
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <div className="container-box">
-        <Nav />
+        <Nav styles={styles} />
 
-        <div className="footer-copyright">
+        <div className={styles["footer-copyright"]}>
           <Image
             src="/favicon.ico"
             alt="favicon growly"
             width="66"
             height="66"
           />
-          <p className="footer-copyrightText">
+          <p className={styles["footer-text"]}>
             ©2024 Growly, todos los derechos reservados
           </p>
         </div>

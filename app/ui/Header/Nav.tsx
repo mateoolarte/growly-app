@@ -5,7 +5,9 @@ import { User } from "@/assets/icons/User";
 
 import { ButtonLink } from "../Button";
 
-export async function Nav() {
+export async function Nav(props) {
+  const { styles } = props;
+
   const data = await getNavigationData("header");
 
   const hasData = data && data.length > 0;
@@ -13,12 +15,12 @@ export async function Nav() {
   if (!hasData) return null;
 
   return (
-    <nav className="header-nav">
-      <ul className="header-list">
+    <nav className={styles["header-nav"]}>
+      <ul className={styles["header-list"]}>
         {data.map((item) => {
           return (
-            <li key={item.id} className="header-listItem">
-              {renderLink(item)}
+            <li key={item.id} className={styles["header-item"]}>
+              {renderLink({ item, styles })}
             </li>
           );
         })}
@@ -27,13 +29,14 @@ export async function Nav() {
   );
 }
 
-function renderLink(item) {
+function renderLink(options) {
+  const { item, styles } = options;
   const { title, type, url } = item;
 
   if (type === "button-alt") {
     return (
-      <Link href={url || ""} className="header-listLogin">
-        <User className="header-listLoginIcon" />
+      <Link href={url || ""} className={styles["header-login"]}>
+        <User className={styles["header-login-icon"]} />
         <span>{title}</span>
       </Link>
     );
@@ -48,7 +51,7 @@ function renderLink(item) {
   }
 
   return (
-    <Link href={url || ""} className="header-listLink">
+    <Link href={url || ""} className={styles["header-link"]}>
       {title}
     </Link>
   );

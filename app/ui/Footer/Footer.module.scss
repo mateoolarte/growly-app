@@ -21,20 +21,20 @@
       gap: 4rem;
       margin-bottom: 4rem;
     }
+  }
 
-    &Link {
-      color: var(--orange-color-lighted);
-      font-size: 1.25rem;
-      font-weight: 500;
-      text-decoration: none;
-    }
+  &-link {
+    color: var(--orange-color-lighted);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
   }
 
   &-copyright {
     text-align: center;
+  }
 
-    &Text {
-      color: var(--color-white);
-    }
+  &-text {
+    color: var(--color-white);
   }
 }

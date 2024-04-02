@@ -1,0 +1,84 @@
+.header {
+  padding: 1rem 0;
+
+  @include screen(lg) {
+    padding: 1.5rem 0;
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-logo {
+    width: auto;
+    height: 50px;
+
+    @include screen(md) {
+      height: 60px;
+    }
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    @include screen(sm) {
+      gap: 1rem;
+    }
+
+    @include screen(lg) {
+      gap: 1.5rem;
+    }
+  }
+
+  &-item {
+    &:not(:last-child) {
+      display: none;
+
+      @include screen(sm) {
+        display: block;
+      }
+    }
+  }
+
+  &-login {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--space-3);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-base);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+
+    span {
+      display: none;
+
+      @include screen(md) {
+        display: inline-block;
+      }
+    }
+
+    &-icon {
+      fill: var(--primary-color);
+    }
+  }
+
+  &-link {
+    color: var(--color-black);
+    font-size: 0.813rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    @include screen(md) {
+      font-size: 1rem;
+    }
+  }
+}

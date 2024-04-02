@@ -4,18 +4,18 @@ import { Logo } from "@/ui/Logo";
 
 import { Nav } from "./Nav";
 
-import "./Header.scss";
+import styles from "./Header.module.scss";
 
 export function Header() {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <div className="container-box">
-        <div className="header-container">
+        <div className={styles["header-container"]}>
           <Link href="/">
-            <Logo className="header-logo" />
+            <Logo className={styles["header-logo"]} />
           </Link>
 
-          <Nav />
+          <Nav styles={styles} />
         </div>
       </div>
     </header>

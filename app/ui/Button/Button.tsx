@@ -1,7 +1,5 @@
 import { classNamesBtn } from "./classNames";
 
-import "./Button.scss";
-
 export function Button(props) {
   const { type = "button", children, onClick } = props;
 

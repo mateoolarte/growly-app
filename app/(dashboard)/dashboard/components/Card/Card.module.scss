@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border: 1px solid var(--border-neutral);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white-2);
+
+  &-icon {
+    svg {
+      width: auto;
+      height: 26px;
+      fill: var(--primary-color);
+    }
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: var(--space-1);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &-description {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+    line-height: 1.5;
+  }
+}

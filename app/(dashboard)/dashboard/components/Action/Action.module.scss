@@ -1,0 +1,15 @@
+.action {
+  text-align: center;
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: var(--space-1);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &-description {
+    margin-top: 0;
+    margin-bottom: var(--space-3);
+  }
+}

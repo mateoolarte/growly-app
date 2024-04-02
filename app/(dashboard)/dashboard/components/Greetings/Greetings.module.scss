@@ -1,0 +1,17 @@
+.greetings {
+  margin-bottom: var(--space-8);
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: var(--space-2);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &-description {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}

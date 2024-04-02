@@ -49,6 +49,7 @@ export function Hero(props) {
             height={imageHeight}
             alt={imageName}
             className="hero-image"
+            priority
           />
         )}
       </div>

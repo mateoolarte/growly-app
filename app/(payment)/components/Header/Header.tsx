@@ -4,26 +4,26 @@ import { ArrowCircleLeft } from "@/assets/icons/ArrowCircleLeft";
 import { ButtonLink } from "@/ui/Button";
 import { Logo } from "@/ui/Logo";
 
-import "./Header.scss";
+import styles from "./Header.module.scss";
 
 export function Header() {
   return (
-    <header className="checkout-header">
-      <div className="checkout-headerContainer">
+    <header className={styles["header"]}>
+      <div className={styles["header-container"]}>
         <Link href="/">
-          <Logo className="checkout-headerLogo" />
+          <Logo className={styles["header-logo"]} />
         </Link>
 
         <ButtonLink
           href="/"
           style="secondary"
-          className="checkout-headerBtnBack"
+          className={styles["header-btnBack"]}
         >
           <ArrowCircleLeft />
           Volver
         </ButtonLink>
       </div>
-      <h1 className="checkout-headerTitle">
+      <h1 className={styles["header-title"]}>
         Estás a un paso de ser parte de Growly
       </h1>
     </header>

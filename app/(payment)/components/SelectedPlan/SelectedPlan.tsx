@@ -6,8 +6,9 @@ import { ICONS_MAPPER } from "@/constants/iconMapper";
 import { ArrowsClockwise } from "@/assets/icons/ArrowsClockwise";
 import { PLANS } from "@/constants/plans";
 
-import "./SelectedPlan.scss";
 import { Accordion } from "@/ui/Accordion";
+
+import styles from "./SelectedPlan.module.scss";
 
 export function SelectedPlan(props) {
   const { plan, planBenefits, type } = props;
@@ -39,18 +40,18 @@ export function SelectedPlan(props) {
   };
 
   return (
-    <div className="selectedPlan">
-      <div className="selectedPlan-infoContainer">
-        <div className="selectedPlan-titleContainer">
-          <Icon className="selectedPlan-icon" />
-          <h2 className="selectedPlan-name">Plan {name}</h2>
+    <div className={styles.selectedPlan}>
+      <div className={styles["selectedPlan-info"]}>
+        <div className={styles["selectedPlan-title"]}>
+          <Icon className={styles["selectedPlan-icon"]} />
+          <h2 className={styles["selectedPlan-name"]}>Plan {name}</h2>
         </div>
 
-        <div className="selectedPlan-buttonContainer">
+        <div className={styles["selectedPlan-buttonContainer"]}>
           <select
             name="pets"
             id="pet-select"
-            className="selectedPlan-button"
+            className={styles["selectedPlan-button"]}
             onChange={handleChangePlan}
           >
             <option value="">cambiar</option>
@@ -60,16 +61,16 @@ export function SelectedPlan(props) {
               </option>
             ))}
           </select>
-          <ArrowsClockwise className="selectedPlan-button--icon" />
+          <ArrowsClockwise className={styles["selectedPlan-button--icon"]} />
         </div>
       </div>
 
-      <div className="selectedPlan-priceContainer">
-        <p className="selectedPlan-price">
+      <div className={styles["selectedPlan-priceContainer"]}>
+        <p className={styles["selectedPlan-price"]}>
           ${getPrice} {pricing?.currency}
         </p>
 
-        <p className="selectedPlan-priceMaintenance">
+        <p className={styles["selectedPlan-priceMaintenance"]}>
           Luego de un año el valor de renovación será de $
           {pricing?.priceMaintenance} {pricing?.currency}
         </p>
@@ -77,12 +78,14 @@ export function SelectedPlan(props) {
         <Accordion
           data={mobileBenefits}
           collapsed
-          className="selectedPlan-benefits--mobile"
+          className={styles["selectedPlan-benefits--mobile"]}
         />
 
-        <div className="selectedPlan-benefits--desktop">
-          <p className="selectedPlan-benefitsTitle">Tu plan incluye:</p>
-          <BenefitList data={planBenefits} />
+        <div className={styles["selectedPlan-benefits--desktop"]}>
+          <p className={styles["selectedPlan-benefitsTitle"]}>
+            Tu plan incluye:
+          </p>
+          <BenefitList data={planBenefits} styles={styles} />
         </div>
       </div>
     </div>
@@ -90,12 +93,12 @@ export function SelectedPlan(props) {
 }
 
 function BenefitList(props) {
-  const { data } = props;
+  const { data, styles } = props;
 
   return (
-    <ul className="selectedPlan-benefitList">
+    <ul className={styles["selectedPlan-benefitList"]}>
       {data.map((benefit) => (
-        <li key={benefit.id} className="selectedPlan-benefit">
+        <li key={benefit.id} className={styles["selectedPlan-benefit"]}>
           {benefit.name}
         </li>
       ))}

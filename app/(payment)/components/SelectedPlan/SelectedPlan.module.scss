@@ -1,5 +1,5 @@
 .selectedPlan {
-  &-infoContainer {
+  &-info {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
     }
   }
 
-  &-titleContainer {
+  &-title {
     display: flex;
     align-items: center;
   }

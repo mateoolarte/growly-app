@@ -1,6 +1,6 @@
 import { SelectedPlan } from "../SelectedPlan";
 
-import "./PlanInfo.scss";
+import styles from "./PlanInfo.module.scss";
 
 export function PlanInfo(props) {
   const { plan, benefits, planSlug, type } = props;
@@ -15,8 +15,8 @@ export function PlanInfo(props) {
   });
 
   return (
-    <div className="checkout-planInfo">
-      <h3 className="checkout-planInfoHeadline">Resumen de tu compra</h3>
+    <div className={styles["planInfo"]}>
+      <h3 className={styles["planInfo-headline"]}>Resumen de tu compra</h3>
       <SelectedPlan plan={plan} planBenefits={parsedBenefits} type={type} />
     </div>
   );

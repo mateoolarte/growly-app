@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 
 import { ICONS_MAPPER } from "@/constants/iconMapper";
-import { ArrowsClockwise } from "@/assets/icons/ArrowsClockwise";
+import { ArrowsClockwise } from "@/ui/icons/ArrowsClockwise";
 import { PLANS } from "@/constants/plans";
 
 import { Accordion } from "@/ui/Accordion";

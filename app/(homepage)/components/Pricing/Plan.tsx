@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 import { ButtonLink } from "@/ui/Button";
 import { ICONS_MAPPER } from "@/constants/iconMapper";
-import { HIGHLIGHTED_PLAN } from "@/constants";
+import { HIGHLIGHTED_PLAN } from "@/constants/plans";
 
 import { Benefits } from "./Benefits";
 

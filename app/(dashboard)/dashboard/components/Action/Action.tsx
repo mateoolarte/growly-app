@@ -1,16 +1,32 @@
-import { Button } from "@/ui/Button";
+import { Button, ButtonLink } from "@/ui/Button";
 import styles from "./Action.module.scss";
 
-export function Action() {
+export function Action(props) {
+  const { title, description, btn } = props;
+  const { label, action, url, target } = btn || {};
+
+  const isBtn = btn && action && !url;
+  const isUrl = btn && url && !action;
+
   return (
     <div className={styles.action}>
-      <h3 className={styles["action-title"]}>Detalles de tu plan</h3>
-      <p className={styles["action-description"]}>
-        Plan E-commerce, vence el 01/04/2025
-      </p>
-      <Button size="small" style="secondary">
-        Escalar sitio web
-      </Button>
+      {title && <h3 className={styles["action-title"]}>{title}</h3>}
+
+      {description && (
+        <p className={styles["action-description"]}>{description}</p>
+      )}
+
+      {isBtn && (
+        <Button size="small" style="secondary" onClick={action}>
+          {label}
+        </Button>
+      )}
+
+      {isUrl && (
+        <ButtonLink href={url} target={target}>
+          {label}
+        </ButtonLink>
+      )}
     </div>
   );
 }

@@ -13,6 +13,8 @@
   --color-black: #22252b;
   --color-darker: #130101;
   --color-black-2: #191510;
+  --foreground-principal: #262626;
+  --foreground-secondary: #ed3a11;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -27,6 +29,7 @@
 
   /* Border radius */
   --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
 
   /* Typography */
   --heading: 3rem;

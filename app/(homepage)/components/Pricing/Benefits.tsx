@@ -1,4 +1,4 @@
-import { CheckCircle } from "@/assets/icons/CheckCircle";
+import { CheckCircle } from "@/ui/icons/CheckCircle";
 
 export function Benefits(props) {
   const { slug, data } = props;

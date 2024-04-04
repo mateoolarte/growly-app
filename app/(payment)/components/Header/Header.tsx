@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { ArrowCircleLeft } from "@/assets/icons/ArrowCircleLeft";
+import { ArrowCircleLeft } from "@/ui/icons/ArrowCircleLeft";
 import { ButtonLink } from "@/ui/Button";
 import { Logo } from "@/ui/Logo";
 

@@ -3,7 +3,7 @@
 import * as AccordionUI from "@radix-ui/react-accordion";
 import classNames from "classnames";
 
-import { Plus } from "@/assets/icons/Plus";
+import { Plus } from "@/ui/icons/Plus";
 
 import styles from "./Accordion.module.scss";
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { getNavigationData } from "@/services/getNavigationData";
-import { User } from "@/assets/icons/User";
+import { User } from "@/ui/icons/User";
 
 import { ButtonLink } from "../Button";
 

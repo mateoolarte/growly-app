@@ -1,12 +1,42 @@
+"use client";
+
+import { useState } from "react";
+
+import { Modal } from "@/ui/Modal";
+
+import { firstTimeData, defaultData } from "./data";
+
 import { Card } from "../Card";
+import { Marketplace } from "../Marketplace";
 
 import styles from "./CardsInfo.module.scss";
 
 export function CardsInfo() {
+  const [activeModal, setActiveModal] = useState("");
+
+  function handleModal(type) {
+    setActiveModal(type);
+  }
+
+  const tiles = false
+    ? firstTimeData
+    : defaultData(() => handleModal("marketplace"));
+
   return (
-    <div className={styles.cardsInfo}>
-      <Card />
-      <Card />
-    </div>
+    <>
+      <div className={styles.cardsInfo}>
+        {tiles.map((item) => {
+          return <Card key={item.id} {...item} />;
+        })}
+      </div>
+
+      <Modal
+        title="Escala tu sitio web"
+        isOpen={activeModal}
+        handleModal={() => handleModal("")}
+      >
+        {activeModal === "marketplace" && <Marketplace />}
+      </Modal>
+    </>
   );
 }

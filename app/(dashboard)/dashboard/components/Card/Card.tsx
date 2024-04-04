@@ -1,20 +1,34 @@
-import { Button } from "@/ui/Button";
-import styles from "./Card.module.scss";
-import { CheckCircle } from "@/assets/icons/CheckCircle";
+import { Button, ButtonLink } from "@/ui/Button";
 
-export function Card() {
+import styles from "./Card.module.scss";
+
+export function Card(props) {
+  const { Icon, title, description, btn } = props;
+  const { label, action, url, target } = btn ?? {};
+
+  const isBtn = btn && action && !url;
+  const isUrl = btn && url && !action;
+
   return (
     <div className={styles.card}>
-      <span className={styles["card-icon"]}>
-        <CheckCircle />
-      </span>
+      {Icon && (
+        <span className={styles["card-icon"]}>
+          <Icon />
+        </span>
+      )}
       <div className={styles["card-content"]}>
-        <h2 className={styles["card-title"]}>Google Form</h2>
-        <p className={styles["card-description"]}>
-          Completa el formulario para recopilar la información necesaria que
-          necesitamos para comenzar con el diseño de tu sitio web.
-        </p>
-        <Button size="small">Continuar con el formulario</Button>
+        {title && <h2 className={styles["card-title"]}>{title}</h2>}
+        {description && (
+          <p className={styles["card-description"]}>{description}</p>
+        )}
+
+        {isBtn && <Button onClick={action}>{label}</Button>}
+
+        {isUrl && (
+          <ButtonLink href={url} target={target}>
+            {label}
+          </ButtonLink>
+        )}
       </div>
     </div>
   );

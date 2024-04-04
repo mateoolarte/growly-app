@@ -1,5 +1,6 @@
 import { Actions } from "./components/Actions";
 import { CardsInfo } from "./components/CardsInfo";
+import { Footer } from "./components/Footer";
 import { Greetings } from "./components/Greetings";
 import { Header } from "./components/Header";
 
@@ -13,6 +14,7 @@ export default function Dashboard() {
         <Greetings />
         <CardsInfo />
         <Actions />
+        <Footer />
       </div>
     </main>
   );

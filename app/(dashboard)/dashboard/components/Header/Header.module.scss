@@ -4,4 +4,13 @@
   justify-content: space-between;
   padding-top: var(--space-5);
   margin-bottom: var(--space-8);
+
+  &-actions {
+    display: flex;
+    gap: var(--space-5);
+  }
+
+  &-icon {
+    fill: var(--orange-color-lighted-100);
+  }
 }

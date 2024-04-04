@@ -6,7 +6,7 @@ import { IS_DEV_ENV, CMS_URL } from "@/constants/envs";
 import { Button } from "@/ui/Button";
 
 import "./Hero.scss";
-import { ArrowCircleRight } from "@/assets/icons/ArrowCircleRight";
+import { ArrowCircleRight } from "@/ui/icons/ArrowCircleRight";
 import { scrollToSection } from "@/utils/scrollToSection";
 
 export function Hero(props) {

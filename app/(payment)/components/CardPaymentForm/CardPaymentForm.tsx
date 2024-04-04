@@ -4,6 +4,8 @@ import { CardPayment } from "@mercadopago/sdk-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { IS_BROWSER_ENV } from "@/constants/envs";
+
 import { sendPayment } from "@/services/sendPayment";
 import { sendFeePayment } from "@/services/sendFeePayment";
 
@@ -48,7 +50,7 @@ export function CardPaymentForm(props) {
 
   useEffect(() => {
     return () => {
-      if (typeof window !== "undefined" && window.cardPaymentBrickController) {
+      if (IS_BROWSER_ENV && window.cardPaymentBrickController) {
         window.cardPaymentBrickController.unmount();
       }
     };

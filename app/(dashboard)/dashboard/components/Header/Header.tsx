@@ -1,13 +1,19 @@
 import { Logo } from "@/ui/Logo";
-import { Button } from "@/ui/Button";
+import { Button, ButtonLink } from "@/ui/Button";
 
 import styles from "./Header.module.scss";
+import { Computer } from "@/ui/icons/Computer";
 
 export function Header() {
   return (
     <header className={styles.header}>
       <Logo className={styles["header-logo"]} />
-      <Button style="secondary">Salir</Button>
+      <div className={styles["header-actions"]}>
+        <ButtonLink href="/" target="_blank">
+          Ir al sitio web <Computer className={styles["header-icon"]} />
+        </ButtonLink>
+        <Button style="secondary">Salir</Button>
+      </div>
     </header>
   );
 }

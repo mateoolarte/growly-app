@@ -2,4 +2,5 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: var(--space-6);
+  margin-bottom: 6.25rem;
 }

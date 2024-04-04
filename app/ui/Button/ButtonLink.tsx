@@ -3,10 +3,10 @@ import Link from "next/link";
 import { classNamesBtn } from "./classNames";
 
 export function ButtonLink(props) {
-  const { href, children } = props;
+  const { href, target, children } = props;
 
   return (
-    <Link href={href} className={classNamesBtn(props)}>
+    <Link href={href} target={target} className={classNamesBtn(props)}>
       {children}
     </Link>
   );

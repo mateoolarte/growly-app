@@ -26,7 +26,7 @@ export function Actions() {
       description: "Contacta con soporte",
       btn: {
         label: "Contáctanos",
-        url: "",
+        url: "https://wa.me/573183540619",
         target: "_blank",
       },
     },

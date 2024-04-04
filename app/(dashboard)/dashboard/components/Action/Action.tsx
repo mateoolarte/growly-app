@@ -23,7 +23,7 @@ export function Action(props) {
       )}
 
       {isUrl && (
-        <ButtonLink href={url} target={target}>
+        <ButtonLink href={url} size="small" style="secondary" target={target}>
           {label}
         </ButtonLink>
       )}

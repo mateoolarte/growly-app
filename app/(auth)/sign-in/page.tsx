@@ -1,20 +1,10 @@
 import { Isotype } from "@/ui/Isotype";
 
 import { Headline } from "../components/Headline";
-import { Cta } from "../components/Cta";
 
 import { Form } from "./components/Form";
 
 import "./sign-in.scss";
-
-const ctaProps = {
-  text: "¿Aún no tienes cuenta?",
-  btn: {
-    label: "Regístrate",
-    url: "/sign-up",
-  },
-  theme: "dark",
-};
 
 export default function Signin() {
   return (
@@ -27,7 +17,6 @@ export default function Signin() {
           theme="dark"
         />
         <Form />
-        <Cta {...ctaProps} />
       </div>
     </main>
   );

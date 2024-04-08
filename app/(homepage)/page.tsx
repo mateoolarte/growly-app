@@ -4,7 +4,7 @@ import { SectionRenderer } from "@/ui/SectionRenderer";
 import { getLandingData } from "@/services/getLandingData";
 import { Header } from "@/ui/Header";
 import { Footer } from "@/ui/Footer";
-import { CMS_URL } from "@/constants/envs";
+import { CMS_URL, IS_DEV_ENV } from "@/constants/envs";
 
 export async function generateMetadata() {
   const { seoTags } = await getLandingData();
@@ -12,7 +12,7 @@ export async function generateMetadata() {
   const title = seoTags?.metaTitle ?? "";
   const description = seoTags?.metaDescription ?? "";
   const ogImage = {
-    url: `${CMS_URL}${seoTags?.metaImage?.data?.attributes?.url}`,
+    url: `${IS_DEV_ENV ? CMS_URL : ""}${seoTags?.metaImage?.data?.attributes?.url}`,
     width: seoTags?.metaImage?.data?.attributes?.width,
     height: seoTags?.metaImage?.data?.attributes?.height,
   };

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { getBenefitsData } from "@/services/getBenefitsData";
 import { Plan } from "./Plan";
 
 export function Plans(props) {
-  const { data, withInstallments } = props;
+  const { data, withInstallments, tooltip } = props;
 
   const [benefits, setBenefits] = useState([]);
 
@@ -12,7 +12,7 @@ export function Plans(props) {
     getBenefitsData()
       .then((res) => setBenefits(res))
       .catch((err) => console.error(err));
-  }, [])
+  }, []);
 
   return (
     <div className="pricing-plans">
@@ -23,6 +23,7 @@ export function Plans(props) {
             {...item}
             withInstallments={withInstallments}
             benefits={benefits}
+            tooltip={tooltip}
           />
         );
       })}

@@ -1,6 +1,12 @@
+"use client";
+
 import classNames from "classnames";
+import { useState } from "react";
 
 import { ButtonLink } from "@/ui/Button";
+import { Popover } from "@/ui/Popover";
+import { Information } from "@/ui/icons/Information";
+
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 import { HIGHLIGHTED_PLAN } from "@/constants/plans";
 
@@ -14,7 +20,10 @@ export function Plan(props) {
     benefits,
     priceMaintenance,
     priceInstallments,
+    tooltip,
   } = props;
+
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
 
   const pricing = {
     price: props.price?.toLocaleString("es-CO"),
@@ -36,6 +45,7 @@ export function Plan(props) {
   const price = withInstallments ? pricing?.priceInstallments : pricing?.price;
   const installmentsLabel = withInstallments ? "3 cuotas de:" : "";
   const url = `/checkout/${slug}${withInstallments ? "?type=installments" : ""}`;
+  const tooltipTheme = highlightedPlan ? "light" : "dark";
 
   return (
     <div className={classNamesPlan}>
@@ -56,6 +66,24 @@ export function Plan(props) {
 
         <p className="pricing-planLabel">
           Luego ${pricing?.priceMaintenance} {pricing?.currency}/año
+          {tooltip && (
+            <>
+              <button
+                className="pricing-planIcon"
+                aria-label="Más información"
+                onMouseEnter={() => setIsTooltipOpen(true)}
+              >
+                <Information />
+              </button>
+              <Popover
+                isOpen={isTooltipOpen}
+                handlePopover={() => setIsTooltipOpen(false)}
+                theme={tooltipTheme}
+              >
+                <div dangerouslySetInnerHTML={{ __html: tooltip }} />
+              </Popover>
+            </>
+          )}
         </p>
       </div>
 

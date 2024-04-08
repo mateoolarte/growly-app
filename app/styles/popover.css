@@ -1,0 +1,115 @@
+.popover-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-2);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  max-width: 260px;
+  background-color: var(--color-white-2);
+  box-shadow:
+    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  font-size: 0.813rem;
+  font-weight: 400;
+
+  &:focus {
+    box-shadow:
+      hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+      hsl(206 22% 7% / 20%) 0px 10px 20px -15px,
+      0 0 0 2px var(--primary-color);
+  }
+}
+
+.popover-content--light {
+  color: var(--foreground-principal);
+}
+
+.popover-content--light .popover-close svg {
+  fill: var(--primary-color);
+}
+
+.popover-content--dark {
+  background-color: var(--background-contrast);
+  color: var(--color-white-2);
+}
+
+.popover-content--dark .popover-close svg {
+  fill: var(--color-white-2);
+}
+
+.popover-close {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.popover-close svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.popover-content[data-state="open"][data-side="top"] {
+  animation-name: slideDownAndFade;
+}
+
+.popover-content[data-state="open"][data-side="right"] {
+  animation-name: slideLeftAndFade;
+}
+
+.popover-content[data-state="open"][data-side="bottom"] {
+  animation-name: slideUpAndFade;
+}
+
+.popover-content[data-state="open"][data-side="left"] {
+  animation-name: slideRightAndFade;
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -9,7 +9,7 @@ import "./Pricing.scss";
 import { WarrantyPolicy } from "@/components/WarrantyPolicy";
 
 export function Pricing(props) {
-  const { title, description, plans } = props;
+  const { title, description, tooltip, plans } = props;
   const [withInstallments, setWithInstallments] = useState(false);
 
   return (
@@ -29,7 +29,11 @@ export function Pricing(props) {
           setWithInstallments={setWithInstallments}
         />
 
-        <Plans data={plans} withInstallments={withInstallments} />
+        <Plans
+          data={plans}
+          withInstallments={withInstallments}
+          tooltip={tooltip}
+        />
 
         <WarrantyPolicy />
       </div>

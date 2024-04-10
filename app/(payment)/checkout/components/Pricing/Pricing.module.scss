@@ -1,0 +1,41 @@
+.pricing {
+  margin: 0 var(--space-3);
+
+  @include screen(md) {
+    max-width: 70%;
+  }
+
+  &-price {
+    margin: 0;
+    font-size: 1.625rem;
+    font-weight: 600;
+
+    @include screen(md) {
+      font-size: 2rem;
+    }
+  }
+
+  &-maintenance {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+    font-size: var(--text-xs);
+
+    @include screen(sm) {
+      margin-bottom: var(--space-5);
+    }
+
+    @include screen(md) {
+      margin-bottom: var(--space-6);
+      font-size: var(--text);
+    }
+  }
+
+  &-text {
+    margin: 0;
+    font-size: var(--text-xs);
+
+    @include screen(md) {
+      font-size: var(--text);
+    }
+  }
+}

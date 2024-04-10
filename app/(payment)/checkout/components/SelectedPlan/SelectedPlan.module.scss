@@ -1,0 +1,80 @@
+.selectedPlan {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin-bottom: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--orange-color);
+  border-radius: 0.5rem;
+  background-color: var(--color-white-2);
+
+  @include screen(sm) {
+    padding: var(--space-4);
+  }
+
+  @include screen(lg) {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+  }
+
+  &-name {
+    margin: 0 var(--space-4) 0 var(--space-2);
+    font-size: 1rem;
+    font-weight: 600;
+
+    @include screen(lg) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &-selector {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &-button {
+    width: 100%;
+    min-width: 85px;
+    display: flex;
+    appearance: none;
+    align-items: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    font-size: var(--text-xs);
+    font-weight: 600;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--primary-color);
+    }
+
+    &Icon {
+      position: absolute;
+      right: 10%;
+      top: 25%;
+    }
+  }
+
+  &-icon {
+    fill: var(--orange-color);
+  }
+
+  &-text {
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+  }
+}

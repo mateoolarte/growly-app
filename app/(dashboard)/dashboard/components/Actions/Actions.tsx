@@ -15,10 +15,10 @@ export function Actions() {
       id: 2,
       title: "Ayúdanos a mejorar Growly",
       description: "Comparte tus ideas con nosotros.",
-      btn: {
-        label: "Enviar sugerencia",
-        action: () => {},
-      },
+      // btn: {
+      //   label: "Enviar sugerencia",
+      //   action: () => {},
+      // },
     },
     {
       id: 3,

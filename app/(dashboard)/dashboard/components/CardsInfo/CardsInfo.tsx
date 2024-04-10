@@ -18,7 +18,7 @@ export function CardsInfo() {
     setActiveModal(type);
   }
 
-  const tiles = false
+  const tiles = true
     ? firstTimeData
     : defaultData(() => handleModal("marketplace"));
 

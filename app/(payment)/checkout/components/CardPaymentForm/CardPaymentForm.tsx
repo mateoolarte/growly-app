@@ -16,7 +16,8 @@ const TITLE_FEE_PAYMENT = "Tarjeta de crédito";
 
 export function CardPaymentForm(props) {
   const { plan, type } = props;
-  const { price, priceMaintenance, priceInstallments, slug } = plan;
+
+  const { price, priceInstallments, slug } = plan;
   const hasInstallments = type === "installments";
   const getPrice = hasInstallments ? priceInstallments : price;
   const acceptedPaymentMethods = hasInstallments ? ["debit_card"] : undefined;

@@ -9,10 +9,12 @@ export function Header() {
     <header className={styles.header}>
       <Logo className={styles["header-logo"]} />
       <div className={styles["header-actions"]}>
-        <ButtonLink href="/" target="_blank">
-          Ir al sitio web <Computer className={styles["header-icon"]} />
-        </ButtonLink>
-        <Button style="secondary">Salir</Button>
+        {false && (
+          <ButtonLink href="/" target="_blank">
+            Ir al sitio web <Computer className={styles["header-icon"]} />
+          </ButtonLink>
+        )}
+        {false && <Button style="secondary">Salir</Button>}
       </div>
     </header>
   );

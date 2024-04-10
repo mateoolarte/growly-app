@@ -5,9 +5,9 @@ import { getBenefitsData } from "@/services/getBenefitsData";
 
 import { WarrantyPolicy } from "@/components/WarrantyPolicy";
 
-import { CardPaymentForm } from "@/(payment)/components/CardPaymentForm";
-import { PlanInfo } from "@/(payment)/components/PlanInfo";
-import { Header } from "@/(payment)/components/Header";
+import { CardPaymentForm } from "../components/CardPaymentForm";
+import { PlanInfo } from "../components/PlanInfo";
+import { Header } from "../components/Header";
 
 import "./checkout.scss";
 

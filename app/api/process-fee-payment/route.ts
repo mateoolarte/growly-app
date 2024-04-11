@@ -24,9 +24,14 @@ export async function POST(request: Request) {
 
     return Response.json({
       id: subscriptionPlan?.id ?? "",
-      status: subscriptionPlan?.status ?? "error",
+      error: subscriptionPlan?.message ?? "",
     });
   } catch (error) {
-    throw Error("ERROR Creating subscription plan", { cause: error });
+    console.error("ERROR Creating subscription plan", error);
+
+    return Response.json({
+      id: "",
+      error: error.message,
+    });
   }
 }

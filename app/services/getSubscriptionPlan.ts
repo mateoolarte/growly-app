@@ -17,6 +17,8 @@ export async function getSubscriptionPlan(data) {
 
     return selectedPlan;
   } catch (error) {
-    throw Error("ERROR getting subscription plan", { cause: error });
+    console.error("ERROR getting subscription plan", error);
+
+    return null;
   }
 }

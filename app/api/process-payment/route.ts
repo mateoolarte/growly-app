@@ -26,19 +26,20 @@ export async function POST(request: Request) {
   try {
     const transaction = await payment.create({
       body: {
-        transaction_amount,
         description,
-        payment_method_id,
         installments,
         issuer_id,
-        token,
         payer,
+        payment_method_id,
+        token,
+        transaction_amount,
       },
     });
 
-    return Response.json({ id: transaction.id });
+    return Response.json({ id: transaction?.id, error: "" });
   } catch (error) {
-    console.error({ error });
-    throw Error("ERROR Creating payment", { cause: error });
+    console.error("ERROR Creating payment", error);
+
+    return Response.json({ id: "", error: error.message });
   }
 }

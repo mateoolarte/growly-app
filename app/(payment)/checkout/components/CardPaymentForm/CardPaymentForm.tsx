@@ -9,13 +9,26 @@ import { IS_BROWSER_ENV } from "@/constants/envs";
 import { sendPayment } from "@/services/sendPayment";
 import { sendFeePayment } from "@/services/sendFeePayment";
 
+import { Alert } from "@/ui/Alert";
+
 import { MercadoPagoWrapper } from "../MercadoPagoWrapper";
+import { formStyles } from "./styles";
 
 const TITLE_ONE_PAYMENT = "Tarjeta de crédito o débito";
 const TITLE_FEE_PAYMENT = "Tarjeta de crédito";
 
+const initialAlertState = {
+  isActive: false,
+  title: "",
+  message: "",
+  type: "error",
+};
+
 export function CardPaymentForm(props) {
   const { plan, type } = props;
+
+  const router = useRouter();
+  const [alert, setAlert] = useState(initialAlertState);
 
   const { price, priceInstallments, slug } = plan;
   const hasInstallments = type === "installments";
@@ -36,18 +49,13 @@ export function CardPaymentForm(props) {
         formTitle: titleForm,
       },
       style: {
-        customVariables: {
-          baseColor: "#f26a4b",
-        },
+        customVariables: formStyles,
       },
     },
   };
   const initialization = {
     amount: getPrice,
   };
-
-  const router = useRouter();
-  const [error, setError] = useState("");
 
   useEffect(() => {
     return () => {
@@ -58,13 +66,19 @@ export function CardPaymentForm(props) {
   }, []);
 
   async function onError(error) {
-    console.error("onError", error);
-
-    setError(error.message);
+    setAlert({
+      isActive: true,
+      title: "Ha ocurrido un error",
+      message: error.message,
+      type: "error",
+    });
   }
 
   async function onSubmit(formData) {
     try {
+      let paymentId = "";
+      let errorMessage = "";
+
       if (type === "installments") {
         const payloadFee = {
           ...formData,
@@ -72,25 +86,47 @@ export function CardPaymentForm(props) {
         };
 
         const response = await sendFeePayment(payloadFee);
+        const { id, error } = response;
 
-        if (response?.status === "authorized") {
-          setError("Se creó la suscripción de forma existosa");
-        }
+        paymentId = id;
+        errorMessage = error;
+      } else {
+        const payload = {
+          ...formData,
+          description: `Growly plan: ${plan?.slug} a un pago`,
+        };
+
+        const response = await sendPayment(payload);
+        const { id, error } = response;
+
+        paymentId = id;
+        errorMessage = error;
+      }
+
+      if (errorMessage) {
+        setAlert({
+          isActive: true,
+          title: "Ha ocurrido un error",
+          message: errorMessage,
+          type: "error",
+        });
 
         return;
       }
 
-      const payload = {
-        ...formData,
-        description: `Growly plan: ${plan?.slug} a un pago`,
-      };
-
-      const response = await sendPayment(payload);
-
-      const { id: paymentId } = response;
-
-      router.push(`/checkout/status/${paymentId}`);
-    } catch (error) {}
+      if (paymentId) {
+        router.push(
+          `/checkout/status/${paymentId}${hasInstallments ? "?type=installments" : ""}`,
+        );
+      }
+    } catch (error) {
+      setAlert({
+        isActive: true,
+        title: "Ha ocurrido un error",
+        message: error.message,
+        type: "error",
+      });
+    }
   }
 
   return (
@@ -101,7 +137,14 @@ export function CardPaymentForm(props) {
         onSubmit={onSubmit}
         onError={onError}
       />
-      {error && <p>{error}</p>}
+      <Alert
+        isOpen={alert?.isActive}
+        handleAlert={() => setAlert(initialAlertState)}
+        type={alert?.type}
+        title={alert?.title}
+      >
+        {alert?.message}
+      </Alert>
     </MercadoPagoWrapper>
   );
 }

@@ -13,9 +13,16 @@
   --color-black: #22252b;
   --color-darker: #130101;
   --color-black-2: #191510;
+
   --foreground-principal: #262626;
   --foreground-secondary: #ed3a11;
+
   --background-contrast: #5e1808;
+  --background-error: #fdf4f3;
+
+  --text-color-error: #d04232;
+
+  --border-color-error: #ed3a11;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -31,6 +38,7 @@
   /* Border radius */
   --border-radius-sm: 0.5rem;
   --border-radius-md: 0.75rem;
+  --border-radius-lg: 1.5rem;
 
   /* Typography */
   --heading: 3rem;
@@ -40,9 +48,6 @@
   /* Weights */
   --weight-base: 400;
   --weight-medium: 600;
-
-  /* Border */
-  --border-radius-base: 0.75rem;
 }
 
 @import "./reset.css";

@@ -1,0 +1,101 @@
+.checkout-status {
+  /* Clerk components */
+  .cl {
+    &-cardBox {
+      box-shadow: none;
+    }
+
+    &-card {
+      padding: var(--space-1);
+      background: none;
+    }
+
+    &-header {
+      display: none;
+    }
+
+    &-main {
+      gap: var(--space-4);
+    }
+
+    &-socialButtonsBlockButton {
+      padding: var(--space-3);
+      border: 1px solid var(--primary-color-lighted);
+      box-shadow: none;
+
+      @include screen(xl) {
+        padding: var(--space-4);
+      }
+
+      &:hover {
+        background-color: var(--orange-color-lighted-100);
+      }
+    }
+
+    &-socialButtonsBlockButtonText {
+      color: var(--primary-color);
+      font-size: var(--text);
+      font-weight: 600;
+    }
+
+    &-dividerLine {
+      background-color: var(--primary-color-lighted);
+    }
+
+    &-dividerText {
+      color: var(--color-black);
+      font-size: 1.25rem;
+    }
+
+    &-form {
+      gap: var(--space-5);
+    }
+
+    &-formFieldLabel {
+      font-size: var(--text-xs);
+
+      @include screen(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    &-formFieldInput {
+      padding: var(--space-3);
+      border: 1px solid var(--primary-color-lighted);
+      box-shadow: none;
+
+      &:hover,
+      &:focus-within {
+        box-shadow: none;
+      }
+
+      &:focus-within {
+        border-width: 2px;
+      }
+    }
+
+    &-formButtonPrimary {
+      padding: var(--space-4) var(--space-5);
+      border-radius: 0.75rem;
+      background: linear-gradient(
+        283.28deg,
+        var(--primary-color) -130.94%,
+        var(--orange-color) 230.94%
+      );
+      font-size: var(--text);
+      font-weight: var(--weight-medium);
+      text-align: center;
+      box-shadow: none !important;
+      isolation: unset;
+    }
+
+    &-buttonArrowIcon {
+      display: none;
+    }
+
+    &-footer {
+      display: none;
+    }
+  }
+  /* End Clerk components */
+}

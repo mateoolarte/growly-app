@@ -14,11 +14,14 @@
   --color-darker: #130101;
   --color-black-2: #191510;
 
+  --color-success-high: #07946b;
+
   --foreground-principal: #262626;
   --foreground-secondary: #ed3a11;
 
   --background-contrast: #5e1808;
   --background-error: #fdf4f3;
+  --background-success: #ecfdf5;
 
   --text-color-error: #d04232;
 
@@ -34,6 +37,7 @@
   --space-7: 2.5rem;
   --space-8: 3rem;
   --space-9: 4rem;
+  --space-10: 5rem;
 
   /* Border radius */
   --border-radius-sm: 0.5rem;

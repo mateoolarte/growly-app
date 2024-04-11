@@ -1,26 +1,16 @@
-"use client";
+import { ErrorComponent } from "./components/Error";
+import { Success } from "./components/Success";
 
-import { MERCADO_PAGO_PUBLIC_KEY } from "@/constants/envs";
-import { StatusScreen, initMercadoPago } from "@mercadopago/sdk-react";
+import "./checkout-status.scss";
 
 export default function PaymentStatus({ params }) {
-  if (!MERCADO_PAGO_PUBLIC_KEY) return null;
-
-  initMercadoPago(MERCADO_PAGO_PUBLIC_KEY);
-
   const { paymentId } = params;
 
-  const initialization = {
-    paymentId,
-  };
-
-  async function onError(error) {
-    console.error("onError", error);
-  }
-
   return (
-    <main>
-      <StatusScreen initialization={initialization} onError={onError} />
+    <main className="checkout-status container-box">
+      {true && <Success />}
+
+      {false && <ErrorComponent />}
     </main>
   );
 }

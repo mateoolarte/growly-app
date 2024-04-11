@@ -1,0 +1,27 @@
+.headline-form {
+  margin-bottom: var(--space-6);
+  text-align: center;
+
+  &-title {
+    display: none;
+
+    @include screen(md) {
+      display: block;
+      margin-top: 0;
+      margin-bottom: var(--space-2);
+      color: var(--color-darker);
+      font-size: 2rem;
+    }
+  }
+
+  &-description {
+    margin: 0;
+    color: var(--color-black);
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    @include screen(md) {
+      font-weight: 400;
+    }
+  }
+}

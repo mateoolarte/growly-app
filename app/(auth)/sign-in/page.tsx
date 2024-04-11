@@ -1,7 +1,6 @@
 import { Isotype } from "@/ui/Isotype";
 
-import { Headline } from "../components/Headline";
-
+import { Headline } from "./components/Headline";
 import { Form } from "./components/Form";
 
 import "./sign-in.scss";

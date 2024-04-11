@@ -1,7 +1,7 @@
 import { Logo } from "@/ui/Logo";
 
-import { Headline } from "../components/Headline";
-import { Cta } from "../components/Cta";
+import { Headline } from "../sign-in/components/Headline";
+import { Cta } from "../sign-in/components/Cta";
 
 import { Form } from "./components/Form";
 import { Terms } from "./components/Terms";
@@ -13,6 +13,17 @@ const ctaProps = {
   btn: {
     label: "Inicia sesión",
     url: "/sign-in",
+  },
+};
+
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
   },
 };
 

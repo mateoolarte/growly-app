@@ -1,0 +1,14 @@
+.contact-us {
+  display: flex;
+  gap: var(--space-1);
+  justify-content: center;
+  font-size: 0.813rem;
+
+  @include screen(sm) {
+    font-size: 1rem;
+  }
+
+  &-link {
+    color: var(--primary-color);
+  }
+}

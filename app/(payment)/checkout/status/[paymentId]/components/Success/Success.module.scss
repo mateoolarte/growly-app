@@ -1,0 +1,35 @@
+.success {
+  display: grid;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-3);
+
+  @include screen(sm) {
+    margin-top: var(--space-5);
+  }
+
+  @include screen(md) {
+    grid-template-columns: 0.5fr 1fr;
+    gap: 0;
+  }
+
+  &-info {
+    padding: var(--space-5) var(--space-3);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-black-2);
+    background-image: url("/homepage/blur-circle-dark.png");
+    background-position: 30% 50%;
+    background-repeat: no-repeat;
+    background-size: 200%;
+
+    @include screen(sm) {
+      padding: var(--space-6);
+      background-size: cover;
+    }
+
+    @include screen(md) {
+      min-height: 95vh;
+      padding: var(--space-6) var(--space-8);
+    }
+  }
+}

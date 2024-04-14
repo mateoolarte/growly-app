@@ -64,7 +64,7 @@ export function Plan(props) {
           {pricing?.currency}
         </p>
 
-        <p className="pricing-planLabel">
+        <div className="pricing-planLabel">
           Luego ${pricing?.priceMaintenance} {pricing?.currency}/año
           {tooltip && (
             <>
@@ -84,7 +84,7 @@ export function Plan(props) {
               </Popover>
             </>
           )}
-        </p>
+        </div>
       </div>
 
       <Benefits data={benefits} slug={slug} />

@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 import { SmileySad } from "@/ui/icons/SmileySad";
 import { ButtonLink } from "@/ui/Button";
 
@@ -5,7 +7,14 @@ import { ContactUs } from "../ContactUs";
 
 import styles from "./Error.module.scss";
 
-export function ErrorComponent() {
+import "dayjs/locale/es-mx";
+
+export function ErrorComponent(props) {
+  const { data } = props;
+
+  const { id, description, date_created } = data;
+  const date = dayjs(date_created).format("DD [de] MMMM, h:mm a");
+
   return (
     <div className={styles.error}>
       <span className={styles["error-icon"]}>
@@ -24,11 +33,9 @@ export function ErrorComponent() {
 
       <div className={styles["error-details"]}>
         <h2 className={styles["error-details-title"]}>Resumen</h2>
-        <p className={styles["error-text"]}>Producto: Plan E-commerce</p>
-        <p className={styles["error-text"]}>
-          Código de la transacción: #444444
-        </p>
-        <p className={styles["error-text"]}>01 de abril, 12:48pm</p>
+        <p className={styles["error-text"]}>Producto: {description}</p>
+        <p className={styles["error-text"]}>Código de la transacción: {id}</p>
+        <p className={styles["error-text"]}>{date}</p>
       </div>
 
       <div className={styles["error-actions"]}>

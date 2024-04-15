@@ -15,8 +15,7 @@ export const MERCADOPAGO_API = "https://api.mercadopago.com";
 export const MERCADOPAGO_API_GET_PLANS = (plan) =>
   `${MERCADOPAGO_API}/preapproval_plan/search?status=active&limit=1&q=${plan}`;
 export const MERCADOPAGO_API_SUBSCRIPTION = `${MERCADOPAGO_API}/preapproval`;
-export const MERCADOPAGO_API_PAYMENTS = (id) =>
-  `${MERCADOPAGO_API}/v1/payments/${id}`;
 
 export const PAYMENT_API = "/api/process-payment";
 export const PAYMENT_FEE_API = "/api/process-fee-payment";
+export const PAYMENT_STATUS_API = "/api/payment-status";

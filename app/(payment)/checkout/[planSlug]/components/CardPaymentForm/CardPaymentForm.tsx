@@ -93,7 +93,7 @@ export function CardPaymentForm(props) {
       } else {
         const payload = {
           ...formData,
-          description: `Growly plan: ${plan?.slug} a un pago`,
+          description: `${plan?.slug} a un pago`,
         };
 
         const response = await sendPayment(payload);

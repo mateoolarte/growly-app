@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import Image from "next/image";
 
 import { LOGO_DARK } from "@/constants/assets";
@@ -5,7 +6,14 @@ import { CheckCircle } from "@/ui/icons/CheckCircle";
 
 import styles from "./PaymentDetails.module.scss";
 
-export function PaymentDetails() {
+import "dayjs/locale/es-mx";
+
+export function PaymentDetails(props) {
+  const { data } = props;
+
+  const { id, description, date_created, transaction_amount } = data;
+  const date = dayjs(date_created).format("DD [de] MMMM, h:mm a");
+
   return (
     <>
       <Image
@@ -40,15 +48,16 @@ export function PaymentDetails() {
             Resumen de tu compra
           </h3>
           <p className={styles["payment-details-text"]}>
-            Pagaste $5&apos;814.000 a través de Mercado pago
+            Pagaste ${transaction_amount?.toLocaleString("es-CO")} a través de
+            Mercado pago
           </p>
           <p className={styles["payment-details-text"]}>
-            Producto: Plan E-commerce
+            Producto: {description}
           </p>
           <p className={styles["payment-details-text"]}>
-            Código de la compra: #444444
+            Código de la compra: {id}
           </p>
-          <p className={styles["payment-details-text"]}>01 de abril, 12:48pm</p>
+          <p className={styles["payment-details-text"]}>{date}</p>
         </div>
       </div>
     </>

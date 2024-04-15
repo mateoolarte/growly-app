@@ -8,9 +8,9 @@ export default function PaymentStatus({ params }) {
 
   return (
     <main className="checkout-status container-box">
-      {true && <Success />}
+      {false && <Success />}
 
-      {false && <ErrorComponent />}
+      {true && <ErrorComponent />}
     </main>
   );
 }

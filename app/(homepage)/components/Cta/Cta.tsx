@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/ui/Button";
+import { ArrowCircleRight } from "@/ui/icons/ArrowCircleRight";
 
 import { scrollToSection } from "@/utils/scrollToSection";
 
@@ -27,6 +28,7 @@ export function Cta(props) {
               onClick={() => scrollToSection(cta?.linkBtn)}
             >
               {cta?.textBtn}
+              <ArrowCircleRight />
             </Button>
           )}
         </div>

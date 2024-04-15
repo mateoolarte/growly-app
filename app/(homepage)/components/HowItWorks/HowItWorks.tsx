@@ -3,6 +3,7 @@
 import { scrollToSection } from "@/utils/scrollToSection";
 
 import { Button } from "@/ui/Button";
+import { ArrowCircleRight } from "@/ui/icons/ArrowCircleRight";
 
 import { Steps } from "./Steps";
 
@@ -33,6 +34,7 @@ export function HowItWorks(props) {
               onClick={() => scrollToSection(cta?.linkBtn)}
             >
               {cta?.textBtn}
+              <ArrowCircleRight />
             </Button>
           </div>
         )}

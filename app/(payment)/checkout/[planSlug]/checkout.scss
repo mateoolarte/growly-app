@@ -1,4 +1,8 @@
-body {
+.checkout {
+  min-width: 100vw;
+  min-height: 100vh;
+  padding-bottom: var(--space-8);
+
   @include screen(sm) {
     background-image: url("/checkout/blur-circle-light.png");
     background-repeat: no-repeat;
@@ -15,10 +19,6 @@ body {
     background-position: 0% 100%;
     background-size: 1000px;
   }
-}
-
-.checkout {
-  margin-bottom: var(--space-8);
 
   &-container {
     @include screen(sm) {

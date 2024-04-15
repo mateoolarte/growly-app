@@ -25,18 +25,20 @@ export default async function Checkout(props) {
   const planBenefits = await getBenefitsData();
 
   return (
-    <main className="checkout container-box">
-      <Header />
-      <div className="checkout-container">
-        <PlanInfo
-          plan={plan}
-          benefits={planBenefits}
-          planSlug={planSlug}
-          type={type}
-        />
-        <CardPaymentForm plan={plan} type={type} />
+    <main className="checkout">
+      <div className="container-box">
+        <Header />
+        <div className="checkout-container">
+          <PlanInfo
+            plan={plan}
+            benefits={planBenefits}
+            planSlug={planSlug}
+            type={type}
+          />
+          <CardPaymentForm plan={plan} type={type} />
+        </div>
+        <WarrantyPolicy />
       </div>
-      <WarrantyPolicy />
     </main>
   );
 }

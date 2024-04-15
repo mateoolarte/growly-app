@@ -13,15 +13,16 @@ export default async function PaymentStatus(props) {
   const { data, error } = await getPaymentStatus({ id: paymentId, type });
   const { status } = data || {};
 
+  const successfullStatuses = ["approved", "authorized"];
+  const errorStatuses = ["rejected", "cancelled"];
+
   return (
     <main className="checkout-status container-box">
       {error && <h1>{error}</h1>}
 
-      {(status === "approved" || status === "authorized") && (
-        <Success data={data} />
-      )}
+      {successfullStatuses.includes(status) && <Success data={data} />}
 
-      {status === "rejected" && <ErrorComponent data={data} />}
+      {errorStatuses.includes(status) && <ErrorComponent data={data} />}
     </main>
   );
 }

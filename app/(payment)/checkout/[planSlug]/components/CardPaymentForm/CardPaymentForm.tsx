@@ -83,6 +83,7 @@ export function CardPaymentForm(props) {
         const payloadFee = {
           ...formData,
           plan: slug,
+          description: `Plan ${plan?.slug} a 3 cuotas`,
         };
 
         const response = await sendFeePayment(payloadFee);
@@ -93,7 +94,10 @@ export function CardPaymentForm(props) {
       } else {
         const payload = {
           ...formData,
-          description: `${plan?.slug} a un pago`,
+          description: `Plan ${plan?.slug} a un pago`,
+          metadata: {
+            plan: slug,
+          },
         };
 
         const response = await sendPayment(payload);

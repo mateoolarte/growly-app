@@ -15,6 +15,7 @@ export async function POST(request: Request) {
     payer,
     issuer_id,
     description,
+    metadata,
   } = requestData;
 
   const client = new MercadoPagoConfig({
@@ -33,6 +34,7 @@ export async function POST(request: Request) {
         payment_method_id,
         token,
         transaction_amount,
+        metadata,
       },
     });
 

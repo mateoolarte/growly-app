@@ -12,8 +12,11 @@ import "dayjs/locale/es-mx";
 export function ErrorComponent(props) {
   const { data } = props;
 
-  const { id, description, date_created } = data;
+  const { id, description, date_created, metadata } = data;
+  const { plan } = metadata || {};
+
   const date = dayjs(date_created).format("DD [de] MMMM, h:mm a");
+  const checkoutUrl = `/checkout/${plan}`;
 
   return (
     <div className={styles.error}>
@@ -39,7 +42,7 @@ export function ErrorComponent(props) {
       </div>
 
       <div className={styles["error-actions"]}>
-        <ButtonLink href="/checkout" className={styles["error-btn"]}>
+        <ButtonLink href={checkoutUrl} className={styles["error-btn"]}>
           Intentar nuevamente
         </ButtonLink>
         <ButtonLink href="/" style="secondary" className={styles["error-btn"]}>

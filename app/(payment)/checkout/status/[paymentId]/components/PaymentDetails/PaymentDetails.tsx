@@ -48,7 +48,7 @@ export function PaymentDetails(props) {
             Resumen de tu compra
           </h3>
           <p className={styles["payment-details-text"]}>
-            Pagaste ${transaction_amount?.toLocaleString("es-CO")} a través de
+            Pagaste: ${transaction_amount?.toLocaleString("es-CO")} a través de
             Mercado pago
           </p>
           <p className={styles["payment-details-text"]}>

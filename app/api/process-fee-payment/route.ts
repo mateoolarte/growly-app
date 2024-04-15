@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   }
 
   const requestData = await request.json();
-  const { plan, token, payer } = requestData;
+  const { plan, token, payer, description } = requestData;
 
   try {
     const selectedPlan = await getSubscriptionPlan({ plan });
@@ -19,6 +19,7 @@ export async function POST(request: Request) {
       card_token_id: token,
       payer_email: payer?.email ?? "",
       preapproval_plan_id: planId,
+      external_reference: description,
     };
     const subscriptionPlan = await createSubscriptionPlan(payload);
 

@@ -9,21 +9,34 @@
   &-icon {
     svg {
       width: auto;
-      height: 26px;
+      height: 20px;
       fill: var(--primary-color);
+
+      @include screen(md) {
+        height: 26px;
+      }
     }
   }
 
   &-title {
     margin-top: 0;
     margin-bottom: var(--space-1);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
+
+    @include screen(md) {
+      font-size: 1.25rem;
+    }
   }
 
   &-description {
     margin-top: 0;
     margin-bottom: var(--space-4);
+    font-size: var(--text-xs);
     line-height: 1.5;
+
+    @include screen(md) {
+      font-size: var(--text);
+    }
   }
 }

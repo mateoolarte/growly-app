@@ -14,7 +14,7 @@ export function Header() {
             Ir al sitio web <Computer className={styles["header-icon"]} />
           </ButtonLink>
         )}
-        {false && <Button style="secondary">Salir</Button>}
+        {true && <Button style="secondary">Salir</Button>}
       </div>
     </header>
   );

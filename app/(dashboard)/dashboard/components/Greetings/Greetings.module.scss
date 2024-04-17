@@ -1,17 +1,35 @@
 .greetings {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-5);
+  text-align: center;
+
+  @include screen(sm) {
+    margin-bottom: var(--space-8);
+  }
+
+  @include screen(md) {
+    text-align: left;
+  }
 
   &-title {
     margin-top: 0;
     margin-bottom: var(--space-2);
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 600;
     line-height: 1;
+
+    @include screen(sm) {
+      font-size: 2rem;
+    }
   }
 
   &-description {
     margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: var(--text);
+    font-weight: 400;
+
+    @include screen(sm) {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
   }
 }

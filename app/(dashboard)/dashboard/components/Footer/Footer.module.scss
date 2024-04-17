@@ -3,8 +3,15 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
+  padding: var(--space-4) 0;
 
   &-text {
+    margin: 0;
     color: var(--foreground-principal);
+    font-size: var(--text-xs);
+
+    @include screen(md) {
+      font-size: var(--text);
+    }
   }
 }

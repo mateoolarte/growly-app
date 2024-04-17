@@ -1,6 +1,11 @@
 .actions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: var(--space-6);
-  margin-bottom: 6.25rem;
+  gap: var(--space-5);
+  margin-bottom: var(--space-9);
+
+  @include screen(sm) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: 6.25rem;
+  }
 }

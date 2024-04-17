@@ -18,10 +18,10 @@ export function CardsInfo() {
     setActiveModal(type);
   }
 
-  const tiles = true
+  const tiles = false
     ? firstTimeData
     : defaultData(() => handleModal("marketplace"));
-  const inProgressState = true;
+  const inProgressState = false;
 
   if (inProgressState) {
     return <CardInProgress />;

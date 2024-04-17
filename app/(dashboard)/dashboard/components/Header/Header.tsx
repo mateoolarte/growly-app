@@ -9,7 +9,7 @@ export function Header() {
     <header className={styles.header}>
       <Logo className={styles["header-logo"]} />
       <div className={styles["header-actions"]}>
-        {false && (
+        {true && (
           <ButtonLink href="/" target="_blank">
             Ir al sitio web <Computer className={styles["header-icon"]} />
           </ButtonLink>

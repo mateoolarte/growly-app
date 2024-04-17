@@ -1,0 +1,75 @@
+.cardInProgress {
+  margin: 0 auto var(--space-9);
+  padding: var(--space-8);
+  border: 1px solid var(--border-neutral);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white-2);
+  text-align: center;
+
+  @include screen(sm) {
+    width: 70%;
+    margin-bottom: 7.25rem;
+  }
+
+  @include screen(md) {
+    width: 55%;
+    margin-bottom: 9rem;
+  }
+
+  &-heading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-bottom: var(--space-3);
+
+    @include screen(md) {
+      flex-direction: row;
+      margin-bottom: var(--space-5);
+    }
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--orange-color-lighted-100);
+
+    @include screen(md) {
+      width: 64px;
+      height: 64px;
+    }
+
+    svg {
+      width: auto;
+      height: 30px;
+
+      @include screen(md) {
+        height: 40px;
+      }
+    }
+  }
+
+  &-title {
+    margin: 0;
+    font-size: var(--text);
+    font-weight: 600;
+
+    @include screen(sm) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &-description {
+    margin: 0;
+    font-size: var(--text-xs);
+
+    @include screen(md) {
+      font-size: var(--text);
+    }
+  }
+}

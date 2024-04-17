@@ -6,7 +6,7 @@ import { Modal } from "@/ui/Modal";
 
 import { firstTimeData, defaultData } from "./data";
 
-import { Card } from "../Card";
+import { Card, CardInProgress } from "../Card";
 import { Marketplace } from "../Marketplace";
 
 import styles from "./CardsInfo.module.scss";
@@ -21,6 +21,11 @@ export function CardsInfo() {
   const tiles = true
     ? firstTimeData
     : defaultData(() => handleModal("marketplace"));
+  const inProgressState = true;
+
+  if (inProgressState) {
+    return <CardInProgress />;
+  }
 
   return (
     <>

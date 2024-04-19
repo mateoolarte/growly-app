@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713479389277,
+      "tag": "0000_lying_swarm",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1713479782312,
+      "tag": "0001_narrow_korg",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1713483195038,
+      "tag": "0002_funny_sandman",
+      "breakpoints": true
+    }
+  ]
+}

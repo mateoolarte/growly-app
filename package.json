@@ -2,12 +2,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "tsx app/db/migrate.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "fmt": "prettier --write .",
     "pretty": "pnpm fmt && pnpm lint",
-    "prepare": "husky install"
+    "generate": "drizzle-kit generate:pg",
+    "migrate": "tsx --env-file=.env app/db/migrate.ts",
+    "studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@clerk/localizations": "1.28.2",
@@ -19,8 +22,10 @@
     "@radix-ui/react-toast": "1.1.5",
     "classnames": "2.5.1",
     "dayjs": "1.11.10",
+    "drizzle-orm": "0.30.8",
     "mercadopago": "2.0.8",
     "next": "14.2.1",
+    "postgres": "3.4.4",
     "posthog-js": "1.121.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,13 +34,17 @@
   "devDependencies": {
     "@types/node": "20.12.7",
     "@types/react": "18.2.78",
+    "dotenv": "16.4.5",
+    "drizzle-kit": "0.20.14",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.1",
     "eslint-config-prettier": "9.1.0",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
+    "pg": "8.11.5",
     "prettier": "3.2.5",
     "sass": "1.75.0",
+    "tsx": "4.7.2",
     "typescript": "5.4.5"
   },
   "engines": {

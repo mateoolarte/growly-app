@@ -1,10 +1,12 @@
 import { SECTIONS_MAPPER } from "@/(homepage)/constants/sectionsMapper";
 
-import { SectionRenderer } from "@/ui/SectionRenderer";
-import { getLandingData } from "@/services/getLandingData";
-import { Header } from "@/ui/Header";
-import { Footer } from "@/ui/Footer";
 import { CMS_URL, IS_DEV_ENV } from "@/constants/envs";
+
+import { getLandingData } from "@/services/getLandingData";
+
+import { SectionRenderer } from "@/ui/SectionRenderer";
+
+import { Layout } from "@/components/Layout";
 
 export async function generateMetadata() {
   const { seoTags } = await getLandingData();
@@ -39,12 +41,10 @@ export default async function Homepage() {
     return <h1>Go to strapi admin and add sections</h1>;
 
   return (
-    <>
-      <Header />
+    <Layout>
       <main className="home">
         <SectionRenderer data={sections} components={SECTIONS_MAPPER} />
       </main>
-      <Footer />
-    </>
+    </Layout>
   );
 }

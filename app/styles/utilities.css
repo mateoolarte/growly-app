@@ -1,7 +1,7 @@
 .container-box {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--space-2);
+  padding: 0 var(--space-3);
 }
 
 .text-center {

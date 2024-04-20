@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ICONS_MAPPER } from "@/constants/iconMapper";
 
 import styles from "./WarrantyPolicy.module.scss";
@@ -9,7 +11,7 @@ export function WarrantyPolicy() {
     <div className={styles["warranty-policy"]}>
       <SealWarningIcon />
       <p>Si no cumplimos tus expectativas, te devolvemos el dinero.</p>
-      <a href="">Conoce nuestra política de garantía</a>
+      <Link href="/warranty-policy">Conoce nuestra política de garantía</Link>
     </div>
   );
 }

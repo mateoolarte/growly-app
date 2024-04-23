@@ -78,21 +78,33 @@ export default async function Dashboard(props) {
   });
 
   const customerPlans = customerInfo?.plans;
-  const customerPlanInfo = customerPlans && customerPlans[0];
-  const customerPlanId = customerPlanInfo?.planId;
-  const customerPlanCreatedAt = customerPlanInfo?.createdAt;
+  let planInfo = {};
+  let customerPlanCreatedAt = "";
 
-  const planInfo = await db.query.plan.findFirst({
-    where: (plan, { eq }) => eq(plan.id, customerPlanId),
-  });
+  if (customerPlans && customerPlans.length > 0) {
+    const customerPlanInfo = customerPlans && customerPlans[0];
+    const customerPlanId = customerPlanInfo?.planId;
+    customerPlanCreatedAt = customerPlanInfo?.createdAt;
+
+    planInfo = await db.query.plan.findFirst({
+      where: (plan, { eq }) => eq(plan.id, customerPlanId),
+    });
+  }
 
   return (
     <main className="dashboard">
       <div className="container-box">
         <Header appInfo={appInfo} />
         <Greetings appInfo={appInfo} />
-        <CardsInfo appInfo={appInfo} />
-        <Actions planInfo={{ ...planInfo, createdAt: customerPlanCreatedAt }} />
+
+        {customerPlans && customerPlans.length > 0 && (
+          <>
+            <CardsInfo appInfo={appInfo} />
+            <Actions
+              planInfo={{ ...planInfo, createdAt: customerPlanCreatedAt }}
+            />
+          </>
+        )}
         <Footer />
       </div>
     </main>

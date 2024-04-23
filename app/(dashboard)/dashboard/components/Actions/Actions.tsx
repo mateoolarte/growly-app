@@ -1,15 +1,34 @@
 "use client";
 
+import dayjs from "dayjs";
+
 import { Action } from "../Action";
 
 import styles from "./Actions.module.scss";
 
-export function Actions() {
+function parsePlanName(name, installments) {
+  if (name === "landing" && installments === "3") {
+    return "Plan Landing a 3 cuotas";
+  }
+
+  if (name === "landing" && installments === "1") {
+    return "Plan Landing";
+  }
+
+  return "";
+}
+
+export function Actions(props) {
+  const { planInfo } = props;
+  const { name, installments, createdAt } = planInfo;
+
+  const dueData = dayjs(createdAt).add(1, "year").format("DD/MM/YYYY");
+
   const items = [
     {
       id: 1,
       title: "Detalles de tu plan",
-      description: "Plan E-commerce, vence el 01/04/2025",
+      description: `${parsePlanName(name, installments)}, vence el ${dueData}`,
     },
     {
       id: 2,

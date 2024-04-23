@@ -1,0 +1,1 @@
+ALTER TABLE "customer_plan" ALTER COLUMN "payment_id" SET DATA TYPE text;

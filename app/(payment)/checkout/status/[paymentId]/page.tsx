@@ -20,7 +20,9 @@ export default async function PaymentStatus(props) {
     <main className="checkout-status container-box">
       {error && <h1>{error}</h1>}
 
-      {successfullStatuses.includes(status) && <Success data={data} />}
+      {successfullStatuses.includes(status) && (
+        <Success data={{ ...data, type, paymentId }} />
+      )}
 
       {errorStatuses.includes(status) && <ErrorComponent data={data} />}
     </main>

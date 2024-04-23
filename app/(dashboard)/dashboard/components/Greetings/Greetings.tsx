@@ -2,17 +2,20 @@ import { currentUser } from "@clerk/nextjs/server";
 
 import styles from "./Greetings.module.scss";
 
-export async function Greetings() {
+export async function Greetings(props) {
+  const { appInfo } = props;
+  const { status } = appInfo;
+
   const user = await currentUser();
 
   const firstName = user?.firstName;
   const firstEmail = user?.emailAddresses[0]?.emailAddress;
   const username = firstName || firstEmail;
 
-  const isInitialState = false;
+  const isInitialState = status === "initial";
   const initialStateDescription = "¿Como quieres que comencemos?";
 
-  const isDefaultState = true;
+  const isDefaultState = status === "default";
   const defaultStateDescription = "¿Qué quieres hacer hoy?";
 
   return (

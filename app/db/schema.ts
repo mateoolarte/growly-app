@@ -26,7 +26,7 @@ export const statusServiceEnum = pgEnum("status_service", [
 
 export const customer = pgTable("customer", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").notNull(),
+  userId: text("user_id").notNull(),
 });
 
 export const plan = pgTable("plan", {
@@ -54,7 +54,7 @@ export const service = pgTable("service", {
 
 export const customerPlan = pgTable("customer_plan", {
   id: serial("id").primaryKey(),
-  paymentId: integer("payment_id").unique(),
+  paymentId: text("payment_id").unique(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
   customerId: integer("customer_id")
@@ -80,8 +80,8 @@ export const appService = pgTable("app_service", {
 
 export const customerRelations = relations(customer, ({ one, many }) => ({
   app: one(app, {
-    references: [app.id],
     fields: [customer.id],
+    references: [app.id],
   }),
   plans: many(customerPlan),
 }));

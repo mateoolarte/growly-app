@@ -10,11 +10,7 @@ export function Form() {
       </ClerkLoading>
 
       <ClerkLoaded>
-        <SignIn
-          redirectUrl="/dashboard"
-          signUpUrl="/sign-up"
-          routing="virtual"
-        />
+        <SignIn redirectUrl="/dashboard" signUpUrl="" routing="virtual" />
       </ClerkLoaded>
     </div>
   );

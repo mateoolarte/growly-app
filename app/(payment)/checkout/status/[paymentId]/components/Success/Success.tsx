@@ -1,3 +1,5 @@
+import { db } from "@/db";
+
 import { HeadlineForm } from "../HeadlineForm";
 import { Form } from "../Form";
 import { Terms } from "../Terms";
@@ -6,8 +8,15 @@ import { PaymentDetails } from "../PaymentDetails";
 
 import styles from "./Success.module.scss";
 
-export function Success(props) {
+export async function Success(props) {
   const { data } = props;
+  const { paymentId } = data;
+
+  const payment = await db.query.customerPlan.findFirst({
+    where: (customerPlan, { eq }) => eq(customerPlan.paymentId, paymentId),
+  });
+
+  if (payment) return <h1>Este pago ya ha sido usado</h1>;
 
   return (
     <div className={styles.success}>
@@ -16,7 +25,7 @@ export function Success(props) {
       </div>
       <div className={styles["success-form"]}>
         <HeadlineForm />
-        <Form />
+        <Form data={data} />
         <Terms />
         <ContactUs />
       </div>

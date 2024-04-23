@@ -11,21 +11,23 @@ import { Marketplace } from "../Marketplace";
 
 import styles from "./CardsInfo.module.scss";
 
-export function CardsInfo() {
+export function CardsInfo(props) {
+  const { appInfo } = props;
+  const { status } = appInfo;
+
   const [activeModal, setActiveModal] = useState("");
 
   function handleModal(type) {
     setActiveModal(type);
   }
 
-  const tiles = false
-    ? firstTimeData
-    : defaultData(() => handleModal("marketplace"));
-  const inProgressState = false;
+  const tiles =
+    status === "initial"
+      ? firstTimeData
+      : defaultData(() => handleModal("marketplace"));
+  const inProgressState = status === "in-progress";
 
-  if (inProgressState) {
-    return <CardInProgress />;
-  }
+  if (inProgressState) return <CardInProgress />;
 
   return (
     <>

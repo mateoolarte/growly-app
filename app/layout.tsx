@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { ClerkProvider } from "@clerk/nextjs";
-import { esES } from "@clerk/localizations";
 
 import { DEFAULT_FONT } from "@/constants/assets";
+import { translations } from "@/constants/translations";
 
 import { CSPostHogProvider } from "./providers";
 
@@ -12,7 +12,7 @@ import "@/styles/base.css";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <ClerkProvider localization={esES}>
+    <ClerkProvider localization={translations}>
       <html lang="es" className={DEFAULT_FONT.className}>
         <CSPostHogProvider>
           <body>

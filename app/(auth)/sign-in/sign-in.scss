@@ -110,6 +110,22 @@
       }
     }
 
+    &-otpCodeFieldInput {
+      border: 1px solid var(--color-white);
+      background: none;
+      color: var(--color-white);
+      box-shadow: none;
+
+      &:hover,
+      &:focus-within {
+        box-shadow: none;
+      }
+
+      &:focus-within {
+        border-width: 2px;
+      }
+    }
+
     &-formButtonPrimary,
     &-alternativeMethodsBlockButton {
       padding: var(--space-4) var(--space-5);
@@ -136,6 +152,7 @@
 
     &-formFieldAction,
     &-footerActionLink,
+    &-formResendCodeLink,
     &-backLink {
       color: var(--color-white);
     }

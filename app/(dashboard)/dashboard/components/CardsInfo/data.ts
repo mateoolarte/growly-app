@@ -24,7 +24,7 @@ export const firstTimeData = [
       "Agenda una entrevista de 30 minutos donde podremos conocer mucho mas de cerca tus requerimientos.",
     btn: {
       label: "Agendar entrevista",
-      url: "https://cal.com/mateoolarte/30min",
+      url: "https://cal.com/usegrowly/30min",
       target: "_blank",
     },
   },

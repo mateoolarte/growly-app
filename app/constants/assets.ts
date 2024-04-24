@@ -9,4 +9,5 @@ export const DEFAULT_FONT = Hind_Madurai({
   weight: ["400", "500", "600"],
   display: "swap",
   fallback: ["system-ui", "arial"],
+  variable: "--font-hind-madurai",
 });

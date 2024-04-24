@@ -4,12 +4,15 @@ import * as PopoverUI from "@radix-ui/react-popover";
 import { Times } from "../icons/Times";
 
 export function Popover(props) {
-  const { children, isOpen, handlePopover, theme } = props;
+  const { children, isOpen, handlePopover, theme, className, classNameClose } =
+    props;
 
   const classNamesContent = classNames(
     "popover-content",
-    `popover-content--${theme}`,
+    `${theme ? `popover-content--${theme}` : ""}`,
+    className,
   );
+  const classNamesClose = classNames("popover-close", classNameClose);
 
   return (
     <PopoverUI.Root open={isOpen} onOpenChange={handlePopover}>
@@ -17,7 +20,7 @@ export function Popover(props) {
       <PopoverUI.Portal>
         <PopoverUI.Content className={classNamesContent}>
           {children}
-          <PopoverUI.Close className="popover-close">
+          <PopoverUI.Close className={classNamesClose}>
             <Times />
           </PopoverUI.Close>
         </PopoverUI.Content>

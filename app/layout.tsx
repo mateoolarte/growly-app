@@ -13,9 +13,9 @@ import "@/styles/base.css";
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ClerkProvider localization={esES}>
-      <html lang="es">
+      <html lang="es" className={DEFAULT_FONT.className}>
         <CSPostHogProvider>
-          <body className={DEFAULT_FONT.className}>
+          <body>
             <GoogleAnalytics />
             {children}
           </body>

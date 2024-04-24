@@ -15,7 +15,7 @@ export function Header() {
             <Logo className={styles["header-logo"]} />
           </Link>
 
-          <Nav styles={styles} />
+          <Nav />
         </div>
       </div>
     </header>

@@ -1,58 +1,34 @@
-import Link from "next/link";
+import { currentUser } from "@clerk/nextjs/server";
 
 import { getNavigationData } from "@/services/getNavigationData";
-import { User } from "@/ui/icons/User";
 
-import { ButtonLink } from "../Button";
+import styles from "./Nav.module.scss";
 
-export async function Nav(props) {
-  const { styles } = props;
+import { Item } from "./Item";
 
+export async function Nav() {
+  const user = await currentUser();
   const data = await getNavigationData("header");
 
   const hasData = data && data.length > 0;
 
-  if (!hasData) return null;
+  if (!hasData && !user) return null;
 
   return (
-    <nav className={styles["header-nav"]}>
-      <ul className={styles["header-list"]}>
+    <nav className={styles.nav}>
+      <ul className={styles["nav-list"]}>
         {data.map((item) => {
+          if (item.type === "button" && user) return null;
+
+          const classNamesItem = `${styles["nav-item"]} ${user ? styles["nav-item--logged"] : ""}`;
+
           return (
-            <li key={item.id} className={styles["header-item"]}>
-              {renderLink({ item, styles })}
+            <li key={item.id} className={classNamesItem}>
+              <Item item={item} styles={styles} user={JSON.stringify(user)} />
             </li>
           );
         })}
       </ul>
     </nav>
-  );
-}
-
-function renderLink(options) {
-  const { item, styles } = options;
-  const { title, type, url } = item;
-
-  if (type === "button-alt") {
-    return (
-      <Link href={url || ""} className={styles["header-login"]}>
-        <User className={styles["header-login-icon"]} />
-        <span>{title}</span>
-      </Link>
-    );
-  }
-
-  if (type === "button") {
-    return (
-      <ButtonLink href={url || ""} size="small">
-        {title}
-      </ButtonLink>
-    );
-  }
-
-  return (
-    <Link href={url || ""} className={styles["header-link"]}>
-      {title}
-    </Link>
   );
 }

@@ -78,6 +78,7 @@ export default async function Dashboard(props) {
   });
 
   const customerPlans = customerInfo?.plans;
+  const hasCustomerPlan = customerPlans && customerPlans.length > 0;
   let planInfo = {};
   let customerPlanCreatedAt = "";
 
@@ -95,16 +96,11 @@ export default async function Dashboard(props) {
     <main className="dashboard">
       <div className="container-box">
         <Header appInfo={appInfo} />
-        <Greetings appInfo={appInfo} />
+        <Greetings appInfo={appInfo} hasCustomerPlan={hasCustomerPlan} />
 
-        {customerPlans && customerPlans.length > 0 && (
-          <>
-            <CardsInfo appInfo={appInfo} />
-            <Actions
-              planInfo={{ ...planInfo, createdAt: customerPlanCreatedAt }}
-            />
-          </>
-        )}
+        <CardsInfo appInfo={appInfo} hasCustomerPlan={hasCustomerPlan} />
+
+        <Actions planInfo={{ ...planInfo, createdAt: customerPlanCreatedAt }} />
         <Footer />
       </div>
     </main>

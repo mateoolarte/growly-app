@@ -13,12 +13,16 @@ export function Actions(props) {
   const { name, installments, createdAt } = planInfo;
 
   const dueData = dayjs(createdAt).add(1, "year").format("DD/MM/YYYY");
+  const currentPlan =
+    name && installments
+      ? `${parsePlanName(name, installments)}, vence el ${dueData}`
+      : "Sin plan";
 
   const items = [
     {
       id: 1,
       title: "Detalles de tu plan",
-      description: `${parsePlanName(name, installments)}, vence el ${dueData}`,
+      description: currentPlan,
     },
     {
       id: 2,

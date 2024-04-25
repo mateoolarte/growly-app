@@ -3,7 +3,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import styles from "./Greetings.module.scss";
 
 export async function Greetings(props) {
-  const { appInfo } = props;
+  const { appInfo, hasCustomerPlan } = props;
   const { status } = appInfo;
 
   const user = await currentUser();
@@ -21,16 +21,20 @@ export async function Greetings(props) {
   return (
     <div className={styles.greetings}>
       <h1 className={styles["greetings-title"]}>¡Hola {username}!</h1>
-      {isInitialState && (
-        <h2 className={styles["greetings-description"]}>
-          {initialStateDescription}
-        </h2>
-      )}
+      {hasCustomerPlan && (
+        <>
+          {isInitialState && (
+            <h2 className={styles["greetings-description"]}>
+              {initialStateDescription}
+            </h2>
+          )}
 
-      {isDefaultState && (
-        <h2 className={styles["greetings-description"]}>
-          {defaultStateDescription}
-        </h2>
+          {isDefaultState && (
+            <h2 className={styles["greetings-description"]}>
+              {defaultStateDescription}
+            </h2>
+          )}
+        </>
       )}
     </div>
   );

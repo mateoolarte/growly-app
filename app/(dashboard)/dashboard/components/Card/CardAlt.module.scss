@@ -1,4 +1,4 @@
-.cardInProgress {
+.cardAlt {
   margin: 0 auto var(--space-9);
   padding: var(--space-8);
   border: 1px solid var(--border-neutral);
@@ -47,6 +47,7 @@
     svg {
       width: auto;
       height: 30px;
+      fill: var(--foreground-secondary);
 
       @include screen(md) {
         height: 40px;
@@ -70,6 +71,14 @@
 
     @include screen(md) {
       font-size: var(--text);
+    }
+  }
+
+  &-cta {
+    margin-top: var(--space-3);
+
+    @include screen(md) {
+      margin-top: var(--space-5);
     }
   }
 }

@@ -1,3 +1,5 @@
+import { currentUser } from "@clerk/nextjs/server";
+
 import { db } from "@/db";
 
 import { HeadlineForm } from "../HeadlineForm";
@@ -5,12 +7,15 @@ import { Form } from "../Form";
 import { Terms } from "../Terms";
 import { ContactUs } from "../ContactUs";
 import { PaymentDetails } from "../PaymentDetails";
+import { Cta } from "../Cta";
 
 import styles from "./Success.module.scss";
 
 export async function Success(props) {
   const { data } = props;
   const { paymentId } = data;
+
+  const user = await currentUser();
 
   const payment = await db.query.customerPlan.findFirst({
     where: (customerPlan, { eq }) => eq(customerPlan.paymentId, paymentId),
@@ -25,9 +30,16 @@ export async function Success(props) {
       </div>
       <div className={styles["success-form"]}>
         <HeadlineForm />
-        <Form data={data} />
-        <Terms />
-        <ContactUs />
+
+        {user && <Cta />}
+
+        {!user && (
+          <>
+            <Form data={data} />
+            <Terms />
+            <ContactUs />
+          </>
+        )}
       </div>
     </div>
   );

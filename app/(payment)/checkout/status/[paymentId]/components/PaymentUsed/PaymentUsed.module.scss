@@ -1,0 +1,78 @@
+.payment-used {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 680px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+  text-align: center;
+
+  @include screen(md) {
+    padding: 0;
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-2);
+    border-radius: 50%;
+    background-color: var(--color-warning-low);
+
+    @include screen(md) {
+      width: 64px;
+      height: 64px;
+      margin-bottom: var(--space-3);
+    }
+
+    svg {
+      fill: var(--color-warning-high);
+      width: auto;
+      height: 25px;
+
+      @include screen(md) {
+        height: 35px;
+      }
+    }
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: var(--space-2);
+    font-size: 1.25rem;
+
+    @include screen(md) {
+      margin-bottom: var(--space-3);
+      font-size: 2rem;
+    }
+  }
+
+  &-description {
+    margin-top: 0;
+    margin-bottom: var(--space-5);
+    line-height: 1.6;
+
+    @include screen(md) {
+      margin-bottom: var(--space-6);
+      font-size: 1.25rem;
+    }
+  }
+
+  &-cta {
+    width: 90%;
+    margin-bottom: 80px;
+
+    @include screen(sm) {
+      width: 60%;
+    }
+
+    @include screen(md) {
+      width: 80%;
+      margin-bottom: 116px;
+    }
+  }
+}

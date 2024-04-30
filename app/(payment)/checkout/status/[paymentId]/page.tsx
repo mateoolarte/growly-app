@@ -1,8 +1,12 @@
+import { db } from "@/db";
+
+import { getPaymentStatus } from "@/services/getPaymentStatus";
+
 import { ErrorComponent } from "./components/Error";
 import { Success } from "./components/Success";
+import { PaymentUsed } from "./components/PaymentUsed";
 
 import "./checkout-status.scss";
-import { getPaymentStatus } from "@/services/getPaymentStatus";
 
 export default async function PaymentStatus(props) {
   const { params, searchParams } = props;
@@ -11,10 +15,16 @@ export default async function PaymentStatus(props) {
   const { type } = searchParams;
 
   const { data, error } = await getPaymentStatus({ id: paymentId, type });
+  const payment = await db.query.customerPlan.findFirst({
+    where: (customerPlan, { eq }) => eq(customerPlan.paymentId, paymentId),
+  });
+
   const { status } = data || {};
 
   const successfullStatuses = ["approved", "authorized"];
   const errorStatuses = ["rejected", "cancelled"];
+
+  if (payment) return <PaymentUsed />;
 
   return (
     <main className="checkout-status container-box">

@@ -24,15 +24,15 @@ export function Actions(props) {
       title: "Detalles de tu plan",
       description: currentPlan,
     },
-    {
-      id: 2,
-      title: "Ayúdanos a mejorar Growly",
-      description: "Comparte tus ideas con nosotros.",
-      // btn: {
-      //   label: "Enviar sugerencia",
-      //   action: () => {},
-      // },
-    },
+    // {
+    //   id: 2,
+    //   title: "Ayúdanos a mejorar Growly",
+    //   description: "Comparte tus ideas con nosotros.",
+    //   btn: {
+    //     label: "Enviar sugerencia",
+    //     action: () => {},
+    //   },
+    // },
     {
       id: 3,
       title: "¿Problemas técnicos?",

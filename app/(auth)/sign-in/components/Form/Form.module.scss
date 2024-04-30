@@ -1,11 +1,10 @@
 .form {
   display: flex;
   justify-content: center;
-  min-height: 330px;
+  min-height: 285px;
   margin-bottom: var(--space-5);
 
   @include screen(sm) {
-    min-height: 285px;
     margin-bottom: var(--space-8);
   }
 }

@@ -1,7 +1,7 @@
 import { Logo } from "@/ui/Logo";
 
 import { Headline } from "../sign-in/components/Headline";
-import { Cta } from "../sign-in/components/Cta";
+import { Cta } from "./components/Cta";
 
 import { Form } from "./components/Form";
 import { Terms } from "./components/Terms";

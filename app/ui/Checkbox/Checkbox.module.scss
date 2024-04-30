@@ -1,0 +1,60 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 1px solid var(--primary-color-lighted);
+    border-radius: 2px;
+    background-color: var(--color-white-2);
+    box-sizing: content-box;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--orange-color-lighted);
+    }
+
+    &:focus,
+    &:focus-visible {
+      box-shadow: 0 0 0 1px var(--primary-color);
+      outline: none;
+    }
+
+    &--checked {
+      border: 1px solid var(--primary-color);
+    }
+  }
+
+  &-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+
+    svg {
+      width: 10px;
+      height: 10px;
+      fill: var(--color-white-2);
+    }
+  }
+
+  &-label {
+    padding-left: var(--space-2);
+    color: var(--text-color-unchecked);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1;
+
+    &--checked {
+      color: var(--foreground-principal);
+    }
+  }
+}

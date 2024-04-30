@@ -25,6 +25,7 @@
     height: 50px;
 
     @include screen(sm) {
+      width: 226px;
       height: 60px;
     }
   }

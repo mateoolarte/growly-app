@@ -21,8 +21,10 @@ export default async function Checkout(props) {
     return <h1>El plan {planSlug} no existe</h1>;
   }
 
-  const plan = await getPlanDetail(planSlug);
-  const planBenefits = await getBenefitsData();
+  const [plan, planBenefits] = await Promise.all([
+    getPlanDetail(planSlug),
+    getBenefitsData(),
+  ]);
 
   return (
     <main className="checkout">

@@ -1,0 +1,27 @@
+.marketplace {
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--space-3);
+    row-gap: var(--space-5);
+    margin-top: 0;
+    margin-bottom: var(--space-6);
+    padding: 0;
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  &-item {
+    padding: var(--space-3);
+    border: 1px solid var(--border-neutral);
+    border-radius: var(--border-radius-sm);
+
+    &-description {
+      margin-top: var(--space-2);
+      margin-bottom: 0;
+      margin-left: 28px;
+      color: var(--foreground-principal);
+      font-size: var(--text-xs);
+    }
+  }
+}

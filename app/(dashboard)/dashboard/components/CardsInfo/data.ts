@@ -4,18 +4,18 @@ import { Layers } from "@/ui/icons/Layers";
 import { Barbell } from "@/ui/icons/Barbell";
 
 export const firstTimeData = [
-  // {
-  //   id: 1,
-  //   Icon: File,
-  //   title: "Google Form",
-  //   description:
-  //     "Completa el formulario para recopilar la información necesaria que necesitamos para comenzar con el diseño de tu sitio web.",
-  //   btn: {
-  //     label: "Continuar con el formulario",
-  //     url: "https://docs.google.com/forms/d/e/1FAIpQLSdU1fslnvyDJtqriQ1QQNRP_d1SpciyTVNaYh1mRm7V2QQ11g/viewform?usp=sf_link",
-  //     target: "_blank",
-  //   },
-  // },
+  {
+    id: 1,
+    Icon: File,
+    title: "Google Form",
+    description:
+      "Completa el formulario para recopilar la información necesaria que necesitamos para comenzar con el diseño de tu sitio web.",
+    btn: {
+      label: "Continuar con el formulario",
+      url: "https://forms.gle/x7zP5u5wwGaM3XV29",
+      target: "_blank",
+    },
+  },
   {
     id: 2,
     Icon: Video,

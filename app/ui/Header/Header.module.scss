@@ -16,6 +16,7 @@
     height: 45px;
 
     @include screen(md) {
+      width: 226px;
       height: 60px;
     }
   }

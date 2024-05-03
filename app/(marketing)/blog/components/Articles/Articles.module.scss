@@ -1,0 +1,20 @@
+.articles {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--space-5);
+  row-gap: var(--space-5);
+  margin-bottom: var(--space-9);
+
+  @include screen(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 9.25rem;
+  }
+
+  @include screen(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include screen(lg) {
+    row-gap: var(--space-9);
+  }
+}

@@ -21,6 +21,7 @@ export function Plan(props) {
     priceMaintenance,
     priceInstallments,
     tooltip,
+    icon,
   } = props;
 
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
@@ -35,7 +36,7 @@ export function Plan(props) {
     currency: "COP",
   };
 
-  const Icon = ICONS_MAPPER[slug];
+  const Icon = ICONS_MAPPER[icon] || null;
   const highlightedPlan = slug === HIGHLIGHTED_PLAN;
 
   const classNamesPlan = classNames("pricing-plan", `pricing-plan--${slug}`, {
@@ -52,7 +53,7 @@ export function Plan(props) {
       <div className="pricing-planInfo">
         <h3 className="pricing-planName">
           {name}
-          <Icon className="pricing-planBadge" />
+          {Icon && <Icon className="pricing-planBadge" />}
         </h3>
 
         {installmentsLabel && (

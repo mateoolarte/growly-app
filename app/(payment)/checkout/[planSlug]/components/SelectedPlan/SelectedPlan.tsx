@@ -11,11 +11,11 @@ import styles from "./SelectedPlan.module.scss";
 
 export function SelectedPlan(props) {
   const { plan, type } = props;
-  const { name, slug } = plan;
+  const { name, icon } = plan;
 
   const router = useRouter();
 
-  const Icon = ICONS_MAPPER[slug];
+  const Icon = ICONS_MAPPER[icon] ?? null;
 
   const handleChangePlan = (e) => {
     const value = e.target.value;
@@ -25,7 +25,7 @@ export function SelectedPlan(props) {
   return (
     <div className={styles.selectedPlan}>
       <div className={styles["selectedPlan-title"]}>
-        <Icon className={styles["selectedPlan-icon"]} />
+        {Icon && <Icon className={styles["selectedPlan-icon"]} />}
         <h2 className={styles["selectedPlan-name"]}>Plan {name}</h2>
       </div>
 

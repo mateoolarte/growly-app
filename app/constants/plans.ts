@@ -1,3 +1,3 @@
-export const PLANS = ["landing", "corporate", "ecommerce"];
+export const PLANS = ["spotlight", "hub", "stream"];
 
-export const HIGHLIGHTED_PLAN = "corporate";
+export const HIGHLIGHTED_PLAN = "hub";

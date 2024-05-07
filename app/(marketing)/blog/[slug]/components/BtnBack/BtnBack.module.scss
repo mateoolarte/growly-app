@@ -1,0 +1,38 @@
+.btn-back {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-2);
+  color: var(--foreground-principal);
+  font-weight: 600;
+  text-decoration: none;
+
+  @include screen(sm) {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  @include screen(lg) {
+    font-size: 1.25rem;
+  }
+
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--orange-color-lighted-100);
+
+    @include screen(lg) {
+      width: 48px;
+      height: 48px;
+    }
+
+    svg {
+      fill: var(--primary-color);
+    }
+  }
+}

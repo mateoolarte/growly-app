@@ -1,0 +1,14 @@
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+
+  @include screen(sm) {
+    margin-bottom: var(--space-8);
+  }
+
+  @include screen(lg) {
+    margin-bottom: var(--space-9);
+  }
+}

@@ -1,0 +1,50 @@
+.share {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  @include screen(sm) {
+    align-items: center;
+    flex-direction: row;
+    gap: var(--space-3);
+  }
+
+  &-title {
+    margin: 0;
+    color: var(--foreground-principal);
+    font-weight: 600;
+
+    @include screen(lg) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--orange-color-lighted-100);
+
+    @include screen(lg) {
+      width: 48px;
+      height: 48px;
+    }
+
+    svg {
+      fill: var(--primary-color);
+    }
+  }
+}

@@ -1,4 +1,7 @@
 import Link from "next/link";
+
+import { WHATSAPP_NUMBER } from "@/constants";
+
 import styles from "./ContactUs.module.scss";
 
 export function ContactUs(props) {
@@ -9,7 +12,7 @@ export function ContactUs(props) {
       {message}
       <Link
         className={styles["contact-us-link"]}
-        href="https://wa.me/573183540619"
+        href={WHATSAPP_NUMBER}
         target="_blank"
       >
         Contáctanos

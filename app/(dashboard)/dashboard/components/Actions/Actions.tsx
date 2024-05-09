@@ -2,6 +2,8 @@
 
 import dayjs from "dayjs";
 
+import { WHATSAPP_NUMBER } from "@/constants";
+
 import { parsePlanName } from "./parsePlanName";
 
 import { Action } from "../Action";
@@ -39,7 +41,7 @@ export function Actions(props) {
       description: "Contacta con soporte",
       btn: {
         label: "Contáctanos",
-        url: "https://wa.me/573183540619",
+        url: WHATSAPP_NUMBER,
         target: "_blank",
       },
     },

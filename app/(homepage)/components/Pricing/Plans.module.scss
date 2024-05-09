@@ -1,0 +1,32 @@
+.plans {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: var(--space-6);
+
+  @include screen(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include screen(lg) {
+    gap: 3rem;
+  }
+
+  &-label {
+    margin-top: 0;
+    margin-bottom: var(--space-6);
+    color: var(--foreground-principal);
+    font-size: var(--text-xs);
+    font-weight: 600;
+
+    @include screen(md) {
+      margin-bottom: var(--space-8);
+      font-size: var(--text);
+    }
+  }
+
+  &-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+  }
+}

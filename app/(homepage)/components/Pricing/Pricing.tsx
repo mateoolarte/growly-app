@@ -1,16 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { ToggleInstallments } from "./ToggleInstallments";
+import { WarrantyPolicy } from "@/components/WarrantyPolicy";
+
+import { getBenefitsData } from "@/services/getBenefitsData";
+
+import { Tabs, TabContent } from "@/ui/Tabs";
+
 import { Plans } from "./Plans";
 
 import "./Pricing.scss";
-import { WarrantyPolicy } from "@/components/WarrantyPolicy";
 
 export function Pricing(props) {
   const { title, description, tooltip, plans } = props;
-  const [withInstallments, setWithInstallments] = useState(false);
+
+  const [benefits, setBenefits] = useState([]);
+
+  useEffect(() => {
+    getBenefitsData()
+      .then((data) => setBenefits(data))
+      .catch(console.error);
+  }, []);
+
+  const options = [
+    {
+      id: 1,
+      value: "one-payment",
+      content: () => "Un solo pago",
+    },
+    {
+      id: 2,
+      value: "installments",
+      content: () => "Pago a 3 cuotas",
+    },
+  ];
 
   return (
     <section className="pricing" id="precios">
@@ -24,16 +48,19 @@ export function Pricing(props) {
           dangerouslySetInnerHTML={{ __html: description }}
         />
 
-        <ToggleInstallments
-          withInstallments={withInstallments}
-          setWithInstallments={setWithInstallments}
-        />
-
-        <Plans
-          data={plans}
-          withInstallments={withInstallments}
-          tooltip={tooltip}
-        />
+        <Tabs defaultTab="one-payment" tabs={options}>
+          <TabContent value="one-payment">
+            <Plans data={plans} tooltip={tooltip} benefits={benefits} />
+          </TabContent>
+          <TabContent value="installments">
+            <Plans
+              data={plans}
+              withInstallments
+              tooltip={tooltip}
+              benefits={benefits}
+            />
+          </TabContent>
+        </Tabs>
 
         <WarrantyPolicy />
       </div>

@@ -1,32 +1,40 @@
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
-import { getBenefitsData } from "@/services/getBenefitsData";
+import { WHATSAPP_NUMBER } from "@/constants";
+
 import { Plan } from "./Plan";
 
+import styles from "./Plans.module.scss";
+
 export function Plans(props) {
-  const { data, withInstallments, tooltip } = props;
-
-  const [benefits, setBenefits] = useState([]);
-
-  useEffect(() => {
-    getBenefitsData()
-      .then((res) => setBenefits(res))
-      .catch((err) => console.error(err));
-  }, []);
+  const { data, withInstallments, tooltip, benefits } = props;
 
   return (
-    <div className="pricing-plans">
-      {data?.map((item) => {
-        return (
-          <Plan
-            key={item.id}
-            {...item}
-            withInstallments={withInstallments}
-            benefits={benefits}
-            tooltip={tooltip}
-          />
-        );
-      })}
-    </div>
+    <>
+      <p className={styles["plans-label"]}>
+        ¿Necesitas mas opciones de financiamiento?{" "}
+        <Link
+          href={WHATSAPP_NUMBER}
+          target="_blank"
+          className={styles["plans-link"]}
+        >
+          Haz clic acá
+        </Link>
+      </p>
+
+      <div className={styles.plans}>
+        {data?.map((item) => {
+          return (
+            <Plan
+              key={item.id}
+              {...item}
+              withInstallments={withInstallments}
+              benefits={benefits}
+              tooltip={tooltip}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }

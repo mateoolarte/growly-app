@@ -1,7 +1,7 @@
 import { getWarrantyPolicyData } from "@/services/getWarrantyPolicyData";
 
 import { Layout } from "@/components/Layout";
-import { BlocksRenderer } from "../components/BlocksRenderer";
+import { BlocksRenderer } from "@/components/BlocksRenderer";
 
 import "../legal.scss";
 

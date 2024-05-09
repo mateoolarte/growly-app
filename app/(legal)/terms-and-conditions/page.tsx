@@ -1,7 +1,7 @@
 import { getTermsConditionsData } from "@/services/getTermsConditionsData";
 
 import { Layout } from "@/components/Layout";
-import { BlocksRenderer } from "../components/BlocksRenderer";
+import { BlocksRenderer } from "@/components/BlocksRenderer";
 
 import "../legal.scss";
 

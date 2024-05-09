@@ -30,7 +30,7 @@ export default async function Article(props) {
   return (
     <Layout>
       <main className="article">
-        <Actions />
+        <Actions slug={slug} />
         <h1 className="article-title">{title}</h1>
         <div className="article-info">
           <time className="article-date">{formattedDate}</time>

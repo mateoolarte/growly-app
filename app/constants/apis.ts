@@ -15,6 +15,8 @@ export const TERMS_CONDITIONS_API = `${CMS_URL}/api/term-and-condition?populate[
 export const PRIVACY_POLICY_API = `${CMS_URL}/api/privacy-policy?populate[content]=*`;
 export const WARRANTY_POLICY_API = `${CMS_URL}/api/warranty-policy?populate[content]=*`;
 
+export const BLOG_API = `${CMS_URL}/api/blogs?sort[0]=publishedAt:desc&populate=*`;
+
 export const MERCADOPAGO_API = "https://api.mercadopago.com";
 export const MERCADOPAGO_API_GET_PLANS = (plan) =>
   `${MERCADOPAGO_API}/preapproval_plan/search?status=active&limit=1&q=${plan}`;

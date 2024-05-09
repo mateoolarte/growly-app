@@ -23,12 +23,12 @@
     object-fit: cover;
 
     @include screen(sm) {
-      height: 220px;
+      height: 250px;
       margin-bottom: var(--space-6);
     }
 
     @include screen(lg) {
-      height: 330px;
+      height: 350px;
     }
   }
 

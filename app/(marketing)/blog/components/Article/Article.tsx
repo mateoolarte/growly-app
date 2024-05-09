@@ -1,24 +1,36 @@
 import Link from "next/link";
+import dayjs from "dayjs";
+
+import { parseCategories } from "../../utils/parseCategories";
+
 import styles from "./Article.module.scss";
 
-export function Article() {
+export function Article(props) {
+  const { title, slug, categories, excerpt, publishedAt } = props;
+
+  const url = `/blog/${slug}`;
+  const formattedDate = dayjs(publishedAt).format("DD/MM/YYYY");
+  const parsedCategories = parseCategories(categories?.data);
+  const hasCategories = parsedCategories && parseCategories.length;
+
   return (
     <article className={styles.article}>
-      <Link href="/" className={styles["article-link"]}>
-        <h2 className={styles["article-title"]}>
-          How does writing influence your personal brand?
-        </h2>
-        <p className={styles["article-description"]}>
-          Another factor to take into account has to do with the nature of the
-          rewards you expect to give your customers
-        </p>
-        <time dateTime="" className={styles["article-date"]}>
-          03/03/2023
-        </time>
-        <ul className={styles["article-categories"]}>
-          <li className={styles["article-category"]}>Brand</li>
-          <li className={styles["article-category"]}>Writing</li>
-        </ul>
+      <Link href={url} className={styles["article-link"]}>
+        <h2 className={styles["article-title"]}>{title}</h2>
+        <p className={styles["article-description"]}>{excerpt}</p>
+        <time className={styles["article-date"]}>{formattedDate}</time>
+
+        {hasCategories && (
+          <ul className={styles["article-categories"]}>
+            {parsedCategories?.map((item) => {
+              return (
+                <li key={item.id} className={styles["article-category"]}>
+                  {item.name}
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </Link>
     </article>
   );

@@ -1,2 +1,1 @@
-export { CardPaymentForm } from './CardPaymentForm';
-
+export { CardPaymentForm } from "./CardPaymentForm";

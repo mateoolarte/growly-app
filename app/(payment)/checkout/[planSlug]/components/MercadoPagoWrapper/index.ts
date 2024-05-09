@@ -1,1 +1,1 @@
-export { MercadoPagoWrapper } from './MercadoPagoWrapper'
+export { MercadoPagoWrapper } from "./MercadoPagoWrapper";

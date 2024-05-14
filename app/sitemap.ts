@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://usegrowly.com/sign-in",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: "https://usegrowly.com/checkout/spotlight",
@@ -36,19 +36,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://usegrowly.com/warranty-policy",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.8,
+      priority: 0.6,
     },
     {
       url: "https://usegrowly.com/privacy-policy",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.8,
+      priority: 0.6,
     },
     {
       url: "https://usegrowly.com/terms-and-conditions",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.8,
+      priority: 0.6,
     },
     {
       url: "https://usegrowly.com/blog",

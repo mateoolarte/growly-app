@@ -5,6 +5,11 @@ import { Layout } from "@/components/Layout";
 import { Hero } from "./components/Hero";
 import { Articles } from "./components/Articles";
 
+export const metadata = {
+  title: "Blog | Growly",
+  description: "",
+};
+
 export default async function Blog() {
   const data = await getBlogpostsData();
 

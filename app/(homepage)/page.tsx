@@ -1,14 +1,16 @@
-import { SECTIONS_MAPPER } from "@/(homepage)/constants/sectionsMapper";
-
 import { getLandingData } from "@/services/getLandingData";
 
-import { homepageMetadata as generateMetadata } from "./utils/metadata";
+import { metadataGenerator } from "@/utils/metadataGenerator";
 
 import { SectionRenderer } from "@/ui/SectionRenderer";
 
+import { SECTIONS_MAPPER } from "@/(homepage)/constants/sectionsMapper";
+
 import { Layout } from "@/components/Layout";
 
-export { generateMetadata };
+export async function generateMetadata() {
+  return await metadataGenerator(getLandingData);
+}
 
 export default async function Homepage() {
   const { sections } = await getLandingData();

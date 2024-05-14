@@ -2,7 +2,9 @@ import Image from "next/image";
 import dayjs from "dayjs";
 
 import { getArticleData } from "@/services/getArticleData";
+
 import { parseMediaField } from "@/utils/parseMediaField";
+import { metadataGenerator } from "@/utils/metadataGenerator";
 
 import { Layout } from "@/components/Layout";
 import { BlocksRenderer } from "@/components/BlocksRenderer";
@@ -12,6 +14,10 @@ import { parseCategories } from "../utils/parseCategories";
 import { Actions } from "./components/Actions";
 
 import "./article.scss";
+
+export async function generateMetadata() {
+  return await metadataGenerator(getArticleData);
+}
 
 export default async function Article(props) {
   const { params } = props;

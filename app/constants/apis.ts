@@ -11,9 +11,9 @@ export const BENEFITS_API = `${CMS_URL}/api/pricing-benefit?populate[items][popu
 export const NAVIGATION_API = (location) =>
   `${CMS_URL}/api/navigation?populate[${location}][populate]=*`;
 
-export const TERMS_CONDITIONS_API = `${CMS_URL}/api/term-and-condition?populate[content]=*`;
-export const PRIVACY_POLICY_API = `${CMS_URL}/api/privacy-policy?populate[content]=*`;
-export const WARRANTY_POLICY_API = `${CMS_URL}/api/warranty-policy?populate[content]=*`;
+export const TERMS_CONDITIONS_API = `${CMS_URL}/api/term-and-condition?populate[content]=*&populate[seo][populate]=*`;
+export const PRIVACY_POLICY_API = `${CMS_URL}/api/privacy-policy?populate[content]=*&populate[seo][populate]=*`;
+export const WARRANTY_POLICY_API = `${CMS_URL}/api/warranty-policy?populate[content]=*&populate[seo][populate]=*`;
 
 export const BLOG_API = `${CMS_URL}/api/blogs?sort[0]=publishedAt:desc&populate=*`;
 export const ARTICLE_API = (slug) =>

@@ -15,13 +15,15 @@ export async function getPrivacyPolicyData() {
     const data = json?.data;
     const attributes = data?.attributes;
     const content = attributes?.content;
+    const seo = attributes?.seo;
 
-    return { content };
+    return { content, seo };
   } catch (error) {
     console.error({ function: "getPrivacyPolicyData", error });
 
     return {
       content: null,
+      seo: null,
     };
   }
 }

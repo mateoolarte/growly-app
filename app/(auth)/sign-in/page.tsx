@@ -8,6 +8,11 @@ import { GoHome } from "./components/GoHome";
 
 import "./sign-in.scss";
 
+export const metadata = {
+  title: "Inicia sesión | Growly",
+  description: "",
+};
+
 export default function Signin() {
   return (
     <main className="sign-in">

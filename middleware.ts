@@ -7,7 +7,10 @@ export default clerkMiddleware((auth, req) => {
   if (isProtectedRoute(req)) auth().protect();
 
   const requestHeaders = new Headers(req.headers);
-  requestHeaders.set("x-url", req.url);
+  const pathname = req.nextUrl.pathname;
+  const params = req.nextUrl.search;
+
+  requestHeaders.set("x-url", `${pathname}${params}`);
 
   return NextResponse.next({
     request: {

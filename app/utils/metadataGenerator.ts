@@ -8,7 +8,7 @@ export async function metadataGenerator(dataFetcher) {
   const { seo } = (await dataFetcher()) ?? {};
 
   const headersList = headers();
-  const currentUrl = headersList.get("x-url") || "";
+  const currentUrl = headersList.get("x-url") ?? "";
 
   const image = parseMediaField(seo?.metaImage?.data);
 

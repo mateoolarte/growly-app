@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run migrate",
+    "prebuild": "tsx app/db/migrate.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

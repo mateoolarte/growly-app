@@ -4,6 +4,7 @@ import { List } from "./List";
 import { Paragraph } from "./Paragraph";
 
 import styles from "./BlocksRenderer.module.scss";
+import { Media } from "./Media";
 
 export function BlocksRenderer(props) {
   const { data, className } = props;
@@ -22,6 +23,8 @@ export function BlocksRenderer(props) {
         if (type === "heading") return <Heading key={index} data={block} />;
 
         if (type === "list") return <List key={index} data={block} />;
+
+        if (type === "image") return <Media key={index} data={block} />;
 
         return <h2 key={index}>Block</h2>;
       })}

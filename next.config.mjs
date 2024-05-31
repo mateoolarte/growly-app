@@ -16,7 +16,7 @@ const securityHeaders = [
   },
 ];
 
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
   typescript: {
     // !! WARN !!
@@ -52,3 +52,5 @@ module.exports = {
     prependData: `@import "breakpoints.scss";`,
   },
 };
+
+export default nextConfig;

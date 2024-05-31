@@ -48,3 +48,7 @@ yarn-error.log*
 
 # dotenv environment variables file(s)
 .env
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

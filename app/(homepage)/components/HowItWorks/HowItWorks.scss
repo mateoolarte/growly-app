@@ -51,20 +51,20 @@
     display: flex;
     width: 100%;
 
-    &:first-child {
-      .howItWorks-step {
-        &Number {
-          background-color: var(--primary-color);
-          color: var(--orange-color-lighted);
-        }
+    // &:first-child {
+    //   .howItWorks-step {
+    //     &Number {
+    //       background-color: var(--primary-color);
+    //       color: var(--orange-color-lighted);
+    //     }
 
-        &Content {
-          &::before {
-            background-color: var(--primary-color);
-          }
-        }
-      }
-    }
+    //     &Content {
+    //       &::before {
+    //         background-color: var(--primary-color);
+    //       }
+    //     }
+    //   }
+    // }
 
     &Title {
       margin: 0;

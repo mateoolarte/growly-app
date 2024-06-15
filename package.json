@@ -2,12 +2,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "tsx app/db/migrate.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "fmt": "prettier --write .",
     "pretty": "npm run fmt && npm run lint",
+    "prebuild": "tsx app/db/migrate.ts",
     "generate": "drizzle-kit generate:pg",
     "migrate": "tsx --env-file=.env app/db/migrate.ts",
     "studio": "drizzle-kit studio"

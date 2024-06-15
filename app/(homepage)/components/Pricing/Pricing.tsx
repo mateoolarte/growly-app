@@ -13,7 +13,7 @@ import { Plans } from "./Plans";
 import "./Pricing.scss";
 
 export function Pricing(props) {
-  const { title, description, tooltip, plans } = props;
+  const { title, description, tooltip, plans, enabled } = props;
 
   const [benefits, setBenefits] = useState([]);
 
@@ -22,6 +22,8 @@ export function Pricing(props) {
       .then((data) => setBenefits(data))
       .catch(console.error);
   }, []);
+
+  if (!enabled) return null;
 
   const options = [
     {
